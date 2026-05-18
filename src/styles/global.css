@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #fbf8f3;
+  --color-charcoal: #2d2438;
+  --color-muted: #6b6478;
+  --color-purple: #6b3b6e;
+  --color-coral: #d4574e;
+  --color-orange: #e89b4c;
+  --color-sage: #a8b870;
+
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-charcoal font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-charcoal;
+  }
+}
+
+@layer components {
+  .watercolor-bar {
+    height: 3px;
+    background: linear-gradient(
+      90deg,
+      #6b3b6e 0%,
+      #d4574e 35%,
+      #e89b4c 65%,
+      #a8b870 100%
+    );
+  }
+
+  .watercolor-divider {
+    @apply h-0.5 w-full border-0;
+    background: linear-gradient(
+      90deg,
+      #6b3b6e 0%,
+      #d4574e 35%,
+      #e89b4c 65%,
+      #a8b870 100%
+    );
+  }
+
+  .page-container {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg bg-purple px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors duration-200 hover:bg-coral focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple;
+  }
+}

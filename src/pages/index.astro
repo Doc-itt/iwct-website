@@ -1,11 +1,291 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const title = 'Brevard County House Painters | If Walls Could Talk — Interior & Exterior Painting';
+const description =
+  'Professional painting for Brevard County homeowners — backed by real standards. Interior, exterior, pool deck, and cabinet painting with insured crews and written specifications. Serving Melbourne, Palm Bay, Cocoa, Viera and all of Brevard County.';
+
+const services = [
+  {
+    name: 'Exterior House Painting',
+    description:
+      "Florida's climate is hard on exterior paint. We do the prep work right so the finish lasts. Stucco, wood siding, trim, doors, and more.",
+    href: '/services/exterior-painting',
+  },
+  {
+    name: 'Interior Painting',
+    description:
+      "Clean lines, proper prep, no shortcuts. Walls, ceilings, trim, cabinets — done to a standard you'll notice.",
+    href: '/services/interior-painting',
+  },
+  {
+    name: 'Pool Deck Painting',
+    description:
+      'Brevard pools take a beating from sun and moisture. We use the right coatings for concrete and cool deck surfaces that hold up in Florida conditions.',
+    href: '/services/pool-deck-painting',
+  },
+  {
+    name: 'Cabinet Painting',
+    description:
+      'A full kitchen replacement costs tens of thousands. Professionally painted cabinets done right can transform the same space for a fraction of the cost.',
+    href: '/services/cabinet-painting',
+  },
+];
+
+const trustSignals = [
+  'Crews are fully insured',
+  'Written estimate before any work begins',
+  'Clear timeline communicated upfront — you know what\'s happening and when',
+  'Job updates throughout — no radio silence while work is in progress',
+  'Paint records provided after every job — exact products used in every room, for future reference',
+  'All crews follow written SOPs — prep work and materials are never improvised',
+];
+
+const portfolioImages = [
+  {
+    src: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80',
+    alt: 'Exterior repaint — Melbourne, FL',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80',
+    alt: 'Interior living room — Viera, FL',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
+    alt: 'Freshly painted exterior — Palm Bay, FL',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80',
+    alt: 'Kitchen cabinet refresh — Brevard County, FL',
+  },
+];
+
+const reviews = [
+  {
+    text: 'We have used If Walls Could Talk on several projects — most recently a 2-bedroom beachside rental in Cape Canaveral. Heather and her team did a spectacular job bringing an old, dingy unit back to life. Her color recommendations were excellent, attention to detail is unsurpassed, and everything was meticulously cleaned when they finished.',
+    author: 'George P.',
+    location: 'Cape Canaveral',
+  },
+  {
+    text: "If you're looking for high-quality interior painting in Brevard, I highly recommend If Walls Could Talk. Communication was excellent from start to finish — very transparent about the process, timeline, and expectations. It's clear she truly cares about the quality of her work and her customers' satisfaction.",
+    author: 'Christina K.',
+    location: 'Brevard County (Google Local Guide)',
+  },
+  {
+    text: 'Great service at a reasonable price, very detail oriented. Would definitely recommend.',
+    author: 'Cohen M.',
+    location: 'Brevard County',
+  },
+];
+
+const faqs = [
+  {
+    question: 'What areas of Brevard County does If Walls Could Talk serve?',
+    answer:
+      'We serve all of Brevard County, Florida, including Melbourne, Palm Bay, Viera, Rockledge, Titusville, Cocoa, Cocoa Beach, Satellite Beach, Cape Canaveral, Merritt Island, Indialantic, and Indian Harbour Beach. If you\'re anywhere on the Space Coast, we can help with your project.',
+  },
+  {
+    question: 'Do painters in Brevard County need to be licensed?',
+    answer:
+      "No. Florida removed the painting license requirement in 2021, and the full preemption took effect in 2025. This means anyone can legally operate as a painter in Brevard County without a license. That's why hiring an insured painter with documented standards matters more than ever.",
+  },
+  {
+    question: "How does If Walls Could Talk's model work?",
+    answer:
+      "Heather, the owner, manages every job and sets all standards — from prep work to final cleanup. Vetted, insured local crews execute the work according to her written specifications. She handles all estimates, communication, and quality oversight personally, so there's always one accountable person responsible for the outcome.",
+  },
+  {
+    question: 'What types of painting projects do you handle?',
+    answer:
+      'We handle interior painting, exterior house painting, pool deck painting, cabinet painting, and minor repair services across Brevard County. Whether it\'s a single room refresh or a full exterior repaint, every project follows the same standards.',
+  },
+  {
+    question: 'How do I get an estimate for my project?',
+    answer:
+      'Reach out by phone at 321-557-6959 or through our contact page. Heather will walk through your project with you — scope, timeline, and what to expect — with no pressure and no obligation.',
+  },
+];
 ---
 
-<Layout>
-	<Welcome />
+<Layout {title} {description}>
+  <!-- Section 1: Hero -->
+  <section class="relative overflow-hidden border-b border-charcoal/5">
+    <div
+      class="pointer-events-none absolute inset-0 opacity-40"
+      aria-hidden="true"
+      style="background: radial-gradient(ellipse 80% 60% at 20% 0%, rgba(107,59,110,0.12) 0%, transparent 50%), radial-gradient(ellipse 60% 50% at 80% 20%, rgba(212,87,78,0.1) 0%, transparent 45%), radial-gradient(ellipse 50% 40% at 50% 100%, rgba(168,184,112,0.08) 0%, transparent 50%);"
+    ></div>
+    <div class="page-container relative py-16 sm:py-20 lg:py-28">
+      <h1 class="max-w-4xl font-display text-3xl font-semibold leading-tight tracking-tight text-charcoal sm:text-4xl lg:text-5xl">
+        Professional Painting for Brevard County Homeowners — Backed by Real Standards
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
+        If Walls Could Talk is owner-operated with vetted, insured local crews. Every job runs according to my
+        specifications — surface prep, materials, process, and cleanup. You always know who's accountable.
+      </p>
+      <a href="/contact" class="btn-primary mt-8">Get a Free Estimate</a>
+    </div>
+  </section>
+
+  <!-- Section 2: Service area -->
+  <section class="page-container py-10 text-center sm:py-12">
+    <p class="text-sm font-medium leading-relaxed text-purple sm:text-base">
+      Serving Melbourne, Viera, Rockledge, Palm Bay, Titusville, Cocoa, Cocoa Beach, Satellite Beach, Cape
+      Canaveral, and all of Brevard County, Florida.
+    </p>
+    <div class="watercolor-divider mx-auto mt-8 max-w-2xl" aria-hidden="true"></div>
+  </section>
+
+  <!-- Section 3: How this works -->
+  <section class="border-t border-charcoal/5 bg-charcoal/[0.02] py-14 sm:py-20">
+    <div class="page-container">
+      <h2 class="font-display text-2xl font-semibold sm:text-3xl">How This Works</h2>
+      <div class="mt-6 max-w-3xl space-y-5 text-base leading-relaxed text-muted sm:text-lg">
+        <p>
+          Most painting companies in today's market operate with little to no formal accountability. Florida removed
+          its painting license requirement in 2021 — which means anyone can show up to paint your home with no vetting,
+          no insurance, and no real standards. Most homeowners don't know that.
+        </p>
+        <p>
+          If Walls Could Talk was built specifically to address that gap. I select and work with a small number of
+          local crews who meet my requirements and follow my process on every job. Every estimate, every specification,
+          and every quality standard comes from me. If something isn't right, I'm the person you call — and I'm the
+          person who makes it right.
+        </p>
+      </div>
+      <a href="/about" class="mt-6 inline-block text-sm font-semibold text-purple transition-colors hover:text-coral">
+        Learn more about how we operate →
+      </a>
+    </div>
+  </section>
+
+  <!-- Section 4: Services -->
+  <section class="py-14 sm:py-20">
+    <div class="page-container">
+      <h2 class="font-display text-2xl font-semibold sm:text-3xl">What We Do</h2>
+      <ul class="mt-10 grid gap-6 sm:grid-cols-2">
+        {
+          services.map((service) => (
+            <li class="flex flex-col rounded-xl border border-charcoal/10 bg-white/60 p-6 shadow-sm transition-shadow hover:shadow-md">
+              <h3 class="font-display text-xl font-semibold text-charcoal">{service.name}</h3>
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-muted">{service.description}</p>
+              <a
+                href={service.href}
+                class="mt-4 text-sm font-semibold text-purple transition-colors hover:text-coral"
+              >
+                Learn more →
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <a href="/services" class="mt-8 inline-block text-sm font-semibold text-purple transition-colors hover:text-coral">
+        See all services →
+      </a>
+    </div>
+  </section>
+
+  <div class="watercolor-divider" aria-hidden="true"></div>
+
+  <!-- Section 5: Trust signals -->
+  <section class="py-14 sm:py-20">
+    <div class="page-container">
+      <h2 class="font-display text-2xl font-semibold sm:text-3xl">What Every Job Includes</h2>
+      <ul class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          trustSignals.map((item) => (
+            <li class="flex gap-3 rounded-lg border border-charcoal/5 bg-cream px-4 py-3">
+              <svg
+                class="mt-0.5 h-5 w-5 shrink-0 text-sage"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2.5"
+                aria-hidden="true"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-sm leading-relaxed text-charcoal">{item}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- Section 6: Portfolio preview -->
+  <section class="border-t border-charcoal/5 bg-charcoal/[0.02] py-14 sm:py-20">
+    <div class="page-container">
+      <h2 class="font-display text-2xl font-semibold sm:text-3xl">Recent Work</h2>
+      <ul class="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
+        {
+          portfolioImages.map((image) => (
+            <li class="overflow-hidden rounded-lg">
+              <img
+                src={image.src}
+                alt={image.alt}
+                width={800}
+                height={600}
+                loading="lazy"
+                decoding="async"
+                class="aspect-[4/3] h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+              />
+            </li>
+          ))
+        }
+      </ul>
+      <a href="/portfolio" class="mt-8 inline-block text-sm font-semibold text-purple transition-colors hover:text-coral">
+        See more of our work →
+      </a>
+    </div>
+  </section>
+
+  <!-- Section 7: Reviews -->
+  <section class="py-14 sm:py-20">
+    <div class="page-container">
+      <h2 class="font-display text-2xl font-semibold sm:text-3xl">What Brevard Homeowners Are Saying</h2>
+      <ul class="mt-10 grid gap-6 md:grid-cols-3">
+        {
+          reviews.map((review) => (
+            <li class="flex flex-col rounded-xl border border-charcoal/10 bg-white/60 p-6 shadow-sm">
+              <div class="flex gap-0.5 text-amber-400" aria-label="5 out of 5 stars">
+                {[1, 2, 3, 4, 5].map(() => (
+                  <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <blockquote class="mt-4 flex-1">
+                <p class="text-sm italic leading-relaxed text-muted">"{review.text}"</p>
+              </blockquote>
+              <footer class="mt-4 text-sm font-medium text-charcoal">
+                — {review.author}, {review.location}
+              </footer>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <div class="watercolor-divider" aria-hidden="true"></div>
+
+  <!-- Section 8: FAQ -->
+  <section class="border-t border-charcoal/5 bg-charcoal/[0.02] py-14 sm:py-20">
+    <div class="page-container">
+      <h2 class="font-display text-2xl font-semibold sm:text-3xl">Frequently Asked Questions</h2>
+      <dl class="mt-10 max-w-3xl space-y-8">
+        {
+          faqs.map((faq) => (
+            <div>
+              <dt>
+                <h3 class="font-display text-lg font-semibold text-charcoal">{faq.question}</h3>
+              </dt>
+              <dd class="mt-2 text-base leading-relaxed text-muted">{faq.answer}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </section>
 </Layout>
