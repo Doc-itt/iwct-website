@@ -1,70 +1,154 @@
 ---
-import Layout from '../layouts/Layout.astro';   // Change this line ONLY if your layout file has a different name
+// This page explains IWCT's approach, standards, and homeowner guidance in Brevard County.
+import Layout from '../layouts/Layout.astro';
 
-const title = "Brevard County Painting Company | Quality Interior & Exterior";
-const description = "Quality house painters serving all of Brevard County, Florida. Clear estimates, proper surface prep, vetted local crews, fair pricing, and Florida-ready materials. Transparent process with full paint records. Get honest advice and a reliable job.";
+const title = 'About IWCT | Brevard County Painters';
+const description =
+  'Owner-led Brevard County painters with vetted local crews, clear communication, and Florida-ready prep standards. Serving the Space Coast with honest guidance.';
+
+const faqItems = [
+  {
+    question: 'How does IWCT work in Brevard County?',
+    answer:
+      'If Walls Could Talk works with a small group of vetted local crews and helps homeowners navigate projects with clearer expectations, stronger communication, and standards from start to finish.',
+  },
+  {
+    question: 'What should I expect from an IWCT painting project?',
+    answer:
+      'Each project includes clear scope, defined timelines, regular updates, thorough prep, Florida-ready materials, vetted crews, and full paint records for future maintenance.',
+  },
+  {
+    question: 'Why does IWCT publish free homeowner resources?',
+    answer:
+      'Florida removed its painting license requirement in 2021. IWCT shares guides and checklists so Space Coast homeowners can ask better questions and avoid expensive mistakes.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'If Walls Could Talk LLC',
+  url: 'https://ifwallscouldtalkllc.com/about',
+  telephone: '+1-321-557-6959',
+  email: 'iwctpaintingplus@gmail.com',
+  areaServed: [
+    'Brevard County, Florida',
+    'Space Coast, Florida',
+    'Melbourne, Florida',
+    'Palm Bay, Florida',
+    'Titusville, Florida',
+    'Merritt Island, Florida',
+    'Cocoa, Florida',
+  ],
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Melbourne',
+    addressRegion: 'FL',
+    addressCountry: 'US',
+  },
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Interior and exterior residential painting',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'If Walls Could Talk LLC',
+  },
+  areaServed: {
+    '@type': 'AdministrativeArea',
+    name: 'Brevard County, Florida',
+  },
+};
 ---
 
 <Layout title={title} description={description}>
-  <main class="max-w-4xl mx-auto px-6 py-12">
-    <article class="prose prose-lg max-w-none">
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-4xl space-y-14 text-base leading-relaxed text-charcoal sm:text-lg">
+      <header class="space-y-6">
+        <h1 class="font-display text-4xl font-semibold tracking-tight sm:text-5xl">About If Walls Could Talk</h1>
+      </header>
 
-      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-10">About If Walls Could Talk</h1>
+      <section class="space-y-5">
+        <h2 class="font-display text-2xl font-semibold sm:text-3xl">Painting Done With Clear Communication and Real Standards</h2>
+        <p>If Walls Could Talk was built because I realized I couldn’t personally paint every home in Brevard County, but I could make sure more homeowners still receive the level of care, preparation, and communication I believe every project deserves.</p>
+        <p>Too many painting projects in Florida are rushed, poorly prepped, or full of surprises once the job starts. I created IWCT to bring a different experience to Brevard County homeowners — one built on honesty, communication, and work that lasts.</p>
+        <p>My name is Heather, and I built this company through word-of-mouth from local homeowners who appreciated quality work and straightforward communication. No aggressive sales tactics. No lead-generation games. Just real relationships and projects done the right way.</p>
+        <p>I started out doing much of the painting work myself, which taught me exactly where most jobs go wrong: prep work gets skipped, materials get downgraded, and homeowners are often left in the dark until problems appear later.</p>
+        <p>That’s why IWCT focuses so heavily on standards, documentation, and homeowner education.</p>
+      </section>
 
-      <!-- SECTION 1 -->
-      <section class="mb-16">
-        <h2 class="text-3xl font-semibold mb-6">What You Can Expect When You Work With Us</h2>
-        <p class="mb-6">When you hire If Walls Could Talk, you get more than just paint on your walls. You get a properly prepped, long-lasting job with clear communication the entire way.</p>
-        <p class="mb-8">Every project includes:</p>
-        <ul class="list-disc pl-6 space-y-3 mb-8">
-          <li>A clear written estimate before any work starts</li>
-          <li>A defined timeline so you always know what's happening</li>
-          <li>Regular updates — no radio silence</li>
+      <section class="space-y-5">
+        <h2 class="font-display text-2xl font-semibold sm:text-3xl">How IWCT Works</h2>
+        <p>If Walls Could Talk works with a small group of vetted local crews to help homeowners navigate their painting projects with better communication, clearer expectations, and higher standards from start to finish.</p>
+        <p>The goal is simple: help homeowners understand exactly what’s being done, why it matters, and what quality work should actually look like — while making the entire process smoother, more transparent, and less stressful.</p>
+      </section>
+
+      <section class="space-y-5">
+        <h2 class="font-display text-2xl font-semibold sm:text-3xl">What You Can Expect</h2>
+        <p>Every project includes:</p>
+        <ul class="list-disc space-y-2 pl-6">
+          <li>A clear scope of work before the project begins</li>
+          <li>Defined timelines and expectations</li>
+          <li>Regular communication and project updates</li>
           <li>Thorough surface preparation</li>
-          <li>The right materials for Florida's heat, humidity, and salt air</li>
-          <li>Fully insured local crews</li>
-          <li>Work performed to written specifications — prep work and materials are never improvised</li>
-          <li>A complete paint record at the end — every product used on every surface, so you can match it perfectly years from now</li>
+          <li>Materials selected for Florida’s climate and conditions</li>
+          <li>Carefully vetted local crews</li>
+          <li>Clear explanations of the preparation process, materials, and recommended solutions — not vague contractor language or rushed decisions</li>
+          <li>A complete paint record documenting all products and colors used for future maintenance and touch-ups</li>
         </ul>
       </section>
 
-      <!-- SECTION 2 -->
-      <section class="mb-16">
-        <h2 class="text-3xl font-semibold mb-6">Who I Am</h2>
-        <p class="mb-6">My name is Heather. I started If Walls Could Talk because I was tired of seeing homeowners disappointed by painting jobs that didn't last — peeling paint after one season, poor prep work, and surprises at the end of the job.</p>
-        <p class="mb-6">I built this company through word-of-mouth from real Brevard County homeowners. No ads, no lead generation. Just work that spoke for itself and clients who told other people.</p>
-        <p class="mb-6">I started out doing much of the painting work myself. Over time I realized I could help far more Brevard County homeowners by putting the right information in their hands and making sure more local crews were actually following proper standards — not cutting corners to finish faster. That's what this business is built around.</p>
-        <p>I genuinely care about protecting your home. Even if you never hire me, I'd rather you leave this site knowing what quality work actually looks like and what questions to ask before letting anyone touch your home.</p>
+      <section class="space-y-5">
+        <h2 class="font-display text-2xl font-semibold sm:text-3xl">Why I Share So Much Free Information</h2>
+        <p>Florida removed its painting license requirement in 2021, which means anyone can buy a brush and call themselves a painter. Most homeowners have no idea.</p>
+        <p>That’s one of the reasons I created the guides, checklists, and educational resources on this site.</p>
+        <p>Even if you never hire IWCT, I want you to understand:</p>
+        <ul class="list-disc space-y-2 pl-6">
+          <li>what quality work actually looks like,</li>
+          <li>what questions to ask,</li>
+          <li>and how to protect yourself from expensive mistakes.</li>
+        </ul>
+        <p>An educated homeowner makes better decisions, gets better results, and has a much smoother experience overall.</p>
       </section>
 
-      <!-- SECTION 3 -->
-      <section class="mb-16">
-        <h2 class="text-3xl font-semibold mb-6">How This Works</h2>
-        <p class="mb-6">If Walls Could Talk partners with a small group of vetted, fully insured local crews who follow my detailed written specifications on every project. I review every estimate and set every standard.</p>
-        <p>You'll always have me as your single consistent point of contact — making sure you understand your options, what's included, and that you're getting fair value for the work. I'm your personal guide through the whole process.</p>
+      <section class="space-y-5">
+        <h2 class="font-display text-2xl font-semibold sm:text-3xl">Let’s Talk About Your Project</h2>
+        <p>Whether you’re planning interior painting, exterior painting, cabinet refinishing, or just looking for honest guidance before hiring a painter, I’m here to help.</p>
+        <p>IWCT proudly serves homeowners throughout Brevard County, including Melbourne, Palm Bay, Titusville, Merritt Island, and surrounding areas.</p>
       </section>
 
-      <!-- SECTION 4 -->
-      <section class="mb-16">
-        <h2 class="text-3xl font-semibold mb-6">Why I Share So Much Free Information</h2>
-        <p class="mb-6">Florida removed its painting license requirement in 2021 — which means literally anyone can show up with a brush and call themselves a professional. Most homeowners don't know that.</p>
-        <p>I created the guides, checklists, and articles on this site so you have real tools to protect yourself — whether you hire us or not. An educated homeowner makes the whole process smoother and helps you avoid expensive mistakes down the road.</p>
+      <section class="space-y-6 border-t border-charcoal/10 pt-10">
+        <h2 class="font-display text-2xl font-semibold sm:text-3xl">Frequently Asked Questions</h2>
+        <dl class="space-y-6">
+          {faqItems.map((item) => (
+            <div>
+              <dt>
+                <h3 class="text-lg font-semibold text-charcoal">{item.question}</h3>
+              </dt>
+              <dd class="mt-2 text-muted">{item.answer}</dd>
+            </div>
+          ))}
+        </dl>
       </section>
-
-      <!-- SECTION 5 - Contact -->
-      <section class="mb-16">
-        <h2 class="text-3xl font-semibold mb-6">Let's Talk About Your Project</h2>
-        <p class="mb-8">Whether you have a project in Melbourne, Palm Bay, Titusville, Merritt Island, Cocoa, or anywhere in Brevard County — or you just want honest advice on what to look for when hiring a painter — I'm here.</p>
-        
-        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100">
-          <div class="space-y-4 text-lg">
-            <p><strong>Call or text:</strong> <a href="tel:3215576959" class="text-blue-600 hover:underline">321-557-6959</a></p>
-            <p><strong>Email:</strong> <a href="mailto:iwctpaintingplus@gmail.com" class="text-blue-600 hover:underline">iwctpaintingplus@gmail.com</a></p>
-          </div>
-          <p class="mt-8 text-sm text-gray-600">Or fill out the contact form and I'll get back to you within 24 hours.</p>
-        </div>
-      </section>
-
     </article>
   </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
 </Layout>
