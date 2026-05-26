@@ -16,6 +16,9 @@ const {
   ogImage = '/logotransparent.png',
 } = Astro.props;
 
+// IMPORTANT: Remove noindex when the full site is ready for Google to see it.
+const noindex = true;
+
 const siteUrl = Astro.site ?? 'https://ifwallscouldtalkllc.com';
 const canonicalURL = new URL(Astro.url.pathname, siteUrl);
 const ogImageURL = new URL(ogImage, siteUrl);
@@ -76,6 +79,7 @@ const localBusinessSchema = {
 
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonicalURL} />
 
     <meta property="og:type" content="website" />
