@@ -1,0 +1,248 @@
+---
+// Homeowner Guide article: eight questions to ask before hiring a painter in Brevard County.
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Questions to Ask Before You Hire a Painter in Brevard County | If Walls Could Talk';
+const description =
+  'Eight questions to ask before hiring a painter in Brevard County — what good answers sound like, red flags to watch for, and a checklist for every estimate.';
+
+const phone = '(321) 557-6959';
+const phoneHref = 'tel:+13215576959';
+
+const paintProductsHref = '/homeowner-guide/paint-products-florida';
+const linkClass = 'font-medium text-purple transition-colors hover:text-coral';
+
+const questions = [
+  {
+    number: 1,
+    title: 'What specific products are you using — and why?',
+    paragraphs: [
+      'A good painter names the exact product line and explains their choice. For example, they might say "Sherwin-Williams Emerald Exterior because of the mildew resistance and Florida humidity rating." They should also talk about primer, surface type, and how the product holds up against our salt air and heavy rains.',
+    ],
+    redFlag:
+      'Vague answers like "We use good paint," "Sherwin-Williams," or "paint-and-primer-in-one is always best." These usually mean they\'re defaulting to cheaper contractor-grade materials without much thought for your home.',
+    followUp: {
+      intro: 'Want to understand the real differences in paint for Florida?',
+      label: 'Understanding Paint Products in Florida',
+    },
+  },
+  {
+    number: 2,
+    title: 'Can you walk me through your prep process step by step?',
+    paragraphs: [
+      'Listen for clear steps: pressure washing with enough dry time, scraping loose paint, treating mildew, caulking gaps and cracks, sealing bare spots, and priming where needed. They should explain this naturally without much prompting.',
+    ],
+    redFlag:
+      'Short or vague answers like "We wash it and paint it." In our climate, poor prep is the #1 reason paint jobs fail early.',
+  },
+  {
+    number: 3,
+    title: 'What exactly is included in this price — and what happens if prep turns up something unexpected?',
+    paragraphs: [
+      'You want a clear written estimate that covers the main scope of work: which surfaces are included, how many coats, and what products they plan to use. Just as important is how they handle surprises during prep — hidden damage, excessive mildew, rotted wood. This is the most common source of confusion and added cost on Florida jobs. A good painter has a straightforward process for flagging it and getting your approval before moving forward.',
+    ],
+    redFlag:
+      'A single total number with no breakdown, or "We\'ll figure it out as we go." Bids that are much lower than others without explanation often cut corners somewhere.',
+  },
+  {
+    number: 4,
+    title: 'What sheen are you recommending for each area — and why?',
+    paragraphs: [
+      'A thoughtful painter tailors sheen to the space and explains the tradeoffs. For example: flat or matte on ceilings, eggshell/satin on most walls, satin on exteriors and high-traffic areas, semi-gloss on trim, doors, kitchens, and bathrooms. There are situations where different finishes make sense, just make sure trade offs are acknowledged.',
+      'The right sheen affects both appearance and how easy the surface is to clean over time.',
+    ],
+    redFlag:
+      'Using the same finish everywhere or recommending flat paint for bathrooms/exteriors with no reasoning.',
+    followUp: {
+      intro: 'Full details here',
+      label: 'Understanding Paint Products in Florida',
+    },
+  },
+  {
+    number: 5,
+    title: "What happens if something doesn't look right after the job?",
+    paragraphs: [
+      'Look for a clear answer about how they handle touch-ups or issues, and whether they offer any warranty or guarantee.',
+    ],
+    redFlag: 'Brushing it off with "It\'ll look great, don\'t worry" or hesitation to discuss it.',
+  },
+  {
+    number: 6,
+    title: 'How long will this job take, and what could delay it?',
+    paragraphs: [
+      'A realistic answer accounts for Brevard County weather — afternoon rain, morning humidity, and proper dry times between coats. Good painters build in some buffer instead of promising everything will go perfectly.',
+    ],
+    redFlag:
+      'Overly optimistic answers like "It should be quick" that ignore weather and drying realities.',
+  },
+  {
+    number: 7,
+    title: 'How will you protect my home during the job?',
+    paragraphs: [
+      'They should describe covering floors and furniture, protecting landscaping from overspray and runoff, masking windows and trim properly, and doing daily cleanup.',
+    ],
+    redFlag: 'Vague responses like "We\'re careful" without any real plan.',
+  },
+  {
+    number: 8,
+    title: 'How will we communicate during the job?',
+    paragraphs: [
+      'Look for a straightforward answer about how they\'ll keep you updated and who you should reach out to if questions come up.',
+    ],
+    redFlag: '"We\'ll stay in touch" with no real plan or process described.',
+  },
+];
+
+const checklistRows = [
+  'Specific products and why?',
+  'Step-by-step prep process?',
+  'Clear scope and handling of changes?',
+  'Sheen recommendations with reasoning?',
+  'Process for touch-ups or issues?',
+  'Realistic timeline including weather?',
+  'Protection and cleanup plan?',
+  'How they\'ll keep you updated?',
+];
+
+const moreGuideLinks = [
+  { label: 'Hiring a Painter in Brevard County', href: '/homeowner-guide/hiring-a-painter-brevard-county' },
+  { label: 'Understanding Paint Products in Florida', href: paintProductsHref },
+  { label: 'What to Expect During Your Project', href: '/homeowner-guide/what-to-expect-during-your-project' },
+];
+---
+
+<Layout {title} {description}>
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-3xl space-y-10 text-base leading-relaxed text-charcoal sm:space-y-12 sm:text-lg">
+      <header class="space-y-4">
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+          Questions to Ask Before You Hire a Painter
+        </h1>
+        <div class="space-y-4 text-muted">
+          <p>
+            Asking the right questions upfront makes a real difference in the quality and longevity of the work,
+            especially here in Brevard County. These eight questions will help you quickly understand who takes the
+            job seriously and who is just trying to close the deal.
+          </p>
+          <p>Two or more red flags is usually a sign to keep looking.</p>
+        </div>
+      </header>
+
+      <section class="space-y-10" aria-labelledby="questions-heading">
+        <h2 id="questions-heading" class="sr-only">Eight questions to ask</h2>
+
+        {
+          questions.map((item) => (
+            <div class="space-y-4">
+              <h3 class="font-display text-xl font-semibold sm:text-2xl">
+                {item.number}. {item.title}
+              </h3>
+              {item.paragraphs.map((paragraph) => (
+                <p>{paragraph}</p>
+              ))}
+              <p class="rounded-xl border border-coral/25 bg-coral/5 p-5 sm:p-6">
+                <span class="font-semibold text-coral">Red flag:</span>{' '}
+                <span class="text-charcoal">{item.redFlag}</span>
+              </p>
+              {item.followUp && (
+                <p>
+                  {item.followUp.intro}{' '}
+                  <a href={paintProductsHref} class={linkClass}>
+                    {item.followUp.label} →
+                  </a>
+                </p>
+              )}
+            </div>
+          ))
+        }
+      </section>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section class="space-y-5" aria-labelledby="estimate-checklist-heading">
+        <h2 id="estimate-checklist-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Quick Checklist for Every Estimate
+        </h2>
+        <p class="text-muted">
+          Use this at each walkthrough or when comparing written proposals. Note what you heard for each question.
+        </p>
+        <div class="overflow-x-auto rounded-xl border border-charcoal/10 bg-white/60">
+          <table class="w-full min-w-[40rem] border-collapse text-left text-sm sm:text-base">
+            <caption class="sr-only">
+              Checklist of eight questions with space to note good answers and red flags
+            </caption>
+            <thead>
+              <tr class="border-b border-charcoal/10 bg-charcoal/[0.03]">
+                <th scope="col" class="w-12 px-4 py-3 font-semibold text-charcoal">#</th>
+                <th scope="col" class="px-4 py-3 font-semibold text-charcoal">Question</th>
+                <th scope="col" class="w-36 px-4 py-3 font-semibold text-charcoal">Good answer?</th>
+                <th scope="col" class="w-36 px-4 py-3 font-semibold text-charcoal">Red flag?</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                checklistRows.map((question, index) => (
+                  <tr class="border-b border-charcoal/10 last:border-b-0">
+                    <td class="px-4 py-4 align-top font-medium text-charcoal">{index + 1}</td>
+                    <td class="px-4 py-4 align-top">{question}</td>
+                    <td class="px-4 py-4 align-top" aria-label={`Good answer for question ${index + 1}`}>
+                      <span class="block min-h-8 border-b border-dashed border-charcoal/20" />
+                    </td>
+                    <td class="px-4 py-4 align-top" aria-label={`Red flag for question ${index + 1}`}>
+                      <span class="block min-h-8 border-b border-dashed border-charcoal/20" />
+                    </td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+        <p>
+          If you get two or more red flags, there's likely a better option. Keep asking until you feel confident.
+        </p>
+      </section>
+
+      <section
+        class="space-y-5 rounded-xl border border-purple/20 bg-purple/5 p-6 sm:p-8"
+        aria-labelledby="questions-cta-heading"
+      >
+        <h2 id="questions-cta-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Specific Questions? Reach Out Directly
+        </h2>
+        <p>
+          <a href="/contact" class="font-semibold text-purple transition-colors hover:text-coral">
+            Contact Page →
+          </a>
+        </p>
+        <p class="text-muted">
+          Or call/text:{' '}
+          <a href={phoneHref} class="font-medium text-purple transition-colors hover:text-coral">{phone}</a>
+        </p>
+      </section>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <nav class="space-y-4" aria-labelledby="more-guide-heading">
+        <h2 id="more-guide-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          More from the Homeowner Guide
+        </h2>
+        <ul class="space-y-3">
+          {
+            moreGuideLinks.map((item) => (
+              <li>
+                <a href={item.href} class="font-medium text-purple transition-colors hover:text-coral">
+                  {item.label} →
+                </a>
+              </li>
+            ))
+          }
+          <li class="pt-2">
+            <a href="/homeowner-guide" class="font-medium text-muted transition-colors hover:text-charcoal">
+              ← Back to the Homeowner Guide
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </article>
+  </main>
+</Layout>

@@ -37,30 +37,6 @@ const faqSchema = {
   })),
 };
 
-const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'If Walls Could Talk LLC',
-  url: 'https://ifwallscouldtalkllc.com/about',
-  telephone: '+1-321-557-6959',
-  email: 'iwctpaintingplus@gmail.com',
-  areaServed: [
-    'Brevard County, Florida',
-    'Space Coast, Florida',
-    'Melbourne, Florida',
-    'Palm Bay, Florida',
-    'Titusville, Florida',
-    'Merritt Island, Florida',
-    'Cocoa, Florida',
-  ],
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Melbourne',
-    addressRegion: 'FL',
-    addressCountry: 'US',
-  },
-};
-
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
@@ -148,7 +124,6 @@ const serviceSchema = {
     </article>
   </main>
 
-  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}></script>
   <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)}></script>
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
 </Layout>

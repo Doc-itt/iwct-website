@@ -1,13 +1,96 @@
 ---
+// Homeowner Guide hub: intro and links to Brevard County painting resources for homeowners.
 import Layout from '../layouts/Layout.astro';
+
+const title = 'Homeowner Guide to Hiring a Painter in Brevard County, FL | If Walls Could Talk';
+const description =
+  'What every Brevard County homeowner should know before hiring a painter — products, questions to ask, what good prep looks like, and how to protect your investment.';
+
+const phone = '(321) 557-6959';
+const phoneHref = 'tel:+13215576959';
+
+const guideLinks = [
+  {
+    title: 'Hiring a Painter in Brevard County',
+    description:
+      "Florida dropped its painting license requirement in 2021. Here's what that means for you, what to look for instead, and how to vet a contractor before anyone touches your home.",
+    href: '/homeowner-guide/hiring-a-painter-brevard-county',
+  },
+  {
+    title: 'Questions to Ask Before You Hire',
+    description:
+      "Eight questions that quickly separate the professionals from the pretenders — with what a good answer sounds like and what's a red flag.",
+    href: '/homeowner-guide/questions-to-ask-before-you-hire',
+  },
+  {
+    title: 'Understanding Paint Products in Florida',
+    description:
+      "Brand names, product tiers, sheens, primer rules, and why the wrong product in Florida's climate can fail in under two years.",
+    href: '/homeowner-guide/paint-products-florida',
+  },
+  {
+    title: 'What to Expect During Your Project',
+    description:
+      'Before, during, and after the job — prep, communication, weather delays, the final walkthrough, and fair payment terms.',
+    href: '/homeowner-guide/what-to-expect-during-your-project',
+  },
+];
 ---
 
-<Layout
-  title="Homeowner Guide | If Walls Could Talk — Brevard County Painting"
-  description="Practical painting advice for Brevard County homeowners from If Walls Could Talk."
->
-  <section class="page-container py-16 sm:py-24">
-    <h1 class="font-display text-3xl font-semibold sm:text-4xl">Homeowner Guide - Coming Soon</h1>
-    <p class="mt-4 text-muted">This page is under construction. Content coming soon.</p>
-  </section>
+<Layout {title} {description}>
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-3xl space-y-12 text-base leading-relaxed text-charcoal sm:text-lg">
+      <header class="space-y-4">
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+          Homeowner Guide to Hiring a Painter in Brevard County
+        </h1>
+        <p class="text-lg text-muted sm:text-xl">
+          A practical guide to making informed decisions before starting your painting project
+        </p>
+      </header>
+
+      <section class="space-y-4">
+        <p>
+          Most homeowners only hire a painter a few times in their life. 
+          That’s not much experience for a decision that affects how a home looks, 
+          how it holds up in Florida’s climate, and how long it lasts.
+        </p>
+        <p>
+          This guide helps Brevard County homeowners understand what quality work looks like,
+           what to ask, and how to evaluate a contractor’s process. 
+           It’s useful whether you hire If Walls Could Talk or someone else.
+        </p>
+        <p class="text-muted">— Heather, Owner of If Walls Could Talk</p>
+      </section>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section class="space-y-6" aria-labelledby="starting-point-heading">
+        <h2 id="starting-point-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Choose Your Starting Point
+        </h2>
+        <ul class="grid gap-4 sm:gap-5">
+          {guideLinks.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="group block rounded-xl border border-charcoal/10 bg-white/60 p-5 transition-colors hover:border-purple/30 hover:bg-white/80 sm:p-6"
+              >
+                <h3 class="font-display text-lg font-semibold text-charcoal transition-colors group-hover:text-purple sm:text-xl">
+                  {item.title} →
+                </h3>
+                <p class="mt-2 text-sm leading-relaxed text-muted sm:text-base">{item.description}</p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <p class="border-t border-charcoal/10 pt-10 text-muted">
+        If you'd like guidance on your project or help understanding your options, call or text{' '}
+        <a href={phoneHref} class="font-medium text-purple transition-colors hover:text-coral">{phone}</a> or{' '}
+        <a href="/contact" class="font-medium text-purple transition-colors hover:text-coral">send a message</a>.
+      </p>
+    </article>
+  </main>
 </Layout>

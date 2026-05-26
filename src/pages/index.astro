@@ -1,10 +1,12 @@
 ---
-// This page presents IWCT's core home messaging, standards, and homeowner FAQs.
+// Homepage for IWCT: core messaging, standards, FAQs, and structured data for search.
 import Layout from '../layouts/Layout.astro';
 
-const title = 'Brevard County Painting Services | IWCT';
+const siteUrl = 'https://ifwallscouldtalkllc.com';
+
+const title = 'Brevard County Painters | If Walls Could Talk';
 const description =
-  'Owner-operated Brevard County painting services with vetted crews, clear standards, and Florida-ready prep. Transparent communication across the Space Coast.';
+  'The best owner-operated painting services in Brevard County, FL. Vetted crews, clear standards, Florida-ready prep, and honest communication across the Space Coast.';
 
 const includedItems = [
   'Vetted local crews',
@@ -13,8 +15,15 @@ const includedItems = [
   'Regular communication and progress updates',
   'Thorough surface preparation',
   'Materials selected for Florida’s heat, humidity, and coastal conditions',
-  'Work completed according to agreed project standards',
+  'Work completed according to agreed upon project standards',
   'Complete paint record after the job, including all products and colors for future maintenance',
+];
+
+const goalItems = [
+  'Clear expectations',
+  'Proper preparation',
+  'Consistent communication',
+  'A finished result that holds up in Florida’s climate',
 ];
 
 const faqs = [
@@ -40,8 +49,9 @@ const faqs = [
   },
   {
     question: 'How do I get an estimate?',
+    answerHtml: true,
     answer:
-      'Call 321-557-6959 or reach out through the contact page. We’ll review your project, timeline, and scope with no pressure and no obligation.',
+      'Call <a href="tel:+13215576959" class="text-purple transition-colors hover:text-coral">321-557-6959</a> or through the <a href="/contact" class="text-purple transition-colors hover:text-coral">contact page</a>. We’ll review your project, timeline, and scope with no pressure and no obligation.',
   },
 ];
 
@@ -53,112 +63,122 @@ const faqSchema = {
     name: item.question,
     acceptedAnswer: {
       '@type': 'Answer',
-      text: item.answer,
+      text: item.answer.replace(/<[^>]+>/g, ''),
     },
   })),
-};
-
-const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'If Walls Could Talk LLC',
-  url: 'https://ifwallscouldtalkllc.com/',
-  telephone: '+1-321-557-6959',
-  email: 'iwctpaintingplus@gmail.com',
-  areaServed: ['Brevard County, Florida', 'Space Coast, Florida'],
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Melbourne',
-    addressRegion: 'FL',
-    addressCountry: 'US',
-  },
 };
 
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
+  '@id': `${siteUrl}/#service`,
+  name: 'Residential Painting Services in Brevard County',
+  description:
+    'Interior painting, exterior painting, cabinet painting, pool deck painting, and minor repair services with clear scope, prep standards, and paint records.',
   serviceType: 'Residential painting services',
-  provider: {
-    '@type': 'LocalBusiness',
-    name: 'If Walls Could Talk LLC',
-  },
+  provider: { '@id': `${siteUrl}/#localbusiness` },
   areaServed: {
     '@type': 'AdministrativeArea',
     name: 'Brevard County, Florida',
   },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Painting Services',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Interior Painting' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Exterior Painting' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Cabinet Painting' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Pool Deck Painting' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Minor Repair Work' } },
+    ],
+  },
 };
+
+const listClass =
+  'space-y-3 rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6';
+const listItemClass = 'flex items-start gap-3 text-sm sm:text-base';
+const bulletClass = 'mt-1 inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-purple';
 ---
 
-<Layout {title} {description}>
-  <main class="page-container py-12 sm:py-16">
+<Layout {title} {description} ogImage="/logotransparent.png">
+  <div class="page-container py-12 sm:py-16">
     <article class="mx-auto max-w-4xl space-y-14 text-base leading-relaxed text-charcoal sm:text-lg">
-      <section class="space-y-6">
+      <header class="space-y-6">
         <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
-          Painting Services for Brevard County Homeowners — Built on Clear Standards and Accountability
+          The Best Painting Services for Brevard County — Built on Clear Standards and Accountability
         </h1>
         <p>
-          If Walls Could Talk is owner-operated and works with vetted local crews. Every project follows clear
-          standards for preparation, materials, communication, and cleanup — so you always know what to expect and how
-          the work is being handled.
+          If Walls Could Talk is owner-operated and works with vetted local crews. Every project, large or small,
+          follows clear standards for preparation, materials, communication, and cleanup — so you always know what to
+          expect and how the work is being handled.
         </p>
         <a href="/contact" class="btn-primary mt-6 inline-flex text-center sm:mt-8">
           Talk About Your Project or Get an Estimate
         </a>
-      </section>
+      </header>
 
       <div class="watercolor-divider" aria-hidden="true"></div>
 
-      <section class="space-y-5">
-        <h2 class="font-display text-2xl font-semibold sm:text-3xl">How This Works</h2>
-        <p>If Walls Could Talk is built to give homeowners a more accountable and transparent painting experience.</p>
+      <section class="space-y-5" aria-labelledby="how-it-works-heading">
+        <h2 id="how-it-works-heading" class="font-display text-2xl font-semibold sm:text-3xl">How This Works</h2>
         <p>
-          Florida does not require a painting license, which means quality can vary widely from contractor to
-          contractor. IWCT exists to reduce that uncertainty by setting clear expectations and working with crews who
-          follow them.
+          If Walls Could Talk (IWCT) gives homeowners a more accountable and transparent painting experience.
         </p>
         <p>
-          We work with a small group of vetted local crews on a project-by-project basis. I help define the scope and
-          expectations for each job and stay involved to make sure the work is completed correctly and meets the
-          agreed standards.
+          Florida does not require a painting license, which means quality will vary widely from contractor to
+          contractor. IWCT exists to reduce that uncertainty by setting clear standards and working only with crews
+          who follow them.
         </p>
         <p>
-          The goal is simple: clear expectations, proper preparation, consistent communication, and a finished result
-          that holds up in Florida’s climate.
+          I help define the scope and expectations for each job and stay involved to make sure the work is completed
+          correctly and meets the agreed upon standards.
         </p>
-      </section>
-
-      <div class="watercolor-divider" aria-hidden="true"></div>
-
-      <section class="space-y-5">
-        <h2 class="font-display text-2xl font-semibold sm:text-3xl">What Every Job Includes</h2>
-        <ul class="space-y-3 rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
-          {includedItems.map((item) => (
-            <li class="flex items-start gap-3 text-sm sm:text-base">
-              <span class="mt-1 inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-purple"></span>
+        <p>The goals are simple:</p>
+        <ul class={listClass}>
+          {goalItems.map((item) => (
+            <li class={listItemClass}>
+              <span class={bulletClass} aria-hidden="true"></span>
               <span>{item}</span>
             </li>
           ))}
         </ul>
       </section>
 
-      <section class="space-y-6 border-t border-charcoal/10 pt-10">
-        <h2 class="font-display text-2xl font-semibold sm:text-3xl">Frequently Asked Questions</h2>
-        <div class="space-y-3">
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section class="space-y-5" aria-labelledby="job-includes-heading">
+        <h2 id="job-includes-heading" class="font-display text-2xl font-semibold sm:text-3xl">What Every Job Includes</h2>
+        <ul class={listClass}>
+          {includedItems.map((item) => (
+            <li class={listItemClass}>
+              <span class={bulletClass} aria-hidden="true"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="space-y-6 border-t border-charcoal/10 pt-10" aria-labelledby="faq-heading">
+        <h2 id="faq-heading" class="font-display text-2xl font-semibold sm:text-3xl">Frequently Asked Questions</h2>
+        <div class="space-y-3" role="list">
           {faqs.map((faq) => (
-            <details class="rounded-lg border border-charcoal/10 bg-white/70 p-4">
+            <details class="rounded-lg border border-charcoal/10 bg-white/70 p-4" role="listitem">
               <summary class="cursor-pointer list-none pr-6 font-semibold text-charcoal [&::-webkit-details-marker]:hidden">
-                {faq.question}
-                <span class="float-right text-purple">+</span>
+                <h3 class="inline font-display text-base font-semibold sm:text-lg">{faq.question}</h3>
+                <span class="float-right text-purple" aria-hidden="true">+</span>
               </summary>
-              <p class="mt-3 text-muted">{faq.answer}</p>
+              {faq.answerHtml ? (
+                <p class="mt-3 text-muted" set:html={faq.answer} />
+              ) : (
+                <p class="mt-3 text-muted">{faq.answer}</p>
+              )}
             </details>
           ))}
         </div>
       </section>
     </article>
-  </main>
+  </div>
 
-  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}></script>
   <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)}></script>
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
 </Layout>
