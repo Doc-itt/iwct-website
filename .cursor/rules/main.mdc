@@ -1,0 +1,16 @@
+---
+description: Core working rules for the If Walls Could Talk website project
+alwaysApply: true
+---
+
+# IWCT Website — Core Rules
+
+These rules apply to every conversation in this project. Keep them short. Anything longer belongs in `docs/`.
+
+- Always use Astro + Tailwind CSS. Never use inline styles.
+- Keep components small and focused — one job per component.
+- Add a comment at the top of every file explaining what it does.
+- Never remove existing content without confirming first.
+- Follow the tone and rules in `docs/BRAND_RULES.md`.
+- SEO: every page needs a unique title and meta description.
+- Break all suggestions into small steps and confirm before proceeding.

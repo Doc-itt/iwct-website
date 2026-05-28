@@ -1,0 +1,412 @@
+---
+// Homeowner Guide article: paint products, tiers, sheens, and primer for Brevard County's climate.
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Understanding Paint Products in Brevard County | If Walls Could Talk';
+const description =
+  'Paint tiers, sheens, primer, and elastomeric coatings for Brevard County — what holds up in Florida humidity, salt air, and UV, and how to talk products with your painter.';
+
+const phone = '(321) 557-6959';
+const phoneHref = 'tel:+13215576959';
+
+const paintTiers = [
+  {
+    tier: 'Budget / Builder',
+    price: '$40–$60 per gallon',
+    examples: 'SW A-100, SW ProMar 400, store brands',
+    lifespan: '3–5 years exterior',
+  },
+  {
+    tier: 'Standard Pro',
+    price: '$60–$80 per gallon',
+    examples: 'SW SuperPaint, SW ProMar 200, BM Regal Select',
+    lifespan: '5–8 years exterior',
+  },
+  {
+    tier: 'Premium',
+    price: '$80–$120 per gallon',
+    examples: 'SW Emerald, SW Duration, BM Aura',
+    lifespan: '7–10 years inland, 5–8 coastal',
+  },
+];
+
+const sheenRows = [
+  {
+    sheen: 'Flat / Matte',
+    uses: 'Ceilings, low-traffic interior walls',
+    notes: 'Avoid on exteriors and humid areas — traps moisture and harder to clean',
+  },
+  {
+    sheen: 'Eggshell',
+    uses: 'Living rooms, bedrooms, hallways',
+    notes: 'Good everyday choice for most interior walls',
+  },
+  {
+    sheen: 'Satin',
+    uses: 'Exteriors, high-traffic interiors, trim',
+    notes: 'Best all-around for Brevard exteriors — sheds water, resists mildew, cleans easily',
+  },
+  {
+    sheen: 'Semi-Gloss',
+    uses: 'Trim, doors, kitchens, bathrooms',
+    notes: 'Most durable and washable — ideal for high-use or steamy areas',
+  },
+];
+
+const primerWhenItems = [
+  'Bare stucco, wood, or new drywall',
+  'Big color changes — light over dark needs the extra coverage',
+  'Chalking, mildewed, or porous surfaces',
+  'Coastal homes with salt buildup',
+  'Concrete and masonry, where bonding primers are often essential for adhesion',
+];
+
+const elastomericWorthItems = [
+  'Homes with existing hairline cracks in stucco',
+  'Heavy salt and moisture exposure near the water',
+  'Properties with a history of peeling or bubbling',
+];
+
+const favoriteProducts = [
+  {
+    label: 'Exterior Stucco',
+    detail:
+      'Sherwin-Williams Duration or Emerald in Satin — strong color retention, mildew resistance, and longevity in our humidity.',
+  },
+  {
+    label: 'Interior Walls',
+    detail: 'Benjamin Moore Regal Select or Aura — smooth finish, great washability, holds up in Florida homes.',
+  },
+  {
+    label: 'Best Everyday Value',
+    detail: 'Sherwin-Williams SuperPaint — reliable performer for most standard jobs.',
+  },
+  {
+    label: 'Cabinets & Trim',
+    detail:
+      'Polyurethane enamel — cures hard, resists yellowing, and handles the constant contact that cabinets and trim take.',
+  },
+  {
+    label: 'Coastal & High-Exposure Homes',
+    detail: 'Premium elastomeric or top-tier acrylics built for salt air.',
+  },
+];
+
+const relatedReadingLinks = [
+  {
+    label: 'Questions to Ask Before Hiring a Painter',
+    href: '/homeowner-guide/questions-to-ask-before-you-hire',
+  },
+  {
+    label: 'What to Expect During Your Painting Project',
+    href: '/homeowner-guide/what-to-expect-during-your-project',
+  },
+];
+
+const tableWrapperClass = 'overflow-x-auto rounded-xl border border-charcoal/10 bg-white/60';
+const tableClass = 'w-full border-collapse text-left text-sm sm:text-base';
+const thClass = 'px-4 py-3 font-semibold text-charcoal';
+const tdClass = 'px-4 py-4 align-top';
+---
+
+<Layout {title} {description}>
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-3xl space-y-10 text-base leading-relaxed text-charcoal sm:space-y-12 sm:text-lg">
+      <header class="space-y-4">
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+          Understanding Paint Products in Brevard County
+        </h1>
+        <div class="space-y-4 text-muted">
+          <p>
+            You don't need to become a paint expert to hire the right painter. You just need enough knowledge to ask
+            good questions and recognize solid answers.
+          </p>
+          <p>
+            This page covers the practical side of paint products — what the tiers actually mean, how sheens work,
+            when primer matters, and which products hold up in our climate. Surface-specific recommendations, and brand
+            comparisons are coming as we build this section out.
+          </p>
+        </div>
+      </header>
+
+      <section class="space-y-4" aria-labelledby="why-florida-heading">
+        <h2 id="why-florida-heading" class="font-display text-2xl font-semibold sm:text-3xl">Why Florida Is Different</h2>
+        <p>Most national paint guidance assumes a moderate climate. Brevard County isn't moderate.</p>
+        <p>
+          Year-round UV exposure breaks down pigments and binders faster than nearly anywhere else in the country. The
+          same product that lasts 12 years in Pennsylvania might give you 6 here.
+        </p>
+        <p>
+          Humidity and moisture pressure — especially in coastal areas near the Indian River, the Banana River, and the
+          barrier islands — create constant stress that cheap paint absorbs rather than sheds. The result is bubbling,
+          blistering, and mildew.
+        </p>
+        <p>
+          Salt air accelerates oxidation and weakens adhesion. Homes within a few miles of the ocean need products
+          specifically designed to handle it.
+        </p>
+        <p>
+          Stucco, the dominant exterior surface in most Brevard neighborhoods, is porous and moves with temperature
+          changes. It needs flexible, breathable paint formulas. Trap moisture behind a non-breathable coating and the
+          paint will eventually push itself off the wall.
+        </p>
+        <p>
+          This is why "use the best paint you can afford" actually matters here in a way it doesn't everywhere else.
+        </p>
+      </section>
+
+      <section class="space-y-4" aria-labelledby="acrylic-heading">
+        <h2 id="acrylic-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          The Foundation: 100% Acrylic Latex
+        </h2>
+        <p>
+          For most exterior work in Brevard, the right base product is 100% acrylic latex. It's flexible, breathable,
+          holds color better against UV, and resists mildew far better than oil-based alternatives.
+        </p>
+        <p>
+          For stucco homes with hairline cracks or heavy coastal exposure, elastomeric coatings are often worth the
+          upgrade. They stretch to bridge small cracks and create a stronger moisture barrier.
+        </p>
+        <p>
+          Concrete, masonry, pool decks, and wood decks are their own category — each needs products specifically
+          formulated for that surface. Standard exterior paint fails fast on those surfaces in Florida's climate. More
+          on that below.
+        </p>
+        <p>
+          If a painter recommends oil-based exterior paint for general exterior work, ask why. It's rarely the best
+          option in Florida.
+        </p>
+      </section>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section class="space-y-5" aria-labelledby="tiers-heading">
+        <h2 id="tiers-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Paint Tiers — What You're Actually Paying For
+        </h2>
+        <p>
+          The brand name doesn't tell the full story — Sherwin-Williams and Benjamin Moore both make everything from
+          builder-grade to premium. Prices below are approximate retail per gallon and will shift over time:
+        </p>
+        <div class={tableWrapperClass}>
+          <table class={`${tableClass} min-w-[44rem]`}>
+            <caption class="sr-only">Paint tier comparison for Brevard County</caption>
+            <thead>
+              <tr class="border-b border-charcoal/10 bg-charcoal/[0.03]">
+                <th scope="col" class={thClass}>Tier</th>
+                <th scope="col" class={thClass}>Approx. retail (per gallon)</th>
+                <th scope="col" class={thClass}>Examples</th>
+                <th scope="col" class={thClass}>Expected lifespan in Brevard</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                paintTiers.map((row) => (
+                  <tr class="border-b border-charcoal/10 last:border-b-0">
+                    <td class={`${tdClass} font-medium text-charcoal`}>{row.tier}</td>
+                    <td class={tdClass}>{row.price}</td>
+                    <td class={tdClass}>{row.examples}</td>
+                    <td class={tdClass}>{row.lifespan}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+        <aside class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+          <p class="text-base sm:text-lg">
+            <span class="font-semibold text-charcoal">Florida reality check:</span> National sources often claim premium
+            paints last 12–15 years. In Brevard that's optimistic. UV, humidity, and salt cut those numbers down
+            significantly. Premium paint is still worth it — you get more years and better appearance throughout — but
+            plan around Brevard lifespans, not what the label says.
+          </p>
+        </aside>
+      </section>
+
+      <section class="space-y-5" aria-labelledby="sheens-heading">
+        <h2 id="sheens-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Sheens — Appearance, Cleanability &amp; Moisture Control
+        </h2>
+        <div class={tableWrapperClass}>
+          <table class={`${tableClass} min-w-[44rem]`}>
+            <caption class="sr-only">Paint sheen guide for Brevard County homes</caption>
+            <thead>
+              <tr class="border-b border-charcoal/10 bg-charcoal/[0.03]">
+                <th scope="col" class={thClass}>Sheen</th>
+                <th scope="col" class={thClass}>Best uses</th>
+                <th scope="col" class={thClass}>Florida notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                sheenRows.map((row) => (
+                  <tr class="border-b border-charcoal/10 last:border-b-0">
+                    <td class={`${tdClass} font-medium text-charcoal`}>{row.sheen}</td>
+                    <td class={tdClass}>{row.uses}</td>
+                    <td class={tdClass}>{row.notes}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+        <p>A few things worth knowing:</p>
+        <ul class="list-disc space-y-2 pl-6">
+          <li>
+            Satin is the go-to exterior sheen for stucco in Brevard. It sheds water, resists mildew, and holds up in
+            direct sun better than flat.
+          </li>
+          <li>
+            In kitchens and bathrooms, satin works well for most homes. Semi-gloss is only necessary if you want
+            maximum durability and don't mind the higher shine.
+          </li>
+          <li>
+            On interior walls, flat is a legitimate choice — especially in lower-traffic rooms. Touch-ups blend almost
+            invisibly with flat paint, which is a real advantage in a climate where walls take a beating from humidity,
+            kids, and sand tracked in from outside. The tradeoff is that flat shows dirt and wear faster than satin or
+            eggshell. Higher sheens clean up easier day-to-day but show touch-up spots more noticeably over time. It
+            comes down to whether you'd rather clean or repaint.
+          </li>
+        </ul>
+      </section>
+
+      <section class="space-y-4" aria-labelledby="primer-heading">
+        <h2 id="primer-heading" class="font-display text-2xl font-semibold sm:text-3xl">Primer — When It Matters</h2>
+        <p>
+          Primer is one of the most skipped steps in budget paint jobs and one of the most important in Florida's
+          climate. It's especially critical for:
+        </p>
+        <ul class="list-disc space-y-2 pl-6">
+          {primerWhenItems.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+        <p>
+          Skipping primer where it's needed is one of the most common reasons paint jobs fail early in Brevard. A good
+          painter will explain where they're priming and why without being asked.
+        </p>
+      </section>
+
+      <section class="space-y-4" aria-labelledby="elastomeric-heading">
+        <h2 id="elastomeric-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Elastomeric Coatings — When They're Worth It
+        </h2>
+        <p>
+          Elastomeric coatings are thicker and more flexible than standard paint. On stucco they can bridge hairline
+          cracks and create a stronger moisture barrier than acrylic latex alone.
+        </p>
+        <p>Worth considering for:</p>
+        <ul class="list-disc space-y-2 pl-6">
+          {elastomericWorthItems.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+        <p>On well-prepped stucco, elastomeric coatings typically last 7–10 years in Brevard.</p>
+        <p>
+          They're not the right call for wood siding or any surface with active moisture problems underneath. Sealing
+          in moisture makes the problem worse, not better.
+        </p>
+      </section>
+
+      <section class="space-y-4" aria-labelledby="specialty-heading">
+        <h2 id="specialty-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Specialty Surfaces — Concrete, Masonry &amp; Decks
+        </h2>
+        <p>
+          Pool decks, driveways, walkways, and wood decks each have their own product requirements and failure modes in
+          Florida's climate. Standard exterior paint isn't the answer on any of them.
+        </p>
+        <p>
+          Pool decks need coatings that handle bare feet, heat, chlorine exposure, and constant wet/dry cycles — and
+          depending on the surface condition, a conditioner or bonding primer before any topcoat. Walkways and
+          driveways have different demands again. Wood decks need products built specifically for foot traffic and the
+          expansion and contraction that comes with Florida's humidity swings.
+        </p>
+        <p>
+          Getting the product wrong on these surfaces means early failure, peeling, and in the case of pool decks, a
+          safety issue.
+        </p>
+        <p class="text-muted">More detailed coverage on specialty surfaces coming soon.</p>
+      </section>
+
+      <section class="space-y-4" aria-labelledby="favorites-heading">
+        <h2 id="favorites-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Our Favorite Products &amp; Setups
+        </h2>
+        <p>These are the products we reach for most often on Brevard County jobs:</p>
+        <ul class="space-y-4">
+          {
+            favoriteProducts.map((item) => (
+              <li>
+                <span class="font-semibold text-charcoal">{item.label}:</span> {item.detail}
+              </li>
+            ))
+          }
+        </ul>
+        <p>We're always happy to talk through the right product for your specific home and surfaces.</p>
+      </section>
+
+      <section class="space-y-4" aria-labelledby="reminder-heading">
+        <h2 id="reminder-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Quick Reminder When Talking to Painters
+        </h2>
+        <p>
+          Ask what specific products they're using, why those fit your home and surfaces, and what their priming plan
+          is. A painter who knows their products will answer those questions without hesitation.
+        </p>
+        <p>
+          <a
+            href="/homeowner-guide/questions-to-ask-before-you-hire"
+            class="font-medium text-purple transition-colors hover:text-coral"
+          >
+            Questions to Ask Before Hiring a Painter →
+          </a>
+        </p>
+      </section>
+
+      <section
+        class="space-y-5 rounded-xl border border-purple/20 bg-purple/5 p-6 sm:p-8"
+        aria-labelledby="products-cta-heading"
+      >
+        <h2 id="products-cta-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Questions About Products for Your Home?
+        </h2>
+        <p>
+          If you're weighing options for your surfaces, exposure, or an estimate you've already received, we're glad to
+          talk it through — no sales pitch, just straight answers.
+        </p>
+        <p>
+          <a href="/contact" class="font-semibold text-purple transition-colors hover:text-coral">
+            Send a message →
+          </a>
+        </p>
+        <p class="text-muted">
+          Or call/text:{' '}
+          <a href={phoneHref} class="font-medium text-purple transition-colors hover:text-coral">{phone}</a>
+        </p>
+      </section>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <nav class="space-y-4" aria-labelledby="related-reading-heading">
+        <h2 id="related-reading-heading" class="font-display text-2xl font-semibold sm:text-3xl">Related Reading</h2>
+        <ul class="space-y-3">
+          {
+            relatedReadingLinks.map((item) => (
+              <li>
+                <a href={item.href} class="font-medium text-purple transition-colors hover:text-coral">
+                  {item.label} →
+                </a>
+              </li>
+            ))
+          }
+          <li class="pt-2">
+            <a href="/homeowner-guide" class="font-medium text-muted transition-colors hover:text-charcoal">
+              ← Back to the Homeowner Guide
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </article>
+  </main>
+</Layout>

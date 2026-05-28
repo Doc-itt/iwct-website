@@ -1,4 +1,5 @@
 ---
+// Site-wide shell: meta tags, header/footer, and LocalBusiness JSON-LD on every page.
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -15,9 +16,57 @@ const {
   ogImage = '/logotransparent.png',
 } = Astro.props;
 
+// IMPORTANT: Remove noindex when the full site is ready for Google to see it.
+const noindex = true;
+
 const siteUrl = Astro.site ?? 'https://ifwallscouldtalkllc.com';
 const canonicalURL = new URL(Astro.url.pathname, siteUrl);
 const ogImageURL = new URL(ogImage, siteUrl);
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HousePainter',
+  '@id': `${siteUrl}/#localbusiness`,
+  name: 'If Walls Could Talk LLC',
+  description:
+    'Owner-operated painting company serving Brevard County, Florida with vetted local crews, clear standards, and transparent communication.',
+  url: `${siteUrl}/`,
+  image: `${siteUrl}/logotransparent.png`,
+  telephone: '+1-321-557-6959',
+  email: 'iwctpaintingplus@gmail.com',
+  foundingDate: '2020',
+  priceRange: '$$',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Melbourne',
+    addressRegion: 'FL',
+    postalCode: '32901',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 28.0836,
+    longitude: -80.6081,
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '08:00',
+      closes: '17:00',
+    },
+  ],
+  areaServed: [
+    { '@type': 'AdministrativeArea', name: 'Brevard County, Florida' },
+    { '@type': 'Place', name: 'Space Coast, Florida' },
+    { '@type': 'City', name: 'Melbourne, Florida' },
+    { '@type': 'City', name: 'Palm Bay, Florida' },
+    { '@type': 'City', name: 'Viera, Florida' },
+    { '@type': 'City', name: 'Titusville, Florida' },
+    { '@type': 'City', name: 'Cocoa, Florida' },
+  ],
+  sameAs: [],
+};
 ---
 
 <!doctype html>
@@ -30,6 +79,7 @@ const ogImageURL = new URL(ogImage, siteUrl);
 
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonicalURL} />
 
     <meta property="og:type" content="website" />
@@ -50,6 +100,7 @@ const ogImageURL = new URL(ogImage, siteUrl);
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&display=swap"
       rel="stylesheet"
     />
+    <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
   </head>
   <body class="flex min-h-screen flex-col">
     <Header />

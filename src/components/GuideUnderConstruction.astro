@@ -1,0 +1,37 @@
+---
+// Placeholder layout for Homeowner Guide articles that are not published yet.
+interface Props {
+  heading: string;
+}
+
+const { heading } = Astro.props;
+---
+
+<main class="page-container py-12 sm:py-16">
+  <article class="mx-auto max-w-3xl space-y-6 text-base leading-relaxed text-charcoal sm:text-lg">
+    <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl">{heading}</h1>
+    <p class="text-muted">
+      This guide article is under construction. We're preparing clear, practical information for Brevard
+      County homeowners — check back soon.
+    </p>
+    <p>
+      <a href="/homeowner-guide" class="font-medium text-purple transition-colors hover:text-coral">
+        ← Back to the Homeowner Guide
+      </a>
+    </p>
+    <p class="text-muted">
+      In the meantime, you can read{' '}
+      <a
+        href="/homeowner-guide/hiring-a-painter-brevard-county"
+        class="font-medium text-purple transition-colors hover:text-coral"
+      >
+        Hiring a Painter in Brevard County
+      </a>{' '}
+      or{' '}
+      <a href="/contact" class="font-medium text-purple transition-colors hover:text-coral">
+        send us a message
+      </a>{' '}
+      with questions.
+    </p>
+  </article>
+</main>

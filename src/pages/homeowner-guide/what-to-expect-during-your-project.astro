@@ -1,0 +1,211 @@
+---
+// Homeowner Guide article: what to expect before, during, and after a painting project in Brevard County.
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'What to Expect During Your Painting Project in Brevard County | If Walls Could Talk';
+const description =
+  'What to expect before, during, and after a painting project in Brevard County — prep, communication, weather delays, the final walkthrough, and follow-up after the job.';
+
+const phone = '(321) 557-6959';
+const phoneHref = 'tel:+13215576959';
+
+const beforeProjectItems = [
+  'Which surfaces are included (rooms, exterior walls, trim, doors, ceilings, etc.)',
+  'What products will be used on each surface',
+  'How preparation will be handled',
+  'A realistic timeline, including start and finish dates',
+  'How you\'ll be kept updated during the job',
+  'Payment terms — deposit, progress payments if needed, and when final payment is due',
+];
+
+const prepSteps = [
+  'Pressure washing to remove dirt, salt, mildew, and chalking',
+  'Adequate dry time before any paint goes on — especially important in Brevard County\'s humidity',
+  'Scraping loose paint and sanding rough edges',
+  'Treating any mildew or mold growth',
+  'Caulking gaps, cracks, and around windows and doors',
+  'Sealing bare surfaces and priming where needed',
+];
+
+const moreGuideLinks = [
+  { label: 'Hiring a Painter in Brevard County', href: '/homeowner-guide/hiring-a-painter-brevard-county' },
+  {
+    label: 'Questions to Ask Before You Hire a Painter',
+    href: '/homeowner-guide/questions-to-ask-before-you-hire',
+  },
+  { label: 'Understanding Paint Products in Florida', href: '/homeowner-guide/paint-products-florida' },
+];
+---
+
+<Layout {title} {description}>
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-3xl space-y-10 text-base leading-relaxed text-charcoal sm:space-y-12 sm:text-lg">
+      <header class="space-y-4">
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+          What to Expect During Your Painting Project
+        </h1>
+        <div class="space-y-4 text-muted">
+          <p>
+            A good painting project should feel organized and transparent from the first conversation all the way
+            through to the final walkthrough. You shouldn't be left wondering what's happening next or worrying about
+            the condition of your home.
+          </p>
+          <p>
+            Every job is different, but a well-run project in Brevard County follows a clear pattern. Here's what that
+            usually looks like.
+          </p>
+        </div>
+      </header>
+
+      <section class="space-y-4" aria-labelledby="before-project-heading">
+        <h2 id="before-project-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Before the Project Starts
+        </h2>
+        <p>You should have a solid understanding of the basics before any work begins:</p>
+        <ul class="list-disc space-y-2 pl-6">
+          {beforeProjectItems.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+        <p>
+          If anything feels vague, it's okay to ask for more detail. Clear expectations early on prevent most problems
+          later.
+        </p>
+      </section>
+
+      <section class="space-y-4" aria-labelledby="prep-heading">
+        <h2 id="prep-heading" class="font-display text-2xl font-semibold sm:text-3xl">Surface Preparation</h2>
+        <p>
+          In Florida's climate, preparation is where a paint job is really made or broken. Good prep takes time, but
+          it's what helps the paint last much longer in our humidity, rain, and salt air.
+        </p>
+        <p>
+          A professional should be able to clearly explain their process. A complete prep job typically includes:
+        </p>
+        <ul class="list-disc space-y-2 pl-6">
+          {prepSteps.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+        <p>
+          If a painter can't walk you through these steps, that's worth paying attention to. Most paint failures in
+          Florida happen at the prep stage, not because of the finish coat.
+        </p>
+      </section>
+
+      <section class="space-y-4" aria-labelledby="protecting-heading">
+        <h2 id="protecting-heading" class="font-display text-2xl font-semibold sm:text-3xl">Protecting Your Home</h2>
+        <p>
+          A thoughtful crew will take steps to protect your belongings and landscaping. This generally means covering
+          floors and furniture, masking windows and trim, and being careful with overspray and runoff. Daily cleanup at
+          the end of each workday is a good sign they respect your space.
+        </p>
+      </section>
+
+      <section class="space-y-4" aria-labelledby="communication-heading">
+        <h2 id="communication-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Communication During the Job
+        </h2>
+        <p>
+          You should know who to reach out to with questions and how often you'll get updates. Projects rarely go
+          perfectly on schedule, so honest communication when things shift (especially because of weather) makes a
+          big difference.
+        </p>
+      </section>
+
+      <section class="space-y-4" aria-labelledby="weather-heading">
+        <h2 id="weather-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Florida Weather and Timelines
+        </h2>
+        <p>
+          Painting in Brevard County means working around our weather. Humidity, afternoon rain, and drying times all
+          affect the schedule. A realistic timeline is better than an overly optimistic one. Good painters plan for
+          these realities instead of rushing.
+        </p>
+      </section>
+
+      <section class="space-y-4" aria-labelledby="walkthrough-heading">
+        <h2 id="walkthrough-heading" class="font-display text-2xl font-semibold sm:text-3xl">The Final Walkthrough</h2>
+        <p>
+          Before final payment, take time to walk through the project with the painter in good lighting. Look for even
+          coverage, clean lines, and that everything is cleaned up properly. This is your chance to catch anything
+          that needs attention while they're still on site.
+        </p>
+      </section>
+
+      <section class="space-y-4" aria-labelledby="after-job-heading">
+        <h2 id="after-job-heading" class="font-display text-2xl font-semibold sm:text-3xl">After the Job</h2>
+        <p>
+          Most painting projects end once the final coat is dry and the final payment is made. However, a thoughtful
+          painter will go a step further by giving you information that makes future touch-ups much easier.
+        </p>
+        <p>
+          This can include notes on the colors, brands, and products used on each surface. Not every painter does
+          this, so it's worth asking about during your estimate if it matters to you. Some also offer a basic warranty
+          and may check in after a few months.
+        </p>
+      </section>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section class="space-y-4" aria-labelledby="iwct-heading">
+        <h2 id="iwct-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          How We Handle Projects at If Walls Could Talk
+        </h2>
+        <p>
+          When I oversee a project, the goal is to give homeowners the kind of experience I wrote about in this guide.
+          That means clear communication, solid preparation, attention to protecting your home, and follow-through after
+          the job is done.
+        </p>
+        <p>
+          I work with small, vetted local crews and stay involved to help keep things on track so the standards stay
+          consistent.
+        </p>
+      </section>
+
+      <section
+        class="space-y-5 rounded-xl border border-purple/20 bg-purple/5 p-6 sm:p-8"
+        aria-labelledby="project-cta-heading"
+      >
+        <h2 id="project-cta-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Ready to Talk About Your Project?
+        </h2>
+        <p>
+          If you've read through this guide and want to discuss your specific home — whether it's interior, exterior,
+          cabinets, or something else — I'd be happy to hear from you.
+        </p>
+        <p>
+          <a href="/contact" class="font-semibold text-purple transition-colors hover:text-coral">
+            Send a message →
+          </a>
+        </p>
+        <p class="text-muted">
+          Call or text:{' '}
+          <a href={phoneHref} class="font-medium text-purple transition-colors hover:text-coral">{phone}</a>
+        </p>
+      </section>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <nav class="space-y-4" aria-labelledby="keep-reading-heading">
+        <h2 id="keep-reading-heading" class="font-display text-2xl font-semibold sm:text-3xl">Keep Reading</h2>
+        <ul class="space-y-3">
+          {
+            moreGuideLinks.map((item) => (
+              <li>
+                <a href={item.href} class="font-medium text-purple transition-colors hover:text-coral">
+                  {item.label} →
+                </a>
+              </li>
+            ))
+          }
+          <li class="pt-2">
+            <a href="/homeowner-guide" class="font-medium text-muted transition-colors hover:text-charcoal">
+              ← Back to the Homeowner Guide
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </article>
+  </main>
+</Layout>
