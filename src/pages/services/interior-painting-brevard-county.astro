@@ -1,0 +1,210 @@
+---
+// Interior painting service page for Brevard County homeowners with process, tips, and FAQ.
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Interior Painting in Brevard County | If Walls Could Talk';
+const description =
+  "Interior painting in Brevard County with humidity-aware prep, proper sheen selection, and mildew-resistant options for Florida homes.";
+
+const whatWeCover = [
+  'Walls and ceilings',
+  'Trim, baseboards, and door casings',
+  'Interior doors',
+  'Drywall repair and prep',
+  'Accent walls',
+  'Popcorn ceiling removal',
+  'Mildew-resistant coatings for bathrooms, kitchens, and laundry rooms',
+];
+
+const approachSteps = [
+  {
+    title: 'Protect the space',
+    details:
+      'Move and cover furniture, then mask floors, window frames, and fixtures staying in place.',
+  },
+  {
+    title: 'Clean the surfaces',
+    details:
+      'Degrease kitchen walls and treat mildew in bathrooms before paint goes on, not after.',
+  },
+  {
+    title: 'Repair the drywall',
+    details:
+      'Fill nail holes, cracks, and dings, then sand smooth and prime repaired areas so they disappear under the finish coat.',
+  },
+  {
+    title: 'Prime where needed',
+    details:
+      'Use the right primer for fresh drywall, water stains, and major color transitions from dark to light.',
+  },
+  {
+    title: 'Paint',
+    details:
+      'Apply the right number of coats for the color and surface. Most walls need two coats; dark-to-light transitions may need three.',
+  },
+];
+
+const homeownerTips = [
+  {
+    title: 'Sheen matters',
+    details:
+      "The right sheen affects durability and cleanability. Flat paint in high-humidity rooms like bathrooms or kitchens often fails faster.",
+  },
+  {
+    title: "Don't paint over mildew",
+    details:
+      'Treat mildew first with a diluted bleach solution, let it dry fully, then use a stain-blocking primer before painting.',
+  },
+  {
+    title: 'Wait before washing new paint',
+    details:
+      'Fresh paint may feel dry quickly but often needs 2-4 weeks to fully cure. Cleaning too soon can damage the finish.',
+  },
+  {
+    title: 'Keep your paint record',
+    details:
+      'Track exact brand, color code, and sheen for each room so future touch-ups blend better and faster.',
+  },
+  {
+    title: 'Ventilate during and after',
+    details:
+      'Run fans and AC during painting and for at least 24 hours after to improve curing and clear fumes in humid Florida air.',
+  },
+];
+
+const faqs = [
+  {
+    question: 'What paint sheen should I use in a Florida home?',
+    answer:
+      'Satin and eggshell are generally more durable and easier to clean, while flat hides imperfections better. In bathrooms and kitchens, eggshell or higher is usually best for moisture resistance and cleanability.',
+  },
+  {
+    question: 'How long does interior paint last in Florida?',
+    answer:
+      'In well-maintained homes, interior paint often lasts 5-8 years, and some rooms can reach 7-10 years with strong prep and quality products. High-humidity rooms may show wear sooner, often around 3-5 years.',
+  },
+  {
+    question: 'Do you move furniture before interior painting?',
+    answer:
+      "Yes. Standard furniture is moved and covered as part of prep. Very large or heavy items may stay in place and be fully protected while we work around them.",
+  },
+  {
+    question: 'How long does interior paint take to cure in Florida humidity?',
+    answer:
+      'Most latex paints are dry to the touch within 1-2 hours but often need 2-4 weeks to fully cure. High humidity can slow curing, so ventilation and AC help significantly.',
+  },
+  {
+    question: 'What prep is needed before interior painting?',
+    answer:
+      'Prep includes cleaning walls, drywall repair, sanding, priming where needed, and careful masking of trim, windows, floors, and fixtures. Better prep directly improves final appearance and durability.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<Layout {title} {description}>
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-5xl space-y-12 text-base leading-relaxed text-charcoal sm:text-lg">
+      <header class="space-y-5">
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          Interior Painting in Brevard County
+        </h1>
+        <p>
+          Interior painting is where most transformation happens in a home. In Florida, that means managing humidity,
+          choosing the right sheen by room, using mildew-resistant products where needed, and allowing proper cure time.
+        </p>
+      </header>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section aria-labelledby="what-we-cover-heading" class="space-y-5">
+        <h2 id="what-we-cover-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What We Cover
+        </h2>
+        <p>Interior painting includes more than walls. A complete project can include:</p>
+        <ul class="space-y-2">
+          {whatWeCover.map((item) => (
+            <li class="flex items-start gap-3 text-sm sm:text-base">
+              <span class="mt-1 inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-purple" aria-hidden="true"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+        <p class="text-muted">
+          We can handle one room or the whole house, with clear prep recommendations and options before work begins.
+        </p>
+      </section>
+
+      <section aria-labelledby="approach-heading" class="space-y-5">
+        <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          How We Approach It
+        </h2>
+        <p>Every interior job starts with prep:</p>
+        <ol class="space-y-3">
+          {approachSteps.map((step) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-4 sm:p-5">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{step.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{step.details}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section aria-labelledby="expect-heading" class="space-y-5">
+        <h2 id="expect-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What to Expect
+        </h2>
+        <p>
+          A single room typically takes one day. Whole-house timelines vary by room count, ceiling height, and prep
+          requirements. You get a clear timeline upfront.
+        </p>
+        <p>
+          We document every product used, including brand, color code, and sheen, so future touch-ups are faster and
+          more accurate.
+        </p>
+      </section>
+
+      <section aria-labelledby="tips-heading" class="space-y-5">
+        <h2 id="tips-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Homeowner Tips
+        </h2>
+        <ul class="space-y-4">
+          {homeownerTips.map((tip) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{tip.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{tip.details}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="faq-heading" class="space-y-6">
+        <h2 id="faq-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Common Questions
+        </h2>
+        <ul class="space-y-4">
+          {faqs.map((item) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{item.question}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-muted sm:text-base">{item.answer}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </article>
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+</Layout>

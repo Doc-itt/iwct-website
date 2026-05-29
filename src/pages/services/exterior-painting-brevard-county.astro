@@ -1,0 +1,218 @@
+---
+// Exterior painting service page for Brevard County homeowners with process, tips, and FAQ.
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Exterior Painting in Brevard County | If Walls Could Talk';
+const description =
+  "Exterior painting in Brevard County built for Florida heat, humidity, salt air, and UV with prep-first process, homeowner tips, and common questions.";
+
+const whatWeCover = [
+  'House siding, stucco, and block walls',
+  'Soffits and fascia',
+  'Trim and shutters',
+  'Doors and garage doors',
+  'Fences and gates',
+  'Caulking around windows, doors, and trim',
+  'Stucco crack repair before painting',
+  'UV-protective and mildew-resistant coatings',
+  'Rust-inhibiting primer for metal surfaces',
+];
+
+const approachSteps = [
+  {
+    title: 'Pressure wash',
+    details:
+      'Remove dirt, mildew, chalking, and any loose or flaking paint from the entire surface.',
+  },
+  {
+    title: 'Inspect and repair',
+    details:
+      'Find and fix stucco cracks, damaged siding, rotted wood trim, or any area where moisture could get behind the surface.',
+  },
+  {
+    title: 'Caulk and seal',
+    details:
+      'Seal all gaps around windows, doors, trim, and penetrations with a flexible, paintable caulk rated for Florida temperature swings.',
+  },
+  {
+    title: 'Prime',
+    details:
+      'If needed, apply the right primer for the surface: moisture-blocking for bare stucco, rust-inhibiting for metal, and bonding primer where needed.',
+  },
+  {
+    title: 'Paint',
+    details:
+      'Apply quality 100% acrylic coatings that flex with heat, resist UV fading, and repel moisture without trapping it inside the wall.',
+  },
+];
+
+const homeownerTips = [
+  {
+    title: "Don't paint over mildew",
+    details:
+      'Pressure washing removes surface dirt but not mildew roots. Treat with a mildewcide solution before washing, or mildew can bleed through within months.',
+  },
+  {
+    title: 'Check your caulk first',
+    details:
+      'Cracked or missing caulk around windows and doors is a leading cause of interior water damage in Florida homes. Walk the perimeter and note cracked or missing sections before painting.',
+  },
+  {
+    title: 'Avoid direct afternoon sun in summer',
+    details:
+      'Surface temperatures can exceed 120F, which prevents proper adhesion. Early morning or overcast conditions are better. Most paints need at least 24 hours before rain exposure, with some exceptions.',
+  },
+  {
+    title: 'Choose sheen for the surface',
+    details:
+      'Flat hides surface imperfections on stucco, while satin and low-sheen finishes are more durable, easier to clean, and hold up better in Florida humidity and frequent rain.',
+  },
+  {
+    title: 'Coastal homes need extra attention',
+    details:
+      "If you're within a mile of open water, ask for salt-tolerant coatings and rust-inhibiting primer on all metal surfaces, including railings, shutters, and exposed fasteners.",
+  },
+];
+
+const faqs = [
+  {
+    question: 'How long does exterior paint last in Brevard County?',
+    answer:
+      "With proper prep and quality paint, exterior paint on a Brevard County home should last 5-10 years. Skip prep and you're often looking at 3 years or less before peeling, cracking, or fading.",
+  },
+  {
+    question: 'What kind of paint works best on stucco in Florida?',
+    answer:
+      'A quality 100% acrylic or elastomeric paint is typically the right choice. It helps bridge small cracks, flexes with temperature swings, and remains breathable enough to let moisture escape.',
+  },
+  {
+    question: 'How do I know if my home needs exterior painting?',
+    answer:
+      'Watch for chalking, visible cracking or peeling, faded or uneven color, water staining, and mildew growth. These are signs the coating system is weakening.',
+  },
+  {
+    question: 'What does exterior prep actually involve?',
+    answer:
+      'Proper prep includes pressure washing, scraping failing paint, repairing stucco cracks, caulking around openings and trim, and applying the right primer for the surface.',
+  },
+  {
+    question: 'Does salt air affect exterior paint in coastal Brevard?',
+    answer:
+      'Yes. Salt air accelerates corrosion and can break down paint faster. Breathable coatings and rust-inhibiting primers are especially important for coastal properties.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<Layout {title} {description}>
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-5xl space-y-12 text-base leading-relaxed text-charcoal sm:text-lg">
+      <header class="space-y-5">
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          Exterior Painting in Brevard County
+        </h1>
+        <p>
+          Florida's heat, humidity, salt air, and UV are the real challenge for exterior paint. The difference between
+          a job that lasts 5-10 years and one that starts peeling in three comes down to prep and materials.
+        </p>
+      </header>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section aria-labelledby="what-we-cover-heading" class="space-y-5">
+        <h2 id="what-we-cover-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What We Cover
+        </h2>
+        <p>
+          Exterior painting is more than just walls. A complete exterior project can include all major surfaces and
+          components around your home.
+        </p>
+        <ul class="space-y-2">
+          {whatWeCover.map((item) => (
+            <li class="flex items-start gap-3 text-sm sm:text-base">
+              <span class="mt-1 inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-purple" aria-hidden="true"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+        <p class="text-muted">We can handle the full exterior or specific components depending on project scope.</p>
+      </section>
+
+      <section aria-labelledby="approach-heading" class="space-y-5">
+        <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          How We Approach It
+        </h2>
+        <p>Prep is everything. Most exterior projects follow the same sequence:</p>
+        <ol class="space-y-3">
+          {approachSteps.map((step) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-4 sm:p-5">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{step.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{step.details}</p>
+            </li>
+          ))}
+        </ol>
+        <p class="text-muted">Most exterior paint failures in Florida trace back to a skipped prep step.</p>
+      </section>
+
+      <section aria-labelledby="expect-heading" class="space-y-5">
+        <h2 id="expect-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What to Expect
+        </h2>
+        <p>
+          Most single-story homes in Brevard County take 2-4 days for a full exterior painting project. Two-story homes
+          or projects with heavy prep usually take longer.
+        </p>
+        <p>
+          We document products used, colors, and sheen levels so you have a complete record for future touch-ups or
+          repaints.
+        </p>
+        <p>
+          Pricing varies by home size, surface type (stucco, wood, vinyl siding), and prep required. Typical exterior
+          painting in Brevard County runs $2.50-$6 per square foot of paintable surface.
+        </p>
+      </section>
+
+      <section aria-labelledby="tips-heading" class="space-y-5">
+        <h2 id="tips-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Homeowner Tips
+        </h2>
+        <ul class="space-y-4">
+          {homeownerTips.map((tip) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{tip.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{tip.details}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="faq-heading" class="space-y-6">
+        <h2 id="faq-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Common Questions
+        </h2>
+        <ul class="space-y-4">
+          {faqs.map((item) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{item.question}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-muted sm:text-base">{item.answer}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </article>
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+</Layout>

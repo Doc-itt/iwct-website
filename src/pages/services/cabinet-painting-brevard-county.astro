@@ -1,0 +1,228 @@
+---
+// Cabinet painting service page for Brevard County homeowners with process, tips, and FAQ.
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Cabinet Painting in Brevard County | If Walls Could Talk';
+const description =
+  'Cabinet painting in Brevard County with prep-first process, durable cabinet enamel, realistic timelines, and homeowner tips for lasting results in Florida humidity.';
+
+const whatWeCover = [
+  'Kitchen upper and lower cabinets',
+  'Bathroom vanity cabinets',
+  'Laundry room cabinets',
+  'Built-in shelving or storage units',
+  'Kitchen islands',
+];
+
+const approachSteps = [
+  {
+    title: 'Remove doors and drawer fronts',
+    details:
+      'We take them off, number them, and paint both sides plus all edges for a clean, professional finish.',
+  },
+  {
+    title: 'Clean thoroughly',
+    details:
+      'Grease, residue, and buildup are completely removed so paint can bond correctly.',
+  },
+  {
+    title: 'Degloss and sand',
+    details:
+      'The existing finish is dulled so primer can adhere properly and hold up over time.',
+  },
+  {
+    title: 'Fill and repair',
+    details:
+      'Dings, scratches, and old hardware holes are filled and sanded smooth before primer and paint.',
+  },
+  {
+    title: 'Prime',
+    details:
+      'We use the right primer for the material, including wood and MDF, to improve adhesion and durability.',
+  },
+  {
+    title: 'Paint',
+    details:
+      'Multiple thin coats of quality cabinet enamel are applied, with light sanding between coats.',
+  },
+  {
+    title: 'Reinstall',
+    details:
+      'Doors and drawers go back on with adjusted hinges for proper alignment and a finished look.',
+  },
+];
+
+const homeownerTips = [
+  {
+    title: 'Do not skip deglossing and sanding',
+    details:
+      'Skipping this step is the main reason cabinet paint fails early through peeling or chipping.',
+  },
+  {
+    title: 'Use true cabinet enamel',
+    details:
+      'Standard wall paint stays too soft for cabinets. Hard-wearing cabinet enamel cures harder and resists daily wear.',
+  },
+  {
+    title: 'Light colors show more imperfections',
+    details:
+      'White and off-white finishes highlight every dent, seam, and texture issue, so prep quality matters even more.',
+  },
+  {
+    title: 'Plan for full cure time',
+    details:
+      'Cabinets feel dry quickly but usually need 2-4 weeks to fully harden. Use gentle cleaning and avoid slamming doors during this period.',
+  },
+  {
+    title: 'Update hardware while cabinets are off',
+    details:
+      'It is one of the easiest ways to change the overall look while doors and drawer fronts are already removed.',
+  },
+];
+
+const faqs = [
+  {
+    question: 'How long does cabinet painting last in Florida?',
+    answer:
+      'With proper prep and quality enamel, cabinet painting typically lasts 7-10 years with normal use. Florida humidity makes good prep critical, and skipping deglossing or priming is where most jobs fail early.',
+  },
+  {
+    question: 'Is cabinet painting cheaper than replacing cabinets?',
+    answer:
+      'Yes, significantly. Painting usually costs $1,500-$4,500 while new cabinets often run $8,000-$20,000+ installed. You get a fresh, updated look for a fraction of the price.',
+  },
+  {
+    question: 'Can you match my existing cabinet color?',
+    answer:
+      'Yes. We can match your current color exactly, shift to a new color, or work from a paint chip or photo.',
+  },
+  {
+    question: 'What paint do you use on cabinets?',
+    answer:
+      'We use hard-wearing water-based alkyd or urethane trim enamels designed for cabinets. These cure much harder than standard wall paint and hold up better to daily use and Florida humidity.',
+  },
+  {
+    question: 'Do the cabinet doors need to be removed?',
+    answer:
+      'Yes. Removing doors and drawer fronts is the only way to properly paint all edges, avoid brush marks, and get a clean, professional result.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<Layout {title} {description}>
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-5xl space-y-12 text-base leading-relaxed text-charcoal sm:text-lg">
+      <header class="space-y-5">
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          Cabinet Painting in Brevard County
+        </h1>
+        <p>
+          Cabinet painting can completely transform a kitchen or bathroom without a full remodel. Thorough cleaning,
+          deglossing, and the right hard-wearing enamel are what make it last through daily use and Florida humidity.
+        </p>
+      </header>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section aria-labelledby="what-we-cover-heading" class="space-y-5">
+        <h2 id="what-we-cover-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What We Cover
+        </h2>
+        <p>
+          We paint kitchen and bathroom cabinets, including doors, drawer fronts, frames, and boxes. We also handle:
+        </p>
+        <ul class="space-y-2">
+          {whatWeCover.map((item) => (
+            <li class="flex items-start gap-3 text-sm sm:text-base">
+              <span class="mt-1 inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-purple" aria-hidden="true"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+        <p class="text-muted">
+          Hardware (pulls, knobs, hinges) can be masked or removed and reinstalled. Many homeowners update hardware
+          while the cabinets are being painted.
+        </p>
+      </section>
+
+      <section aria-labelledby="approach-heading" class="space-y-5">
+        <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          How We Approach It
+        </h2>
+        <p>
+          Cabinet painting takes more time and care than wall painting. The prep is what determines whether it lasts or
+          starts chipping and peeling.
+        </p>
+        <ol class="space-y-3">
+          {approachSteps.map((step) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-4 sm:p-5">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{step.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{step.details}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section aria-labelledby="expect-heading" class="space-y-5">
+        <h2 id="expect-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What to Expect
+        </h2>
+        <p>
+          A typical kitchen cabinet project takes 3-5 days. You will still have access to the refrigerator, but the
+          kitchen will otherwise be off limits during active work.
+        </p>
+        <p>
+          The paint feels dry fairly quickly, but full cure takes 2-4 weeks. Treat cabinets gently during that time:
+          avoid slamming doors and use light cleaning only.
+        </p>
+        <p>
+          Cabinet painting in Brevard County usually runs $1,500-$4,500 depending on the number of doors, drawers, and
+          linear feet. This is a fraction of the cost of new cabinets.
+        </p>
+      </section>
+
+      <section aria-labelledby="tips-heading" class="space-y-5">
+        <h2 id="tips-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Homeowner Tips
+        </h2>
+        <ul class="space-y-4">
+          {homeownerTips.map((tip) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{tip.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{tip.details}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="faq-heading" class="space-y-6">
+        <h2 id="faq-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Common Questions
+        </h2>
+        <ul class="space-y-4">
+          {faqs.map((item) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{item.question}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-muted sm:text-base">{item.answer}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </article>
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+</Layout>

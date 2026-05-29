@@ -1,4 +1,5 @@
 ---
+// Site header: logo, main nav (always visible from tablet up), phone CTA, and mobile menu on small screens.
 const navItems = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
@@ -18,10 +19,16 @@ function isActive(href: string) {
   if (normalized === '/') return currentPath === '/';
   return currentPath === normalized || currentPath.startsWith(`${normalized}/`);
 }
+
+const linkClasses = (href: string) =>
+  [
+    'text-sm font-medium transition-colors whitespace-nowrap',
+    isActive(href) ? 'text-purple' : 'text-muted hover:text-charcoal',
+  ] as const;
 ---
 
 <header class="sticky top-0 z-50 border-b border-charcoal/5 bg-cream/95 backdrop-blur-sm">
-  <div class="page-container flex items-center justify-between gap-4 py-4">
+  <div class="page-container flex items-center justify-between gap-4 py-3 md:py-4">
     <a href="/" class="group shrink-0" aria-label="If Walls Could Talk — Home">
       <div class="flex items-center gap-3">
         <img
@@ -38,7 +45,21 @@ function isActive(href: string) {
       <span class="watercolor-bar mt-1.5 block w-full max-w-[16rem] rounded-full" aria-hidden="true"></span>
     </a>
 
-    <div class="flex items-center gap-3 sm:gap-6">
+    <nav class="hidden min-w-0 flex-1 justify-center px-2 xl:flex" aria-label="Main navigation">
+      <ul class="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 2xl:gap-x-8">
+        {
+          navItems.map(({ label, href }) => (
+            <li>
+              <a href={href} class:list={linkClasses(href)} aria-current={isActive(href) ? 'page' : undefined}>
+                {label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div class="flex shrink-0 items-center gap-3 sm:gap-4">
       <a
         href={phoneHref}
         class="text-sm font-semibold text-purple transition-colors hover:text-coral sm:text-base"
@@ -50,7 +71,7 @@ function isActive(href: string) {
       <button
         type="button"
         id="menu-toggle"
-        class="inline-flex h-10 w-10 items-center justify-center rounded-lg text-charcoal transition-colors hover:bg-charcoal/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple lg:hidden"
+        class="inline-flex h-10 w-10 items-center justify-center rounded-lg text-charcoal transition-colors hover:bg-charcoal/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple md:hidden"
         aria-expanded="false"
         aria-controls="mobile-menu"
         aria-label="Open navigation menu"
@@ -63,21 +84,15 @@ function isActive(href: string) {
     </div>
   </div>
 
-  <nav class="page-container hidden border-t border-charcoal/5 py-3 lg:block" aria-label="Main navigation">
-    <ul class="flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
+  <nav
+    class="page-container hidden border-t border-charcoal/5 py-2.5 md:block xl:hidden"
+    aria-label="Main navigation"
+  >
+    <ul class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 md:gap-x-6">
       {
         navItems.map(({ label, href }) => (
           <li>
-            <a
-              href={href}
-              class:list={[
-                'text-sm font-medium transition-colors',
-                isActive(href)
-                  ? 'text-purple'
-                  : 'text-muted hover:text-charcoal',
-              ]}
-              aria-current={isActive(href) ? 'page' : undefined}
-            >
+            <a href={href} class:list={linkClasses(href)} aria-current={isActive(href) ? 'page' : undefined}>
               {label}
             </a>
           </li>
@@ -88,7 +103,7 @@ function isActive(href: string) {
 
   <nav
     id="mobile-menu"
-    class="hidden border-t border-charcoal/5 bg-cream lg:hidden"
+    class="hidden border-t border-charcoal/5 bg-cream md:hidden"
     aria-label="Mobile navigation"
   >
     <ul class="page-container flex flex-col gap-1 py-4">

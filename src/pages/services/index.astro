@@ -1,13 +1,236 @@
 ---
+// Services hub page: outlines IWCT service categories and included services for Brevard County homeowners.
 import Layout from '../../layouts/Layout.astro';
+
+const siteUrl = 'https://ifwallscouldtalkllc.com';
+
+const title = 'Painting Services in Brevard County | If Walls Could Talk';
+const description =
+  'We offer exterior painting, interior painting, cabinet and wood finishing, plus outdoor living and concrete coatings across Brevard County.';
+
+const phone = '(321) 557-6959';
+const phoneHref = 'tel:+13215576959';
+
+const categories = [
+  {
+    title: 'Exterior Painting',
+    intro:
+      'Full exterior work on homes across Brevard. We focus on thorough prep and coatings that handle UV, salt, humidity, and mildew.',
+    services: [
+      {
+        label: 'Exterior House Painting',
+        href: '/services/exterior-painting-brevard-county',
+      },
+      'Siding Painting',
+      'Stucco Painting and Sealing',
+      'Soffit and Fascia Painting',
+      'Trim, Shutters and Doors',
+      'Fence Painting',
+      'Roof Painting',
+      'Brick Painting and Sealing',
+      'UV-Protective and Mildew-Resistant Coatings',
+      'Rust-Inhibiting Metal Painting',
+    ],
+  },
+  {
+    title: 'Interior Painting',
+    intro:
+      'Interior painting with proper prep and finishes that perform in Florida’s humid homes.',
+    services: [
+      {
+        label: 'Interior House Painting',
+        href: '/services/interior-painting-brevard-county',
+      },
+      'Drywall Painting and Repair',
+      'Trim and Baseboard Painting',
+      'Accent Walls and Specialty Design',
+      'Popcorn Ceiling Removal',
+      'Garage Painting (Walls and Floors)',
+      'Touch-Up Painting',
+    ],
+  },
+  {
+    title: 'Cabinet and Wood Finishing',
+    intro:
+      'Cabinet painting and wood refinishing — a practical way to update kitchens, bathrooms, and other wood surfaces without a full remodel.',
+    services: [
+      {
+        label: 'Cabinet Painting (Kitchen and Bathroom)',
+        href: '/services/cabinet-painting-brevard-county',
+      },
+      'Wood Painting',
+      'Wood Staining',
+      'Wood Varnishing',
+      'Color Consultation and Paint Selection',
+    ],
+  },
+  {
+    title: 'Outdoor Living and Concrete Coatings',
+    intro:
+      'Pool decks, patios, garages, and other concrete surfaces built to handle sun, rain, chlorine, and heavy use.',
+    services: [
+      {
+        label: 'Pool Deck Painting and Slip-Resistant Coatings',
+        href: '/services/pool-deck-painting-slip-resistant-coatings-brevard-county',
+      },
+      'Patio and Porch Painting',
+      'Deck Painting',
+      'Concrete Floor Coatings',
+      'Garage Floor Coatings',
+      'Driveway Sealing and Painting',
+      'Polyaspartic Coatings',
+    ],
+  },
+];
+
+const faqs = [
+  {
+    question: 'What painting services do you offer in Brevard County?',
+    answer:
+      'We offer a full range of painting and coating services built for Brevard County’s heat, humidity, salt air, and sun. Each category has its own detailed page with process steps, tips, and common questions.',
+  },
+  {
+    question: 'Do you handle smaller projects or just full repaints?',
+    answer:
+      'We do both. Single rooms, cabinets, pool decks, fences, trim work, and touch-ups are all common projects and receive the same standards.',
+  },
+  {
+    question: 'How do I know which service category my project fits into?',
+    answerHtml: true,
+    answer:
+      `Most projects are clear by location and surface type. If you're unsure <a href="/contact" class="text-purple transition-colors hover:text-coral">reach out through the contact page</a>.`,
+  },
+  {
+    question: 'How do I request an estimate?',
+    answer:
+      'Use the contact page, or call/text 321-557-6959. We review the scope first so you know exactly what to expect before scheduling.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer.replace(/<[^>]+>/g, ''),
+    },
+  })),
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': `${siteUrl}/services/#service`,
+  name: 'Residential Painting Services in Brevard County',
+  description:
+    'Exterior painting, interior painting, cabinet and wood finishing, and outdoor living concrete coating services for homeowners in Brevard County, Florida.',
+  serviceType: 'Residential painting services',
+  areaServed: {
+    '@type': 'AdministrativeArea',
+    name: 'Brevard County, Florida',
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Painting Services',
+    itemListElement: categories.map((category) => ({
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name: category.title,
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: `${category.title} Services`,
+          itemListElement: category.services.map((service) => ({
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: typeof service === 'string' ? service : service.label,
+            },
+          })),
+        },
+      },
+    })),
+  },
+};
 ---
 
-<Layout
-  title="Services | If Walls Could Talk — Brevard County Painting"
-  description="Interior, exterior, pool deck, and cabinet painting services in Brevard County, Florida."
->
-  <section class="page-container py-16 sm:py-24">
-    <h1 class="font-display text-3xl font-semibold sm:text-4xl">Services - Coming Soon</h1>
-    <p class="mt-4 text-muted">This page is under construction. Content coming soon.</p>
-  </section>
+<Layout {title} {description}>
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-5xl space-y-12 text-base leading-relaxed text-charcoal sm:text-lg">
+      <header class="space-y-5">
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          Our Services
+        </h1>
+        <p>
+          We offer four main service categories. Each has its own dedicated page with full details, process steps,
+          homeowner tips, and common questions.
+        </p>
+        <p class="text-muted">
+          Florida’s heat, humidity, salt air, and intense sun make preparation and material choices critical. Every
+          service below is built around what actually holds up long-term in Brevard County.
+        </p>
+      </header>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section aria-labelledby="service-categories-heading" class="space-y-6">
+        <h2 id="service-categories-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Service Categories
+        </h2>
+        <ul class="grid gap-5 md:grid-cols-2">
+          {categories.map((category) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-xl font-semibold text-charcoal sm:text-2xl">{category.title}</h3>
+              <p class="mt-3 text-sm text-muted sm:text-base">{category.intro}</p>
+              <h4 class="mt-5 text-base font-semibold text-charcoal sm:text-lg">Included services:</h4>
+              <ul class="mt-3 space-y-2">
+                {category.services.map((service) => (
+                  <li class="flex items-start gap-3 text-sm sm:text-base">
+                    <span class="mt-1 inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-purple" aria-hidden="true"></span>
+                    {typeof service === 'string' ? (
+                      <span>{service}</span>
+                    ) : (
+                      <a href={service.href} class="font-medium text-purple transition-colors hover:text-coral">
+                        {service.label}
+                      </a>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="services-faq-heading" class="space-y-6">
+        <h2 id="services-faq-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Common Questions
+        </h2>
+        <ul class="space-y-4">
+          {faqs.map((item) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-lg font-semibold text-charcoal sm:text-xl">{item.question}</h3>
+              {item.answerHtml ? (
+                <p class="mt-2 text-sm leading-relaxed text-muted sm:text-base" set:html={item.answer}></p>
+              ) : (
+                <p class="mt-2 text-sm leading-relaxed text-muted sm:text-base">{item.answer}</p>
+              )}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <p class="border-t border-charcoal/10 pt-8 text-muted">
+        Not sure where your project fits? <a href="/contact" class="font-medium text-purple transition-colors hover:text-coral">Contact page</a>, or call/text{' '}
+        <a href={phoneHref} class="font-medium text-purple transition-colors hover:text-coral">321-557-6959</a>.
+      
+      </p>
+    </article>
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
 </Layout>

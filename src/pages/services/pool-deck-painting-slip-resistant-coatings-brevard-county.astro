@@ -1,0 +1,222 @@
+---
+// Pool deck and concrete coating service page for Brevard County homeowners with process, options, tips, and FAQ.
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Pool Deck Painting & Slip-Resistant Coatings in Brevard County | If Walls Could Talk';
+const description =
+  'Pool deck painting and slip-resistant coatings in Brevard County with acrylic and polyaspartic options, crack repair prep, and Florida-specific homeowner guidance.';
+
+const whatWeCover = [
+  'Pool decks and pool surrounds',
+  'Slip-resistant textured coatings',
+  'Patios, porches, and screened enclosure floors',
+  'Concrete crack repair before coating',
+  'Polyaspartic premium coatings',
+  'Garage and utility area concrete floor coatings',
+];
+
+const coatingOptions = [
+  {
+    title: 'Acrylic pool deck coating',
+    details:
+      'Most common and budget-friendly. Good UV resistance and color retention. Typically needs recoating every 3-5 years in Florida sun.',
+  },
+  {
+    title: 'Slip-resistant textured coating',
+    details:
+      'Acrylic base with added silica or polymer grit for grip. The texture stays effective even when wet.',
+  },
+  {
+    title: 'Polyaspartic coating',
+    details:
+      'Premium option. Cures fast (often walkable same day), resists UV yellowing better, handles pool chemicals and moisture well, and lasts longer (often 5-10+ years with good prep). Higher upfront cost but better long-term value for heavy-use decks.',
+  },
+];
+
+const approachSteps = [
+  {
+    title: 'Pressure wash',
+    details:
+      'Remove dirt, algae, chlorine residue, and any loose or flaking material.',
+  },
+  {
+    title: 'Inspect and repair',
+    details:
+      'Fill cracks and spalled areas. We never coat over existing problems.',
+  },
+  {
+    title: 'Allow full drying',
+    details:
+      'Concrete must be completely dry. Florida humidity makes this step especially important.',
+  },
+  {
+    title: 'Apply coating',
+    details:
+      'Use the right product at the proper thickness, with slip-resistant texture added if needed.',
+  },
+];
+
+const homeownerTips = [
+  {
+    title: "Don't coat over failing surfaces",
+    details:
+      'Everything loose or peeling must be removed first or the new coating can fail early.',
+  },
+  {
+    title: 'Choose cooler colors for comfort',
+    details:
+      'Light colors stay noticeably cooler underfoot than dark colors on hot Florida days.',
+  },
+  {
+    title: 'Fix cracks before coating',
+    details:
+      'Pool water and chlorine can worsen existing cracks over time if they are not repaired first.',
+  },
+  {
+    title: 'Balance grip and comfort',
+    details:
+      'More texture improves slip resistance but can feel rougher on bare feet. We help find the right balance.',
+  },
+  {
+    title: 'Plan for maintenance cycles',
+    details:
+      'Acrylic coatings typically need recoating every 3-5 years in Brevard County climate conditions.',
+  },
+];
+
+const faqs = [
+  {
+    question: 'What makes a pool deck coating slip-resistant?',
+    answer:
+      'We add texture materials like silica sand or polymer grit into the coating or broadcast it while wet. This keeps the surface safer even when wet from the pool.',
+  },
+  {
+    question: 'How often does pool deck coating need recoating in Florida?',
+    answer:
+      'Standard acrylic usually needs recoating every 3-5 years. Polyaspartic lasts longer, often 5-10+ years with proper prep.',
+  },
+  {
+    question: 'Can pool deck coatings reduce surface heat?',
+    answer:
+      'Yes. Light colors reflect more heat than dark colors. Some coatings also use reflective pigments that help lower surface temperature on hot Florida days.',
+  },
+  {
+    question: 'Is polyaspartic worth the extra cost?',
+    answer:
+      'For busy pool decks, yes. It cures faster, handles chemicals better, resists UV yellowing, and lasts longer than standard acrylic.',
+  },
+  {
+    question: 'What prep does a pool deck need before coating?',
+    answer:
+      'Thorough pressure washing, crack repairs, and complete drying. Skipping proper prep is the main reason coatings peel early in Florida.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<Layout {title} {description}>
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-5xl space-y-12 text-base leading-relaxed text-charcoal sm:text-lg">
+      <header class="space-y-5">
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          Pool Deck Painting & Slip-Resistant Coatings in Brevard County
+        </h1>
+        <p>
+          Pool decks in Brevard take a beating from constant sun, chlorine, rain, and wet feet. A good coating keeps
+          the surface safer when wet, protects the concrete, and helps it look better for longer in Florida conditions.
+        </p>
+      </header>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section aria-labelledby="what-we-cover-heading" class="space-y-5">
+        <h2 id="what-we-cover-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What We Cover
+        </h2>
+        <ul class="space-y-2">
+          {whatWeCover.map((item) => (
+            <li class="flex items-start gap-3 text-sm sm:text-base">
+              <span class="mt-1 inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-purple" aria-hidden="true"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="coating-options-heading" class="space-y-5">
+        <h2 id="coating-options-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Coating Options
+        </h2>
+        <ul class="space-y-4">
+          {coatingOptions.map((option) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{option.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{option.details}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="approach-heading" class="space-y-5">
+        <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          How We Approach It
+        </h2>
+        <p>Prep determines whether the coating lasts or peels in Florida weather.</p>
+        <ol class="space-y-3">
+          {approachSteps.map((step) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-4 sm:p-5">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{step.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{step.details}</p>
+            </li>
+          ))}
+        </ol>
+        <p class="text-muted">
+          Most projects finish in 1-2 days. Polyaspartic is usually walkable the same day. Standard acrylic typically
+          needs 24-48 hours before normal foot traffic.
+        </p>
+      </section>
+
+      <section aria-labelledby="tips-heading" class="space-y-5">
+        <h2 id="tips-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Homeowner Tips
+        </h2>
+        <ul class="space-y-4">
+          {homeownerTips.map((tip) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{tip.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{tip.details}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="faq-heading" class="space-y-6">
+        <h2 id="faq-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Common Questions
+        </h2>
+        <ul class="space-y-4">
+          {faqs.map((item) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{item.question}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-muted sm:text-base">{item.answer}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </article>
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+</Layout>
