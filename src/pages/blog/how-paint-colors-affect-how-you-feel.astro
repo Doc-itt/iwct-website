@@ -1,0 +1,308 @@
+---
+// Blog post: how interior paint color affects mood and feel, with Florida-specific light and testing tips.
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'How Paint Colors Affect How You Feel at Home | Brevard County | If Walls Could Talk';
+const description =
+  'Interior paint color tips for Brevard County — undertones, Florida light, sample testing, and how wall color changes how a room actually feels.';
+
+const ogImage = '/images/blog/paint-colors-feel-home.jpg';
+
+const phone = '(321) 557-6959';
+const phoneHref = 'tel:+13215576959';
+
+const colorPsychologyItems = [
+  'Cool colors (blues, greens, soft grays) tend to feel calming and expansive.',
+  'Warm colors (yellows, oranges, warm reds) feel energizing and can make spaces feel smaller and cozier.',
+  'Neutrals are the most flexible — they can read warm or cool depending on the undertone and the light in the room.',
+  'Very dark colors make walls recede, which can make a small room feel cave-like or dramatic depending on what you\'re going for.',
+];
+
+const floridaLightItems = [
+  'Colors can shift significantly between morning, midday, and late afternoon light.',
+  'Warm undertones (beiges, soft yellows, greiges) often feel more balanced and comfortable in Florida\'s strong light.',
+  'Rooms with west-facing windows are the trickiest — the light changes dramatically from soft morning light to warm, intense afternoon sun.',
+  'South-facing rooms usually provide the most consistent bright light and tend to be the easiest for color selection.',
+];
+
+const sampleTestOptions = [
+  'Paint a good-sized sample (at least 12×12 inches) directly on the wall.',
+  'Paint samples on a scrap board or poster board so you can move them around the room to different walls and see how the color looks throughout the day under different lighting.',
+  'Use peel-and-stick paint samples. Samplize is the most popular option — they make large samples using real paint from Sherwin-Williams, Benjamin Moore, and other major brands. Sherwin-Williams also offers their own smaller peel-and-stick samples in many stores.',
+];
+
+const relatedLinks = [
+  { label: 'Interior Painting in Brevard County', href: '/services/interior-painting-brevard-county' },
+  { label: 'Cabinet Painting in Brevard County', href: '/services/cabinet-painting-brevard-county' },
+];
+---
+
+<Layout {title} {description} {ogImage}>
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-3xl space-y-10 text-base leading-relaxed text-charcoal sm:space-y-12 sm:text-lg">
+      <header class="space-y-4">
+        <figure class="-mx-4 overflow-hidden rounded-xl sm:mx-0">
+          <img
+            src={ogImage}
+            alt="Paint color swatches held against a sunlit Florida interior wall"
+            width={1200}
+            height={675}
+            class="aspect-[16/9] w-full object-cover"
+            loading="eager"
+          />
+        </figure>
+        <p class="text-sm font-medium text-purple">Homeowner Guidance</p>
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+          How Paint Colors Actually Affect How You Feel in Your Home
+        </h1>
+        <p class="text-sm text-muted">
+          If Walls Could Talk LLC · Brevard County, FL · Homeowner Guidance
+        </p>
+        <div class="space-y-4 text-muted">
+          <p>
+            Most people approach interior paint color the same way: they fall in love with a swatch, get it matched,
+            and hope for the best. Then the color goes on the wall and looks completely different from what they
+            expected — too dark, too cold, too blue, too purple.
+          </p>
+          <p>
+            Color selection is one of the trickier parts of interior painting. Not because there are a bunch of strict
+            rules, but because so many people don't realize how much lighting, undertones, and the rest of the room
+            affect how a color actually looks once it's on the wall.
+          </p>
+          <p>
+            Here's what I've learned from years of painting interiors — and from watching homeowners make the same few
+            mistakes.
+          </p>
+        </div>
+      </header>
+
+      <section class="space-y-4" aria-labelledby="feel-heading">
+        <h2 id="feel-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Color Isn't Just About Looks — It Changes How Rooms Feel
+        </h2>
+        <p>
+          This isn't design theory. It's practical. The colors on your walls affect how big or small a room feels, how
+          warm or cool it reads, and how energized or calm you feel in the space. In Florida especially, where we have
+          intense light year-round, how a color actually feels in the room matters a lot.
+        </p>
+        <p>Most of the research on color psychology is consistent on a few core points:</p>
+        <ul class="list-disc space-y-2 pl-6">
+          {colorPsychologyItems.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+        <p>
+          None of this is absolute — context changes everything. But it's a useful starting point before you pick up a
+          fan deck.
+        </p>
+      </section>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section class="space-y-8" aria-labelledby="common-colors-heading">
+        <h2 id="common-colors-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Common Colors and What They Actually Do
+        </h2>
+
+        <div class="space-y-4">
+          <h3 class="font-display text-xl font-semibold sm:text-2xl">Whites and Off-Whites</h3>
+          <p>
+            White is the most popular interior color in the US and also the most misunderstood. There is no such thing
+            as "just white." Every white has an undertone — pink, yellow, green, blue, gray — and that undertone reacts
+            to the light in your room. A white that looks crisp and clean in the store can look dingy, pink, or cold on
+            your walls depending on your lighting and what else is in the room.
+          </p>
+          <p>
+            Off-whites and warm whites (with yellow or cream undertones) tend to feel softer and more livable. In
+            Florida's bright light, cool whites can sometimes look harsh or sterile.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h3 class="font-display text-xl font-semibold sm:text-2xl">Blues and Greens</h3>
+          <p>
+            These are the most popular choices in Florida homes, and for good reason. Blues and greens feel calming,
+            connect naturally to the coastal environment, and hold up well visually in strong sunlight. Lighter shades
+            make rooms feel open and airy. Deeper shades — navy, hunter green, sage — have become popular as statement
+            walls and work well in rooms that get a lot of natural light.
+          </p>
+          <p>
+            Watch the undertones here too. Some blues have purple undertones that become more visible in artificial
+            light. Some greens turn yellowish in direct sun. Test in your actual space before committing.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h3 class="font-display text-xl font-semibold sm:text-2xl">Grays</h3>
+          <p>
+            Gray had a long run as the default "safe" neutral and it's still everywhere. The problem in Florida is that
+            many grays read colder and more industrial under our bright light than they do in showrooms or online. The
+            wrong gray — especially in a room with north-facing windows — can make a space feel sterile instead of
+            sophisticated.
+          </p>
+          <p>
+            Warm grays (with beige or taupe undertones, sometimes called "greige") tend to work better in Florida
+            interiors. Cool, blue-toned grays are harder to make work unless you have very warm artificial lighting or
+            very specific design intentions.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h3 class="font-display text-xl font-semibold sm:text-2xl">Warm Neutrals — Beige, Taupe, Greige</h3>
+          <p>
+            Warm neutrals are workhorses. They work in almost every room, read differently depending on the light, and
+            are forgiving enough to let furniture and artwork be the statement. In Florida they tend to feel
+            comfortable and livable without being boring — which is why they've never really gone out of style here even
+            when gray was dominating everywhere else.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h3 class="font-display text-xl font-semibold sm:text-2xl">
+            Bold Colors — Deep Greens, Navy, Terracotta, Black
+          </h3>
+          <p>
+            Bold colors used well can make a room feel intentional and sophisticated. Used wrong, they feel
+            overwhelming or trendy in a way that ages quickly. A few things that help: bold colors work better in
+            rooms with good natural light, they almost always need more coats to apply properly (budget for it), and
+            they tend to work best as part of a full room concept rather than a standalone decision.
+          </p>
+          <p>
+            Black ceilings and dark accent walls are genuinely popular right now and they work in the right context. If
+            you want to try it, test it. Don't commit to an entire room based on a paint chip.
+          </p>
+        </div>
+      </section>
+
+      <section class="space-y-4" aria-labelledby="florida-light-heading">
+        <h2 id="florida-light-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Florida Light Is Different — and It Changes Everything
+        </h2>
+        <p>This is the part most national paint advice gets wrong for Florida homeowners.</p>
+        <p>
+          Florida's intense, direct sunlight affects how colors appear on your walls. The same color can look
+          noticeably different depending on the time of day, which direction the windows face, and the other elements in
+          the room.
+        </p>
+        <p>
+          This is exactly why testing samples in your actual home is so important — there's no perfect rule that works
+          for every room.
+        </p>
+        <p>A few things this means in practice:</p>
+        <ul class="list-disc space-y-2 pl-6">
+          {floridaLightItems.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </section>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section class="space-y-8" aria-labelledby="practical-tips-heading">
+        <h2 id="practical-tips-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Practical Tips Before You Paint
+        </h2>
+
+        <div class="space-y-4">
+          <h3 class="font-display text-xl font-semibold sm:text-2xl">Test your samples properly</h3>
+          <p>
+            The best way to see how a color will actually look is to test it in your own room under different lighting
+            conditions.
+          </p>
+          <p>Here are the most practical options:</p>
+          <ul class="list-disc space-y-2 pl-6">
+            {sampleTestOptions.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+          <p>
+            Whichever method you choose, look at the samples in morning light, midday, late afternoon, and at night
+            with your regular lights on. Florida lighting changes colors significantly.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h3 class="font-display text-xl font-semibold sm:text-2xl">A good trick for spotting undertones</h3>
+          <p>
+            Take the paint swatch you're considering and hold it next to strong primary colors — a bright red, blue, and
+            yellow (or even a pure white). This makes the undertone much more obvious. If the swatch picks up a
+            greenish or bluish cast next to them, it has cool undertones. If it looks slightly yellow, orange, or
+            pink, it has warm undertones. This quick test at the paint store can save you from big surprises once the
+            color is on the wall.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h3 class="font-display text-xl font-semibold sm:text-2xl">Consider what you're not changing</h3>
+          <p>
+            Your flooring, your cabinets, your furniture — those stay. Any color you choose has to work with what's
+            already in the room. Pull the undertones from your fixed elements and match to those, not just to what you
+            love in isolation.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h3 class="font-display text-xl font-semibold sm:text-2xl">Sheen affects how color reads</h3>
+          <p>
+            Higher sheen (satin, semi-gloss) reflects more light, which makes colors look slightly lighter and more
+            intense. Flat and matte finishes absorb light and make colors read slightly darker and more muted.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h3 class="font-display text-xl font-semibold sm:text-2xl">Ceilings matter more than most people think</h3>
+          <p>
+            Painting ceilings bright white when the walls are a saturated color can create a jarring visual break. A
+            ceiling color that's a slightly lighter version of the wall color, or a warm white that picks up the
+            undertone, tends to feel more cohesive.
+          </p>
+        </div>
+
+        <aside class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+          <p class="text-base sm:text-lg">
+            <span class="font-semibold text-charcoal">The single most common color mistake I see:</span> Choosing a
+            color based on a photo online, getting it matched at the store, and skipping the sample test. Photos of
+            rooms are taken in controlled lighting, often color-corrected. Your room is not that room. Always test in
+            your actual space.
+          </p>
+        </aside>
+      </section>
+
+      <section
+        class="space-y-5 rounded-xl border border-purple/20 bg-purple/5 p-6 sm:p-8"
+        aria-labelledby="color-cta-heading"
+      >
+        <h2 id="color-cta-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Not Sure Where to Start with Color?
+        </h2>
+        <p>
+          That's what color consultation is for. Fill out the form on our{' '}
+          <a href="/contact" class="font-semibold text-purple transition-colors hover:text-coral">contact page</a>{' '}
+          or call or text{' '}
+          <a href={phoneHref} class="font-semibold text-purple transition-colors hover:text-coral">{phone}</a>{' '}
+          and we can talk through your space before you commit to anything.
+        </p>
+      </section>
+
+      <nav class="space-y-4" aria-labelledby="see-also-heading">
+        <h2 id="see-also-heading" class="font-display text-2xl font-semibold sm:text-3xl">See Also</h2>
+        <ul class="space-y-3">
+          {
+            relatedLinks.map((item) => (
+              <li>
+                <a href={item.href} class="font-medium text-purple transition-colors hover:text-coral">
+                  {item.label} →
+                </a>
+              </li>
+            ))
+          }
+          <li class="pt-2">
+            <a href="/blog" class="font-medium text-muted transition-colors hover:text-charcoal">
+              ← Back to the Blog
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </article>
+  </main>
+</Layout>

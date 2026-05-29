@@ -1,0 +1,172 @@
+---
+// Blog post: Florida and Brevard County painting license changes — what homeowners should know when hiring.
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Florida Painting License Law Change: What Brevard Homeowners Should Know';
+const description =
+  'Florida ended the state painting license requirement in 2021, and Brevard County local licenses stopped in July 2025. Here\'s what it means for homeowners hiring painters.';
+
+const ogImage = '/images/blog/florida-painting-license-law.jpg';
+
+const vettingItems = [
+  {
+    heading: 'They can clearly explain their process',
+    body: 'Ask: "Can you walk me through how you prepare surfaces before painting?" A good painter should describe pressure washing, mildew treatment, caulking, crack repair, and priming — and explain why these steps are especially important in coastal Florida.',
+  },
+  {
+    heading: 'They carry general liability insurance',
+    body: 'Ask to see their certificate of insurance for larger jobs to protect your property in case something goes wrong.',
+  },
+  {
+    heading: 'They provide a written scope of work',
+    body: 'Avoid vague agreements. You should receive a clear written outline of what is included.',
+  },
+  {
+    heading: 'They have verifiable local references',
+    body: 'Check their Google Business profile or ask for recent references from Brevard County homeowners. Look for feedback that mentions communication, preparation, and follow-through.',
+  },
+];
+---
+
+<Layout {title} {description} {ogImage}>
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-3xl space-y-10 text-base leading-relaxed text-charcoal sm:space-y-12 sm:text-lg">
+      <header class="space-y-4">
+        <figure class="-mx-4 overflow-hidden rounded-xl sm:mx-0">
+          <img
+            src={ogImage}
+            alt="Scales of justice in front of a well-painted Florida home exterior"
+            width={1200}
+            height={675}
+            class="aspect-[16/9] w-full object-cover"
+            loading="eager"
+          />
+        </figure>
+        <p class="text-sm font-medium text-purple">Homeowner Guidance</p>
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+          Florida Removed the Painting License Requirement. Here's What That Actually Means.
+        </h1>
+        <p class="text-lg text-muted sm:text-xl">
+          Brevard County Painting Contractor License Changes: What Homeowners Need to Know
+        </p>
+        <p class="text-sm text-muted">
+          If Walls Could Talk LLC · Brevard County, FL · Homeowner Guidance
+        </p>
+        <div class="space-y-4 text-muted">
+          <p>
+            In 2021, Florida eliminated the state requirement for a painting contractor license. Then in July 2025,
+            Brevard County ended its local license requirement for painting as well.
+          </p>
+          <p>
+            Today, there is no state or local license required to offer painting services in Brevard County. This means
+            homeowners have more options — but it also makes it even more important to carefully vet the painters you
+            hire.
+          </p>
+          <p>
+            The right crew will stand out through clear communication, solid references, attention to detail, and a
+            strong track record of reliable work. When there's no license requirement, taking time to choose carefully
+            protects your home and your investment.
+          </p>
+        </div>
+      </header>
+
+      <section class="space-y-4" aria-labelledby="law-heading">
+        <h2 id="law-heading" class="font-display text-2xl font-semibold sm:text-3xl">What the Law Actually Says</h2>
+        <p>
+          The 2021 change came through House Bill 735, which classified painting as a specialty trade the state does not
+          regulate. It also prohibited local governments from creating their own licensing rules for it. Senate Bill
+          1142, effective July 1, 2025, closed the remaining gaps.
+        </p>
+        <p>
+          As a result, painting is no longer a licensed trade at either the state or local level in Brevard County. This
+          is clear statewide law, not a gray area.
+        </p>
+      </section>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section class="space-y-4" aria-labelledby="homeowners-heading">
+        <h2 id="homeowners-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What This Means for Homeowners
+        </h2>
+        <p>
+          Licenses used to provide a basic level of screening. They required exams, insurance, and proof of financial
+          responsibility. That filter no longer exists for painting.
+        </p>
+        <p>
+          This doesn't mean quality painters have disappeared — plenty of good ones are still out there. It simply means
+          the responsibility for choosing wisely now rests more fully with you as the homeowner.
+        </p>
+        <p>
+          In Florida's challenging climate (high humidity, salt air, heavy rain, and intense sun), a poorly done paint
+          job fails faster and costs more to fix later. That's why vetting matters more than ever.
+        </p>
+      </section>
+
+      <section class="space-y-8" aria-labelledby="look-for-heading">
+        <h2 id="look-for-heading" class="font-display text-2xl font-semibold sm:text-3xl">What to Look for Instead</h2>
+        <p>
+          Since a painting license is no longer part of the picture, focus on these practical signs of a professional
+          crew:
+        </p>
+        {
+          vettingItems.map((item) => (
+            <div class="space-y-3">
+              <h3 class="font-display text-xl font-semibold sm:text-2xl">{item.heading}</h3>
+              <p>{item.body}</p>
+            </div>
+          ))
+        }
+      </section>
+
+      <section
+        class="space-y-5 rounded-xl border border-purple/20 bg-purple/5 p-6 sm:p-8"
+        aria-labelledby="homeowner-tips-heading"
+      >
+        <h2 id="homeowner-tips-heading" class="font-display text-2xl font-semibold sm:text-3xl">Homeowner Tips</h2>
+        <p>
+          For a deeper walkthrough on hiring in Brevard County — questions to ask, what good prep looks like, and what to
+          expect during your project — start with our{' '}
+          <a
+            href="/homeowner-guide"
+            class="font-semibold text-purple transition-colors hover:text-coral"
+          >
+            Homeowner Guide
+          </a>
+          .
+        </p>
+        <p>
+          Ready to talk about your home? Fill out the form on our{' '}
+          <a href="/contact" class="font-semibold text-purple transition-colors hover:text-coral">contact page</a>.
+        </p>
+      </section>
+
+      <nav class="space-y-4" aria-labelledby="see-also-heading">
+        <h2 id="see-also-heading" class="font-display text-2xl font-semibold sm:text-3xl">See Also</h2>
+        <ul class="space-y-3">
+          <li>
+            <a
+              href="/homeowner-guide/hiring-a-painter-brevard-county"
+              class="font-medium text-purple transition-colors hover:text-coral"
+            >
+              Hiring a Painter in Brevard County →
+            </a>
+          </li>
+          <li>
+            <a
+              href="/homeowner-guide/questions-to-ask-before-you-hire"
+              class="font-medium text-purple transition-colors hover:text-coral"
+            >
+              Questions to Ask Before You Hire →
+            </a>
+          </li>
+          <li class="pt-2">
+            <a href="/blog" class="font-medium text-muted transition-colors hover:text-charcoal">
+              ← Back to the Blog
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </article>
+  </main>
+</Layout>

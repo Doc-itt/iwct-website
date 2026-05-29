@@ -1,13 +1,74 @@
 ---
+// Blog index: lists published posts. Add new entries to the posts array as articles go live.
 import Layout from '../../layouts/Layout.astro';
+
+const title = 'Blog | If Walls Could Talk — Brevard County Painting';
+const description =
+  'Practical painting advice for Brevard County homeowners — color, prep, products, and what to expect from a quality paint job in Florida.';
+
+const posts = [
+  {
+    title: "Florida Removed the Painting License Requirement. Here's What That Actually Means.",
+    excerpt:
+      'State and Brevard County painting licenses are gone — what changed in 2021 and 2025, and what to look for when you hire.',
+    href: '/blog/florida-painting-contractor-license-changes-brevard',
+    image: '/images/blog/florida-painting-license-law.jpg',
+    imageAlt: 'Scales of justice in front of a well-painted Florida home exterior',
+    category: 'Homeowner Guidance',
+  },
+  {
+    title: 'How Paint Colors Actually Affect How You Feel in Your Home',
+    excerpt:
+      'Why swatches lie, how Florida light changes everything, and practical tips for testing color before you commit to the wall.',
+    href: '/blog/how-paint-colors-affect-how-you-feel',
+    image: '/images/blog/paint-colors-feel-home.jpg',
+    imageAlt: 'Paint color swatches held against a sunlit Florida interior wall',
+    category: 'Homeowner Guidance',
+  },
+];
 ---
 
-<Layout
-  title="Blog | If Walls Could Talk — Brevard County Painting"
-  description="Painting insights and practical advice for Brevard County homeowners."
->
-  <section class="page-container py-16 sm:py-24">
-    <h1 class="font-display text-3xl font-semibold sm:text-4xl">Blog - Coming Soon</h1>
-    <p class="mt-4 text-muted">This page is under construction. Content coming soon.</p>
-  </section>
+<Layout {title} {description}>
+  <main class="page-container py-12 sm:py-16">
+    <header class="mx-auto max-w-3xl space-y-4">
+      <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl">Blog</h1>
+      <p class="text-lg text-muted sm:text-xl">
+        Practical advice for Brevard County homeowners — color, prep, products, and what actually holds up in Florida.
+      </p>
+    </header>
+
+    <ul class="mx-auto mt-10 max-w-3xl space-y-6 sm:mt-12">
+      {
+        posts.map((post) => (
+          <li>
+            <a
+              href={post.href}
+              class="group block overflow-hidden rounded-xl border border-charcoal/10 bg-white/60 transition-colors hover:border-purple/30 hover:bg-white/80"
+            >
+              <div class="aspect-[16/9] overflow-hidden bg-charcoal/5">
+                <img
+                  src={post.image}
+                  alt={post.imageAlt}
+                  width={1200}
+                  height={675}
+                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                  loading="lazy"
+                />
+              </div>
+              <div class="space-y-2 p-5 sm:p-6">
+                <p class="text-sm font-medium text-purple">{post.category}</p>
+                <h2 class="font-display text-xl font-semibold text-charcoal transition-colors group-hover:text-purple sm:text-2xl">
+                  {post.title}
+                </h2>
+                <p class="text-sm leading-relaxed text-muted sm:text-base">{post.excerpt}</p>
+                <p class="pt-1 text-sm font-medium text-purple transition-colors group-hover:text-coral">
+                  Read article →
+                </p>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
 </Layout>
