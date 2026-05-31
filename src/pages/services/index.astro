@@ -1,5 +1,6 @@
 ---
 // Services hub page: outlines IWCT service categories and included services for Brevard County homeowners.
+import FaqSection from '../../components/FaqSection.astro';
 import Layout from '../../layouts/Layout.astro';
 
 const siteUrl = 'https://ifwallscouldtalkllc.com';
@@ -50,9 +51,9 @@ const categories = [
     ],
   },
   {
-    title: 'Cabinet and Wood Finishing',
+    title: 'Specialty Finishes & Woodwork',
     intro:
-      'Cabinet painting and wood refinishing — a practical way to update kitchens, bathrooms, and other wood surfaces without a full remodel.',
+      'Cabinet painting, wood refinishing, and specialty finishes — a practical way to update kitchens, bathrooms, and other wood surfaces without a full remodel.',
     services: [
       {
         label: 'Cabinet Painting (Kitchen and Bathroom)',
@@ -126,7 +127,7 @@ const serviceSchema = {
   '@id': `${siteUrl}/services/#service`,
   name: 'Residential Painting Services in Brevard County',
   description:
-    'Exterior painting, interior painting, cabinet and wood finishing, and outdoor living concrete coating services for homeowners in Brevard County, Florida.',
+    'Exterior painting, interior painting, specialty finishes and woodwork, and outdoor living concrete coating services for homeowners in Brevard County, Florida.',
   serviceType: 'Residential painting services',
   areaServed: {
     '@type': 'AdministrativeArea',
@@ -205,23 +206,7 @@ const serviceSchema = {
         </ul>
       </section>
 
-      <section aria-labelledby="services-faq-heading" class="space-y-6">
-        <h2 id="services-faq-heading" class="font-display text-2xl font-semibold sm:text-3xl">
-          Common Questions
-        </h2>
-        <ul class="space-y-4">
-          {faqs.map((item) => (
-            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
-              <h3 class="font-display text-lg font-semibold text-charcoal sm:text-xl">{item.question}</h3>
-              {item.answerHtml ? (
-                <p class="mt-2 text-sm leading-relaxed text-muted sm:text-base" set:html={item.answer}></p>
-              ) : (
-                <p class="mt-2 text-sm leading-relaxed text-muted sm:text-base">{item.answer}</p>
-              )}
-            </li>
-          ))}
-        </ul>
-      </section>
+      <FaqSection items={faqs} headingId="services-faq-heading" />
 
       <p class="border-t border-charcoal/10 pt-8 text-muted">
         Not sure where your project fits? <a href="/contact" class="font-medium text-purple transition-colors hover:text-coral">Contact page</a>, or call/text{' '}

@@ -14,6 +14,9 @@
 
 # Decisions
 
+## 2026-05-29
+- **Verify before changing SEO metadata or indexing.** Any change to page `title`, meta `description`, `noindex`, canonical, OG/Twitter tags, or JSON-LD requires explicit owner approval and a before/after summary. Documented in `docs/SEO_METADATA.md`; enforced for AI via `.cursor/rules/seo-metadata.mdc`. Site stays `noindex` until a deliberate launch step.
+
 ## 2026-05-18
 - **Use `.cursor/rules/main.mdc` instead of legacy `.cursorrules`.** Cursor's modern format; lets us scope rules by file type later; official recommendation.
 - **Tailwind v4 with `@theme` in `src/styles/global.css`; no separate `tailwind.config.js`.** This is the v4 best practice. Inherited from existing setup.

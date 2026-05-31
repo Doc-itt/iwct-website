@@ -1,5 +1,6 @@
 ---
 // Pool deck and concrete coating service page for Brevard County homeowners with process, options, tips, and FAQ.
+import FaqSection from '../../components/FaqSection.astro';
 import Layout from '../../layouts/Layout.astro';
 
 const title = 'Pool Deck Coatings Brevard County | If Walls Could Talk';
@@ -202,19 +203,7 @@ const faqSchema = {
         </ul>
       </section>
 
-      <section aria-labelledby="faq-heading" class="space-y-6">
-        <h2 id="faq-heading" class="font-display text-2xl font-semibold sm:text-3xl">
-          Common Questions
-        </h2>
-        <ul class="space-y-4">
-          {faqs.map((item) => (
-            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
-              <h3 class="font-display text-lg font-semibold sm:text-xl">{item.question}</h3>
-              <p class="mt-2 text-sm leading-relaxed text-muted sm:text-base">{item.answer}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <FaqSection items={faqs} />
     </article>
   </main>
 

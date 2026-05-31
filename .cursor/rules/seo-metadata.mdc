@@ -1,0 +1,32 @@
+---
+description: Verify before changing titles, meta tags, or anything that affects Google indexing
+alwaysApply: true
+---
+
+# SEO metadata — verify before changing
+
+The site is **not live for Google yet** (`noindex` is on in `src/layouts/Layout.astro`). Mistakes to titles, descriptions, or robots tags can hurt indexing after launch.
+
+## Required before any edit
+
+1. **Get explicit user approval** before changing:
+   - `<title>` / page `title` passed to `<Layout>`
+   - `<meta name="description">` / page `description`
+   - `<meta name="robots">` / `noindex` flag in `Layout.astro`
+   - `<link rel="canonical">`
+   - Open Graph or Twitter meta tags
+   - JSON-LD structured data in `Layout.astro` or page `<script type="application/ld+json">`
+
+2. **Show a before/after summary** (old value → new value) in your reply so the user can confirm nothing unintended changed.
+
+3. **Do not remove or flip `noindex`** unless the user explicitly says they are launching and want the site indexed. That change belongs in a dedicated launch step, not bundled with unrelated work.
+
+## Do not
+
+- Change metadata “while you’re here” on unrelated tasks.
+- Copy the same title or description onto multiple pages.
+- Add `noindex` to individual pages without discussing impact on launch.
+
+## Reference
+
+Full checklist and launch notes: `docs/SEO_METADATA.md`

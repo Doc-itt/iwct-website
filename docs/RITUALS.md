@@ -102,6 +102,7 @@ Run a freshness audit on the docs/ folder. Don't change files yet.
 | `docs/PROJECT_BRIEF.md` | Static project facts | When the *business* changes (new phone, new service area, etc.) |
 | `docs/BRAND_RULES.md` | Voice + visual identity | When tone/colors/fonts change |
 | `docs/SEO_KEYWORDS.md` | SEO targets | When keyword strategy changes |
+| `docs/SEO_METADATA.md` | Titles, meta, indexing, launch gate | Before any metadata change; required at launch |
 | `docs/STATUS.md` | Current state snapshot | Every time something material changes |
 | `docs/SESSIONS.md` | Chronological session recaps | Every session (newest at top) |
 | `docs/DECISIONS.md` | Why we chose X over Y | Whenever a non-obvious choice is made |

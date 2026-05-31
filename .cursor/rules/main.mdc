@@ -12,5 +12,5 @@ These rules apply to every conversation in this project. Keep them short. Anythi
 - Add a comment at the top of every file explaining what it does.
 - Never remove existing content without confirming first.
 - Follow the tone and rules in `docs/BRAND_RULES.md`.
-- SEO: every page needs a unique title and meta description.
+- SEO: every page needs a unique title and meta description. **Never change titles, meta descriptions, `noindex`, canonical, or structured data without explicit user approval and a before/after summary** — see `docs/SEO_METADATA.md` and `.cursor/rules/seo-metadata.mdc`.
 - Break all suggestions into small steps and confirm before proceeding.

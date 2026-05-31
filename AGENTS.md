@@ -15,9 +15,10 @@ A static **Astro + Tailwind CSS** site for **If Walls Could Talk LLC**, a painti
 2. `docs/STATUS.md` — current state of the project (what's done, what's next). Note the `_Last verified_` date at the top.
 3. `docs/BRAND_RULES.md` — voice, tone, colors, fonts
 4. `docs/SEO_KEYWORDS.md` — SEO targets and topic clusters
-5. `docs/DECISIONS.md` — past calls that constrain new work (skim, full read if relevant to today's task)
-6. `docs/SESSIONS.md` — last 2–3 entries only, for recent context
-7. `docs/RITUALS.md` — start-of-session, end-of-session, and freshness rituals (you'll run these)
+5. `docs/SEO_METADATA.md` — **verify before changing titles, meta tags, or indexing** (required if touching Layout SEO)
+6. `docs/DECISIONS.md` — past calls that constrain new work (skim, full read if relevant to today's task)
+7. `docs/SESSIONS.md` — last 2–3 entries only, for recent context
+8. `docs/RITUALS.md` — start-of-session, end-of-session, and freshness rituals (you'll run these)
 
 ## Working rules
 - Confirm before creating, modifying, or deleting files.
@@ -26,4 +27,5 @@ A static **Astro + Tailwind CSS** site for **If Walls Could Talk LLC**, a painti
 - Use Astro + Tailwind CSS. Never use inline styles.
 - Follow the tone in `docs/BRAND_RULES.md`. No hard-sell, salesy, or hype language.
 - Every page must pass a unique `title` and `description` to `<Layout>` for SEO.
+- **Never change metadata or indexing settings without explicit approval** — show before/after; see `docs/SEO_METADATA.md`. Do not remove `noindex` unless the user is intentionally launching.
 - At the end of every working session, run the **wrap-up ritual** in `docs/RITUALS.md`.

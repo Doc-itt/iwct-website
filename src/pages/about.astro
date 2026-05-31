@@ -1,26 +1,39 @@
 ---
-// This page explains IWCT's approach, standards, and homeowner guidance in Brevard County.
+// About page: IWCT approach, standards, free resources, and FAQs for Brevard County homeowners.
 import Layout from '../layouts/Layout.astro';
+import FaqSection from '../components/FaqSection.astro';
 
 const title = 'About If Walls Could Talk | Brevard County Painters';
 const description =
   'Owner-operated Brevard County painting company with vetted local crews, high preparation standards, and honest communication. Learn how we deliver quality results built for Florida homes.';
 
+const phone = '(321) 557-6959';
+const phoneHref = 'tel:+13215576959';
+
+const includedItems = [
+  'Written scope of work before anything starts',
+  'Defined timelines and clear expectations upfront',
+  'Regular communication throughout the job',
+  'Thorough surface preparation',
+  "Materials selected for Florida's heat, humidity, salt air, and UV",
+  'A complete paint record at the end, documenting every product and color used',
+];
+
 const faqItems = [
   {
-    question: 'How does IWCT work in Brevard County?',
+    question: 'How is IWCT different from hiring a standard painting contractor?',
     answer:
-      'If Walls Could Talk works with a small group of vetted local crews and helps homeowners navigate projects with clearer expectations, stronger communication, and standards from start to finish.',
+      'Most painting projects rely on verbal agreements and inconsistent communication. IWCT introduces a defined scope, clearer expectations, and a structured process that stays consistent from start to finish.',
   },
   {
-    question: 'What should I expect from an IWCT painting project?',
+    question: 'How are crews selected for each project?',
     answer:
-      'Each project includes clear scope, defined timelines, regular updates, thorough prep, Florida-ready materials, vetted crews, and full paint records for future maintenance.',
+      'IWCT works with a small group of vetted local crews. Crews are selected based on reliability, workmanship standards, and consistency on past projects.',
   },
   {
-    question: 'Why does IWCT publish free homeowner resources?',
+    question: 'Do homeowners still make the final decisions on their project?',
     answer:
-      'Florida removed its painting license requirement in 2021. IWCT shares guides and checklists so Space Coast homeowners can ask better questions and avoid expensive mistakes.',
+      "Yes. Homeowners always approve the scope, materials, and timing before work begins. IWCT's role is to provide structure, clarity, and oversight throughout the process.",
   },
 ];
 
@@ -50,77 +63,106 @@ const serviceSchema = {
     name: 'Brevard County, Florida',
   },
 };
+
+const listClass = 'space-y-3 rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6';
+const listItemClass = 'flex items-start gap-3 text-sm sm:text-base';
+const bulletClass = 'mt-1 inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-purple';
+const inlineLinkClass = 'font-medium text-purple transition-colors hover:text-coral';
+const textLinkClass =
+  'text-sm font-medium text-purple underline-offset-4 transition-colors hover:text-coral hover:underline sm:text-base';
 ---
 
 <Layout title={title} description={description}>
   <main class="page-container py-12 sm:py-16">
     <article class="mx-auto max-w-4xl space-y-14 text-base leading-relaxed text-charcoal sm:text-lg">
       <header class="space-y-6">
-        <h1 class="font-display text-4xl font-semibold tracking-tight sm:text-5xl">About If Walls Could Talk</h1>
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          About If Walls Could Talk
+        </h1>
+        <p class="font-display text-xl font-medium text-charcoal sm:text-2xl">
+          Painting services and homeowner guidance built around clear standards and communication
+        </p>
       </header>
 
       <section class="space-y-5">
-        <h2 class="font-display text-2xl font-semibold sm:text-3xl">Painting Done With Clear Communication and Real Standards</h2>
-        <p>If Walls Could Talk was built because I realized I couldn’t personally paint every home in Brevard County, but I could make sure more homeowners still receive the level of care, preparation, and communication I believe every project deserves.</p>
-        <p>Too many painting projects in Florida are rushed, poorly prepped, or full of surprises once the job starts. I created IWCT to bring a different experience to Brevard County homeowners — one built on honesty, communication, and work that lasts.</p>
-        <p>My name is Heather, and I built this company through word-of-mouth from local homeowners who appreciated quality work and straightforward communication. No aggressive sales tactics. No lead-generation games. Just real relationships and projects done the right way.</p>
-        <p>I started out doing much of the painting work myself, which taught me exactly where most jobs go wrong: prep work gets skipped, materials get downgraded, and homeowners are often left in the dark until problems appear later.</p>
-        <p>That’s why IWCT focuses so heavily on standards, documentation, and homeowner education.</p>
+        <p>
+          If Walls Could Talk (IWCT) works with a small group of vetted local crews to help homeowners get better
+          outcomes on their painting projects. The focus is not just on the work itself, but on how the entire process
+          is handled.
+        </p>
+        <p>
+          My name is Heather. I spent years working on homes directly before IWCT became what it is today. I realized I
+          couldn't personally paint every home in Brevard County, so I built a system to make sure the work still gets
+          done the right way. My experience showed me exactly where things tend to break down. Prep gets skipped.
+          Materials get changed without explanation. Communication fades once the job starts. Most homeowners are never
+          shown what to ask, or what quality work should actually look like.
+        </p>
       </section>
 
-      <section class="space-y-5">
-        <h2 class="font-display text-2xl font-semibold sm:text-3xl">How IWCT Works</h2>
-        <p>If Walls Could Talk works with a small group of vetted local crews to help homeowners navigate their painting projects with better communication, clearer expectations, and higher standards from start to finish.</p>
-        <p>The goal is simple: help homeowners understand exactly what’s being done, why it matters, and what quality work should actually look like — while making the entire process smoother, more transparent, and less stressful.</p>
-      </section>
+      <div class="watercolor-divider" aria-hidden="true"></div>
 
-      <section class="space-y-5">
-        <h2 class="font-display text-2xl font-semibold sm:text-3xl">What You Can Expect</h2>
+      <section class="space-y-5" aria-labelledby="what-you-can-expect-heading">
+        <h2 id="what-you-can-expect-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What You Can Expect
+        </h2>
         <p>Every project includes:</p>
-        <ul class="list-disc space-y-2 pl-6">
-          <li>A clear scope of work before the project begins</li>
-          <li>Defined timelines and expectations</li>
-          <li>Regular communication and project updates</li>
-          <li>Thorough surface preparation</li>
-          <li>Materials selected for Florida’s climate and conditions</li>
-          <li>Carefully vetted local crews</li>
-          <li>Clear explanations of the preparation process, materials, and recommended solutions — not vague contractor language or rushed decisions</li>
-          <li>A complete paint record documenting all products and colors used for future maintenance and touch-ups</li>
+        <ul class={listClass}>
+          {
+            includedItems.map((item) => (
+              <li class={listItemClass}>
+                <span class={bulletClass} aria-hidden="true"></span>
+                <span>{item}</span>
+              </li>
+            ))
+          }
         </ul>
+        <div class="flex justify-center pt-2 sm:pt-4">
+          <a href="/contact" class="btn-primary text-center">Work with IWCT on your project</a>
+        </div>
       </section>
 
-      <section class="space-y-5">
-        <h2 class="font-display text-2xl font-semibold sm:text-3xl">Why I Share So Much Free Information</h2>
-        <p>Florida removed its painting license requirement in 2021, which means anyone can buy a brush and call themselves a painter. Most homeowners have no idea.</p>
-        <p>That’s one of the reasons I created the guides, checklists, and educational resources on this site.</p>
-        <p>Even if you never hire IWCT, I want you to understand:</p>
-        <ul class="list-disc space-y-2 pl-6">
-          <li>what quality work actually looks like,</li>
-          <li>what questions to ask,</li>
-          <li>and how to protect yourself from expensive mistakes.</li>
-        </ul>
-        <p>An educated homeowner makes better decisions, gets better results, and has a much smoother experience overall.</p>
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section class="space-y-5" aria-labelledby="free-information-heading">
+        <h2 id="free-information-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Why This Site Has So Much Free Information
+        </h2>
+        <p>
+          Florida removed its state painting license requirement in 2021. There's no longer an official filter between a
+          homeowner and whoever shows up with a brush. Most people don't know that.
+        </p>
+        <p>
+          That's why I built out the guides and resources here. Even if you never hire IWCT, I want you to know what
+          good prep looks like, what questions to ask, and how to spot a job done right.
+        </p>
+        <p class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm sm:text-base">
+          <a href="/homeowner-guide" class={textLinkClass}>Browse the Homeowner Guide →</a>
+          <span class="text-muted" aria-hidden="true">·</span>
+          <a href="/blog/florida-painting-contractor-license-changes-brevard" class={textLinkClass}>
+            Read about the license change →
+          </a>
+        </p>
       </section>
 
-      <section class="space-y-5">
-        <h2 class="font-display text-2xl font-semibold sm:text-3xl">Let’s Talk About Your Project</h2>
-        <p>Whether you’re planning interior painting, exterior painting, cabinet refinishing, or just looking for honest guidance before hiring a painter, I’m here to help.</p>
-        <p>IWCT proudly serves homeowners throughout Brevard County, including Melbourne, Palm Bay, Titusville, Merritt Island, and surrounding areas.</p>
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section class="space-y-5" aria-labelledby="ready-to-talk-heading">
+        <h2 id="ready-to-talk-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Ready to Talk About Your Project?
+        </h2>
+        <p>
+          Interior, exterior, cabinets, pool deck — or just an honest answer before you hire anyone. Reach out through the
+          contact page or call/text directly. No pressure, no obligation.
+        </p>
+        <p class="flex flex-wrap items-center gap-x-2 gap-y-1">
+          <a href="/contact" class={inlineLinkClass}>Send a message →</a>
+          <span class="text-muted">or call/text</span>
+          <a href={phoneHref} class={inlineLinkClass}>{phone}</a>
+        </p>
+        <p class="text-muted">We serve all of Brevard County.</p>
       </section>
 
-      <section class="space-y-6 border-t border-charcoal/10 pt-10">
-        <h2 class="font-display text-2xl font-semibold sm:text-3xl">Frequently Asked Questions</h2>
-        <dl class="space-y-6">
-          {faqItems.map((item) => (
-            <div>
-              <dt>
-                <h3 class="text-lg font-semibold text-charcoal">{item.question}</h3>
-              </dt>
-              <dd class="mt-2 text-muted">{item.answer}</dd>
-            </div>
-          ))}
-        </dl>
-      </section>
+      <FaqSection items={faqItems} headingId="about-faq-heading" />
     </article>
   </main>
 

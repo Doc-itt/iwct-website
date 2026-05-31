@@ -1,0 +1,40 @@
+---
+// Branded 404 page: friendly message and link back to the homepage.
+import Layout from '../layouts/Layout.astro';
+
+const title = 'Page Not Found | If Walls Could Talk';
+const description =
+  'This page could not be found. Return to If Walls Could Talk for Brevard County painting services, guides, and contact information.';
+---
+
+<Layout {title} {description}>
+  <main class="page-container py-12 sm:py-20">
+    <article class="mx-auto max-w-2xl text-center">
+      <a href="/" class="inline-block" aria-label="If Walls Could Talk — home">
+        <img
+          src="/logotransparent.png"
+          alt="If Walls Could Talk"
+          width="220"
+          height="auto"
+          class="mx-auto h-auto w-44 sm:w-52"
+          loading="eager"
+        />
+      </a>
+
+      <div class="watercolor-divider mx-auto mt-8 max-w-xs" aria-hidden="true"></div>
+
+      <p class="mt-8 font-display text-6xl font-semibold tracking-tight text-purple/90 sm:text-7xl" aria-hidden="true">
+        404
+      </p>
+      <h1 class="mt-4 font-display text-2xl font-semibold tracking-tight text-charcoal sm:text-3xl">
+        This page isn’t here
+      </h1>
+      <p class="mt-4 text-base leading-relaxed text-muted sm:text-lg">
+        The link may be outdated or the address was typed wrong. You can head back to the homepage to explore our
+        services, homeowner guide, and contact options.
+      </p>
+
+      <a href="/" class="btn-primary mt-10 inline-flex">Back to Home</a>
+    </article>
+  </main>
+</Layout>
