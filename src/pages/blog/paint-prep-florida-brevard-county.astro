@@ -1,0 +1,230 @@
+---
+// Blog post: what proper paint prep looks like in Florida and why it matters in Brevard County.
+import { Image } from 'astro:assets';
+import Layout from '../../layouts/Layout.astro';
+import heroImage from '../../assets/blog/paint-prep-florida-brevard.jpg';
+
+const title = 'What Good Paint Prep Really Looks Like in Florida (Brevard County Guide)';
+const description =
+  "Florida's climate destroys paint fast if prep is skipped. Here's what proper preparation actually involves in Brevard County — and why it matters more here than almost anywhere else.";
+
+const ogImage = '/images/blog/paint-prep-florida-brevard.jpg';
+
+const floridaChallenges = [
+  'Intense UV rays break down paint faster here than in almost any other state.',
+  'Constant high humidity slows curing and feeds mildew.',
+  'Salt air near the coast eats away at coatings and metal.',
+  'Big temperature swings cause surfaces to expand and contract daily.',
+  'Frequent heavy rains drive moisture into any small weakness.',
+];
+
+const skipConsequences = [
+  'Mildew grows back through the new paint',
+  'Paint peels in sheets because it was applied over dirt or chalk',
+  'Water gets behind walls through bad caulk, causing bubbling and interior damage',
+  'Stucco cracks widen and create bigger problems',
+  'Cabinets and trim chip at every edge that gets touched',
+];
+
+const seeAlsoLinks = [
+  { label: 'Homeowner Guide', href: '/homeowner-guide' },
+  { label: 'Hiring a Painter in Brevard County', href: '/homeowner-guide/hiring-a-painter-brevard-county' },
+  { label: 'Questions to Ask Before You Hire', href: '/homeowner-guide/questions-to-ask-before-you-hire' },
+  {
+    label: 'Florida Painting License Law Change',
+    href: '/blog/florida-painting-contractor-license-changes-brevard',
+  },
+];
+
+const linkClass = 'font-semibold text-purple transition-colors hover:text-coral';
+---
+
+<Layout {title} {description} {ogImage}>
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-3xl space-y-10 text-base leading-relaxed text-charcoal sm:space-y-12 sm:text-lg">
+      <header class="space-y-4">
+        <figure class="-mx-4 overflow-hidden rounded-xl sm:mx-0">
+          <Image
+            src={heroImage}
+            alt="Painter pressure-washing and prepping the stucco exterior of a Florida home in Brevard County"
+            widths={[480, 640, 768, 1200]}
+            sizes="(max-width: 768px) 100vw, 768px"
+            class="aspect-[16/9] w-full object-cover"
+            loading="eager"
+            decoding="async"
+          />
+        </figure>
+        <p class="text-sm font-medium text-purple">Homeowner Guidance</p>
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+          What &ldquo;Good Prep&rdquo; Actually Looks Like in Florida — And Why It&rsquo;s Non-Negotiable
+        </h1>
+        <p class="text-sm text-muted">
+          If Walls Could Talk LLC · Brevard County, FL · Homeowner Guidance
+        </p>
+        <div class="space-y-4 text-muted">
+          <p>
+            If you&rsquo;ve ever had paint start peeling within a couple of years, or watched a brand-new paint job turn
+            chalky and faded way too soon, the problem was probably not the paint itself.
+          </p>
+          <p>It was the prep.</p>
+          <p>
+            In Florida, prep isn&rsquo;t just a step — it&rsquo;s one of the most important parts of the job.
+            Here&rsquo;s why it matters so much in Brevard County, and what good prep actually looks like.
+          </p>
+        </div>
+      </header>
+
+      <section class="space-y-4" aria-labelledby="why-florida-heading">
+        <h2 id="why-florida-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Why Florida Makes Prep So Critical
+        </h2>
+        <p>
+          Most of the country has one or two weather challenges. Florida gives paint every challenge at once,
+          year-round — and each one compounds the others:
+        </p>
+        <ul class="list-disc space-y-2 pl-6">
+          {floridaChallenges.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+        <p>
+          Because of this, cutting corners on prep doesn&rsquo;t just shorten the paint job — it can cause major damage
+          that shows up within 2–3 years instead of 8–10+.
+        </p>
+      </section>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section class="space-y-8" aria-labelledby="proper-prep-heading">
+        <h2 id="proper-prep-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What Proper Prep Actually Involves in Brevard
+        </h2>
+        <p>
+          When a painter says they&rsquo;ll &ldquo;prep the house,&rdquo; it can mean almost nothing — or it can mean the
+          difference between a job that lasts and one that fails. Here&rsquo;s what good prep should include:
+        </p>
+
+        <div class="space-y-3">
+          <h3 class="font-display text-xl font-semibold sm:text-2xl">Pressure Washing + Mildew Treatment</h3>
+          <p>
+            A real pressure wash removes dirt, chalky residue, and loose paint. But washing alone doesn&rsquo;t kill
+            mildew. In Florida, you also need a proper mildewcide treatment. If the roots aren&rsquo;t killed, that black
+            and green growth will push through your new paint within months.
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <h3 class="font-display text-xl font-semibold sm:text-2xl">Caulking and Sealing</h3>
+          <p>
+            Every window, door, and penetration needs to be inspected. Cracked, missing, or hardened caulk lets water
+            behind the walls — one of the biggest causes of hidden damage in Brevard homes. Fresh, flexible caulk that
+            can handle our temperature swings is essential.
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <h3 class="font-display text-xl font-semibold sm:text-2xl">Stucco Crack Repair</h3>
+          <p>
+            Most homes here have stucco. Small cracks need to be cleaned out and properly filled before painting.
+            Painting over active cracks just traps water and makes the problem worse over time.
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <h3 class="font-display text-xl font-semibold sm:text-2xl">Priming the Right Way</h3>
+          <p>Primer is not optional on most Florida jobs. You need the correct primer for each surface:</p>
+          <ul class="list-disc space-y-2 pl-6">
+            <li>Bare stucco needs a good bonding or moisture-blocking primer</li>
+            <li>Wood needs a penetrating primer to stop tannin bleed</li>
+            <li>Metal needs rust-inhibiting primer</li>
+          </ul>
+          <p>
+            Skipping or using the wrong primer is one of the fastest ways to get peeling paint in our climate.
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <h3 class="font-display text-xl font-semibold sm:text-2xl">Interior Prep</h3>
+          <p>
+            Exterior surfaces get most of the attention in Florida, but interior prep has its own set of requirements —
+            and they get skipped just as often. Walls, ceilings, trim, and cabinets each need different treatment: glossy
+            surfaces like cabinets and doors must be sanded or chemically deglossed so new paint can stick, trim needs
+            cleaning and light sanding, and walls need hole fills and skim work before a single drop of paint goes on.
+            Skip any of it and you&rsquo;ll see chipping, peeling, and uneven finish within a year. We&rsquo;ll cover
+            interior prep in detail in a separate post.
+          </p>
+        </div>
+      </section>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section class="space-y-4" aria-labelledby="skipped-prep-heading">
+        <h2 id="skipped-prep-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What Happens When Prep Gets Skipped
+        </h2>
+        <ul class="list-disc space-y-2 pl-6">
+          {skipConsequences.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+        <p>
+          The sad part? Fixing these issues later always costs more than doing the prep correctly in the first place.
+        </p>
+      </section>
+
+      <section
+        class="space-y-4 rounded-xl border border-purple/20 bg-purple/5 p-6 sm:p-8"
+        aria-labelledby="homeowner-tip-heading"
+      >
+        <h2 id="homeowner-tip-heading" class="font-display text-2xl font-semibold sm:text-3xl">Homeowner Tip</h2>
+        <p>
+          Take a quick walk around your house and check the caulk around your windows and doors. If it&rsquo;s cracked,
+          shrunk, or pulling away, that&rsquo;s water waiting to get inside. Fix it before it becomes a bigger (and more
+          expensive) problem.
+        </p>
+      </section>
+
+      <section class="space-y-4" aria-labelledby="bottom-line-heading">
+        <h2 id="bottom-line-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          The Bottom Line for Brevard Homes
+        </h2>
+        <p>
+          Proper prep is what separates a paint job that looks good for a few years from one that still looks solid 8–10
+          years later in Brevard County. Florida&rsquo;s climate doesn&rsquo;t forgive shortcuts.
+        </p>
+        <p>
+          If you&rsquo;ve seen paint fail early on your own home, there&rsquo;s a very good chance prep (or lack of it)
+          was the real reason.
+        </p>
+        <p>
+          Check out our{' '}
+          <a href="/homeowner-guide" class={linkClass}>Homeowner Guide</a> for{' '}
+          <a href="/homeowner-guide/hiring-a-painter-brevard-county" class={linkClass}>
+            tips on hiring a painter in Brevard County
+          </a>
+          .
+        </p>
+      </section>
+
+      <nav class="space-y-4" aria-labelledby="see-also-heading">
+        <h2 id="see-also-heading" class="font-display text-2xl font-semibold sm:text-3xl">See Also</h2>
+        <ul class="space-y-3">
+          {
+            seeAlsoLinks.map((item) => (
+              <li>
+                <a href={item.href} class="font-medium text-purple transition-colors hover:text-coral">
+                  {item.label} →
+                </a>
+              </li>
+            ))
+          }
+          <li class="pt-2">
+            <a href="/blog" class="font-medium text-muted transition-colors hover:text-charcoal">
+              ← Back to the Blog
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </article>
+  </main>
+</Layout>

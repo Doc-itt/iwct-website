@@ -9,12 +9,15 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "optimize:service-images": "node scripts/optimize-service-images.mjs",
+    "optimize:blog-images": "node scripts/optimize-blog-images.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
     "@tailwindcss/vite": "^4.3.0",
     "astro": "^6.3.8",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4.3.0"
   }
 }

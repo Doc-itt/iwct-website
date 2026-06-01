@@ -1,6 +1,10 @@
 ---
 // Blog index: lists published posts. Add new entries to the posts array as articles go live.
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
+import paintPrepFlorida from '../../assets/blog/paint-prep-florida-brevard.jpg';
+import floridaPaintingLicense from '../../assets/blog/florida-painting-license-law.jpg';
+import paintColorsFeelHome from '../../assets/blog/paint-colors-feel-home.jpg';
 
 const title = 'Blog | If Walls Could Talk — Brevard County Painting';
 const description =
@@ -8,11 +12,20 @@ const description =
 
 const posts = [
   {
+    title: 'What "Good Prep" Actually Looks Like in Florida — And Why It\'s Non-Negotiable',
+    excerpt:
+      "Florida's climate destroys paint fast if prep is skipped. Here's what proper preparation involves in Brevard County — and why it matters more here than almost anywhere else.",
+    href: '/blog/paint-prep-florida-brevard-county',
+    image: paintPrepFlorida,
+    imageAlt: 'Painter pressure-washing and prepping the stucco exterior of a Florida home in Brevard County',
+    category: 'Homeowner Guidance',
+  },
+  {
     title: "Florida Removed the Painting License Requirement. Here's What That Actually Means.",
     excerpt:
       'State and Brevard County painting licenses are gone — what changed in 2021 and 2025, and what to look for when you hire.',
     href: '/blog/florida-painting-contractor-license-changes-brevard',
-    image: '/images/blog/florida-painting-license-law.jpg',
+    image: floridaPaintingLicense,
     imageAlt: 'Scales of justice in front of a well-painted Florida home exterior',
     category: 'Homeowner Guidance',
   },
@@ -21,7 +34,7 @@ const posts = [
     excerpt:
       'Why swatches lie, how Florida light changes everything, and practical tips for testing color before you commit to the wall.',
     href: '/blog/how-paint-colors-affect-how-you-feel',
-    image: '/images/blog/paint-colors-feel-home.jpg',
+    image: paintColorsFeelHome,
     imageAlt: 'Paint color swatches held against a sunlit Florida interior wall',
     category: 'Homeowner Guidance',
   },
@@ -46,13 +59,14 @@ const posts = [
               class="group block overflow-hidden rounded-xl border border-charcoal/10 bg-white/60 transition-colors hover:border-purple/30 hover:bg-white/80"
             >
               <div class="aspect-[16/9] overflow-hidden bg-charcoal/5">
-                <img
+                <Image
                   src={post.image}
                   alt={post.imageAlt}
-                  width={1200}
-                  height={675}
+                  widths={[480, 640, 768, 1200]}
+                  sizes="(max-width: 768px) 100vw, 768px"
                   class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div class="space-y-2 p-5 sm:p-6">

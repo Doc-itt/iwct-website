@@ -1,12 +1,18 @@
 ---
 // Service category bar: image cards for the four main service areas, linking to detail pages.
+import { Image } from 'astro:assets';
+import exteriorRepaint from '../assets/services/exterior-repaint.jpg';
+import interiorRepaint from '../assets/services/interior-repaint.jpg';
+import specialtyFinishes from '../assets/services/specialty-finishes.jpg';
+import outdoorLivingPoolDeck from '../assets/services/outdoor-living-pool-deck.jpg';
+
 const categories = [
   {
     title: 'Exterior Painting',
     teaser:
       'Full exterior painting with proper prep and durable coatings built for Florida’s sun, salt air, and storms.',
     href: '/services/exterior-painting-brevard-county',
-    image: '/images/services/exterior-repaint.jpg',
+    image: exteriorRepaint,
     imageAlt: 'Freshly painted exterior of a Brevard County home',
   },
   {
@@ -14,7 +20,7 @@ const categories = [
     teaser:
       'Professional interior painting with careful prep and finishes that hold up well in Florida’s humidity.',
     href: '/services/interior-painting-brevard-county',
-    image: '/images/services/interior-repaint.jpg',
+    image: interiorRepaint,
     imageAlt: 'Interior room repainting in a Florida home',
   },
   {
@@ -22,7 +28,7 @@ const categories = [
     teaser:
       'Cabinet painting, wood refinishing, and specialty details without needing a full remodel.',
     href: '/services/cabinet-painting-brevard-county',
-    image: '/images/services/specialty-finishes.jpg',
+    image: specialtyFinishes,
     imageAlt: 'Cabinet and wood finishing work in a kitchen or bath',
   },
   {
@@ -30,7 +36,7 @@ const categories = [
     teaser:
       'Pool decks, patios, and concrete surfaces with slip-resistant coatings built for Florida sun, rain, and heavy use.',
     href: '/services/pool-deck-painting-slip-resistant-coatings-brevard-county',
-    image: '/images/services/outdoor-living-pool-deck.jpg',
+    image: outdoorLivingPoolDeck,
     imageAlt: 'Pool deck and outdoor living surface coating',
   },
 ];
@@ -52,13 +58,14 @@ const categories = [
             class="group flex h-full flex-col overflow-hidden rounded-xl border border-charcoal/10 bg-white/60 transition-colors hover:border-purple/30 hover:bg-white/80"
           >
             <div class="aspect-[4/3] overflow-hidden bg-charcoal/5">
-              <img
+              <Image
                 src={category.image}
                 alt={category.imageAlt}
-                width={800}
-                height={600}
+                widths={[320, 480, 640, 800]}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                 loading="lazy"
+                decoding="async"
               />
             </div>
             <div class="flex flex-1 flex-col p-4 sm:p-5">

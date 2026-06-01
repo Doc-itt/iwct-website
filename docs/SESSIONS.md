@@ -13,6 +13,13 @@
 
 # Sessions Log
 
+## 2026-06-01 — Cursor
+- Optimized homepage service bar and blog hero images (~17 MB of JPEGs → ~1 MB); added `sharp`, Astro `<Image />` with WebP + responsive `srcset`, and `src/assets/` sources.
+- Added `scripts/optimize-service-images.mjs` and `scripts/optimize-blog-images.mjs` (`npm run optimize:service-images` / `optimize:blog-images`).
+- Updated `ServiceCategoryBar.astro`, `src/pages/blog/index.astro`, and all three live blog post pages; new post `paint-prep-florida-brevard-county.astro` included in this commit.
+- **Decisions:** Keep optimized JPEGs in `public/images/` for Open Graph / social preview URLs; use `src/assets/` for on-page `<Image />` generation at build time.
+- **Next:** Proofread service pages and homeowner guide on branch `feature/proofread-services-homeowner-guide-2026-06-01`.
+
 ## 2026-05-18 — Claude (Cowork mode)
 - Created `docs/` folder with `PROJECT_BRIEF.md`, `BRAND_RULES.md`, `SEO_KEYWORDS.md`, `CHANGELOG.md`.
 - Inspected project; documented real brand palette (cream/charcoal/muted/purple/coral/orange/sage) and fonts (DM Sans + Fraunces) into `BRAND_RULES.md`.

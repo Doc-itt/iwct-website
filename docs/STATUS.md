@@ -7,7 +7,7 @@
 
 # Project Status
 
-_Last verified: 2026-05-18_
+_Last verified: 2026-06-01_
 
 ## Pages
 | Page | Path | Status | Notes |
@@ -26,9 +26,15 @@ _Last verified: 2026-05-18_
 - `Layout.astro` — done; handles all SEO (title, description, canonical, OG, Twitter cards, fonts)
 - `Welcome.astro` — Astro starter template, **unused** — candidate for deletion
 
+## Images / performance
+- Service bar and blog heroes use **Astro `<Image />`** (`astro:assets`) — build outputs WebP + `srcset`.
+- Sources live in `src/assets/services/` and `src/assets/blog/`; matching optimized JPEGs in `public/images/` for OG meta tags.
+- Re-run after replacing originals: `npm run optimize:service-images` and `npm run optimize:blog-images`.
+
 ## Tech stack
 - **Astro** v6.3.3
 - **Tailwind CSS** v4 via `@tailwindcss/vite` (no separate `tailwind.config.js` — config lives in `src/styles/global.css` using `@theme`)
+- **sharp** — image resize/compress scripts + Astro image pipeline
 - **Sitemap** via `@astrojs/sitemap`
 - **Hosting:** Netlify
 - **Version control:** GitHub
@@ -41,6 +47,7 @@ _Last verified: 2026-05-18_
 - **Notion mirror:** [IWCT Website — LLM Prompts](https://www.notion.so/364cbc135e26815380c6d622686ff22f) (child of "IWCT Website" Notion page) — copy-paste prompts only, repo is source of truth
 
 ## What's next
+- Proofread service pages and homeowner guide (branch `feature/proofread-services-homeowner-guide-2026-06-01`)
 - Reconcile `docs/PROJECT_BRIEF.md` with reality (contact + homeowner-guide stubs exist; blog/services subfolders exist)
 - Build Tier 1 reusable components: `PageHero`, `Section`, `ContactCard`, `FaqItem`, `ServiceCard`
 - Build `services.astro`, `faq.astro`; finish `contact.astro` and `homeowner-guide.astro`

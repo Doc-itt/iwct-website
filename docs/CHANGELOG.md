@@ -9,6 +9,22 @@
 
 # Changelog
 
+## 2026-06-01
+- Updated `package.json` / `package-lock.json` — added `sharp`; scripts `optimize:service-images`, `optimize:blog-images`
+- Created `scripts/optimize-service-images.mjs` — resize/compress service bar photos to 800px
+- Created `scripts/optimize-blog-images.mjs` — resize/compress blog heroes to 1200px
+- Created `src/assets/services/*.jpg` — optimized sources for Astro Image
+- Created `src/assets/blog/*.jpg` — optimized sources for Astro Image
+- Updated `public/images/services/*.jpg` — replaced full-size phone photos with web-sized JPEGs
+- Updated `public/images/blog/*.jpg` — replaced full-size heroes with web-sized JPEGs
+- Created `public/images/blog/paint-prep-florida-brevard.jpg` — hero for prep blog post
+- Updated `src/components/ServiceCategoryBar.astro` — Astro `<Image />`, responsive WebP
+- Updated `src/pages/blog/index.astro` — Astro `<Image />` on post cards
+- Updated `src/pages/blog/florida-painting-contractor-license-changes-brevard.astro` — Astro `<Image />` hero
+- Updated `src/pages/blog/how-paint-colors-affect-how-you-feel.astro` — Astro `<Image />` hero
+- Created `src/pages/blog/paint-prep-florida-brevard-county.astro` — prep blog post with optimized hero
+- Updated `docs/SESSIONS.md`, `docs/CHANGELOG.md`, `docs/STATUS.md` — session wrap-up
+
 ## 2026-05-18
 - Created `docs/PROJECT_BRIEF.md` — project facts
 - Created `docs/BRAND_RULES.md` — voice + brand palette + fonts + logos

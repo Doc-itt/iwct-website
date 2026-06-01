@@ -1,6 +1,8 @@
 ---
 // Blog post: how interior paint color affects mood and feel, with Florida-specific light and testing tips.
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
+import heroImage from '../../assets/blog/paint-colors-feel-home.jpg';
 
 const title = 'How Paint Colors Affect How You Feel at Home | Brevard County | If Walls Could Talk';
 const description =
@@ -42,13 +44,14 @@ const relatedLinks = [
     <article class="mx-auto max-w-3xl space-y-10 text-base leading-relaxed text-charcoal sm:space-y-12 sm:text-lg">
       <header class="space-y-4">
         <figure class="-mx-4 overflow-hidden rounded-xl sm:mx-0">
-          <img
-            src={ogImage}
+          <Image
+            src={heroImage}
             alt="Paint color swatches held against a sunlit Florida interior wall"
-            width={1200}
-            height={675}
+            widths={[480, 640, 768, 1200]}
+            sizes="(max-width: 768px) 100vw, 768px"
             class="aspect-[16/9] w-full object-cover"
             loading="eager"
+            decoding="async"
           />
         </figure>
         <p class="text-sm font-medium text-purple">Homeowner Guidance</p>

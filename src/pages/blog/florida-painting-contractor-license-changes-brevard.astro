@@ -1,6 +1,8 @@
 ---
 // Blog post: Florida and Brevard County painting license changes — what homeowners should know when hiring.
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
+import heroImage from '../../assets/blog/florida-painting-license-law.jpg';
 
 const title = 'Florida Painting License Law Change: What Brevard Homeowners Should Know';
 const description =
@@ -33,13 +35,14 @@ const vettingItems = [
     <article class="mx-auto max-w-3xl space-y-10 text-base leading-relaxed text-charcoal sm:space-y-12 sm:text-lg">
       <header class="space-y-4">
         <figure class="-mx-4 overflow-hidden rounded-xl sm:mx-0">
-          <img
-            src={ogImage}
+          <Image
+            src={heroImage}
             alt="Scales of justice in front of a well-painted Florida home exterior"
-            width={1200}
-            height={675}
+            widths={[480, 640, 768, 1200]}
+            sizes="(max-width: 768px) 100vw, 768px"
             class="aspect-[16/9] w-full object-cover"
             loading="eager"
+            decoding="async"
           />
         </figure>
         <p class="text-sm font-medium text-purple">Homeowner Guidance</p>
