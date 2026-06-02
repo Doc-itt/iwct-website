@@ -13,12 +13,14 @@ A static **Astro + Tailwind CSS** site for **If Walls Could Talk LLC**, a painti
 ## Before doing anything, read these in order
 1. `docs/PROJECT_BRIEF.md` — what the project is, owner, contact info, tech stack
 2. `docs/STATUS.md` — current state of the project (what's done, what's next). Note the `_Last verified_` date at the top.
-3. `docs/BRAND_RULES.md` — voice, tone, colors, fonts
-4. `docs/SEO_KEYWORDS.md` — SEO targets and topic clusters
-5. `docs/SEO_METADATA.md` — **verify before changing titles, meta tags, or indexing** (required if touching Layout SEO)
-6. `docs/DECISIONS.md` — past calls that constrain new work (skim, full read if relevant to today's task)
-7. `docs/SESSIONS.md` — last 2–3 entries only, for recent context
-8. `docs/RITUALS.md` — start-of-session, end-of-session, and freshness rituals (you'll run these)
+3. `docs/BUSINESS_CONTEXT.md` — strategic context and long-term business vision
+4. `docs/BRAND_RULES.md` — voice, tone, colors, fonts
+5. `docs/OPEN_QUESTIONS.md` — unresolved owner decisions
+6. `docs/SEO_KEYWORDS.md` — SEO targets and topic clusters
+7. `docs/SEO_METADATA.md` — **verify before changing titles, meta tags, or indexing** (required if touching Layout SEO)
+8. `docs/DECISIONS.md` — past calls that constrain new work (skim, full read if relevant to today's task)
+9. `docs/SESSIONS.md` — last 2–3 entries only, for recent context
+10. `docs/RITUALS.md` — start-of-session, end-of-session, and freshness rituals (you'll run these)
 
 ## Working rules
 - Confirm before creating, modifying, or deleting files.

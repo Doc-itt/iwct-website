@@ -7,23 +7,30 @@
 
 # Project Status
 
-_Last verified: 2026-06-01_
+_Last verified: 2026-06-02_
 
 ## Pages
 | Page | Path | Status | Notes |
 |---|---|---|---|
 | Home | `/` | Done | `src/pages/index.astro` |
 | About | `/about` | Done — needs refactor | Uses gray/blue colors not in brand palette; not using `.page-container` |
-| Services | `/services` | Planned | `src/pages/services/` subfolder exists, no page file yet |
+| Services hub | `/services` | Done | `src/pages/services/index.astro` |
+| Services detail pages | `/services/*` | Done | Exterior, interior, cabinet, and pool deck pages exist |
 | FAQ | `/faq` | Planned | Not started |
-| Contact | `/contact` | Stub | `src/pages/contact.astro` exists (~487 bytes) |
-| Homeowner Guide | `/homeowner-guide` | Stub | `src/pages/homeowner-guide.astro` exists (~500 bytes) |
-| Blog index | `/blog` | Planned | `src/pages/blog/` subfolder exists |
+| Contact | `/contact` | Done | `src/pages/contact.astro` |
+| Homeowner Guide hub | `/homeowner-guide` | Done | `src/pages/homeowner-guide.astro` |
+| Homeowner Guide articles | `/homeowner-guide/*` | Done | 4 articles published |
+| Blog index | `/blog` | Done | `src/pages/blog/index.astro` |
+| Blog posts | `/blog/*` | Done | 2 published posts |
+| Utility pages | `/thank-you`, `/404` | Done | Thank-you and 404 pages exist |
 
 ## Components
 - `Header.astro` — done; sticky nav with logo, watercolor bar, phone CTA, desktop + mobile menus
 - `Footer.astro` — done; brand block, contact info, quick links, full Brevard service area
 - `Layout.astro` — done; handles all SEO (title, description, canonical, OG, Twitter cards, fonts)
+- `FaqSection.astro` — done; reusable FAQ rendering section
+- `ServiceCategoryBar.astro` — done; service category image cards
+- `GuideUnderConstruction.astro` — done; reusable under-construction callout
 - `Welcome.astro` — Astro starter template, **unused** — candidate for deletion
 
 ## Images / performance
@@ -42,17 +49,16 @@ _Last verified: 2026-06-01_
 
 ## Documentation system
 - `AGENTS.md` (root) — AI entry point
-- `docs/PROJECT_BRIEF.md`, `BRAND_RULES.md`, `SEO_KEYWORDS.md`, `STATUS.md`, `SESSIONS.md`, `DECISIONS.md`, `RITUALS.md`, `CHANGELOG.md`
+- `docs/PROJECT_BRIEF.md`, `BUSINESS_CONTEXT.md`, `OPEN_QUESTIONS.md`, `BRAND_RULES.md`, `SEO_KEYWORDS.md`, `STATUS.md`, `SESSIONS.md`, `DECISIONS.md`, `RITUALS.md`, `CHANGELOG.md`, `FULL_CONTEXT_AUDIT.md`
 - `.cursor/rules/main.mdc` — Cursor-specific rules (modern format)
 - **Notion mirror:** [IWCT Website — LLM Prompts](https://www.notion.so/364cbc135e26815380c6d622686ff22f) (child of "IWCT Website" Notion page) — copy-paste prompts only, repo is source of truth
 
 ## What's next
-- Proofread service pages and homeowner guide (branch `feature/proofread-services-homeowner-guide-2026-06-01`)
-- Reconcile `docs/PROJECT_BRIEF.md` with reality (contact + homeowner-guide stubs exist; blog/services subfolders exist)
+- Proofread service pages and homeowner guide content
+- Build `/faq` page
 - Build Tier 1 reusable components: `PageHero`, `Section`, `ContactCard`, `FaqItem`, `ServiceCard`
-- Build `services.astro`, `faq.astro`; finish `contact.astro` and `homeowner-guide.astro`
 - Refactor `about.astro` to brand palette + `.page-container`
-- Decide what to do with unused `Welcome.astro`
+- Decide what to do with `Welcome.astro`, `dashboard.html`, and `memory/` archive strategy
 
 ## Known issues
 - `about.astro` uses off-palette colors (`bg-gray-50`, `border-gray-100`, `text-blue-600`) and a custom container instead of `.page-container`

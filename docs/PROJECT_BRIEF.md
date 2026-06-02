@@ -28,19 +28,17 @@ iwctpaintingplus@gmail.com
 Educate homeowners first. Build trust through transparency. Not a hard-sell site.
 
 ## Tech stack
-Astro (latest) + Tailwind CSS, static site, Netlify, GitHub
+Astro v6.3.3 + Tailwind CSS v4, static site, Netlify, GitHub
 
 ## Rules
 Keep everything simple and clean. Prioritize readability and trust over fancy design. Break work into small safe steps. Never make big changes without confirming first. Add comments to every file. SEO-friendly but natural — focus on "Brevard County painting", "house painters Brevard", honest advice, quality prep, Florida materials. No pushy sales language.
 
-## Current pages
-- `index.astro` (done)
-- `about.astro` (done)
+## Current build status
+The site has live pages for home, about, contact, services hub + service pages, homeowner guide hub + articles, and blog index + posts.
+For exact up-to-date page and component status, use `docs/STATUS.md` as the source of truth.
 
-## Planned pages
-- `services.astro`
-- `faq.astro`
-- `contact.astro`
+## Open planned page
+- `faq.astro` (not built yet)
 
 ## Project structure
 - Component folder exists at `src/components/`

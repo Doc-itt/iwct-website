@@ -9,6 +9,21 @@
 
 # Changelog
 
+## 2026-06-02
+- Updated `docs/STATUS.md` — reconciled page/component status with actual repo state
+- Updated `docs/PROJECT_BRIEF.md` — removed stale page plan details; pointed to `docs/STATUS.md`
+- Created `docs/BUSINESS_CONTEXT.md` — canonical long-form strategy/business context
+- Created `docs/OPEN_QUESTIONS.md` — canonical unresolved owner decisions list
+- Updated `docs/RITUALS.md` — expanded startup read order and quick-reference file map
+- Updated `README.md` — replaced Astro starter boilerplate with IWCT project docs
+- Updated `CLAUDE.md` — converted to short pointer file to canonical docs
+- Updated `memory/context/business-vision.md` — archived to pointer-only
+- Updated `memory/projects/iwct-website.md` — archived to pointer-only
+- Updated `TASKS.md` — populated active, waiting, and done sections
+- Updated `.cursor/rules/main.mdc` — reduced duplicate SEO wording while preserving policy
+- Updated `AGENTS.md` — added BUSINESS_CONTEXT and OPEN_QUESTIONS to read order
+- Updated `docs/DECISIONS.md`, `docs/SESSIONS.md`, `docs/CHANGELOG.md` — recorded this cleanup session
+
 ## 2026-06-01
 - Updated `package.json` / `package-lock.json` — added `sharp`; scripts `optimize:service-images`, `optimize:blog-images`
 - Created `scripts/optimize-service-images.mjs` — resize/compress service bar photos to 800px

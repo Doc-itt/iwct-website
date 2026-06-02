@@ -14,6 +14,10 @@
 
 # Decisions
 
+## 2026-06-02
+- **Consolidate long-form memory into `docs/` and keep `CLAUDE.md` as a pointer file.** This reduces stale duplication across `CLAUDE.md`, `memory/`, and docs while preserving a single canonical read path.
+- **Track unresolved owner decisions in `docs/OPEN_QUESTIONS.md`.** This keeps pending choices visible in the normal `AGENTS.md` read flow instead of hiding them in side memory files.
+
 ## 2026-05-29
 - **Verify before changing SEO metadata or indexing.** Any change to page `title`, meta `description`, `noindex`, canonical, OG/Twitter tags, or JSON-LD requires explicit owner approval and a before/after summary. Documented in `docs/SEO_METADATA.md`; enforced for AI via `.cursor/rules/seo-metadata.mdc`. Site stays `noindex` until a deliberate launch step.
 

@@ -13,6 +13,14 @@
 
 # Sessions Log
 
+## 2026-06-02 — Cursor
+- Completed a full context/documentation cleanup pass: synced stale status docs, replaced boilerplate README, and standardized project pointers.
+- Added `docs/BUSINESS_CONTEXT.md` and `docs/OPEN_QUESTIONS.md` to make strategy memory and unresolved decisions explicit in the canonical docs flow.
+- Slimmed `CLAUDE.md` into a pointer file and converted `memory/` files into archive pointers to reduce drift.
+- Updated `AGENTS.md`, `docs/RITUALS.md`, `TASKS.md`, and `.cursor/rules/main.mdc` for better consistency and lower duplication.
+- **Decisions:** `docs/` is reinforced as canonical memory; `memory/` is now archive/pointer-only unless reactivated intentionally.
+- **Next:** Confirm and execute per-file deletions (or archival) for irrelevant files such as `src/components/Welcome.astro` and `dashboard.html`.
+
 ## 2026-06-01 — Cursor
 - Optimized homepage service bar and blog hero images (~17 MB of JPEGs → ~1 MB); added `sharp`, Astro `<Image />` with WebP + responsive `srcset`, and `src/assets/` sources.
 - Added `scripts/optimize-service-images.mjs` and `scripts/optimize-blog-images.mjs` (`npm run optimize:service-images` / `optimize:blog-images`).

@@ -27,9 +27,11 @@ Before anything else, read these in order:
 1. AGENTS.md
 2. docs/STATUS.md (note the _Last verified_ date — flag if older than 30 days)
 3. docs/PROJECT_BRIEF.md
-4. docs/BRAND_RULES.md
-5. docs/DECISIONS.md (skim; full read if today's task touches a past decision)
-6. docs/SESSIONS.md — last 2–3 entries only
+4. docs/BUSINESS_CONTEXT.md
+5. docs/BRAND_RULES.md
+6. docs/OPEN_QUESTIONS.md
+7. docs/DECISIONS.md (skim; full read if today's task touches a past decision)
+8. docs/SESSIONS.md — last 2–3 entries only
 
 Then give me a 3-line summary of the current state. Wait for me to give you today's task.
 ```
@@ -100,7 +102,9 @@ Run a freshness audit on the docs/ folder. Don't change files yet.
 |---|---|---|
 | `AGENTS.md` | AI entry point (root) | Rarely — only when working rules change |
 | `docs/PROJECT_BRIEF.md` | Static project facts | When the *business* changes (new phone, new service area, etc.) |
+| `docs/BUSINESS_CONTEXT.md` | Canonical strategy/business context | When long-term strategy or operating model changes |
 | `docs/BRAND_RULES.md` | Voice + visual identity | When tone/colors/fonts change |
+| `docs/OPEN_QUESTIONS.md` | Pending owner decisions | When a new unresolved decision appears or is resolved |
 | `docs/SEO_KEYWORDS.md` | SEO targets | When keyword strategy changes |
 | `docs/SEO_METADATA.md` | Titles, meta, indexing, launch gate | Before any metadata change; required at launch |
 | `docs/STATUS.md` | Current state snapshot | Every time something material changes |
@@ -108,3 +112,6 @@ Run a freshness audit on the docs/ folder. Don't change files yet.
 | `docs/DECISIONS.md` | Why we chose X over Y | Whenever a non-obvious choice is made |
 | `docs/CHANGELOG.md` | One line per concrete file change | Every session |
 | `docs/RITUALS.md` | This playbook | Rarely — only when the workflow itself changes |
+| `docs/FULL_CONTEXT_AUDIT.md` | Full system-level audit snapshot | On major doc-system cleanup passes only |
+| `CLAUDE.md` | Claude pointer file to canonical docs | Rarely — keep short and stable |
+| `TASKS.md` | Active queue snapshot | When current priorities change |
