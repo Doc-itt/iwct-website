@@ -5,7 +5,7 @@ import Layout from '../../layouts/Layout.astro';
 
 const siteUrl = 'https://iwctpainting.com';
 
-const title = 'Painting Services Brevard County | If Walls Could Talk';
+const title = 'Painting Services in Brevard County | If Walls Could Talk';
 const description =
   'Professional painting services in Brevard County: interior, exterior, cabinet refinishing, and pool deck coatings. Built for Florida conditions with expert crews and quality materials.';
 
@@ -16,7 +16,7 @@ const categories = [
   {
     title: 'Exterior Painting',
     intro:
-      'Full exterior work on homes across Brevard. We focus on thorough prep and coatings that handle UV, salt, humidity, and mildew.',
+      'Full exterior house painting and related work. We focus on thorough prep and coatings built for Brevard County conditions.',
     services: [
       {
         label: 'Exterior House Painting',
@@ -36,7 +36,7 @@ const categories = [
   {
     title: 'Interior Painting',
     intro:
-      'Interior painting with proper prep and finishes that perform in Florida’s humid homes.',
+      'Interior painting with proper prep and finishes that hold up in Florida humidity.',
     services: [
       {
         label: 'Interior House Painting',
@@ -44,7 +44,7 @@ const categories = [
       },
       'Drywall Painting and Repair',
       'Trim and Baseboard Painting',
-      'Accent Walls and Specialty Design',
+      'Accent Walls',
       'Popcorn Ceiling Removal',
       'Garage Painting (Walls and Floors)',
       'Touch-Up Painting',
@@ -53,29 +53,28 @@ const categories = [
   {
     title: 'Specialty Finishes & Woodwork',
     intro:
-      'Cabinet painting, wood refinishing, and specialty finishes — a practical way to update kitchens, bathrooms, and other wood surfaces without a full remodel.',
+      'Cabinet painting, wood refinishing, deck and porch painting, and other specialty work. A practical way to update kitchens, bathrooms, and wood surfaces.',
     services: [
       {
         label: 'Cabinet Painting (Kitchen and Bathroom)',
         href: '/services/cabinet-painting-brevard-county',
       },
-      'Wood Painting',
-      'Wood Staining',
-      'Wood Varnishing',
-      'Color Consultation and Paint Selection',
+      'Wood Painting / Staining / Varnishing',
+      'Deck Painting',
+      'Porch Painting',
+      'Color Consultation',
     ],
   },
   {
-    title: 'Outdoor Living and Concrete Coatings',
+    title: 'Outdoor Living & Concrete Coatings',
     intro:
-      'Pool decks, patios, garages, and other concrete surfaces built to handle sun, rain, chlorine, and heavy use.',
+      'Pool decks, patios, garages, and other concrete surfaces built for sun, rain, chlorine, and heavy use.',
     services: [
       {
         label: 'Pool Deck Painting and Slip-Resistant Coatings',
         href: '/services/pool-deck-painting-slip-resistant-coatings-brevard-county',
       },
-      'Patio and Porch Painting',
-      'Deck Painting',
+      'Patio Painting',
       'Concrete Floor Coatings',
       'Garage Floor Coatings',
       'Driveway Sealing and Painting',
@@ -88,23 +87,17 @@ const faqs = [
   {
     question: 'What painting services do you offer in Brevard County?',
     answer:
-      'We offer a full range of painting and coating services built for Brevard County’s heat, humidity, salt air, and sun. Each category has its own detailed page with process steps, tips, and common questions.',
+      'We offer exterior painting, interior painting, cabinet and woodwork refinishing, and concrete coatings. Every job uses the same standards for preparation and materials.',
   },
   {
-    question: 'Do you handle smaller projects or just full repaints?',
+    question: 'Do you handle smaller painting projects in Brevard County?',
     answer:
-      'We do both. Single rooms, cabinets, pool decks, fences, trim work, and touch-ups are all common projects and receive the same standards.',
+      'Yes. Single rooms, cabinets, pool decks, fences, trim work, and touch-ups are all common and get full attention.',
   },
   {
-    question: 'How do I know which service category my project fits into?',
-    answerHtml: true,
+    question: 'How long does exterior paint last in Brevard County?',
     answer:
-      `Most projects are clear by location and surface type. If you're unsure <a href="/contact" class="text-purple transition-colors hover:text-coral">reach out through the contact page</a>.`,
-  },
-  {
-    question: 'How do I request an estimate?',
-    answer:
-      'Use the contact page, or call/text 321-557-6959. We review the scope first so you know exactly what to expect before scheduling.',
+      'With good prep it usually lasts 7–10 years. Without proper prep it often fails in 3–5 years.',
   },
 ];
 
@@ -163,16 +156,27 @@ const serviceSchema = {
     <article class="mx-auto max-w-5xl space-y-12 text-base leading-relaxed text-charcoal sm:text-lg">
       <header class="space-y-5">
         <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
-          Our Services
+          Painting Services in Brevard County
         </h1>
         <p>
-          We offer four main service categories. Each has its own dedicated page with full details, process steps,
-          homeowner tips, and common questions.
+          We offer exterior painting, interior painting, cabinet and woodwork finishes, and concrete coatings specifically
+          for Brevard County. Good preparation and the right materials make the difference between a job that lasts 7–10
+          years and one that fails in 3–5.
         </p>
-        <p class="text-muted">
-          Florida’s heat, humidity, salt air, and intense sun make preparation and material choices critical. Every
-          service below is built around what actually holds up long-term in Brevard County.
+        <p>
+          Florida’s heat, humidity, salt air, and sun are tough on paint.
         </p>
+        <p>
+          For more help deciding on the right approach, check our{' '}
+          <a href="/homeowner-guide" class="font-medium text-purple transition-colors hover:text-coral">
+            Homeowner Guide
+          </a>.
+          It covers what to look for when hiring a painter, questions to ask, paint products that hold up in Florida,
+          and what to expect during a project.
+        </p>
+        <div class="flex justify-center pt-2 sm:pt-4">
+          <a href="/contact" class="btn-primary text-center">Describe your project</a>
+        </div>
       </header>
 
       <div class="watercolor-divider" aria-hidden="true"></div>

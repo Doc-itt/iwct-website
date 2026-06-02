@@ -14,6 +14,14 @@
 # Sessions Log
 
 ## 2026-06-02 — Cursor
+- Updated `src/pages/services/index.astro` with revised services page copy, refined section lists, and streamlined FAQs aligned to Brevard County messaging.
+- Added a centered intro CTA on the services page (`Describe your project`) plus a Homeowner Guide contextual link in the intro.
+- Updated `src/pages/about.astro` intro and contact copy, including a linked Homeowner Guide sentence as a separate paragraph and simplified closing language.
+- Updated `src/pages/homeowner-guide.astro` with a new `Read About IWCT →` link under Heather’s sign-off and simplified the closing contact guidance copy.
+- **Decisions:** Keep CTA/link styles consistent with existing site patterns (`btn-primary` and small purple arrow links) rather than introducing new variants.
+- **Next:** Continue copy QA across service and guide pages; then run a final consistency pass before launch-prep metadata/indexing steps.
+
+## 2026-06-02 — Cursor
 - Completed a full context/documentation cleanup pass: synced stale status docs, replaced boilerplate README, and standardized project pointers.
 - Added `docs/BUSINESS_CONTEXT.md` and `docs/OPEN_QUESTIONS.md` to make strategy memory and unresolved decisions explicit in the canonical docs flow.
 - Slimmed `CLAUDE.md` into a pointer file and converted `memory/` files into archive pointers to reduce drift.
