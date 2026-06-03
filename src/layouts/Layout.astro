@@ -17,7 +17,6 @@ const {
 } = Astro.props;
 
 const siteUrl = Astro.site ?? 'https://iwctpainting.com';
-const googleAnalyticsId = 'G-37CLRJEDS9';
 const canonicalURL = new URL(Astro.url.pathname, siteUrl);
 const ogImageURL = new URL(ogImage, siteUrl);
 
@@ -70,15 +69,14 @@ const localBusinessSchema = {
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) — one sitewide tag via Layout; do not duplicate on individual pages -->
-    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}></script>
-    <script is:inline define:vars={{ googleAnalyticsId }}>
+    <!-- Google tag (gtag.js) — exact snippet from GA; must stay global (no define:vars wrapper) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-37CLRJEDS9"></script>
+    <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
+      function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', googleAnalyticsId);
+
+      gtag('config', 'G-37CLRJEDS9');
     </script>
 
     <meta charset="UTF-8" />
