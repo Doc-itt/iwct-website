@@ -29,5 +29,5 @@ A static **Astro + Tailwind CSS** site for **If Walls Could Talk LLC**, a painti
 - Use Astro + Tailwind CSS. Never use inline styles.
 - Follow the tone in `docs/BRAND_RULES.md`. No hard-sell, salesy, or hype language.
 - Every page must pass a unique `title` and `description` to `<Layout>` for SEO.
-- **Never change metadata or indexing settings without explicit approval** — show before/after; see `docs/SEO_METADATA.md`. Do not remove `noindex` unless the user is intentionally launching.
+- **Never change metadata or indexing settings without explicit approval** — show before/after; see `docs/SEO_METADATA.md`. Follow post-launch guardrails (no sitewide `noindex`, no internal `nofollow`, no robots `Disallow` without approval).
 - At the end of every working session, run the **wrap-up ritual** in `docs/RITUALS.md`.

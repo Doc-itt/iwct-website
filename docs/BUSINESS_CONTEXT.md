@@ -15,7 +15,7 @@
 ## Current operating context
 - Heather is currently out of the country and returning in October 2026
 - Immediate objective is lead flow now, with quality control through trusted crews
-- Site status: pre-launch for indexing (`noindex` remains on until launch decision)
+- Site status: indexing enabled for production (2026-06-03); submit sitemap in Google Search Console after deploy
 
 ## Voice and trust posture
 - Direct, plain, practical, and honest

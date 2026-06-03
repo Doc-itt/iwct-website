@@ -29,6 +29,6 @@ npm run dev
 
 ## Important Notes
 
-- Site indexing is intentionally disabled until launch (`noindex` in `src/layouts/Layout.astro`).
+- Search indexing is enabled; sitemap and `robots.txt` are configured — see `docs/SEO_METADATA.md` for post-deploy Search Console steps.
 - Do not change page metadata/indexing settings without explicit owner approval.
 - For contributors and AI tools, follow the read order in `AGENTS.md`.

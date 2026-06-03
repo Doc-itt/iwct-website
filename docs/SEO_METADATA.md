@@ -24,10 +24,12 @@ Do not bundle metadata changes into unrelated tasks (copy edits, new sections, s
 
 | Item | Where it lives | Notes |
 |------|----------------|-------|
-| **Sitewide `noindex`** | `src/layouts/Layout.astro` — `noindex` constant | While `true`, Google should not index the site. **Removing this is the main launch switch.** |
+| **Sitewide robots** | `src/layouts/Layout.astro` | No `noindex` meta — crawlers use default index/follow. Do not re-add without approval. |
 | **Page `<title>`** | Each page’s `title` prop → `<Layout>` | Must stay unique per page. |
 | **Meta description** | Each page’s `description` prop → `<Layout>` | Must stay unique per page. |
-| **Canonical URL** | `Layout.astro` (built from `Astro.url`) | Usually leave alone unless URL structure changes. |
+| **Canonical URL** | `Layout.astro` (built from `Astro.site` + `Astro.url`) | Set via `site` in `astro.config.mjs`. |
+| **Sitemap** | `@astrojs/sitemap` in `astro.config.mjs` → `dist/sitemap-index.xml` on build | Do not remove integration. |
+| **robots.txt** | `public/robots.txt` | Allow all; points to sitemap. No `Disallow` without approval. |
 | **OG / Twitter tags** | `Layout.astro` | Use page `title` / `description` / `ogImage`. |
 | **JSON-LD** | `Layout.astro` + some pages (e.g. home FAQ) | Changing business name, URL, or service list affects rich results. |
 
@@ -35,31 +37,62 @@ Keyword strategy (what to say, not how tags are wired): `docs/SEO_KEYWORDS.md`.
 
 ---
 
-## Pre-launch (current state)
+## Launch completed (2026-06-03)
 
-- `noindex` is **ON** on purpose until the site is ready for production indexing.
-- Staging: Netlify preview; production domain when launched.
-- Do not remove `noindex` without a deliberate launch decision and a quick check of every public page’s title and description.
+- [x] Every public page has a **unique** `title` and `description`.
+- [x] Sitewide `noindex` removed from `Layout.astro`.
+- [x] `site: 'https://iwctpainting.com'` + `@astrojs/sitemap` wired in `astro.config.mjs`.
+- [x] `public/robots.txt` added (Allow `/`, Sitemap URL).
+- [x] Phase 0 audit: no legacy indexed URLs found; no `_redirects` needed.
+- [ ] **Production deploy** — push/build on Netlify, then run post-deploy checks below.
+- [ ] **Google Search Console** — owner steps below.
+
+**Before → after (robots meta):** `noindex, nofollow` on all pages → *(none — default index/follow)*
 
 ---
 
-## Launch checklist (when going live on Google)
+## Post-deploy verification (production)
 
-Use this as a gate before setting `noindex = false` in `Layout.astro`:
+After Netlify deploy to `iwctpainting.com`:
 
-- [ ] Every public page has a **unique** `title` and `description` (no duplicates).
-- [ ] Titles and descriptions match current page content (not old drafts).
-- [ ] `noindex` removed only in `Layout.astro` (one intentional change).
-- [ ] Deploy to production domain; confirm canonical URLs resolve correctly.
-- [ ] Optional: Google Search Console — submit sitemap / request indexing after deploy.
-- [ ] Record the change in `docs/DECISIONS.md` and bump `docs/STATUS.md` `_Last verified_` date.
+1. View-source on `/` and one inner page — confirm **no** `<meta name="robots" content="noindex`.
+2. Confirm `<link rel="canonical" href="https://iwctpainting.com/...">` on each page checked.
+3. Open `https://iwctpainting.com/robots.txt` — Allow `/` and Sitemap line.
+4. Open `https://iwctpainting.com/sitemap-index.xml` — loads and lists current URLs.
+
+---
+
+## Post-launch guardrails
+
+| Rule | Why |
+|------|-----|
+| No `noindex` on pages (unless explicitly approved) | Blocks indexing |
+| No `nofollow` on internal links | Wastes internal link signals |
+| No `Disallow` in robots.txt (unless approved) | Blocks crawlers |
+| No URL/slug changes without 301 in `public/_redirects` | Breaks links and indexed URLs |
+| Keep sitemap integration working | Discovery for Google and AI crawlers |
+| Unique title + description; one H1 per page | Avoid duplicate/confusing signals |
+| No SEO cloaking (`display:none` / `visibility:hidden` for keyword text) | Policy violation risk |
+| No keyword stuffing | Quality and trust |
+
+---
+
+## Owner: Google Search Console (after deploy)
+
+1. Add or open property for `https://iwctpainting.com` (domain or URL prefix).
+2. **Sitemaps** → submit `https://iwctpainting.com/sitemap-index.xml`.
+3. **URL inspection** → test `/`, `/services/`, `/contact/` → Request indexing (optional; not instant).
+4. Monitor **Pages** / coverage over 2–4 weeks.
+5. Optional: [Bing Webmaster Tools](https://www.bing.com/webmasters) — same sitemap URL.
 
 ---
 
 ## Files to treat as sensitive
 
-- `src/layouts/Layout.astro` — robots, canonical, OG, Twitter, LocalBusiness schema
-- `src/pages/**/*.astro` — frontmatter `title` and `description` on every page
+- `src/layouts/Layout.astro` — canonical, OG, Twitter, LocalBusiness schema
+- `astro.config.mjs` — `site` URL and sitemap integration
+- `public/robots.txt`
+- `src/pages/**/*.astro` — `title` and `description` on every page
 
 ---
 

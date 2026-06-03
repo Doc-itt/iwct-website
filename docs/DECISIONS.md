@@ -14,12 +14,15 @@
 
 # Decisions
 
+## 2026-06-03
+- **Enable search indexing (remove sitewide `noindex`).** Removed `noindex` / robots meta from `Layout.astro`, wired `site` + `@astrojs/sitemap` in `astro.config.mjs`, added `public/robots.txt`. Phase 0 found no indexed legacy URLs — no `_redirects` file. Supersedes 2026-05-29 “site stays `noindex` until launch.” Post-deploy: Netlify production deploy + Google Search Console sitemap (owner).
+
 ## 2026-06-02
 - **Consolidate long-form memory into `docs/` and keep `CLAUDE.md` as a pointer file.** This reduces stale duplication across `CLAUDE.md`, `memory/`, and docs while preserving a single canonical read path.
 - **Track unresolved owner decisions in `docs/OPEN_QUESTIONS.md`.** This keeps pending choices visible in the normal `AGENTS.md` read flow instead of hiding them in side memory files.
 
 ## 2026-05-29
-- **Verify before changing SEO metadata or indexing.** Any change to page `title`, meta `description`, `noindex`, canonical, OG/Twitter tags, or JSON-LD requires explicit owner approval and a before/after summary. Documented in `docs/SEO_METADATA.md`; enforced for AI via `.cursor/rules/seo-metadata.mdc`. Site stays `noindex` until a deliberate launch step.
+- **Verify before changing SEO metadata or indexing.** Any change to page `title`, meta `description`, robots/`noindex`, canonical, OG/Twitter tags, or JSON-LD requires explicit owner approval and a before/after summary. Documented in `docs/SEO_METADATA.md`; enforced for AI via `.cursor/rules/seo-metadata.mdc`. *(Superseded for sitewide blocking: indexing enabled 2026-06-03.)*
 
 ## 2026-05-18
 - **Use `.cursor/rules/main.mdc` instead of legacy `.cursorrules`.** Cursor's modern format; lets us scope rules by file type later; official recommendation.

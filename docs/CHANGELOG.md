@@ -9,6 +9,13 @@
 
 # Changelog
 
+## 2026-06-03
+- Updated `src/layouts/Layout.astro` — removed sitewide `noindex` / robots meta for indexing launch
+- Updated `astro.config.mjs` — added `site` URL and `@astrojs/sitemap` integration
+- Created `public/robots.txt` — allow all crawlers; sitemap discovery URL
+- Updated `docs/SEO_METADATA.md`, `.cursor/rules/seo-metadata.mdc` — post-launch indexing guardrails and GSC steps
+- Updated `docs/DECISIONS.md`, `docs/STATUS.md`, `docs/BUSINESS_CONTEXT.md`, `README.md`, `AGENTS.md`, `docs/SESSIONS.md`, `TASKS.md` — indexing launch recorded
+
 ## 2026-06-02
 - Updated `docs/STATUS.md` — reconciled page/component status with actual repo state
 - Updated `docs/PROJECT_BRIEF.md` — removed stale page plan details; pointed to `docs/STATUS.md`

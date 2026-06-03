@@ -1,0 +1,5 @@
+# Allows all crawlers; points to the sitemap for discovery.
+User-agent: *
+Allow: /
+
+Sitemap: https://iwctpainting.com/sitemap-index.xml

@@ -13,6 +13,15 @@
 
 # Sessions Log
 
+## 2026-06-03 — Cursor
+- SEO indexing launch: removed sitewide `noindex` from `src/layouts/Layout.astro`; wired `site` + `@astrojs/sitemap` in `astro.config.mjs`; added `public/robots.txt`.
+- Phase 0 audit: `site:iwctpainting.com` returned no results; live site had `noindex` only from current build — no `_redirects` needed.
+- Local build verified: no robots `noindex` in HTML, `dist/sitemap-index.xml` with 18 URLs, `dist/robots.txt` present.
+- Updated post-launch docs/rules: `docs/SEO_METADATA.md`, `.cursor/rules/seo-metadata.mdc`, `docs/DECISIONS.md`, `docs/STATUS.md`, `docs/BUSINESS_CONTEXT.md`, `README.md`, `AGENTS.md`.
+- **Decisions:** Indexing enabled 2026-06-03 (see `docs/DECISIONS.md`); supersedes pre-launch `noindex` policy.
+- **Next:** Deploy to Netlify production; run post-deploy checks in `docs/SEO_METADATA.md`; submit `sitemap-index.xml` in Google Search Console; continue services + homeowner guide edits on `feature/services-homeowner-guide-2026-06-03`.
+- **Git:** Committed indexing launch to `master`; new work branch for services/HO guide editing.
+
 ## 2026-06-02 — Cursor
 - Updated `src/pages/services/index.astro` with revised services page copy, refined section lists, and streamlined FAQs aligned to Brevard County messaging.
 - Added a centered intro CTA on the services page (`Describe your project`) plus a Homeowner Guide contextual link in the intro.

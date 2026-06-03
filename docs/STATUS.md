@@ -7,7 +7,7 @@
 
 # Project Status
 
-_Last verified: 2026-06-02_
+_Last verified: 2026-06-03_
 
 ## Pages
 | Page | Path | Status | Notes |
@@ -42,7 +42,8 @@ _Last verified: 2026-06-02_
 - **Astro** v6.3.3
 - **Tailwind CSS** v4 via `@tailwindcss/vite` (no separate `tailwind.config.js` — config lives in `src/styles/global.css` using `@theme`)
 - **sharp** — image resize/compress scripts + Astro image pipeline
-- **Sitemap** via `@astrojs/sitemap`
+- **Sitemap** via `@astrojs/sitemap` (wired in `astro.config.mjs`; `sitemap-index.xml` on build)
+- **Indexing** enabled — no sitewide `noindex`; `public/robots.txt` points to sitemap
 - **Hosting:** Netlify
 - **Version control:** GitHub
 - **Node** ≥ 22.12.0
