@@ -11,7 +11,7 @@ const whatWeCover = [
   'Walls and ceilings',
   'Trim, baseboards, and door casings',
   'Interior doors',
-  'Drywall repair and prep',
+  'Drywall repair',
   'Accent walls',
   'Popcorn ceiling removal',
   'Mildew-resistant coatings for bathrooms, kitchens, and laundry rooms',
@@ -26,17 +26,17 @@ const approachSteps = [
   {
     title: 'Clean the surfaces',
     details:
-      'Degrease kitchen walls and treat mildew in bathrooms before paint goes on, not after.',
+      'Degrease kitchen walls and treat mildew before paint goes on.',
   },
   {
     title: 'Repair the drywall',
     details:
-      'Fill nail holes, cracks, and dings, then sand smooth and prime repaired areas so they disappear under the finish coat.',
+      'Fill nail holes, cracks, and dings, then sand smooth before the finish coat goes on.',
   },
   {
     title: 'Prime where needed',
     details:
-      'Use the right primer for fresh drywall, water stains, and major color transitions from dark to light.',
+      'Use the right primer for fresh drywall, water stains, repaired areas, and major color transitions from dark to light.',
   },
   {
     title: 'Paint',
@@ -47,57 +47,47 @@ const approachSteps = [
 
 const homeownerTips = [
   {
-    title: 'Sheen matters',
+    title: 'Sheen matters more in Florida than most places',
     details:
-      "The right sheen affects durability and cleanability. Flat paint in high-humidity rooms like bathrooms or kitchens often fails faster.",
+      "Flat paint isn't a practical option in bathrooms or kitchens. Moisture gets behind it and mildew follows. Eggshell is the minimum for those rooms; satin gives you more durability and makes cleaning easier. In living areas and bedrooms, flat or matte is fine. It is mostly about goals and preferences.",
   },
   {
     title: "Don't paint over mildew",
     details:
-      'Treat mildew first with a diluted bleach solution, let it dry fully, then use a stain-blocking primer before painting.',
+      "Treat mildew first with a diluted bleach solution, let it dry fully, then use a stain-blocking primer before painting. Painting over it doesn't fix it — it just delays the problem.",
   },
   {
     title: 'Wait before washing new paint',
     details:
-      'Fresh paint may feel dry quickly but often needs 2-4 weeks to fully cure. Cleaning too soon can damage the finish.',
-  },
-  {
-    title: 'Keep your paint record',
-    details:
-      'Track exact brand, color code, and sheen for each room so future touch-ups blend better and faster.',
+      "Fresh paint feels dry within an hour or two but often needs 2–4 weeks to fully cure. Washing too soon — especially in Florida's humidity — can damage the finish before it's set.",
   },
   {
     title: 'Ventilate during and after',
     details:
-      'Run fans and AC during painting and for at least 24 hours after to improve curing and clear fumes in humid Florida air.',
+      "Run fans and AC during painting and for at least 24 hours after. It speeds curing and clears fumes. In Florida's humidity, ventilation makes a real difference in how the finish sets.",
   },
 ];
 
 const faqs = [
   {
-    question: 'What paint sheen should I use in a Florida home?',
-    answer:
-      'Satin and eggshell are generally more durable and easier to clean, while flat hides imperfections better. In bathrooms and kitchens, eggshell or higher is usually best for moisture resistance and cleanability.',
-  },
-  {
     question: 'How long does interior paint last in Florida?',
     answer:
-      'In well-maintained homes, interior paint often lasts 5-8 years, and some rooms can reach 7-10 years with strong prep and quality products. High-humidity rooms may show wear sooner, often around 3-5 years.',
+      'In living areas and bedrooms, 7–10 years is reasonable with good prep and quality paint. Bathrooms and kitchens are harder — humidity and moisture stress the coating more, and 3–5 years is a more realistic expectation there.',
+  },
+  {
+    question: 'What paint sheen should I use in a Florida home?',
+    answer:
+      "In bathrooms and kitchens, eggshell is the minimum — flat paint doesn't hold up to moisture. Satin gives you more durability and is easier to clean. In living areas and bedrooms, flat or matte works fine if the walls are in decent shape; eggshell if you want something more washable.",
   },
   {
     question: 'Do you move furniture before interior painting?',
     answer:
-      "Yes. Standard furniture is moved and covered as part of prep. Very large or heavy items may stay in place and be fully protected while we work around them.",
+      'Yes. Standard furniture is moved and covered as part of prep. Very large or heavy pieces may stay in place and be fully protected while we work around them.',
   },
   {
     question: 'How long does interior paint take to cure in Florida humidity?',
     answer:
-      'Most latex paints are dry to the touch within 1-2 hours but often need 2-4 weeks to fully cure. High humidity can slow curing, so ventilation and AC help significantly.',
-  },
-  {
-    question: 'What prep is needed before interior painting?',
-    answer:
-      'Prep includes cleaning walls, drywall repair, sanding, priming where needed, and careful masking of trim, windows, floors, and fixtures. Better prep directly improves final appearance and durability.',
+      'Most latex paints are dry to the touch within 1–2 hours but need 2–4 weeks to fully cure. High humidity slows curing, so keeping the AC running and fans going helps significantly.',
   },
 ];
 
@@ -123,8 +113,12 @@ const faqSchema = {
           Interior Painting in Brevard County
         </h1>
         <p>
-          Interior painting is where most transformation happens in a home. In Florida, that means managing humidity,
-          choosing the right sheen by room, using mildew-resistant products where needed, and allowing proper cure time.
+          Interior painting in Florida needs more attention to mildew, humidity control, and product choice than most
+          people realize.
+        </p>
+        <p>
+          Get the prep and products right and paint in living areas can last 7–10 years. Get it wrong — wrong sheen,
+          skipped prep, or painting over existing mildew — and you might be repainting a bathroom in three years.
         </p>
       </header>
 
@@ -134,7 +128,7 @@ const faqSchema = {
         <h2 id="what-we-cover-heading" class="font-display text-2xl font-semibold sm:text-3xl">
           What We Cover
         </h2>
-        <p>Interior painting includes more than walls. A complete project can include:</p>
+        <p>A complete project can include:</p>
         <ul class="space-y-2">
           {whatWeCover.map((item) => (
             <li class="flex items-start gap-3 text-sm sm:text-base">
@@ -143,16 +137,14 @@ const faqSchema = {
             </li>
           ))}
         </ul>
-        <p class="text-muted">
-          We can handle one room or the whole house, with clear prep recommendations and options before work begins.
-        </p>
+        <p class="text-muted">We can handle one room or the whole house, whatever the project needs.</p>
       </section>
 
       <section aria-labelledby="approach-heading" class="space-y-5">
         <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
           How We Approach It
         </h2>
-        <p>Every interior job starts with prep:</p>
+        <p>Every interior job follows the same sequence, regardless of room count or project size:</p>
         <ol class="space-y-3">
           {approachSteps.map((step) => (
             <li class="rounded-xl border border-charcoal/10 bg-white/60 p-4 sm:p-5">
@@ -168,12 +160,14 @@ const faqSchema = {
           What to Expect
         </h2>
         <p>
-          A single room typically takes one day. Whole-house timelines vary by room count, ceiling height, and prep
-          requirements. You get a clear timeline upfront.
+          Interior painting timelines depend heavily on how much prep is needed and drying conditions. A single room
+          with light prep usually takes 1 day. Heavy prep (patching, sanding, mildew treatment, moving furniture) can
+          stretch that to 1.5–2 days. Whole-house jobs typically take 3–7 days depending on the number of rooms, ceiling
+          height, and condition of the walls.
         </p>
+        <p>We always give you a clear timeline after we see the space.</p>
         <p>
-          We document every product used, including brand, color code, and sheen, so future touch-ups are faster and
-          more accurate.
+          We document every product used (brand, color code, and sheen) so future touch-ups are simple.
         </p>
       </section>
 

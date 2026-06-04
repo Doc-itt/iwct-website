@@ -19,7 +19,7 @@ const approachSteps = [
   {
     title: 'Remove doors and drawer fronts',
     details:
-      'We take them off, number them, and paint both sides plus all edges for a clean, professional finish.',
+      'We take them off, number them, and paint both sides plus all edges for a clean finish.',
   },
   {
     title: 'Clean thoroughly',
@@ -39,45 +39,40 @@ const approachSteps = [
   {
     title: 'Prime',
     details:
-      'We use the right primer for the material, including wood and MDF, to improve adhesion and durability.',
+      'We use the right primer for the material — wood, MDF — to improve adhesion and durability.',
   },
   {
     title: 'Paint',
     details:
-      'Multiple thin coats of quality cabinet enamel are applied, with light sanding between coats.',
+      'Multiple thin coats of quality cabinet enamel, with light sanding between coats.',
   },
   {
     title: 'Reinstall',
     details:
-      'Doors and drawers go back on with adjusted hinges for proper alignment and a finished look.',
+      'Doors and drawers go back on with adjusted hinges for proper alignment.',
   },
 ];
 
 const homeownerTips = [
   {
-    title: 'Do not skip deglossing and sanding',
+    title: "Don't skip deglossing and sanding",
     details:
-      'Skipping this step is the main reason cabinet paint fails early through peeling or chipping.',
+      'Skipping this step is the main reason cabinet paint peels or chips early. The surface has to be properly prepared before primer goes on.',
   },
   {
     title: 'Use true cabinet enamel',
     details:
-      'Standard wall paint stays too soft for cabinets. Hard-wearing cabinet enamel cures harder and resists daily wear.',
+      'Standard wall paint stays too soft for cabinets. Hard-wearing cabinet enamel cures harder and holds up to daily use and humidity.',
   },
   {
     title: 'Light colors show more imperfections',
     details:
-      'White and off-white finishes highlight every dent, seam, and texture issue, so prep quality matters even more.',
+      'White and off-white finishes highlight every dent, seam, and texture issue. Prep quality matters even more with lighter colors.',
   },
   {
-    title: 'Plan for full cure time',
+    title: 'Update hardware while doors are off',
     details:
-      'Cabinets feel dry quickly but usually need 2-4 weeks to fully harden. Use gentle cleaning and avoid slamming doors during this period.',
-  },
-  {
-    title: 'Update hardware while cabinets are off',
-    details:
-      'It is one of the easiest ways to change the overall look while doors and drawer fronts are already removed.',
+      "With doors and drawer fronts already removed, it's a practical time to swap pulls or knobs if you've been thinking about it. Make sure you mention any changes before the project is started in case new hardware doesn't line up.",
   },
 ];
 
@@ -85,27 +80,22 @@ const faqs = [
   {
     question: 'How long does cabinet painting last in Florida?',
     answer:
-      'With proper prep and quality enamel, cabinet painting typically lasts 7-10 years with normal use. Florida humidity makes good prep critical, and skipping deglossing or priming is where most jobs fail early.',
+      'With proper prep and quality enamel, 7–10 years is a reasonable expectation with normal use. Florida humidity makes good prep critical — skipping deglossing or priming is where most jobs fail early.',
   },
   {
     question: 'Is cabinet painting cheaper than replacing cabinets?',
     answer:
-      'Yes, significantly. Painting usually costs $1,500-$4,500 while new cabinets often run $8,000-$20,000+ installed. You get a fresh, updated look for a fraction of the price.',
-  },
-  {
-    question: 'Can you match my existing cabinet color?',
-    answer:
-      'Yes. We can match your current color exactly, shift to a new color, or work from a paint chip or photo.',
+      "Yes. Painting your existing cabinets usually costs a fraction of what new ones do. You get a fresh look without tearing out the old cabinets or dealing with the mess and downtime of a full kitchen remodel.",
   },
   {
     question: 'What paint do you use on cabinets?',
     answer:
-      'We use hard-wearing water-based alkyd or urethane trim enamels designed for cabinets. These cure much harder than standard wall paint and hold up better to daily use and Florida humidity.',
+      'Hard-wearing water-based alkyd or urethane trim enamels. These cure much harder than standard wall paint and hold up better to daily use and Florida humidity.',
   },
   {
-    question: 'Do the cabinet doors need to be removed?',
+    question: 'Do cabinet doors need to be removed?',
     answer:
-      'Yes. Removing doors and drawer fronts is the only way to properly paint all edges, avoid brush marks, and get a clean, professional result.',
+      'Yes. Removing doors and drawer fronts is the only way to properly paint all edges, avoid brush marks, and get a clean result.',
   },
 ];
 
@@ -131,8 +121,9 @@ const faqSchema = {
           Cabinet Painting in Brevard County
         </h1>
         <p>
-          Cabinet painting can completely transform a kitchen or bathroom without a full remodel. Thorough cleaning,
-          deglossing, and the right hard-wearing enamel are what make it last through daily use and Florida humidity.
+          Cabinet painting is one of the most cost-effective ways to update a kitchen or bathroom without a full remodel.
+          Thorough cleaning, deglossing, and the right hard-wearing enamel are what make it last through daily use and
+          Florida humidity.
         </p>
       </header>
 
@@ -153,10 +144,16 @@ const faqSchema = {
             </li>
           ))}
         </ul>
-        <p class="text-muted">
-          Hardware (pulls, knobs, hinges) can be masked or removed and reinstalled. Many homeowners update hardware
-          while the cabinets are being painted.
-        </p>
+        <div class="space-y-3">
+          <h3 class="font-display text-lg font-semibold sm:text-xl">Hardware</h3>
+          <p class="text-muted">
+            We remove all pulls, knobs, and hinges before painting and reinstall them after.
+          </p>
+          <p class="text-muted">
+            If you're thinking about changing the hardware, let us know ahead of time. That way we can make sure the new
+            pieces line up cleanly.
+          </p>
+        </div>
       </section>
 
       <section aria-labelledby="approach-heading" class="space-y-5">
@@ -164,8 +161,8 @@ const faqSchema = {
           How We Approach It
         </h2>
         <p>
-          Cabinet painting takes more time and care than wall painting. The prep is what determines whether it lasts or
-          starts chipping and peeling.
+          Cabinet painting takes more prep steps than wall painting. That prep is what determines whether it lasts or
+          starts chipping within a year.
         </p>
         <ol class="space-y-3">
           {approachSteps.map((step) => (
@@ -182,16 +179,15 @@ const faqSchema = {
           What to Expect
         </h2>
         <p>
-          A typical kitchen cabinet project takes 3-5 days. You will still have access to the refrigerator, but the
-          kitchen will otherwise be off limits during active work.
+          A typical kitchen cabinet project takes 3–5 days. You'll still have access to the refrigerator, but the kitchen
+          will otherwise be off limits during active work.
         </p>
         <p>
-          The paint feels dry fairly quickly, but full cure takes 2-4 weeks. Treat cabinets gently during that time:
-          avoid slamming doors and use light cleaning only.
+          The paint feels dry quickly, but full cure takes 2–4 weeks. Treat cabinets gently during that time — avoid
+          slamming doors and use light cleaning only.
         </p>
         <p>
-          Cabinet painting in Brevard County usually runs $1,500-$4,500 depending on the number of doors, drawers, and
-          linear feet. This is a fraction of the cost of new cabinets.
+          Cabinet painting costs vary a lot depending on how many cabinets you have and the condition they're in.
         </p>
       </section>
 

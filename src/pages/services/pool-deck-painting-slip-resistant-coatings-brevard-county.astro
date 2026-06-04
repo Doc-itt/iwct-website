@@ -20,7 +20,7 @@ const coatingOptions = [
   {
     title: 'Acrylic pool deck coating',
     details:
-      'Most common and budget-friendly. Good UV resistance and color retention. Typically needs recoating every 3-5 years in Florida sun.',
+      'Most common option. Good UV resistance and color retention. Typically needs recoating every 3–5 years in Florida sun. Lower upfront cost.',
   },
   {
     title: 'Slip-resistant textured coating',
@@ -30,7 +30,7 @@ const coatingOptions = [
   {
     title: 'Polyaspartic coating',
     details:
-      'Premium option. Cures fast (often walkable same day), resists UV yellowing better, handles pool chemicals and moisture well, and lasts longer (often 5-10+ years with good prep). Higher upfront cost but better long-term value for heavy-use decks.',
+      'Cures fast — often walkable the same day. Resists UV yellowing better than standard acrylic, handles pool chemicals and moisture well, and typically lasts 5–10+ years with good prep. Higher upfront cost than acrylic. For heavy-use decks where longevity matters more than initial price, it often makes more sense long-term.',
   },
 ];
 
@@ -43,17 +43,17 @@ const approachSteps = [
   {
     title: 'Inspect and repair',
     details:
-      'Fill cracks and spalled areas. We never coat over existing problems.',
+      'Fill cracks and spalled areas. Coating over existing problems shortens the life of anything applied on top.',
   },
   {
     title: 'Allow full drying',
     details:
-      'Concrete must be completely dry. Florida humidity makes this step especially important.',
+      'Concrete must be completely dry before coating goes on. Florida humidity makes this step especially important.',
   },
   {
     title: 'Apply coating',
     details:
-      'Use the right product at the proper thickness, with slip-resistant texture added if needed.',
+      'Use the right product at the proper thickness, with slip-resistant texture added where needed.',
   },
 ];
 
@@ -61,7 +61,7 @@ const homeownerTips = [
   {
     title: "Don't coat over failing surfaces",
     details:
-      'Everything loose or peeling must be removed first or the new coating can fail early.',
+      'Everything loose or peeling must be removed first. Coating over it just traps the problem underneath.',
   },
   {
     title: 'Choose cooler colors for comfort',
@@ -71,17 +71,17 @@ const homeownerTips = [
   {
     title: 'Fix cracks before coating',
     details:
-      'Pool water and chlorine can worsen existing cracks over time if they are not repaired first.',
+      "Pool water and chlorine can worsen existing cracks over time if they're not repaired first.",
   },
   {
     title: 'Balance grip and comfort',
     details:
-      'More texture improves slip resistance but can feel rougher on bare feet. We help find the right balance.',
+      "More texture improves slip resistance but can feel rougher on bare feet. The right amount depends on who's using the deck and how.",
   },
   {
     title: 'Plan for maintenance cycles',
     details:
-      'Acrylic coatings typically need recoating every 3-5 years in Brevard County climate conditions.',
+      "Acrylic coatings on pool decks usually need recoating every 3–5 years in Brevard County's climate. Proper prep and regular cleaning help them last longer.",
   },
 ];
 
@@ -89,27 +89,22 @@ const faqs = [
   {
     question: 'What makes a pool deck coating slip-resistant?',
     answer:
-      'We add texture materials like silica sand or polymer grit into the coating or broadcast it while wet. This keeps the surface safer even when wet from the pool.',
+      "Texture materials — silica sand or polymer grit — are added into the coating or broadcast while it's wet. This keeps the surface safer even when wet from the pool or rain.",
   },
   {
     question: 'How often does pool deck coating need recoating in Florida?',
     answer:
-      'Standard acrylic usually needs recoating every 3-5 years. Polyaspartic lasts longer, often 5-10+ years with proper prep.',
-  },
-  {
-    question: 'Can pool deck coatings reduce surface heat?',
-    answer:
-      'Yes. Light colors reflect more heat than dark colors. Some coatings also use reflective pigments that help lower surface temperature on hot Florida days.',
+      'Standard acrylic usually needs recoating every 3–5 years. Polyaspartic lasts longer — often 5–10+ years with proper prep.',
   },
   {
     question: 'Is polyaspartic worth the extra cost?',
     answer:
-      'For busy pool decks, yes. It cures faster, handles chemicals better, resists UV yellowing, and lasts longer than standard acrylic.',
+      'It depends on how the deck gets used. Polyaspartic cures faster, handles chemicals and UV better, and lasts longer. If the deck gets heavy use year-round, the longer lifespan often offsets the higher upfront cost. For lighter-use areas, standard acrylic may be the more practical choice.',
   },
   {
     question: 'What prep does a pool deck need before coating?',
     answer:
-      'Thorough pressure washing, crack repairs, and complete drying. Skipping proper prep is the main reason coatings peel early in Florida.',
+      "Thorough pressure washing, crack repair, and complete drying. Skipping prep is the main reason coatings peel early in Florida's climate.",
   },
 ];
 
@@ -135,8 +130,9 @@ const faqSchema = {
           Pool Deck Painting & Slip-Resistant Coatings in Brevard County
         </h1>
         <p>
-          Pool decks in Brevard take a beating from constant sun, chlorine, rain, and wet feet. A good coating keeps
-          the surface safer when wet, protects the concrete, and helps it look better for longer in Florida conditions.
+          Pool deck coatings in Florida do two things: keep the surface safer when wet and protect the concrete from
+          sun, chlorine, and rain. The coating that holds up long-term depends on how well the surface was prepped and
+          whether the right product was chosen for the conditions.
         </p>
       </header>
 
@@ -174,7 +170,10 @@ const faqSchema = {
         <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
           How We Approach It
         </h2>
-        <p>Prep determines whether the coating lasts or peels in Florida weather.</p>
+        <p>
+          Pool decks face Florida's toughest conditions — constant sun, rain, pool chemicals, and foot traffic. We build
+          our process around those realities.
+        </p>
         <ol class="space-y-3">
           {approachSteps.map((step) => (
             <li class="rounded-xl border border-charcoal/10 bg-white/60 p-4 sm:p-5">
@@ -184,8 +183,8 @@ const faqSchema = {
           ))}
         </ol>
         <p class="text-muted">
-          Most projects finish in 1-2 days. Polyaspartic is usually walkable the same day. Standard acrylic typically
-          needs 24-48 hours before normal foot traffic.
+          Most projects finish in 1–2 days. Polyaspartic is usually walkable the same day. Standard acrylic typically
+          needs 24–48 hours before normal foot traffic.
         </p>
       </section>
 

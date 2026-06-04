@@ -28,7 +28,7 @@ const approachSteps = [
   {
     title: 'Inspect and repair',
     details:
-      'Find and fix stucco cracks, damaged siding, rotted wood trim, or any area where moisture could get behind the surface.',
+      'Find and fix stucco cracks, damaged siding, rotted wood trim, or any spot where moisture could get behind the surface.',
   },
   {
     title: 'Caulk and seal',
@@ -38,12 +38,12 @@ const approachSteps = [
   {
     title: 'Prime',
     details:
-      'If needed, apply the right primer for the surface: moisture-blocking for bare stucco, rust-inhibiting for metal, and bonding primer where needed.',
+      'Apply the right primer for the surface: moisture-blocking for bare stucco, rust-inhibiting for metal, bonding primer where needed.',
   },
   {
     title: 'Paint',
     details:
-      'Apply quality 100% acrylic coatings that flex with heat, resist UV fading, and repel moisture without trapping it inside the wall.',
+      'Apply quality coatings that flex with heat, resist UV fading, and let moisture escape without trapping it inside the wall.',
   },
 ];
 
@@ -51,27 +51,27 @@ const homeownerTips = [
   {
     title: "Don't paint over mildew",
     details:
-      'Pressure washing removes surface dirt but not mildew roots. Treat with a mildewcide solution before washing, or mildew can bleed through within months.',
+      'Pressure washing removes surface dirt but not mildew roots. Treat with a mildewcide solution before washing, or mildew can bleed back through within months.',
   },
   {
     title: 'Check your caulk first',
     details:
-      'Cracked or missing caulk around windows and doors is a leading cause of interior water damage in Florida homes. Walk the perimeter and note cracked or missing sections before painting.',
+      'Cracked or missing caulk around windows and doors is a leading cause of water damage in Florida homes. Walk the perimeter before you hire anyone and note what you find.',
   },
   {
-    title: 'Avoid direct afternoon sun in summer',
+    title: 'Avoid painting in direct afternoon sun in summer',
     details:
-      'Surface temperatures can exceed 120F, which prevents proper adhesion. Early morning or overcast conditions are better. Most paints need at least 24 hours before rain exposure, with some exceptions.',
+      'Surface temperatures can exceed 120°F, which prevents proper adhesion. Early morning or overcast days are better. Most paints need at least 24 hours before rain exposure.',
   },
   {
-    title: 'Choose sheen for the surface',
+    title: 'Think about sheen before you decide',
     details:
-      'Flat hides surface imperfections on stucco, while satin and low-sheen finishes are more durable, easier to clean, and hold up better in Florida humidity and frequent rain.',
+      "Flat hides surface imperfections on stucco — useful on older walls where the surface isn't perfect. Satin and low-sheen finishes hold up better in humidity, clean more easily, and resist mildew better over time. Neither is wrong. It depends on your surface and goals.",
   },
   {
     title: 'Coastal homes need extra attention',
     details:
-      "If you're within a mile of open water, ask for salt-tolerant coatings and rust-inhibiting primer on all metal surfaces, including railings, shutters, and exposed fasteners.",
+      "If you're within a mile of open water, ask about salt-tolerant coatings and rust-inhibiting primer on all metal surfaces — railings, shutters, exposed fasteners. Salt air accelerates corrosion more than most people expect.",
   },
 ];
 
@@ -79,27 +79,22 @@ const faqs = [
   {
     question: 'How long does exterior paint last in Brevard County?',
     answer:
-      "With proper prep and quality paint, exterior paint on a Brevard County home should last 5-10 years. Skip prep and you're often looking at 3 years or less before peeling, cracking, or fading.",
+      "With proper prep and quality paint, 7–10 years is a reasonable expectation. Skip prep and you're often looking at 3 years or less before peeling or fading starts.",
   },
   {
     question: 'What kind of paint works best on stucco in Florida?',
     answer:
-      'A quality 100% acrylic or elastomeric paint is typically the right choice. It helps bridge small cracks, flexes with temperature swings, and remains breathable enough to let moisture escape.',
+      'A quality 100% acrylic or elastomeric is usually the right call. It bridges small cracks, flexes with temperature swings, and stays breathable so moisture can escape.',
   },
   {
     question: 'How do I know if my home needs exterior painting?',
     answer:
-      'Watch for chalking, visible cracking or peeling, faded or uneven color, water staining, and mildew growth. These are signs the coating system is weakening.',
+      "Chalking, cracking, peeling, faded or uneven color, water staining, and mildew growth are the main signs. Any one of those is worth looking at sooner rather than later in Florida's climate.",
   },
   {
-    question: 'What does exterior prep actually involve?',
+    question: 'Does salt air actually affect paint?',
     answer:
-      'Proper prep includes pressure washing, scraping failing paint, repairing stucco cracks, caulking around openings and trim, and applying the right primer for the surface.',
-  },
-  {
-    question: 'Does salt air affect exterior paint in coastal Brevard?',
-    answer:
-      'Yes. Salt air accelerates corrosion and can break down paint faster. Breathable coatings and rust-inhibiting primers are especially important for coastal properties.',
+      'Yes, more than most people realize. It accelerates corrosion and breaks down coatings faster. The closer you are to open water, the more it matters.',
   },
 ];
 
@@ -125,8 +120,11 @@ const faqSchema = {
           Exterior Painting in Brevard County
         </h1>
         <p>
-          Florida's heat, humidity, salt air, and UV are the real challenge for exterior paint. The difference between
-          a job that lasts 5-10 years and one that starts peeling in three comes down to prep and materials.
+          Exterior painting in Florida is more demanding than most people expect. The sun is intense, the humidity is
+          constant, and if you're near the coast, salt air is working on your paint year-round.
+        </p>
+        <p>
+          Florida's climate is hard on exterior coatings — heat, UV, and moisture put paint under stress that shows up faster here than in most of the country.
         </p>
       </header>
 
@@ -137,8 +135,7 @@ const faqSchema = {
           What We Cover
         </h2>
         <p>
-          Exterior painting is more than just walls. A complete exterior project can include all major surfaces and
-          components around your home.
+          Exterior painting is more than just walls. A complete exterior project can include all of these:
         </p>
         <ul class="space-y-2">
           {whatWeCover.map((item) => (
@@ -148,14 +145,18 @@ const faqSchema = {
             </li>
           ))}
         </ul>
-        <p class="text-muted">We can handle the full exterior or specific components depending on project scope.</p>
+        <p class="text-muted">
+          We can handle the full exterior or focus on specific components, whatever the project needs.
+        </p>
       </section>
 
       <section aria-labelledby="approach-heading" class="space-y-5">
         <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
           How We Approach It
         </h2>
-        <p>Prep is everything. Most exterior projects follow the same sequence:</p>
+        <p>
+          Most exterior failures in Florida trace back to a skipped step. Here's the sequence we follow:
+        </p>
         <ol class="space-y-3">
           {approachSteps.map((step) => (
             <li class="rounded-xl border border-charcoal/10 bg-white/60 p-4 sm:p-5">
@@ -164,7 +165,6 @@ const faqSchema = {
             </li>
           ))}
         </ol>
-        <p class="text-muted">Most exterior paint failures in Florida trace back to a skipped prep step.</p>
       </section>
 
       <section aria-labelledby="expect-heading" class="space-y-5">
@@ -172,16 +172,17 @@ const faqSchema = {
           What to Expect
         </h2>
         <p>
-          Most single-story homes in Brevard County take 2-4 days for a full exterior painting project. Two-story homes
-          or projects with heavy prep usually take longer.
+          Most single-story homes take 2–4 days for a full exterior. Two-story homes or jobs with heavy prep usually
+          take longer. You get a clear timeline before work starts.
         </p>
         <p>
-          We document products used, colors, and sheen levels so you have a complete record for future touch-ups or
-          repaints.
+          We document every product used — colors, sheen levels, and application notes — so future touch-ups or repaints
+          aren't guesswork.
         </p>
         <p>
-          Pricing varies by home size, surface type (stucco, wood, vinyl siding), and prep required. Typical exterior
-          painting in Brevard County runs $2.50-$6 per square foot of paintable surface.
+          Pricing in Brevard County runs roughly $2.50–$6 per square foot of paintable surface. The lower end usually
+          means less prep time, fewer coats, or lower-grade materials. In Florida's climate, that difference tends to
+          show up within a few years.
         </p>
       </section>
 

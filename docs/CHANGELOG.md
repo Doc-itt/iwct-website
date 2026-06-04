@@ -10,6 +10,11 @@
 # Changelog
 
 ## 2026-06-03
+- Updated `src/pages/services/exterior-painting-brevard-county.astro` — full copy refresh (prep, timelines, tips, FAQs)
+- Updated `src/pages/services/interior-painting-brevard-county.astro` — full copy refresh; revised intro and What to Expect timelines
+- Updated `src/pages/services/cabinet-painting-brevard-county.astro` — full copy refresh; Hardware subsection; pricing/FAQ tweaks
+- Updated `src/pages/services/pool-deck-painting-slip-resistant-coatings-brevard-county.astro` — full copy refresh; coating options and approach intro
+- Updated `docs/SESSIONS.md`, `docs/CHANGELOG.md`, `docs/STATUS.md` — session wrap-up for service page copy pass
 - Updated `src/layouts/Layout.astro` — removed sitewide `noindex` / robots meta for indexing launch
 - Updated `astro.config.mjs` — added `site` URL and `@astrojs/sitemap` integration
 - Created `public/robots.txt` — allow all crawlers; sitemap discovery URL

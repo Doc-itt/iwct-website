@@ -15,7 +15,7 @@ _Last verified: 2026-06-03_
 | Home | `/` | Done | `src/pages/index.astro` |
 | About | `/about` | Done — needs refactor | Uses gray/blue colors not in brand palette; not using `.page-container` |
 | Services hub | `/services` | Done | `src/pages/services/index.astro` |
-| Services detail pages | `/services/*` | Done | Exterior, interior, cabinet, and pool deck pages exist |
+| Services detail pages | `/services/*` | Done — copy refreshed 2026-06-03 | Exterior, interior, cabinet, pool deck; Florida prep/humidity messaging |
 | FAQ | `/faq` | Planned | Not started |
 | Contact | `/contact` | Done | `src/pages/contact.astro` |
 | Homeowner Guide hub | `/homeowner-guide` | Done | `src/pages/homeowner-guide.astro` |
@@ -55,7 +55,7 @@ _Last verified: 2026-06-03_
 - **Notion mirror:** [IWCT Website — LLM Prompts](https://www.notion.so/364cbc135e26815380c6d622686ff22f) (child of "IWCT Website" Notion page) — copy-paste prompts only, repo is source of truth
 
 ## What's next
-- Proofread service pages and homeowner guide content
+- Proofread homeowner guide content (service detail copy refreshed 2026-06-03)
 - Build `/faq` page
 - Build Tier 1 reusable components: `PageHero`, `Section`, `ContactCard`, `FaqItem`, `ServiceCard`
 - Refactor `about.astro` to brand palette + `.page-container`

@@ -13,6 +13,13 @@
 
 # Sessions Log
 
+## 2026-06-03 — Cursor (service page copy)
+- Rewrote body copy on all four service detail pages: `exterior-painting-brevard-county.astro`, `interior-painting-brevard-county.astro`, `cabinet-painting-brevard-county.astro`, `pool-deck-painting-slip-resistant-coatings-brevard-county.astro` (intros, What We Cover, How We Approach It, What to Expect, Homeowner Tips, FAQs + JSON-LD where applicable).
+- Targeted follow-up edits: interior intro + What to Expect timelines; cabinet Hardware subsection + pricing/FAQ wording; pool deck intro, approach intro, maintenance tip; cabinet hardware tip about mentioning changes before start.
+- **Decisions:** Page `title` and meta `description` unchanged (SEO guardrails); FAQ section heading stays “Frequently Asked Questions” via `FaqSection.astro`.
+- **Next:** Proofread homeowner guide articles; deploy and spot-check live service URLs; consider `/faq` page.
+- **Git:** Committed and pushed to `master`.
+
 ## 2026-06-03 — Cursor
 - SEO indexing launch: removed sitewide `noindex` from `src/layouts/Layout.astro`; wired `site` + `@astrojs/sitemap` in `astro.config.mjs`; added `public/robots.txt`.
 - Phase 0 audit: `site:iwctpainting.com` returned no results; live site had `noindex` only from current build — no `_redirects` needed.
