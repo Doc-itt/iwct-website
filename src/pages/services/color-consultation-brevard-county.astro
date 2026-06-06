@@ -1,0 +1,197 @@
+---
+// Color consultation service page for Brevard County homeowners with process, tips, and FAQ.
+import FaqSection from '../../components/FaqSection.astro';
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Color Consultation';
+const description =
+  'Professional color consultation for homes in Brevard County. Help choosing interior and exterior paint colors that work with your space, lighting, and lifestyle.';
+
+const whatWeCover = [
+  'Interior color selection (walls, ceilings, trim)',
+  'Exterior color schemes (siding, trim, accents)',
+  'Working with your existing furniture and finishes',
+  'Lighting considerations (natural and artificial)',
+  'Coordinating multiple rooms',
+];
+
+const approachSteps = [
+  {
+    title: 'Understand your goals',
+    details:
+      'We start by talking about what you want the space to feel like, how you use each room, and any colors you already like or dislike.',
+  },
+  {
+    title: 'Evaluate the space',
+    details:
+      "We look at the room's size, natural light, artificial lighting, existing finishes, and architectural features.",
+  },
+  {
+    title: 'Review options together',
+    details:
+      'We bring physical paint samples and test them in your actual lighting conditions so you can see how the colors perform in your home.',
+  },
+  {
+    title: 'Consider practical factors',
+    details:
+      "We discuss how colors perform in Florida's bright light, how they affect the mood and perceived size of the room, and maintenance considerations.",
+  },
+  {
+    title: 'Finalize recommendations',
+    details:
+      "We provide a clear color plan with specific recommendations, including why certain colors work (or don't work) for your space.",
+  },
+];
+
+const homeownerTips = [
+  {
+    title: 'Lighting changes everything',
+    details:
+      "Florida's intense sunlight can make colors look very different than they do in a store. Always test samples on the actual wall in the room where they'll be used.",
+  },
+  {
+    title: 'Undertones matter more than you think',
+    details:
+      "Many \"neutral\" colors have hidden pink, green, or yellow undertones that become obvious once they're on the walls.",
+  },
+  {
+    title: 'Start with the biggest surfaces first',
+    details:
+      'Decide on wall colors before choosing trim or accent colors.',
+  },
+  {
+    title: 'Understanding how colors affect how you feel helps',
+    details:
+      'For more insight into why certain colors work better in certain rooms, check out our guide:',
+    link: {
+      label: 'How Paint Colors Actually Affect How You Feel in Your Home',
+      href: '/blog/how-paint-colors-affect-how-you-feel',
+    },
+  },
+];
+
+const faqs = [
+  {
+    question: 'How many colors should I use in one room?',
+    answer:
+      "Most successful rooms use 3–5 colors total. Too many can make a space feel busy.",
+  },
+  {
+    question: 'Should interior and exterior colors coordinate?',
+    answer:
+      "It's not required, but many homeowners prefer some connection for a more cohesive look.",
+  },
+  {
+    question: "Can you help choose colors if I'm not sure what I want?",
+    answer:
+      'Yes. Many people come in with very little direction. We ask questions about your style and lifestyle to help narrow things down.',
+  },
+  {
+    question: 'Do you charge for color consultation?',
+    answer:
+      'We can discuss pricing when you reach out. Many consultations are included when paired with a full painting project.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+
+const tipLinkClass = 'font-medium text-purple transition-colors hover:text-coral';
+---
+
+<Layout {title} {description}>
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-5xl space-y-12 text-base leading-relaxed text-charcoal sm:text-lg">
+      <header class="space-y-5">
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          Color Consultation
+        </h1>
+        <p>
+          Choosing paint colors can feel overwhelming. What looks good on a small sample often looks completely different
+          on the wall once the full room is painted. A color consultation helps you pick colors that work well with your
+          home's lighting, architecture, and how you actually live in the space.
+        </p>
+      </header>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section aria-labelledby="what-we-cover-heading" class="space-y-5">
+        <h2 id="what-we-cover-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What We Cover
+        </h2>
+        <ul class="space-y-2">
+          {whatWeCover.map((item) => (
+            <li class="flex items-start gap-3 text-sm sm:text-base">
+              <span class="mt-1 inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-purple" aria-hidden="true"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="approach-heading" class="space-y-5">
+        <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          How We Approach It
+        </h2>
+        <ol class="space-y-3">
+          {approachSteps.map((step) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-4 sm:p-5">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{step.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{step.details}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section aria-labelledby="expect-heading" class="space-y-5">
+        <h2 id="expect-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What to Expect
+        </h2>
+        <p>
+          During the consultation we'll walk through your space together, test real paint samples on the walls, and talk
+          through options in detail.
+        </p>
+        <p>
+          We focus on helping you understand how different colors will actually look and feel in your home — not just
+          picking pretty swatches. You'll get honest feedback, practical guidance, and a written summary of recommended
+          colors and why they make sense for your specific situation.
+        </p>
+      </section>
+
+      <section aria-labelledby="tips-heading" class="space-y-5">
+        <h2 id="tips-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Homeowner Tips
+        </h2>
+        <ul class="space-y-4">
+          {homeownerTips.map((tip) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{tip.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{tip.details}</p>
+              {'link' in tip && tip.link && (
+                <p class="mt-3">
+                  <a href={tip.link.href} class={tipLinkClass}>
+                    {tip.link.label} →
+                  </a>
+                </p>
+              )}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <FaqSection items={faqs} heading="Common Questions" />
+    </article>
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+</Layout>

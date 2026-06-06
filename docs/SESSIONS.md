@@ -13,6 +13,15 @@
 
 # Sessions Log
 
+## 2026-06-06 — Cursor
+- Added 20 new service detail pages under `src/pages/services/` (exterior subservices, interior subservices, specialty/woodwork, outdoor living/concrete) using the same layout pattern as the original four.
+- Updated `src/pages/services/index.astro`: refreshed category copy, linked every listed service to its detail page, and added section anchor IDs (`exterior-painting`, `interior-painting`, `specialty-finishes-woodwork`, `outdoor-living-concrete-coatings`) with `scroll-mt-24` for the sticky header.
+- Updated `src/components/ServiceCategoryBar.astro`: home page service cards now link to those index sections (`/services/#…`) instead of individual detail pages.
+- Tweaked copy on the four original service pages (`exterior`, `interior`, `cabinet`, `pool-deck`) for consistency with the expanded hub.
+- **Decisions:** Home category cards route to hub sections; individual service links live on the services index only. Page titles and meta descriptions on detail pages unchanged this session (SEO guardrails).
+- **Next:** Proofread new service pages; deploy and spot-check all `/services/*` URLs and home-page anchor scroll; submit updated sitemap in Search Console after deploy.
+- **Git:** Committed and pushed to `master`.
+
 ## 2026-06-03 — Cursor (service page copy)
 - Rewrote body copy on all four service detail pages: `exterior-painting-brevard-county.astro`, `interior-painting-brevard-county.astro`, `cabinet-painting-brevard-county.astro`, `pool-deck-painting-slip-resistant-coatings-brevard-county.astro` (intros, What We Cover, How We Approach It, What to Expect, Homeowner Tips, FAQs + JSON-LD where applicable).
 - Targeted follow-up edits: interior intro + What to Expect timelines; cabinet Hardware subsection + pricing/FAQ wording; pool deck intro, approach intro, maintenance tip; cabinet hardware tip about mentioning changes before start.

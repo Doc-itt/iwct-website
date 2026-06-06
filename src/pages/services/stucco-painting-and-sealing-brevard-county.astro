@@ -1,0 +1,196 @@
+---
+// Stucco painting and sealing service page for Brevard County homeowners with process, tips, and FAQ.
+import FaqSection from '../../components/FaqSection.astro';
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Stucco Painting and Sealing Brevard County | If Walls Could Talk';
+const description =
+  "Stucco painting and sealing in Brevard County. Practical information on repairing and protecting stucco in Florida's climate.";
+
+const whatWeCover = [
+  'Inspection and diagnosis of stucco issues',
+  'Crack repair and patching',
+  'Efflorescence cleaning and treatment',
+  'Moisture-related damage assessment',
+  'Stucco painting with elastomeric or acrylic coatings',
+  'Sealing options for added protection',
+  'Whatever the project needs',
+];
+
+const approachSteps = [
+  {
+    title: 'Inspect and diagnose',
+    details:
+      'We assess the condition of the stucco and look for the cause of any damage, such as cracks, water intrusion, or poor original installation.',
+  },
+  {
+    title: 'Repair the damage',
+    details:
+      'Cracks are cleaned and filled. Larger cracks often need mesh reinforcement. We also address areas where moisture has caused bubbling or delamination.',
+  },
+  {
+    title: 'Clean the surface',
+    details:
+      'Power washing removes dirt, chalking, and efflorescence so the new coating can bond properly.',
+  },
+  {
+    title: 'Apply the right coating',
+    details:
+      "We use elastomeric or high-quality acrylic stucco coatings that handle Florida's humidity, rain, and UV better than standard exterior paint.",
+  },
+  {
+    title: 'Protect during and after application',
+    details:
+      'Proper drying time and weather protection during application help the coating perform as intended.',
+  },
+];
+
+const homeownerTips = [
+  {
+    title: 'Fix the cause, not just the surface',
+    details:
+      'Painting or sealing over cracked or moisture-damaged stucco almost always leads to the same problems returning. Addressing the source of the damage first gives much better long-term results.',
+  },
+  {
+    title: 'Efflorescence is a warning sign',
+    details:
+      'The white powdery residue means water is moving through the stucco. Cleaning it without fixing the moisture issue usually means it will come back.',
+  },
+  {
+    title: 'Elastomeric coatings perform better on stucco here',
+    details:
+      "These coatings are more flexible and water-resistant than regular paint, which helps with the constant expansion and contraction caused by Florida's heat and humidity.",
+  },
+  {
+    title: 'Not all cracks need the same repair',
+    details:
+      'Hairline cracks can often be sealed. Wider or moving cracks usually need more substantial repair with mesh and proper patching material.',
+  },
+  {
+    title: 'Regular checks help',
+    details:
+      'Catching small cracks or moisture issues early keeps repair costs lower and helps new coatings last longer.',
+  },
+];
+
+const faqs = [
+  {
+    question: 'How long does stucco painting and sealing last in Brevard?',
+    answer:
+      'With proper repairs and a good elastomeric or acrylic coating, most jobs last 8–12+ years. Results depend heavily on how well underlying moisture and crack issues were addressed.',
+  },
+  {
+    question: 'Can you just paint over cracked stucco?',
+    answer:
+      'You can, but it rarely lasts. The cracks usually come back through the paint, and moisture problems often get worse underneath.',
+  },
+  {
+    question: 'What causes stucco to crack in Florida?',
+    answer:
+      'Common causes include house settling, thermal expansion and contraction from heat, poor original installation, and water intrusion behind the stucco.',
+  },
+  {
+    question: 'Do you match the existing texture?',
+    answer:
+      'Yes. We repair and texture to blend with the existing stucco as much as possible.',
+  },
+  {
+    question: 'Is sealing different from painting?',
+    answer:
+      'Sealing usually refers to applying a clear or tinted protective coating. Painting adds color. Many projects benefit from both — repairing first, then applying a quality elastomeric coating that offers both protection and color.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<Layout {title} {description}>
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-5xl space-y-12 text-base leading-relaxed text-charcoal sm:text-lg">
+      <header class="space-y-5">
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          Stucco Painting and Sealing
+        </h1>
+        <p>
+          Stucco in Brevard County faces constant stress from heat, humidity, rain, and occasional settling. Over time
+          this leads to cracks, efflorescence (white powder), bubbling, and discoloration. Painting and sealing can
+          protect the surface, but results depend heavily on addressing moisture issues and repairing damage before
+          applying any new coating.
+        </p>
+      </header>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section aria-labelledby="what-we-cover-heading" class="space-y-5">
+        <h2 id="what-we-cover-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What We Cover
+        </h2>
+        <ul class="space-y-2">
+          {whatWeCover.map((item) => (
+            <li class="flex items-start gap-3 text-sm sm:text-base">
+              <span class="mt-1 inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-purple" aria-hidden="true"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="approach-heading" class="space-y-5">
+        <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          How We Approach It
+        </h2>
+        <ol class="space-y-3">
+          {approachSteps.map((step) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-4 sm:p-5">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{step.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{step.details}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section aria-labelledby="expect-heading" class="space-y-5">
+        <h2 id="expect-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What to Expect
+        </h2>
+        <p>
+          Small repair jobs can often be completed in 1–2 days. Full stucco painting and sealing projects usually take
+          several days depending on the size of the house and how much repair work is needed.
+        </p>
+        <p>
+          You'll get a clear timeline and explanation of what repairs are necessary before any painting or sealing
+          begins.
+        </p>
+      </section>
+
+      <section aria-labelledby="tips-heading" class="space-y-5">
+        <h2 id="tips-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Homeowner Tips
+        </h2>
+        <ul class="space-y-4">
+          {homeownerTips.map((tip) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{tip.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{tip.details}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <FaqSection items={faqs} heading="Common Questions" />
+    </article>
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+</Layout>

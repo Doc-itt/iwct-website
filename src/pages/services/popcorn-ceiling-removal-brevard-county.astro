@@ -1,0 +1,197 @@
+---
+// Popcorn ceiling removal service page for Brevard County homeowners with process, tips, and FAQ.
+import FaqSection from '../../components/FaqSection.astro';
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Popcorn Ceiling Removal';
+const description =
+  'Popcorn ceiling removal for homes in Brevard County. Practical information on the removal process and texture options afterward.';
+
+const whatWeCover = [
+  'Asbestos testing when needed',
+  'Safe removal of popcorn texture',
+  'Dust and debris containment',
+  'Post-removal surface preparation',
+  'Texture options (smooth, knockdown, orange peel, etc.)',
+  'Painting after removal',
+];
+
+const approachSteps = [
+  {
+    title: 'Test for asbestos',
+    details:
+      'We recommend professional testing for homes built before the early 1980s, as popcorn texture from that era may contain asbestos.',
+  },
+  {
+    title: 'Contain the work area if needed',
+    details:
+      'We set up containment with plastic sheeting and negative air machines to keep dust from spreading through the house.',
+  },
+  {
+    title: 'Remove the texture',
+    details:
+      'We use wet methods and specialized tools to scrape down the popcorn safely. The exact method depends on the texture you want afterward and whether asbestos is present.',
+  },
+  {
+    title: 'Prepare the surface',
+    details:
+      'After removal, we repair any damage to the drywall, sand the ceiling smooth, and get it ready for new texture or a smooth finish.',
+  },
+  {
+    title: 'Apply new texture (optional)',
+    details:
+      'We offer several texture options based on your preference and the look of the rest of the home.',
+  },
+];
+
+const homeownerTips = [
+  {
+    title: 'Testing is important in older homes',
+    details:
+      'Homes built before the early 1980s frequently contain asbestos in popcorn texture. Professional testing is the only way to know for sure. Never attempt removal yourself if asbestos is suspected.',
+  },
+  {
+    title: 'You have options after removal',
+    details:
+      'After the popcorn is gone, you can go with a smooth ceiling or choose a new texture such as:',
+    listItems: [
+      'Knockdown (very popular in Florida)',
+      'Orange peel',
+      'Light skip trowel',
+      'Completely smooth',
+    ],
+  },
+  {
+    title: 'Removal is messy but worth it for most people',
+    details:
+      'The process creates dust and debris during the work, but proper containment keeps the mess contained. The finished result is a much cleaner, more modern-looking ceiling.',
+  },
+  {
+    title: 'Painting after removal',
+    details:
+      'Most people paint the ceiling after the new texture (or smooth finish) is applied. We can coordinate this as part of the project.',
+  },
+];
+
+const faqs = [
+  {
+    question: 'Do all popcorn ceilings contain asbestos?',
+    answer:
+      'No, but many installed before the early 1980s do. Professional testing is the only way to know for sure.',
+  },
+  {
+    question: 'Is it illegal to remove popcorn ceilings myself?',
+    answer:
+      "If the material contains asbestos, disturbing it without proper licensing and procedures can violate regulations. It's much safer to have it tested and handled professionally.",
+  },
+  {
+    question: 'What texture options do I have after removal?',
+    answer:
+      'Popular choices include completely smooth, knockdown, orange peel, or light skip trowel. Knockdown is very common in Florida homes because it hides minor imperfections well.',
+  },
+  {
+    question: 'Can you just cover the popcorn instead of removing it?',
+    answer:
+      'Yes, skim coating over the existing texture is an option for some people, but removal usually gives a cleaner, more modern result.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<Layout {title} {description}>
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-5xl space-y-12 text-base leading-relaxed text-charcoal sm:text-lg">
+      <header class="space-y-5">
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          Popcorn Ceiling Removal
+        </h1>
+        <p>
+          Popcorn ceilings were very common in homes built before the early 1980s. Many homeowners want them removed
+          because they collect dust, look dated, and can be difficult to clean. Removal can dramatically update a room,
+          but it requires proper testing and careful handling, especially in older homes.
+        </p>
+      </header>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section aria-labelledby="what-we-cover-heading" class="space-y-5">
+        <h2 id="what-we-cover-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What We Cover
+        </h2>
+        <ul class="space-y-2">
+          {whatWeCover.map((item) => (
+            <li class="flex items-start gap-3 text-sm sm:text-base">
+              <span class="mt-1 inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-purple" aria-hidden="true"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="approach-heading" class="space-y-5">
+        <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          How We Approach It
+        </h2>
+        <ol class="space-y-3">
+          {approachSteps.map((step) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-4 sm:p-5">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{step.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{step.details}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section aria-labelledby="expect-heading" class="space-y-5">
+        <h2 id="expect-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What to Expect
+        </h2>
+        <p>
+          A typical popcorn ceiling removal project takes 1–4 days depending on the size of the area. Full containment
+          and proper cleanup add time compared to regular painting.
+        </p>
+        <p>
+          The room will be out of use during the work. Once complete, the ceiling will look much more modern and be much
+          easier to clean and maintain.
+        </p>
+      </section>
+
+      <section aria-labelledby="tips-heading" class="space-y-5">
+        <h2 id="tips-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Homeowner Tips
+        </h2>
+        <ul class="space-y-4">
+          {homeownerTips.map((tip) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{tip.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{tip.details}</p>
+              {'listItems' in tip && tip.listItems && tip.listItems.length > 0 && (
+                <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-muted sm:text-base">
+                  {tip.listItems.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <FaqSection items={faqs} heading="Common Questions" />
+    </article>
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+</Layout>

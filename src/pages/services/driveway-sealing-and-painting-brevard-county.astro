@@ -1,0 +1,233 @@
+---
+// Driveway sealing and painting service page for Brevard County homeowners with options, process, tips, and FAQ.
+import FaqSection from '../../components/FaqSection.astro';
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Driveway Sealing and Painting | If Walls Could Talk';
+const description =
+  "Driveway sealing and painting in Brevard County. Practical information on sealers, coatings, and decorative options for concrete and paver driveways in Florida's climate.";
+
+const whatWeCover = [
+  'Cleaning and surface prep',
+  'Crack repair and patching',
+  'Penetrating concrete sealing',
+  'Acrylic and polyaspartic coatings',
+  'Driveway painting',
+  'Decorative overlays and walkway finishes',
+  'Paver sealing',
+];
+
+const coatingOptions = [
+  {
+    title: 'Penetrating sealer',
+    details:
+      "Soaks into the concrete rather than sitting on top. Protects against moisture and staining without changing the appearance much. Low maintenance and a good choice if you want to preserve the natural look of the concrete. Needs reapplication every few years but doesn't peel or wear visibly.",
+  },
+  {
+    title: 'Acrylic sealer / coating',
+    details:
+      "Sits on the surface and adds sheen and color. More visible protection than a penetrating sealer, but Florida's UV wears through it faster than in cooler climates — typically every 2–3 years before recoating is needed.",
+  },
+  {
+    title: 'Concrete paint',
+    details:
+      'Gives solid color coverage and can hide surface wear and discoloration. Expect to recoat every 3–5 years. More maintenance than a polyaspartic but lower upfront cost.',
+  },
+  {
+    title: 'Polyaspartic coating',
+    details:
+      "A higher-performance option that handles Florida's UV and heat well without yellowing. Cures fast, which limits weather exposure during installation. Lasts longer than acrylics with less frequent recoating. More involved to apply and typically a higher upfront cost.",
+  },
+  {
+    title: 'Decorative overlay',
+    details:
+      'A cement-based layer applied over existing concrete, then stamped, stenciled, or textured to replicate stone, brick, or tile. Covers surface cracks and discoloration. Works on driveways and walkways — many homeowners use it to create a consistent look across both. Expect 8–15 years with proper maintenance; the sealer on top needs reapplication every 2–3 years.',
+  },
+  {
+    title: 'Paver sealing',
+    details:
+      "Pavers are sealed differently than concrete. The sealer stabilizes the joint sand, helps resist staining, and enhances color. In Florida's UV, most paver sealers need reapplication every 2–3 years. The type of paver — travertine, brick, concrete — affects which sealer is appropriate.",
+  },
+];
+
+const approachSteps = [
+  {
+    title: 'Assess the surface',
+    details:
+      "We look at the condition of the driveway — cracks, staining, previous coatings, drainage, and sun exposure. Florida surface temps can exceed 120°F, which puts real stress on coatings. What's already on the surface affects what can go over it.",
+  },
+  {
+    title: 'Clean and prep',
+    details:
+      'Dirt, oil, and old failing coatings have to come off before anything new goes on. On driveways, that usually means pressure washing and sometimes chemical cleaning for oil or grease stains.',
+  },
+  {
+    title: 'Repair cracks and damage',
+    details:
+      "Surface cracks are filled before sealing or coating. Sealer won't bridge structural cracks — it slows moisture intrusion at the surface. If the concrete has significant structural issues, we'll let you know before proceeding.",
+  },
+  {
+    title: 'Apply the sealer or coating',
+    details:
+      'We match the product to the surface and the goal. Application conditions matter — temperature and moisture affect how well coatings cure and bond.',
+  },
+];
+
+const homeownerTips = [
+  {
+    title: "Sealer won't fix structural problems",
+    details:
+      "If the concrete is cracking from soil movement or settling underneath, coating over it won't solve the problem. The structural issue needs to be addressed first.",
+  },
+  {
+    title: 'Acrylic sealers need more frequent attention in Florida',
+    details:
+      "Florida's UV degrades acrylic coatings faster than in cooler climates. What might last 4–5 years elsewhere often needs recoating every 2–3 years here.",
+  },
+  {
+    title: 'Decorative overlays work on driveways and walkways',
+    details:
+      'If you want the look of stone, tile, or stamped patterns without replacing the concrete, an overlay is worth considering. Walkways are a natural fit for the same treatment if you want a consistent look across the property.',
+  },
+  {
+    title: "Paver sealers aren't interchangeable with concrete sealers",
+    details:
+      'Using the wrong product on pavers can trap moisture, cloud the surface, or break down faster. Travertine, brick, and concrete pavers each have different sealer requirements.',
+  },
+];
+
+const faqs = [
+  {
+    question: 'How often does a concrete driveway need to be sealed in Brevard?',
+    answer:
+      "It depends on the product. Acrylic sealers typically need recoating every 2–3 years in Florida's UV. Polyaspartic coatings last longer. Penetrating sealers fall somewhere in between but don't show wear the same way surface coatings do.",
+  },
+  {
+    question: 'Can you apply a new coating over an existing one?',
+    answer:
+      'Sometimes. If the existing coating is still bonding well and not peeling or flaking, a new coat can often go over it with proper cleaning and prep. Failing coatings need to come off first.',
+  },
+  {
+    question: "What's the difference between sealing and painting a driveway?",
+    answer:
+      'A sealer — especially a penetrating sealer — protects the concrete without significantly changing its appearance. Paint and acrylic coatings add color and a more finished look but sit on the surface and require more maintenance over time.',
+  },
+  {
+    question: 'Do decorative overlays hold up to vehicle traffic?',
+    answer:
+      'Yes, when the right system is used and properly sealed. Not every decorative product is built for driveway use — some are better suited to patios or walkways — so product selection matters.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<Layout {title} {description}>
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-5xl space-y-12 text-base leading-relaxed text-charcoal sm:text-lg">
+      <header class="space-y-5">
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          Driveway Sealing and Painting
+        </h1>
+        <p>
+          Concrete driveways in Brevard County deal with intense UV, surface heat, heavy rain, and vehicle traffic
+          year-round. Unsealed concrete absorbs moisture, stains easily, and breaks down faster than it would in a
+          cooler climate. The right sealer or coating slows that process — but the options vary a lot in how long they
+          last, what they look like, and how much maintenance they require.
+        </p>
+      </header>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section aria-labelledby="what-we-cover-heading" class="space-y-5">
+        <h2 id="what-we-cover-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What We Cover
+        </h2>
+        <ul class="space-y-2">
+          {whatWeCover.map((item) => (
+            <li class="flex items-start gap-3 text-sm sm:text-base">
+              <span class="mt-1 inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-purple" aria-hidden="true"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="coating-options-heading" class="space-y-5">
+        <h2 id="coating-options-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Coating Options
+        </h2>
+        <p>Not every product is the right fit for every driveway. Here's a practical overview of the main options.</p>
+        <ul class="space-y-4">
+          {coatingOptions.map((option) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{option.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{option.details}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="approach-heading" class="space-y-5">
+        <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          How We Approach It
+        </h2>
+        <ol class="space-y-3">
+          {approachSteps.map((step) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-4 sm:p-5">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{step.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{step.details}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section aria-labelledby="expect-heading" class="space-y-5">
+        <h2 id="expect-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What to Expect
+        </h2>
+        <p>
+          Most driveway sealing and painting projects take 1–2 days. Decorative overlay work takes longer depending on
+          scope.
+        </p>
+        <p>
+          Drying and cure times vary by product. Most sealed driveways can handle foot traffic within 24 hours and
+          vehicle traffic within 48–72 hours, though full cure takes longer.
+        </p>
+        <p>
+          Driveways in full sun wear faster than shaded ones. Resealing before the coating fully breaks down is easier
+          than starting over on bare, weathered concrete.
+        </p>
+      </section>
+
+      <section aria-labelledby="tips-heading" class="space-y-5">
+        <h2 id="tips-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Homeowner Tips
+        </h2>
+        <ul class="space-y-4">
+          {homeownerTips.map((tip) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{tip.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{tip.details}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <FaqSection items={faqs} heading="Common Questions" />
+    </article>
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+</Layout>

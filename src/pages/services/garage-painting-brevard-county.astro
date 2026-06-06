@@ -1,0 +1,197 @@
+---
+// Garage painting service page for Brevard County homeowners with process, tips, and FAQ.
+import FaqSection from '../../components/FaqSection.astro';
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Garage Painting Brevard County | If Walls Could Talk';
+const description =
+  "Garage painting in Brevard County. Practical information on painting garage walls and ceilings in Florida's heat and humidity.";
+
+const whatWeCover = [
+  'Surface cleaning and prep',
+  'Drywall and masonry repair',
+  'Priming bare or previously painted surfaces',
+  'Painting walls and ceilings',
+  'Whatever the project needs',
+];
+
+const approachSteps = [
+  {
+    title: 'Assess the space',
+    details:
+      "We look at the wall and ceiling material — drywall, concrete block, or a mix — along with the current condition, any staining or moisture issues, and whether the surface has been painted before. Garages vary more than most rooms.",
+  },
+  {
+    title: 'Clean and prep the surface',
+    details:
+      "Garages collect dust, grease, and exhaust residue. That has to come off before paint goes on or it won't bond properly.",
+  },
+  {
+    title: 'Repair as needed',
+    details:
+      'Cracks, holes, and damaged areas are addressed before painting. On block walls, we also check for efflorescence, which needs to be treated before paint is applied.',
+  },
+  {
+    title: 'Prime',
+    details:
+      'Most garage surfaces benefit from a dedicated primer — especially bare drywall, concrete block, or surfaces with staining. Primer helps the topcoat go on evenly and adhere better long-term.',
+  },
+  {
+    title: 'Apply the paint',
+    details:
+      'We use paints suited to the conditions — humidity-resistant, washable finishes that can handle the temperature swings a Florida garage sees. Most jobs need two coats.',
+  },
+];
+
+const homeownerTips = [
+  {
+    title: 'Sheen level matters in a garage',
+    details:
+      'Flat paint is harder to wipe down and shows grease and dirt more over time. Satin or semi-gloss finishes are easier to clean and hold up better in a working garage. That said, flat can work fine in a garage used mainly for storage where appearance is less of a priority.',
+  },
+  {
+    title: 'Concrete block needs different treatment than drywall',
+    details:
+      'Block is porous and often has moisture moving through it. A masonry primer or block filler is usually needed before topcoat. Skipping this step leads to peeling and uneven coverage.',
+  },
+  {
+    title: 'Efflorescence has to be dealt with before painting',
+    details:
+      'The white chalky residue that appears on block walls is a sign of moisture moving through the masonry. Painting over it without treatment causes the new paint to fail.',
+  },
+  {
+    title: 'Garage ceilings are often overlooked',
+    details:
+      "Painting the ceiling along with the walls makes the space feel more finished and easier to keep clean. It's worth doing at the same time rather than coming back to it later.",
+  },
+  {
+    title: 'Floors are a separate project',
+    details:
+      "If you're also thinking about the garage floor, that's a different scope involving coatings rather than paint. We cover that on our garage floor coating page.",
+    link: { label: 'Garage floor coating', href: '/services/garage-floor-coating-brevard-county' },
+  },
+];
+
+const faqs = [
+  {
+    question: 'What kind of paint holds up best in a Florida garage?',
+    answer:
+      '100% acrylic latex paints with a satin or semi-gloss finish generally perform well. They handle humidity and temperature changes better than flat paints and are easier to clean.',
+  },
+  {
+    question: 'Do garage walls need to be primed before painting?',
+    answer:
+      'Usually yes, especially if the walls are bare drywall, unpainted block, or have staining. Primer helps the topcoat bond properly and cover evenly.',
+  },
+  {
+    question: 'Can you paint over old garage paint?',
+    answer:
+      "If the existing paint is in good shape — not peeling or flaking — new paint can often go over it with proper cleaning and prep. Failing paint needs to come off first.",
+  },
+  {
+    question: 'How long does garage paint last in Brevard?',
+    answer:
+      'With good prep and the right products, most garage wall and ceiling paint holds up 5–7 years before it needs attention. Garages with moisture issues or heavy use may need it sooner.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+
+const tipLinkClass = 'font-medium text-purple transition-colors hover:text-coral';
+---
+
+<Layout {title} {description}>
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-5xl space-y-12 text-base leading-relaxed text-charcoal sm:text-lg">
+      <header class="space-y-5">
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          Garage Painting
+        </h1>
+        <p>
+          Garage interiors in Brevard County deal with heat, humidity, and conditions that most interior paints aren't
+          built for. Bare drywall or block walls absorb moisture, stain easily, and are harder to keep clean. The right
+          paint and prep make a real difference in how long the finish holds up and how functional the space feels.
+        </p>
+      </header>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section aria-labelledby="what-we-cover-heading" class="space-y-5">
+        <h2 id="what-we-cover-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What We Cover
+        </h2>
+        <ul class="space-y-2">
+          {whatWeCover.map((item) => (
+            <li class="flex items-start gap-3 text-sm sm:text-base">
+              <span class="mt-1 inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-purple" aria-hidden="true"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="approach-heading" class="space-y-5">
+        <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          How We Approach It
+        </h2>
+        <ol class="space-y-3">
+          {approachSteps.map((step) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-4 sm:p-5">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{step.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{step.details}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section aria-labelledby="expect-heading" class="space-y-5">
+        <h2 id="expect-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What to Expect
+        </h2>
+        <p>
+          Most garage painting projects take 1–3 days depending on the size of the space and how much prep work is needed.
+        </p>
+        <p>
+          Garages with unpainted block walls or significant staining take longer because of the extra prep and priming
+          involved.
+        </p>
+      </section>
+
+      <section aria-labelledby="tips-heading" class="space-y-5">
+        <h2 id="tips-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Homeowner Tips
+        </h2>
+        <ul class="space-y-4">
+          {homeownerTips.map((tip) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{tip.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{tip.details}</p>
+              {'link' in tip && tip.link && (
+                <p class="mt-3">
+                  <a href={tip.link.href} class={tipLinkClass}>
+                    {tip.link.label} →
+                  </a>
+                </p>
+              )}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <FaqSection items={faqs} heading="Common Questions" />
+    </article>
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+</Layout>

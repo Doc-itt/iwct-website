@@ -1,0 +1,213 @@
+---
+// Deck painting service page for Brevard County homeowners with process, tips, and FAQ.
+import FaqSection from '../../components/FaqSection.astro';
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Deck Painting Brevard County | If Walls Could Talk';
+const description =
+  "Deck painting in Brevard County. Practical information on solid color finishes for wood decks and porches in Florida's climate.";
+
+const whatWeCover = [
+  'Cleaning and prep, including mildew treatment',
+  'Minor board repair and replacement',
+  'Solid color deck painting',
+  'Railings, stairs, and fascia',
+  'Color consultation',
+  'Clear maintenance expectations',
+];
+
+const approachSteps = [
+  {
+    title: 'Assess the deck',
+    details:
+      'We evaluate the current condition, how much old finish is present, signs of damage or mildew, and the level of sun and weather exposure.',
+  },
+  {
+    title: 'Clean and prep the surface',
+    details:
+      'Thorough cleaning is essential. We remove dirt, mildew, and old failing finish so the new paint can bond properly.',
+  },
+  {
+    title: 'Repair as needed',
+    details:
+      'Damaged or loose boards are fixed or replaced before painting. Painting over bad wood usually leads to early failure.',
+  },
+  {
+    title: 'Choose the right paint system for Florida',
+    details:
+      'We use exterior deck paints formulated for high UV and moisture. Solid color paints give more opacity and color choice than stains.',
+  },
+  {
+    title: 'Apply under proper conditions',
+    details:
+      "Temperature, humidity, and drying time affect how well the paint performs. We don't rush this step.",
+  },
+];
+
+const homeownerTips = [
+  {
+    title: 'Prep is what actually determines how long the paint lasts',
+    details:
+      'Painting over dirt, old failing finish, or mildew is one of the fastest ways to get peeling or early failure.',
+  },
+  {
+    title: 'Solid color paint gives more coverage than stain',
+    details:
+      'It can hide more wear and give older decks a fresher look. Some paint systems can also help extend the life of older wood, which means some minor repairs can sometimes be delayed a bit longer with the right product and prep.',
+  },
+  {
+    title: 'Repair damaged boards before painting when possible',
+    details:
+      'Fixing problem areas now usually prevents you from having to repaint around them again sooner.',
+  },
+  {
+    title: 'New or recently replaced boards need proper preparation',
+    details:
+      'New wood should be cleaned and sometimes primed before painting for better adhesion.',
+  },
+  {
+    title: 'Maintenance between full coats helps',
+    details:
+      'Regular pressure washing (done carefully) and recoating before the paint fully breaks down can make the job easier and help the deck stay protected longer.',
+  },
+  {
+    title: 'Deck staining is another option',
+    details:
+      'If you prefer to keep more of the natural wood look, staining may be worth considering. Staining and painting have different strengths depending on the condition of your deck and what you want it to look like. We can walk you through both options.',
+  },
+];
+
+const faqs = [
+  {
+    question: 'How long does deck painting last in Brevard?',
+    answer:
+      'Most solid color deck paint jobs last 2–4 years before needing attention again. Decks in full sun or with heavy foot traffic usually need it on the shorter end of that range.',
+  },
+  {
+    question: 'Can I paint over old stain?',
+    answer:
+      'Sometimes, but it depends on the condition of the old stain. If the stain is peeling, chalking, or no longer bonding well, it usually needs to be removed or heavily prepped first.',
+  },
+  {
+    question: 'How do I know if my deck needs painting or staining?',
+    answer:
+      'It depends on the current condition of the wood and the look you want. Painting offers more color coverage and can refresh older decks. Staining keeps more of the natural wood appearance. We can help you decide which makes more sense for your deck.',
+  },
+  {
+    question: 'Do I need to prime before painting a deck?',
+    answer:
+      "In many cases yes, especially on new wood or when changing from stain to paint. We'll let you know what your deck needs during the assessment.",
+  },
+  {
+    question: 'When should I consider replacing boards instead of painting?',
+    answer:
+      "If boards are soft, rotting, or badly warped, painting won't fix the underlying problem. In those cases, replacement is usually the better long-term option.",
+  },
+  {
+    question: 'Can porch floors be painted the same way as decks?',
+    answer:
+      'Yes, but porch floors often see more foot traffic and may have some weather protection. We adjust the product and expectations based on your specific porch.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<Layout {title} {description}>
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-5xl space-y-12 text-base leading-relaxed text-charcoal sm:text-lg">
+      <header class="space-y-5">
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          Deck Painting
+        </h1>
+        <p>
+          Deck painting gives solid color coverage and can refresh the look of an older or weathered deck. In Brevard
+          County, strong sun, humidity, and rain make durability more challenging than in drier climates. A good paint
+          job can last reasonably well, but results depend on proper prep and using products suited to Florida
+          conditions.
+        </p>
+        <p>
+          Most deck painting problems here come from painting over poorly prepared surfaces or using products that don't
+          hold up well to constant moisture and UV.
+        </p>
+      </header>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section aria-labelledby="what-we-cover-heading" class="space-y-5">
+        <h2 id="what-we-cover-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What We Cover
+        </h2>
+        <ul class="space-y-2">
+          {whatWeCover.map((item) => (
+            <li class="flex items-start gap-3 text-sm sm:text-base">
+              <span class="mt-1 inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-purple" aria-hidden="true"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="approach-heading" class="space-y-5">
+        <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          How We Approach It
+        </h2>
+        <ol class="space-y-3">
+          {approachSteps.map((step) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-4 sm:p-5">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{step.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{step.details}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section aria-labelledby="expect-heading" class="space-y-5">
+        <h2 id="expect-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What to Expect
+        </h2>
+        <p>
+          Most deck painting jobs take 1–2 days depending on size and condition.
+        </p>
+        <p>
+          You can usually walk on the deck within 24–48 hours, but it needs additional time before heavy furniture or
+          use.
+        </p>
+        <p>
+          In Brevard conditions, solid color deck paint typically needs redoing every 2–4 years. Regular pressure
+          washing between full paint jobs helps the finish last longer. Recoating earlier, before the paint starts
+          failing badly, also makes maintenance easier and helps protect the wood.
+        </p>
+      </section>
+
+      <section aria-labelledby="tips-heading" class="space-y-5">
+        <h2 id="tips-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Homeowner Tips
+        </h2>
+        <ul class="space-y-4">
+          {homeownerTips.map((tip) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{tip.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{tip.details}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <FaqSection items={faqs} heading="Common Questions" />
+    </article>
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+</Layout>

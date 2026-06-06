@@ -1,0 +1,210 @@
+---
+// Stucco crack repair service page for Brevard County homeowners with process, tips, and FAQ.
+import FaqSection from '../../components/FaqSection.astro';
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Stucco Crack Repair';
+const description =
+  'Stucco crack repair in Brevard County. Practical information on fixing hairline and structural cracks, addressing causes, and preventing future damage.';
+
+const whatWeCover = [
+  'Hairline crack repair',
+  'Larger and structural crack repair',
+  'Addressing moisture and settling issues',
+  'Surface preparation and texture matching',
+  'Protective coatings after repair',
+  'Prevention strategies',
+];
+
+const approachSteps = [
+  {
+    title: 'Inspect and diagnose',
+    details:
+      'We examine the cracks to determine if they are stable or still moving, look for signs of moisture intrusion, and identify possible causes like settling or poor drainage.',
+  },
+  {
+    title: 'Prepare the area',
+    details:
+      'We clean the cracks, widen them slightly if needed for better adhesion, and remove loose material.',
+  },
+  {
+    title: 'Repair the cracks',
+    details:
+      'Hairline cracks are often filled with flexible patching compound. Larger cracks may require mesh reinforcement and stucco patching material to restore strength and match the existing texture.',
+  },
+  {
+    title: 'Finish the surface',
+    details:
+      'After repairs, we blend the texture to match the surrounding stucco as closely as possible and apply a protective coating when appropriate.',
+  },
+  {
+    title: 'Final inspection',
+    details:
+      'We check that the texture blends well and the repair is solid before completing the job.',
+  },
+];
+
+const homeownerTips = [
+  {
+    title: 'Address the cause first',
+    details:
+      "Cracks from settling or water intrusion will usually return if the underlying issue isn't fixed. We help identify drainage or foundation problems when present.",
+  },
+  {
+    title: 'Hairline vs. larger cracks need different approaches',
+    details:
+      'Hairline cracks can often be repaired with flexible patching. Wider or moving cracks usually need proper patching with mesh for strength.',
+  },
+  {
+    title: 'Regular inspections catch problems early',
+    details:
+      'Check your stucco after storms or heavy rain. Catching small cracks early is much cheaper than waiting until water has caused bigger damage.',
+  },
+  {
+    title: 'Texture matching is important',
+    details:
+      'A good repair should blend visually with the rest of the wall. We match existing textures as closely as possible.',
+  },
+  {
+    title: 'Protective coatings can help after repair',
+    details:
+      'A quality exterior coating applied after repairs can provide additional protection, but the best choice depends on the condition of the rest of the stucco.',
+    link: {
+      label: 'Stucco painting and sealing',
+      href: '/services/stucco-painting-and-sealing-brevard-county',
+    },
+  },
+];
+
+const faqs = [
+  {
+    question: 'Why does stucco crack so much in Florida?',
+    answer:
+      'Heat causes expansion and contraction, house settling is common in sandy soils, and moisture intrusion from heavy rains or poor drainage all contribute to cracking.',
+  },
+  {
+    question: 'Can you just caulk stucco cracks?',
+    answer:
+      'For very small, stable hairline cracks, flexible caulk or patch can work. Larger or moving cracks usually need proper patching and reinforcement.',
+  },
+  {
+    question: 'How long do stucco crack repairs last?',
+    answer:
+      'With proper preparation and addressing the cause, repairs can last many years. Repairs without fixing the underlying issue may reappear sooner.',
+  },
+  {
+    question: 'Do I need to paint after crack repair?',
+    answer:
+      'It depends on the condition of the surrounding stucco. Many homeowners choose to apply a fresh protective coating or full repaint after repairs for best appearance and protection.',
+    footerLinks: [
+      { label: 'Stucco painting and sealing', href: '/services/stucco-painting-and-sealing-brevard-county' },
+    ],
+  },
+  {
+    question: 'Is it possible to prevent stucco cracks?',
+    answer:
+      'Not completely, but good drainage, proper gutters, and regular maintenance significantly reduce cracking over time.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+
+const tipLinkClass = 'font-medium text-purple transition-colors hover:text-coral';
+---
+
+<Layout {title} {description}>
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-5xl space-y-12 text-base leading-relaxed text-charcoal sm:text-lg">
+      <header class="space-y-5">
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          Stucco Crack Repair
+        </h1>
+        <p>
+          Stucco cracks are very common in Brevard County due to our heat, humidity, house settling, and salt air. Small
+          hairline cracks are often cosmetic, but wider or moving cracks can let water in and lead to bigger problems.
+          Proper repair addresses both the visible crack and the underlying cause for longer-lasting results.
+        </p>
+      </header>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section aria-labelledby="what-we-cover-heading" class="space-y-5">
+        <h2 id="what-we-cover-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What We Cover
+        </h2>
+        <ul class="space-y-2">
+          {whatWeCover.map((item) => (
+            <li class="flex items-start gap-3 text-sm sm:text-base">
+              <span class="mt-1 inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-purple" aria-hidden="true"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="approach-heading" class="space-y-5">
+        <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          How We Approach It
+        </h2>
+        <ol class="space-y-3">
+          {approachSteps.map((step) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-4 sm:p-5">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{step.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{step.details}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section aria-labelledby="expect-heading" class="space-y-5">
+        <h2 id="expect-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What to Expect
+        </h2>
+        <p>
+          Small crack repair jobs can often be completed in 1–2 days. Larger areas or multiple cracks may take several days
+          depending on drying times between steps.
+        </p>
+        <p>
+          Repaired areas will blend with the existing stucco, though exact texture matching can be challenging on older
+          surfaces.
+        </p>
+      </section>
+
+      <section aria-labelledby="tips-heading" class="space-y-5">
+        <h2 id="tips-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Homeowner Tips
+        </h2>
+        <ul class="space-y-4">
+          {homeownerTips.map((tip) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{tip.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{tip.details}</p>
+              {'link' in tip && tip.link && (
+                <p class="mt-3">
+                  <a href={tip.link.href} class={tipLinkClass}>
+                    {tip.link.label} →
+                  </a>
+                </p>
+              )}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <FaqSection items={faqs} heading="Common Questions" />
+    </article>
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+</Layout>

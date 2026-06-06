@@ -7,15 +7,15 @@
 
 # Project Status
 
-_Last verified: 2026-06-03_
+_Last verified: 2026-06-06_
 
 ## Pages
 | Page | Path | Status | Notes |
 |---|---|---|---|
 | Home | `/` | Done | `src/pages/index.astro` |
 | About | `/about` | Done — needs refactor | Uses gray/blue colors not in brand palette; not using `.page-container` |
-| Services hub | `/services` | Done | `src/pages/services/index.astro` |
-| Services detail pages | `/services/*` | Done — copy refreshed 2026-06-03 | Exterior, interior, cabinet, pool deck; Florida prep/humidity messaging |
+| Services hub | `/services` | Done | Four category sections with anchor IDs; every listed service links to a detail page |
+| Services detail pages | `/services/*` | Done | 24 pages across exterior, interior, specialty/woodwork, and outdoor living |
 | FAQ | `/faq` | Planned | Not started |
 | Contact | `/contact` | Done | `src/pages/contact.astro` |
 | Homeowner Guide hub | `/homeowner-guide` | Done | `src/pages/homeowner-guide.astro` |
@@ -29,7 +29,7 @@ _Last verified: 2026-06-03_
 - `Footer.astro` — done; brand block, contact info, quick links, full Brevard service area
 - `Layout.astro` — done; handles all SEO (title, description, canonical, OG, Twitter cards, fonts)
 - `FaqSection.astro` — done; reusable FAQ rendering section
-- `ServiceCategoryBar.astro` — done; service category image cards
+- `ServiceCategoryBar.astro` — done; four category image cards linking to `/services/#` hub sections
 - `GuideUnderConstruction.astro` — done; reusable under-construction callout
 - `Welcome.astro` — Astro starter template, **unused** — candidate for deletion
 
@@ -55,7 +55,8 @@ _Last verified: 2026-06-03_
 - **Notion mirror:** [IWCT Website — LLM Prompts](https://www.notion.so/364cbc135e26815380c6d622686ff22f) (child of "IWCT Website" Notion page) — copy-paste prompts only, repo is source of truth
 
 ## What's next
-- Proofread homeowner guide content (service detail copy refreshed 2026-06-03)
+- Proofread new service detail pages and homeowner guide content
+- Deploy and verify all `/services/*` URLs; re-submit sitemap after deploy
 - Build `/faq` page
 - Build Tier 1 reusable components: `PageHero`, `Section`, `ContactCard`, `FaqItem`, `ServiceCard`
 - Refactor `about.astro` to brand palette + `.page-container`

@@ -1,0 +1,212 @@
+---
+// Porch painting service page for Brevard County homeowners with process, tips, and FAQ.
+import FaqSection from '../../components/FaqSection.astro';
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Porch Painting';
+const description =
+  'Porch painting for homes in Brevard County. Practical information on painting porch ceilings, columns, railings, and floors (concrete or wood).';
+
+const whatWeCover = [
+  'Ceiling and overhead painting',
+  'Column and post painting',
+  'Railing and baluster painting',
+  'Porch floor coatings (concrete or wood)',
+  'Surface preparation and repairs',
+  'Color consultation and coordination',
+];
+
+const approachSteps = [
+  {
+    title: 'Assess the porch',
+    details:
+      'We evaluate the condition of all surfaces — ceilings, columns, railings, and the floor — and note any damage, previous paint issues, or moisture problems.',
+  },
+  {
+    title: 'Prepare the surfaces',
+    details:
+      'We clean, scrape loose paint, sand as needed, and repair damaged areas. Proper prep is especially important on horizontal surfaces that collect water.',
+  },
+  {
+    title: 'Protect surrounding areas',
+    details:
+      'We carefully mask or cover adjacent surfaces, landscaping, and flooring to keep the job clean.',
+  },
+  {
+    title: 'Apply the right coatings',
+    details:
+      'We use products suited to each part of the porch. Ceilings and railings usually get durable exterior paint, while floors need specialized coatings depending on whether they are concrete or wood.',
+  },
+  {
+    title: 'Final inspection and cure',
+    details:
+      'We check for even coverage and clean lines, and provide clear guidance on when the porch can be used again.',
+  },
+];
+
+const homeownerTips = [
+  {
+    title: 'Different surfaces need different finishes',
+    details:
+      'Ceilings often look best with a flat or eggshell finish to reduce glare. Railings and columns benefit from satin or semi-gloss for durability. Floors require specialized coatings designed for foot traffic and weather exposure.',
+  },
+  {
+    title: 'Porch floors need special attention',
+    details:
+      'Concrete porch floors can be coated with durable systems (similar to garage or patio floors). Wood porch floors need paints or stains formulated for high-traffic exterior use. We can discuss both options and link you to more detailed information on concrete or wood floor coatings.',
+    links: [
+      { label: 'Patio painting', href: '/services/patio-painting-brevard-county' },
+      { label: 'Deck painting', href: '/services/deck-painting-brevard-county' },
+    ],
+  },
+  {
+    title: 'Moisture is the biggest enemy',
+    details:
+      'Porches trap water more than other areas. Good caulking, proper sloping, and breathable coatings help prevent peeling and rot.',
+  },
+  {
+    title: 'Color choices affect heat and maintenance',
+    details:
+      'Lighter colors stay cooler underfoot and show less dirt. Darker colors can get very hot in direct sun and may require more frequent maintenance.',
+  },
+  {
+    title: 'Regular cleaning extends the life of the paint',
+    details:
+      'Sweeping and occasional gentle washing help keep porch surfaces looking good between full repaints.',
+  },
+];
+
+const faqs = [
+  {
+    question: 'How often does a porch need to be repainted in Brevard?',
+    answer:
+      'Most porches need attention every 3–6 years. Floors usually wear faster than ceilings and railings due to direct foot traffic and water exposure.',
+  },
+  {
+    question: 'Can you paint both concrete and wood porch floors?',
+    answer:
+      "Yes. Concrete porch floors can be coated with durable systems (similar to garage or patio coatings). Wood porch floors need exterior-grade paints or stains designed for high traffic. We'll recommend the best approach for your specific porch.",
+  },
+  {
+    question: 'Should porch ceilings be painted differently than walls?',
+    answer:
+      'Yes. Many people paint porch ceilings a lighter color (sometimes with a slight blue or green tint) to make the space feel brighter and more open.',
+  },
+  {
+    question: 'Do you paint railings and balusters?',
+    answer:
+      'Yes. Railings and balusters require careful brushing and often multiple coats for good coverage and durability.',
+  },
+  {
+    question: "What's the difference between painting a porch and a deck?",
+    answer:
+      'Porches are often partially covered, so they have slightly different exposure and drainage considerations than fully open decks. We adjust products and prep based on the specific setup.',
+    footerLinks: [{ label: 'Deck painting', href: '/services/deck-painting-brevard-county' }],
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+
+const tipLinkClass = 'font-medium text-purple transition-colors hover:text-coral';
+---
+
+<Layout {title} {description}>
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-5xl space-y-12 text-base leading-relaxed text-charcoal sm:text-lg">
+      <header class="space-y-5">
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          Porch Painting
+        </h1>
+        <p>
+          Porches are high-visibility areas that get heavy use and constant exposure to Florida's sun, rain, and
+          humidity. Painting a porch can dramatically improve curb appeal and protect the structure, but different parts
+          of the porch (ceilings, columns, railings, and floors) need different approaches and products.
+        </p>
+      </header>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section aria-labelledby="what-we-cover-heading" class="space-y-5">
+        <h2 id="what-we-cover-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What We Cover
+        </h2>
+        <ul class="space-y-2">
+          {whatWeCover.map((item) => (
+            <li class="flex items-start gap-3 text-sm sm:text-base">
+              <span class="mt-1 inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-purple" aria-hidden="true"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="approach-heading" class="space-y-5">
+        <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          How We Approach It
+        </h2>
+        <ol class="space-y-3">
+          {approachSteps.map((step) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-4 sm:p-5">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{step.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{step.details}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section aria-labelledby="expect-heading" class="space-y-5">
+        <h2 id="expect-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What to Expect
+        </h2>
+        <p>
+          Most porch painting projects take 2–5 days depending on the size of the porch and how much prep and repair work
+          is needed.
+        </p>
+        <p>
+          Ceilings and railings are usually ready for light use within 24–48 hours. Porch floor coatings take longer to
+          cure fully, especially if a more durable concrete or wood floor system is used.
+        </p>
+      </section>
+
+      <section aria-labelledby="tips-heading" class="space-y-5">
+        <h2 id="tips-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Homeowner Tips
+        </h2>
+        <ul class="space-y-4">
+          {homeownerTips.map((tip) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{tip.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{tip.details}</p>
+              {'links' in tip && tip.links && tip.links.length > 0 && (
+                <ul class="mt-3 flex flex-col gap-1 border-t border-charcoal/10 pt-3 sm:gap-1.5">
+                  {tip.links.map((link) => (
+                    <li>
+                      <a href={link.href} class={tipLinkClass}>
+                        {link.label} →
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <FaqSection items={faqs} heading="Common Questions" />
+    </article>
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+</Layout>

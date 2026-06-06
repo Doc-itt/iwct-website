@@ -1,0 +1,196 @@
+---
+// Exterior wood painting service page for Brevard County homeowners with process, tips, and FAQ.
+import FaqSection from '../../components/FaqSection.astro';
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Exterior Wood Painting Brevard County | If Walls Could Talk';
+const description =
+  "Exterior wood painting in Brevard County. Practical information on painting, staining, and finishing fences, pergolas, railings, and other exterior wood in Florida's climate.";
+
+const whatWeCover = [
+  'Cleaning and prep, including mildew treatment',
+  'Minor wood repair and replacement',
+  'Exterior wood painting',
+  'Staining and varnishing options',
+  'Fences, pergolas, railings, shutters, and trim',
+  'Whatever the project needs',
+];
+
+const approachSteps = [
+  {
+    title: 'Assess the wood',
+    details:
+      'We look at the current condition, how much old finish is left, signs of damage or mildew, and how much sun exposure the wood gets. This helps determine the right approach.',
+  },
+  {
+    title: 'Clean and prep the surface',
+    details:
+      "Old failing finish, dirt, and mildew need to be removed. Without proper cleaning, new finishes won't bond well and won't last as long.",
+  },
+  {
+    title: 'Repair as needed',
+    details:
+      "Damaged or soft wood gets fixed or replaced before any finish goes on. Finishing over bad wood doesn't solve the problem.",
+  },
+  {
+    title: 'Choose the right finish',
+    details:
+      "We help decide between paint, penetrating stain, or varnish based on the look you want and how the wood is holding up. Each option has different strengths in Florida's climate.",
+  },
+  {
+    title: 'Apply under the right conditions',
+    details:
+      'Temperature and drying time affect how well the finish adheres and cures. We pay attention to this during application.',
+  },
+];
+
+const homeownerTips = [
+  {
+    title: 'Prep has the biggest impact on how long it lasts',
+    details:
+      'Thorough cleaning and removing old failing finish before applying new paint or stain makes more difference than the brand you choose.',
+  },
+  {
+    title: 'Paint and stain perform differently here',
+    details:
+      "Solid color paint gives more coverage and can refresh older-looking wood. Penetrating stains soak in and tend to handle Florida's humidity with less peeling over time. Varnish offers a clearer, more natural look but usually requires more frequent maintenance.",
+  },
+  {
+    title: 'New wood needs proper preparation',
+    details:
+      'Fresh exterior wood should be cleaned and sometimes primed before painting or staining for better long-term results.',
+  },
+  {
+    title: "Mildew comes back if it's not handled properly",
+    details:
+      "Black or green spots that return usually mean the surface wasn't cleaned well enough or the finish lacks good mildewcide protection.",
+  },
+  {
+    title: 'Maintenance between full jobs makes a difference',
+    details:
+      'Regular cleaning and recoating before the finish fully breaks down can extend the time between major work and keep the wood in better shape.',
+  },
+];
+
+const faqs = [
+  {
+    question: 'How often does exterior wood need painting or staining in Brevard?',
+    answer:
+      'Most projects need attention every 2–4 years. Wood in full sun or with heavy exposure usually needs it on the shorter end of that range.',
+  },
+  {
+    question: 'Should I paint or stain my fence or pergola?',
+    answer:
+      "It depends on the look you want. Paint gives solid color and hides more wear. Stain keeps more of the natural wood appearance and is often easier to maintain when it's time to recoat.",
+  },
+  {
+    question: 'Can I apply new finish over old paint or stain?',
+    answer:
+      "Sometimes. If the old finish is still bonding well and not peeling or chalking, a new coat can often go over it. If it's failing, it usually needs to be removed first.",
+  },
+  {
+    question: 'Do you handle both painting and staining on the same project?',
+    answer:
+      'Yes. We can use different finishes on different parts of a project when it makes sense.',
+  },
+  {
+    question: 'When should wood be replaced instead of repainted or restained?',
+    answer:
+      "If the wood is soft, rotting, or badly warped, applying a new finish won't fix the underlying issue. Replacement is usually the better option in those cases.",
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<Layout {title} {description}>
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-5xl space-y-12 text-base leading-relaxed text-charcoal sm:text-lg">
+      <header class="space-y-5">
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          Exterior Wood Painting
+        </h1>
+        <p>
+          Fences, pergolas, railings, and shutters in Brevard County take constant abuse from sun, rain, and humidity.
+          Over time the finish breaks down, wood starts to gray, and mildew appears. Choosing between paint, stain, or
+          varnish depends on how much color coverage you want and how much maintenance you're willing to stay on top of.
+        </p>
+      </header>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section aria-labelledby="what-we-cover-heading" class="space-y-5">
+        <h2 id="what-we-cover-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What We Cover
+        </h2>
+        <ul class="space-y-2">
+          {whatWeCover.map((item) => (
+            <li class="flex items-start gap-3 text-sm sm:text-base">
+              <span class="mt-1 inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-purple" aria-hidden="true"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="approach-heading" class="space-y-5">
+        <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          How We Approach It
+        </h2>
+        <ol class="space-y-3">
+          {approachSteps.map((step) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-4 sm:p-5">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{step.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{step.details}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section aria-labelledby="expect-heading" class="space-y-5">
+        <h2 id="expect-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What to Expect
+        </h2>
+        <p>
+          Most exterior wood projects take 1–3 days depending on size and condition.
+        </p>
+        <p>
+          You can usually use the area within 24–48 hours, though full curing takes longer.
+        </p>
+        <p>
+          In Brevard conditions, most exterior wood finishes need attention every 2–4 years. Recoating before the finish
+          completely fails is usually easier and helps protect the wood better.
+        </p>
+      </section>
+
+      <section aria-labelledby="tips-heading" class="space-y-5">
+        <h2 id="tips-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Homeowner Tips
+        </h2>
+        <ul class="space-y-4">
+          {homeownerTips.map((tip) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{tip.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{tip.details}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <FaqSection items={faqs} heading="Common Questions" />
+    </article>
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+</Layout>

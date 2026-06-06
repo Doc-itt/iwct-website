@@ -1,5 +1,5 @@
 ---
-// Service category bar: image cards for the four main service areas, linking to detail pages.
+// Service category bar: image cards for the four main service areas, linking to sections on the services index page.
 import { Image } from 'astro:assets';
 import exteriorRepaint from '../assets/services/exterior-repaint.jpg';
 import interiorRepaint from '../assets/services/interior-repaint.jpg';
@@ -11,7 +11,7 @@ const categories = [
     title: 'Exterior Painting',
     teaser:
       'Full exterior painting with proper prep and durable coatings built for Florida’s sun, salt air, and storms.',
-    href: '/services/exterior-painting-brevard-county',
+    href: '/services/#exterior-painting',
     image: exteriorRepaint,
     imageAlt: 'Freshly painted exterior of a Brevard County home',
   },
@@ -19,7 +19,7 @@ const categories = [
     title: 'Interior Painting',
     teaser:
       'Professional interior painting with careful prep and finishes that hold up well in Florida’s humidity.',
-    href: '/services/interior-painting-brevard-county',
+    href: '/services/#interior-painting',
     image: interiorRepaint,
     imageAlt: 'Interior room repainting in a Florida home',
   },
@@ -27,7 +27,7 @@ const categories = [
     title: 'Specialty Finishes & Woodwork',
     teaser:
       'Cabinet painting, wood refinishing, and specialty details without needing a full remodel.',
-    href: '/services/cabinet-painting-brevard-county',
+    href: '/services/#specialty-finishes-woodwork',
     image: specialtyFinishes,
     imageAlt: 'Cabinet and wood finishing work in a kitchen or bath',
   },
@@ -35,7 +35,7 @@ const categories = [
     title: 'Outdoor Living and Concrete Coatings',
     teaser:
       'Pool decks, patios, and concrete surfaces with slip-resistant coatings built for Florida sun, rain, and heavy use.',
-    href: '/services/pool-deck-painting-slip-resistant-coatings-brevard-county',
+    href: '/services/#outdoor-living-concrete-coatings',
     image: outdoorLivingPoolDeck,
     imageAlt: 'Pool deck and outdoor living surface coating',
   },

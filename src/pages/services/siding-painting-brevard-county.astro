@@ -1,0 +1,199 @@
+---
+// Siding painting service page for Brevard County homeowners with process, tips, and FAQ.
+import FaqSection from '../../components/FaqSection.astro';
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Siding Painting';
+const description =
+  "Siding painting for homes in Brevard County. Practical information on painting vinyl, wood, and fiber cement siding in Florida's climate.";
+
+const whatWeCover = [
+  'Surface cleaning and mildew treatment',
+  'Scraping and repairing loose or failing paint',
+  'Caulking and sealing gaps',
+  'Painting vinyl, wood, and fiber cement siding',
+  'Different paint finishes and their durability',
+  'Color changes and coverage considerations',
+];
+
+const approachSteps = [
+  {
+    title: 'Assess the siding',
+    details:
+      'We evaluate the condition of the siding, check for damage or previous paint failure, and identify the material type. Different siding materials require different preparation and products.',
+  },
+  {
+    title: 'Clean and prep the surface',
+    details:
+      'We remove dirt, mildew, and loose paint. Thorough cleaning and proper surface preparation are essential for the new paint to adhere well and last.',
+  },
+  {
+    title: 'Repair and caulk as needed',
+    details:
+      'Damaged areas are repaired, and gaps around windows, doors, and trim are caulked to prevent water intrusion.',
+  },
+  {
+    title: 'Apply the right paint system',
+    details:
+      "We use exterior paints formulated for Florida's UV, humidity, and moisture conditions. Multiple coats are often needed, especially when making a significant color change.",
+  },
+  {
+    title: 'Protect during and after application',
+    details:
+      'We take care to protect windows, landscaping, and other surfaces during painting and provide guidance on cure times.',
+  },
+];
+
+const homeownerTips = [
+  {
+    title: 'Prep has the biggest impact on how long the paint lasts',
+    details:
+      'Cleaning, scraping loose paint, and repairing damaged areas before painting makes more difference than the brand of paint used.',
+  },
+  {
+    title: 'Different siding materials need different approaches',
+    details:
+      'Vinyl siding has limitations on color choices and requires paints specifically made for vinyl. Wood siding needs more maintenance over time. Fiber cement siding is more durable and holds paint well but still benefits from proper prep and quality paint.',
+  },
+  {
+    title: 'Dark colors fade faster in Florida sun',
+    details:
+      'Bold or dark colors tend to fade more noticeably over time due to intense UV exposure. Lighter colors generally maintain their appearance longer.',
+  },
+  {
+    title: 'Mildew is common on shaded siding',
+    details:
+      'Areas with less direct sun are more prone to mildew growth. Using paint with mildewcide protection and keeping the surface clean helps slow this down.',
+  },
+  {
+    title: 'Caulking is part of a good paint job',
+    details:
+      'Sealing gaps around windows, doors, and trim helps prevent water from getting behind the siding and causing damage.',
+  },
+];
+
+const faqs = [
+  {
+    question: 'How often does siding need to be repainted in Brevard?',
+    answer:
+      'Most homes need siding repainted every 7–10 years. Homes with heavy sun exposure or near the coast may need it more frequently due to faster fading and weathering.',
+  },
+  {
+    question: 'Can you paint vinyl siding?',
+    answer:
+      'Yes, but it requires specific vinyl-safe paints and careful prep. Vinyl can only be painted with lighter colors than the original to avoid heat-related warping.',
+  },
+  {
+    question: 'Do you need to pressure wash siding before painting?',
+    answer:
+      'Cleaning is essential, but high pressure can damage some siding materials. We use appropriate cleaning methods based on the type of siding and its condition.',
+  },
+  {
+    question: "What's the best paint for Florida siding?",
+    answer:
+      "High-quality 100% acrylic exterior paints generally perform well in Florida's climate. They offer good flexibility, UV resistance, and mildew protection when properly applied.",
+  },
+  {
+    question: 'Can you change the color of siding significantly?',
+    answer:
+      "Yes, but darker colors over lighter siding or vice versa often require extra coats and a good primer for proper coverage. We'll let you know what to expect based on your color choice.",
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<Layout {title} {description}>
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-5xl space-y-12 text-base leading-relaxed text-charcoal sm:text-lg">
+      <header class="space-y-5">
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          Siding Painting
+        </h1>
+        <p>
+          Exterior siding takes constant exposure to sun, humidity, rain, and salt air in Brevard County. Over time the
+          finish fades, peels, or collects mildew, making the house look older than it is. Painting siding can refresh
+          the appearance of a home, but results depend on proper preparation and choosing a paint system suited to the
+          siding material and Florida's weather.
+        </p>
+      </header>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section aria-labelledby="what-we-cover-heading" class="space-y-5">
+        <h2 id="what-we-cover-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What We Cover
+        </h2>
+        <ul class="space-y-2">
+          {whatWeCover.map((item) => (
+            <li class="flex items-start gap-3 text-sm sm:text-base">
+              <span class="mt-1 inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-purple" aria-hidden="true"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="approach-heading" class="space-y-5">
+        <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          How We Approach It
+        </h2>
+        <ol class="space-y-3">
+          {approachSteps.map((step) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-4 sm:p-5">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{step.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{step.details}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section aria-labelledby="expect-heading" class="space-y-5">
+        <h2 id="expect-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What to Expect
+        </h2>
+        <p>
+          Most siding painting projects take 3–7 days depending on the size of the house, the condition of the existing
+          paint, and weather conditions.
+        </p>
+        <p>
+          You'll usually see a big improvement once the first coat is applied, but full coverage and the final appearance
+          often require two coats, especially with darker or bolder colors.
+        </p>
+        <p>
+          In Brevard conditions, quality exterior paint on siding typically lasts 7–10 years before it needs attention
+          again, though this can vary based on sun exposure and how well the surface was prepped.
+        </p>
+      </section>
+
+      <section aria-labelledby="tips-heading" class="space-y-5">
+        <h2 id="tips-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Homeowner Tips
+        </h2>
+        <ul class="space-y-4">
+          {homeownerTips.map((tip) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{tip.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{tip.details}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <FaqSection items={faqs} heading="Common Questions" />
+    </article>
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+</Layout>

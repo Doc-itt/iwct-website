@@ -1,0 +1,194 @@
+---
+// Accent wall painting service page for Brevard County homeowners with process, tips, and FAQ.
+import FaqSection from '../../components/FaqSection.astro';
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Accent Wall Painting';
+const description =
+  'Accent wall painting for homes in Brevard County. Practical information on choosing colors, prep, and finishes for feature walls.';
+
+const whatWeCover = [
+  'Color consultation and selection',
+  'Surface preparation',
+  'Repairing minor wall damage',
+  'Painting one or more accent walls',
+  'Different paint finishes and their effects',
+  'Cutting in and clean lines around trim and ceilings',
+];
+
+const approachSteps = [
+  {
+    title: 'Discuss the vision',
+    details:
+      "We talk about the room, the lighting, and the look you're going for. This helps determine the best color and finish for the accent wall.",
+  },
+  {
+    title: 'Prepare the surface',
+    details:
+      'We clean the wall and repair any holes, cracks, or uneven areas. Good prep helps the paint go on smoothly and last longer.',
+  },
+  {
+    title: 'Protect surrounding areas',
+    details:
+      'We carefully mask off trim, ceilings, and adjacent walls to keep clean, sharp lines.',
+  },
+  {
+    title: 'Apply the paint',
+    details:
+      'We use the appropriate paint and finish for the room and wall texture. Multiple coats are often needed for good coverage, especially with bold or dark colors.',
+  },
+  {
+    title: 'Inspect the final result',
+    details:
+      'We check for even coverage, clean edges, and overall appearance before finishing.',
+  },
+];
+
+const homeownerTips = [
+  {
+    title: 'Lighting changes how the color looks',
+    details:
+      'Natural and artificial light can make the same color look different throughout the day. It helps to test paint samples on the actual wall before committing.',
+  },
+  {
+    title: 'Bold colors usually need more prep and coats',
+    details:
+      'Dark or saturated colors tend to show imperfections and often require extra coats or a tinted primer for good coverage.',
+  },
+  {
+    title: 'The finish affects the final look',
+    details:
+      'Matte or eggshell finishes hide imperfections better but are less durable. Satin or semi-gloss finishes are easier to clean but can highlight wall texture.',
+  },
+  {
+    title: 'Accent walls work best when they have a purpose',
+    details:
+      'They tend to look more intentional when they highlight a feature, like a fireplace, headboard, or large piece of furniture.',
+  },
+  {
+    title: 'Prep still matters on accent walls',
+    details:
+      "Even though it's just one wall, skipping repairs or cleaning can lead to uneven results or peeling over time.",
+  },
+];
+
+const faqs = [
+  {
+    question: 'How do I choose the right color for an accent wall?',
+    answer:
+      "It depends on the room's lighting, existing colors, and the mood you want to create. We can help narrow down options based on your space and preferences.",
+  },
+  {
+    question: 'Do accent walls need special paint?',
+    answer:
+      'Not necessarily, but the finish and quality of the paint matter. Some colors and finishes perform better than others depending on the room and wall texture.',
+  },
+  {
+    question: 'Can I paint an accent wall myself?',
+    answer:
+      'Many people can, but achieving clean lines and even coverage — especially with bold colors — can be trickier than it looks. Professional results usually come from good prep and technique.',
+  },
+  {
+    question: 'Should the accent wall be a darker or lighter color than the rest of the room?',
+    answer:
+      'Both can work. Darker accent walls create drama and depth. Lighter ones can make a space feel brighter and more open. It depends on the size of the room and how much contrast you want.',
+  },
+  {
+    question: 'How long does accent wall paint last?',
+    answer:
+      'With proper prep and good quality paint, an accent wall can last just as long as a full room paint job — typically 7–10 years in a well-maintained home before it needs refreshing.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<Layout {title} {description}>
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-5xl space-y-12 text-base leading-relaxed text-charcoal sm:text-lg">
+      <header class="space-y-5">
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          Accent Wall Painting
+        </h1>
+        <p>
+          Accent walls are a popular way to add color and personality to a room without painting the entire space. A
+          well-done accent wall can make a room feel more finished and intentional. However, choosing the right color,
+          finish, and prep method matters — especially when the accent wall contrasts with the rest of the room.
+        </p>
+      </header>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section aria-labelledby="what-we-cover-heading" class="space-y-5">
+        <h2 id="what-we-cover-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What We Cover
+        </h2>
+        <ul class="space-y-2">
+          {whatWeCover.map((item) => (
+            <li class="flex items-start gap-3 text-sm sm:text-base">
+              <span class="mt-1 inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-purple" aria-hidden="true"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="approach-heading" class="space-y-5">
+        <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          How We Approach It
+        </h2>
+        <ol class="space-y-3">
+          {approachSteps.map((step) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-4 sm:p-5">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{step.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{step.details}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section aria-labelledby="expect-heading" class="space-y-5">
+        <h2 id="expect-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What to Expect
+        </h2>
+        <p>
+          Most accent wall projects take a few hours to one day, depending on the size of the wall and how much prep is
+          needed.
+        </p>
+        <p>
+          Darker or bolder colors often require more coats for full coverage. We'll let you know what to expect based on
+          your chosen color and the current wall condition.
+        </p>
+      </section>
+
+      <section aria-labelledby="tips-heading" class="space-y-5">
+        <h2 id="tips-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Homeowner Tips
+        </h2>
+        <ul class="space-y-4">
+          {homeownerTips.map((tip) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{tip.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{tip.details}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <FaqSection items={faqs} heading="Common Questions" />
+    </article>
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+</Layout>

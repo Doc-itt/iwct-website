@@ -1,0 +1,270 @@
+---
+// Concrete coatings service page for Brevard County driveways, pool decks, patios, and garages.
+import FaqSection from '../../components/FaqSection.astro';
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Concrete Coatings Brevard County | If Walls Could Talk';
+const description =
+  "Concrete coating options for Brevard County driveways, pool decks, patios, and garages — honest trade-offs and what to expect in Florida's climate.";
+
+const whatWeCover = [
+  'Driveways',
+  {
+    label: 'Pool decks',
+    href: '/services/pool-deck-painting-slip-resistant-coatings-brevard-county',
+  },
+  'Patios and lanais',
+  'Garage floors',
+  'Sidewalks and walkways',
+];
+
+const coatingOptions = [
+  {
+    title: 'Penetrating Sealers (silane/siloxane)',
+    details:
+      "These soak into the concrete and repel water and salt while staying breathable. They don't change how the surface looks or feels. They give less heavy stain and wear protection than thicker coatings, but they're simpler to reapply when needed.",
+  },
+  {
+    title: 'Epoxy Systems',
+    details:
+      "Epoxy creates a strong chemical-resistant bond and is often used as a base layer. It works well on garage floors and covered areas. It can yellow under direct Florida sun, so it's usually paired with a UV-stable topcoat for outdoor use.",
+  },
+  {
+    title: 'Polyaspartic / Hybrid Resin Systems',
+    details:
+      'These are multi-layer systems with a base, broadcast flakes or quartz for texture and color, and a polyaspartic topcoat. They handle UV, pool chemicals, and abrasion well and many allow foot traffic in about 24 hours. They cost more upfront than sealers or paint, but last longer.',
+  },
+  {
+    title: 'Stains + Sealer or Paint',
+    details:
+      "Stains add color and variation, then get sealed or painted over. Paint gives solid color at the lowest cost. They're usually easier and cheaper to refresh when the time comes.",
+  },
+  {
+    title: 'Cementitious Overlays / Kool Deck-Style',
+    details:
+      'These are thicker textured resurfacing systems applied over existing concrete. Kool Deck-type finishes are designed to stay cooler underfoot in direct sun. They take more steps to install than sealers or thin coatings and the texture needs regular cleaning.',
+  },
+];
+
+const approachSteps = [
+  {
+    title: 'Assess the surface and exposure',
+    details:
+      'We check cracking, spalling, existing coatings, and staining, plus how the area is used and how close it is to water or a pool.',
+  },
+  {
+    title: 'Test for moisture',
+    details:
+      'Brevard humidity means moisture vapor can push up from below even if the surface feels dry. We test before choosing a system that could trap it.',
+  },
+  {
+    title: 'Repair cracks and spalling',
+    details:
+      'Damaged areas get fixed first. Coating over unrepaired problems just hides them temporarily.',
+  },
+  {
+    title: 'Prep the surface',
+    details:
+      "Every coating needs a clean, sound surface to stick properly. Depending on the system we're using, this can mean pressure washing, light etching, or more aggressive grinding. We do the level of prep the chosen coating requires.",
+  },
+  {
+    title: 'Apply in the right conditions',
+    details:
+      'Heat, humidity, and sun affect curing. We time the work and choose products that fit Florida conditions.',
+  },
+  {
+    title: 'Protect during cure',
+    details:
+      'We give you exact timelines for foot traffic, vehicles, or pool use for the system you choose.',
+  },
+];
+
+const homeownerTips = [
+  {
+    title: 'Match the system to what you actually need',
+    details:
+      'A penetrating sealer is often enough for a driveway that mostly needs water and salt protection. A pool deck usually needs better chemical resistance, slip texture, and color retention. Systems built for constant water, chemicals, and UV (such as polyaspartic hybrids or textured cementitious overlays) are common choices for that reason. Ask why a contractor recommends one option over the others for your situation.',
+  },
+  {
+    title: 'Prep matters more than the coating brand',
+    details:
+      "Most failures trace back to moisture issues or weak surface profiling, not the product itself. Good contractors explain what they're doing in prep and why.",
+  },
+  {
+    title: 'Pool decks have extra rules',
+    details:
+      "Slip resistance and surface temperature both matter. Significant resurfacing work often requires a Certified Pool/Spa Contractor license and may need a Brevard County permit. Simple cosmetic work sometimes doesn't. We'll be clear about what applies to your job.",
+  },
+  {
+    title: 'New concrete needs 28 days',
+    details:
+      'Coating too early is a common cause of adhesion failure.',
+  },
+  {
+    title: 'Cheap work usually costs more later',
+    details:
+      'A low-price job that fails in 2–3 years and has to be completely removed and redone ends up more expensive than doing it properly the first time.',
+  },
+];
+
+const faqs = [
+  {
+    question: 'How long do these last in Brevard?',
+    answer:
+      'It depends on the option, prep, exposure, and maintenance. Penetrating sealers typically last 5–10 years. Quality polyaspartic hybrid systems with good prep commonly give strong performance for 8–15 years or more before major work is needed. Stains, paint, and lighter coatings are often on the shorter side outdoors and frequently need refreshing in the 3–7 year range depending on conditions.',
+  },
+  {
+    question: 'Will it hide cracks?',
+    answer:
+      "Minor cracks can be filled and become less visible. Moving or structural cracks need repair first — a coating won't stop them from showing again.",
+  },
+  {
+    question: 'Which option is best for a pool deck?',
+    answer:
+      "Polyaspartic hybrids and Kool Deck-style systems are the most common choices locally because they handle UV, pool chemicals, and slip resistance better than basic epoxy or paint in full sun and water exposure. The right texture level is something we discuss so it's safe but still comfortable under bare feet.",
+  },
+  {
+    question: 'Do I need a permit or special license for this work?',
+    answer:
+      "For pool deck resurfacing that goes beyond light cosmetic recoating, it often falls under Certified Pool/Spa Contractor requirements and may need a Brevard County permit. We'll tell you exactly what applies to your project.",
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<Layout {title} {description}>
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-5xl space-y-12 text-base leading-relaxed text-charcoal sm:text-lg">
+      <header class="space-y-5">
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          Concrete Coatings
+        </h1>
+        <p>
+          Concrete in Brevard County takes a beating from intense UV, humidity, salt air near the coast, and big
+          temperature swings. The right coating protects the slab, improves safety underfoot, and reduces how often you
+          have to redo it. The wrong one peels, traps moisture, or fades fast.
+        </p>
+      </header>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section aria-labelledby="what-we-cover-heading" class="space-y-5">
+        <h2 id="what-we-cover-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What We Cover
+        </h2>
+        <ul class="space-y-2">
+          {whatWeCover.map((item) => (
+            <li class="flex items-start gap-3 text-sm sm:text-base">
+              <span class="mt-1 inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-purple" aria-hidden="true"></span>
+              {typeof item === 'string' ? (
+                <span>{item}</span>
+              ) : (
+                <a href={item.href} class="font-medium text-purple transition-colors hover:text-coral">
+                  {item.label}
+                </a>
+              )}
+            </li>
+          ))}
+        </ul>
+        <p class="text-muted">Whatever the project needs.</p>
+      </section>
+
+      <section aria-labelledby="coating-options-heading" class="space-y-5">
+        <h2 id="coating-options-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Coating Options
+        </h2>
+        <p>These are the main concrete coating types used in Brevard.</p>
+        <ul class="space-y-4">
+          {coatingOptions.map((option) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{option.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{option.details}</p>
+            </li>
+          ))}
+        </ul>
+        <p class="text-muted">
+          We match the option to your concrete's condition and exposure instead of pushing one type for everything.
+        </p>
+      </section>
+
+      <section aria-labelledby="approach-heading" class="space-y-5">
+        <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          How We Approach It
+        </h2>
+        <ol class="space-y-3">
+          {approachSteps.map((step) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-4 sm:p-5">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{step.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{step.details}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section aria-labelledby="expect-heading" class="space-y-5">
+        <h2 id="expect-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What to Expect
+        </h2>
+        <p>Timelines depend on the option.</p>
+        <ul class="space-y-3">
+          <li class="rounded-xl border border-charcoal/10 bg-white/60 p-4 sm:p-5">
+            <h3 class="font-display text-lg font-semibold sm:text-xl">Penetrating sealers</h3>
+            <p class="mt-2 text-sm text-muted sm:text-base">
+              Usually done in one day. Back in use within hours.
+            </p>
+          </li>
+          <li class="rounded-xl border border-charcoal/10 bg-white/60 p-4 sm:p-5">
+            <h3 class="font-display text-lg font-semibold sm:text-xl">Epoxy or polyaspartic hybrid systems</h3>
+            <p class="mt-2 text-sm text-muted sm:text-base">
+              Prep and application take longer. Many polyaspartic systems allow light foot traffic in about 24 hours.
+              Vehicles and heavy use need more time.
+            </p>
+          </li>
+          <li class="rounded-xl border border-charcoal/10 bg-white/60 p-4 sm:p-5">
+            <h3 class="font-display text-lg font-semibold sm:text-xl">Stains + sealer or paint</h3>
+            <p class="mt-2 text-sm text-muted sm:text-base">
+              Often quicker than full hybrid systems but still needs proper prep and cure time.
+            </p>
+          </li>
+          <li class="rounded-xl border border-charcoal/10 bg-white/60 p-4 sm:p-5">
+            <h3 class="font-display text-lg font-semibold sm:text-xl">Cementitious overlays / Kool Deck-style</h3>
+            <p class="mt-2 text-sm text-muted sm:text-base">
+              Multi-day process with more layers. Expect longer before full use.
+            </p>
+          </li>
+        </ul>
+        <p>We give you a clear, option-specific timeline before we start.</p>
+      </section>
+
+      <section aria-labelledby="tips-heading" class="space-y-5">
+        <h2 id="tips-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Homeowner Tips
+        </h2>
+        <ul class="space-y-4">
+          {homeownerTips.map((tip) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{tip.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{tip.details}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <FaqSection items={faqs} />
+    </article>
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+</Layout>

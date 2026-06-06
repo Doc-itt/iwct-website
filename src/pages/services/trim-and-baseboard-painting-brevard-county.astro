@@ -1,0 +1,195 @@
+---
+// Trim and baseboard painting service page for Brevard County homeowners with process, tips, and FAQ.
+import FaqSection from '../../components/FaqSection.astro';
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Trim and Baseboard Painting';
+const description =
+  'Trim and baseboard painting for homes in Brevard County. Practical information on prepping, priming, and painting interior trim and baseboards.';
+
+const whatWeCover = [
+  'Surface preparation and sanding',
+  'Caulking gaps and seams',
+  'Priming trim and baseboards',
+  'Painting with brushes and rollers',
+  'Different paint finishes for trim',
+  'Clean cutting in around walls and ceilings',
+];
+
+const approachSteps = [
+  {
+    title: 'Assess the trim',
+    details:
+      'We look at the current condition of the trim and baseboards, check for damage or previous paint issues, and determine how much prep work is needed.',
+  },
+  {
+    title: 'Prepare the surface',
+    details:
+      'We sand glossy surfaces, repair damage, and caulk gaps to create a smooth, clean foundation for the new paint.',
+  },
+  {
+    title: 'Protect adjacent surfaces',
+    details:
+      "We carefully mask off walls, floors, and ceilings to keep lines clean and avoid getting paint where it doesn't belong.",
+  },
+  {
+    title: 'Prime as needed',
+    details:
+      'New wood or previously painted trim in poor condition is primed to help the topcoat adhere and cover evenly.',
+  },
+  {
+    title: 'Apply the paint',
+    details:
+      'We use the appropriate finish and technique for a smooth, durable result. Multiple coats are often needed for good coverage and a consistent appearance.',
+  },
+];
+
+const homeownerTips = [
+  {
+    title: 'The finish matters more on trim than on walls',
+    details:
+      "Satin or semi-gloss finishes are most common for trim because they're more durable and easier to clean. Flat finishes tend to show marks and wear more easily on high-touch surfaces.",
+  },
+  {
+    title: 'Prep work shows in the final result',
+    details:
+      'Sanding, caulking, and priming properly makes a much bigger difference in the finished look than most people expect. Rushing this step often leads to visible imperfections.',
+  },
+  {
+    title: 'Dark colors usually require more work',
+    details:
+      'Bold or dark trim colors often need extra coats and sometimes a tinted primer to achieve even, streak-free coverage.',
+  },
+  {
+    title: 'Caulking makes a big difference',
+    details:
+      'Filling gaps between the trim and walls or floors creates cleaner lines and helps prevent dust and dirt from collecting in those spaces.',
+  },
+  {
+    title: 'Brush quality affects the finish',
+    details:
+      'Using a good quality brush designed for trim work helps reduce brush marks and creates a smoother final appearance.',
+  },
+];
+
+const faqs = [
+  {
+    question: 'How long does trim and baseboard painting last?',
+    answer:
+      'With proper prep and good quality paint, trim finishes typically last 7–10 years in residential homes before they start to show wear.',
+  },
+  {
+    question: 'Do I need to prime trim before painting?',
+    answer:
+      "It depends on the condition of the existing paint and whether you're changing colors significantly. New wood or previously painted trim in poor condition usually benefits from priming.",
+  },
+  {
+    question: "What's the best paint finish for trim and baseboards?",
+    answer:
+      "Satin or semi-gloss finishes are the most popular choices. They're durable, easy to clean, and hold up well to regular contact. Higher gloss levels can highlight imperfections more, while lower sheens are less durable.",
+  },
+  {
+    question: 'Can trim be painted without removing it?',
+    answer:
+      'Yes, most trim is painted in place. We take care to protect the surrounding walls and floors during the process.',
+  },
+  {
+    question: 'How soon can I put furniture back after painting trim?',
+    answer:
+      "Most paint is dry to the touch within a few hours, but it's best to wait at least 24 hours before moving furniture or placing items against freshly painted trim to avoid damage.",
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<Layout {title} {description}>
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-5xl space-y-12 text-base leading-relaxed text-charcoal sm:text-lg">
+      <header class="space-y-5">
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          Trim and Baseboard Painting
+        </h1>
+        <p>
+          Painting trim and baseboards is one of the most noticeable parts of a room's finish. Clean, well-painted trim
+          can make a space feel more polished and intentional. However, trim work requires more precision than painting
+          walls, and the finish you choose affects both appearance and durability.
+        </p>
+      </header>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section aria-labelledby="what-we-cover-heading" class="space-y-5">
+        <h2 id="what-we-cover-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What We Cover
+        </h2>
+        <ul class="space-y-2">
+          {whatWeCover.map((item) => (
+            <li class="flex items-start gap-3 text-sm sm:text-base">
+              <span class="mt-1 inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-purple" aria-hidden="true"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="approach-heading" class="space-y-5">
+        <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          How We Approach It
+        </h2>
+        <ol class="space-y-3">
+          {approachSteps.map((step) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-4 sm:p-5">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{step.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{step.details}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section aria-labelledby="expect-heading" class="space-y-5">
+        <h2 id="expect-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What to Expect
+        </h2>
+        <p>
+          Trim and baseboard painting usually takes longer than wall painting because of the level of detail involved.
+          Most projects take anywhere from a few hours to a couple of days, depending on the amount of trim and how much
+          prep work is required.
+        </p>
+        <p>
+          You'll usually see the biggest improvement after the first coat, but a second coat is often needed for full
+          coverage and a smooth finish, especially with darker colors.
+        </p>
+      </section>
+
+      <section aria-labelledby="tips-heading" class="space-y-5">
+        <h2 id="tips-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Homeowner Tips
+        </h2>
+        <ul class="space-y-4">
+          {homeownerTips.map((tip) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{tip.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{tip.details}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <FaqSection items={faqs} heading="Common Questions" />
+    </article>
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+</Layout>

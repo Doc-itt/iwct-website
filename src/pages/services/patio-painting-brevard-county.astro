@@ -1,0 +1,199 @@
+---
+// Patio painting service page for Brevard County homeowners with process, tips, and FAQ.
+import FaqSection from '../../components/FaqSection.astro';
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Patio Painting';
+const description =
+  "Patio painting for homes in Brevard County. Practical information on painting and protecting concrete and paver patios in Florida's climate.";
+
+const whatWeCover = [
+  'Surface cleaning and mildew treatment',
+  'Crack repair and surface preparation',
+  'Concrete patio painting and coating',
+  'Paver sealing and color restoration',
+  'Non-slip additives for safety',
+  'Different finish options and their trade-offs',
+];
+
+const approachSteps = [
+  {
+    title: 'Assess the patio',
+    details:
+      'We evaluate the current condition of the surface, check for cracks, spalling, or previous coatings, and consider how much sun and weather exposure the patio gets.',
+  },
+  {
+    title: 'Clean and prep the surface',
+    details:
+      'Thorough cleaning is essential. We remove dirt, mildew, and old failing coatings so the new finish can bond properly.',
+  },
+  {
+    title: 'Repair as needed',
+    details:
+      'Cracks and damaged areas are repaired before any coating is applied. Painting over bad concrete usually leads to early failure.',
+  },
+  {
+    title: 'Choose the right finish',
+    details:
+      "We help select a product based on the look you want and how much maintenance you're willing to do. Options range from breathable concrete paints to more durable elastomeric or cool deck-style coatings.",
+  },
+  {
+    title: 'Apply and protect during cure',
+    details:
+      'We apply the coating under the right conditions and provide clear guidance on when the patio can be used again.',
+  },
+];
+
+const homeownerTips = [
+  {
+    title: 'Prep still matters more than the product',
+    details:
+      'Cleaning the surface properly and repairing cracks before painting has a bigger impact on how long the finish lasts than which brand you choose.',
+  },
+  {
+    title: 'Not all patio coatings perform the same in Florida',
+    details:
+      'Breathable concrete paints are easier to apply but may not hold up as well to constant moisture. More durable elastomeric or cool deck-style coatings resist water and UV better but can be more expensive and require better prep.',
+  },
+  {
+    title: 'Mildew and algae are common on patios',
+    details:
+      'Shaded or frequently wet areas tend to develop black or green spots. Using a coating with mildewcide protection and keeping the surface clean helps slow this down.',
+  },
+  {
+    title: 'Cooler finishes can make a big difference',
+    details:
+      'Some patio coatings are designed to stay cooler underfoot in direct sun. These can be worth considering if your patio gets a lot of afternoon sun.',
+  },
+  {
+    title: 'Furniture and heavy use affect longevity',
+    details:
+      'Dragging furniture or constant heavy traffic can wear down coatings faster. Using pads on furniture legs and being mindful of how the space is used helps the finish last longer.',
+  },
+];
+
+const faqs = [
+  {
+    question: 'How often does a painted patio need to be redone in Brevard?',
+    answer:
+      'Most patio coatings last 3–5 years before needing attention again. Patios in full sun or with heavy use usually need it on the shorter end of that range.',
+  },
+  {
+    question: 'Can you paint over old paint or sealer on a patio?',
+    answer:
+      "Sometimes, but it depends on the condition of the old finish. If it's peeling, chalking, or no longer bonded well, it usually needs to be removed first.",
+  },
+  {
+    question: "What's the difference between painting and sealing a patio?",
+    answer:
+      'Painting adds color and a protective layer. Sealing is usually clear or lightly tinted and focuses more on protection and water repellency. Some projects use both.',
+  },
+  {
+    question: 'Do paver patios need to be painted or sealed?',
+    answer:
+      'Pavers are often sealed rather than painted. Sealing helps protect against stains and fading while keeping the natural look of the pavers. Some paver sealers also enhance color.',
+  },
+  {
+    question: 'Can I use regular house paint on a patio?',
+    answer:
+      "It's not recommended. Patio surfaces need coatings specifically designed for exterior concrete or masonry that can handle moisture, UV, and foot traffic. Regular house paint usually fails quickly in these conditions.",
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<Layout {title} {description}>
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-5xl space-y-12 text-base leading-relaxed text-charcoal sm:text-lg">
+      <header class="space-y-5">
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          Patio Painting
+        </h1>
+        <p>
+          Patios in Brevard County are exposed to intense sun, humidity, rain, and mildew. Over time the surface fades,
+          stains, and can become slippery or difficult to clean. Painting or coating a patio can improve its appearance
+          and make it easier to maintain, but the finish needs to hold up to Florida's weather and constant foot
+          traffic.
+        </p>
+      </header>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section aria-labelledby="what-we-cover-heading" class="space-y-5">
+        <h2 id="what-we-cover-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What We Cover
+        </h2>
+        <ul class="space-y-2">
+          {whatWeCover.map((item) => (
+            <li class="flex items-start gap-3 text-sm sm:text-base">
+              <span class="mt-1 inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-purple" aria-hidden="true"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="approach-heading" class="space-y-5">
+        <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          How We Approach It
+        </h2>
+        <ol class="space-y-3">
+          {approachSteps.map((step) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-4 sm:p-5">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{step.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{step.details}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section aria-labelledby="expect-heading" class="space-y-5">
+        <h2 id="expect-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What to Expect
+        </h2>
+        <p>
+          Most patio painting projects take 1–2 days depending on the size and condition of the surface.
+        </p>
+        <p>
+          You can usually walk on the patio within 24–48 hours, though full cure times vary by product. Some coatings
+          (especially elastomeric or cool deck systems) may take longer before heavy furniture can be placed back on the
+          surface.
+        </p>
+        <p>
+          In Brevard conditions, most patio coatings need attention every 3–5 years, depending on sun exposure and how well
+          the surface was prepped.
+        </p>
+      </section>
+
+      <section aria-labelledby="tips-heading" class="space-y-5">
+        <h2 id="tips-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Homeowner Tips
+        </h2>
+        <ul class="space-y-4">
+          {homeownerTips.map((tip) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{tip.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{tip.details}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <FaqSection items={faqs} heading="Common Questions" />
+    </article>
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+</Layout>

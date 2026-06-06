@@ -1,0 +1,204 @@
+---
+// Trim, soffit, and door painting service page for Brevard County homeowners with process, tips, and FAQ.
+import FaqSection from '../../components/FaqSection.astro';
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Trim, Soffit, and Door Painting';
+const description =
+  'Trim, soffit, and front door painting in Brevard County. Refresh the details that make the biggest visual impact on your home.';
+
+const whatWeCover = [
+  'Fascia and soffit painting',
+  'Exterior trim and eave painting',
+  'Front door refresh (painting + hardware update)',
+  'Garage door painting',
+  'Column and post painting',
+  'Detailed prep and clean lines',
+];
+
+const approachSteps = [
+  {
+    title: 'Assess the areas',
+    details:
+      'We inspect the condition of the trim, soffits, and doors, looking for peeling paint, wood damage, or mildew.',
+  },
+  {
+    title: 'Prepare the surfaces',
+    details:
+      'We scrape loose paint, sand, caulk gaps, and clean thoroughly so the new paint bonds properly.',
+  },
+  {
+    title: 'Protect surrounding areas',
+    details:
+      'We mask off siding, windows, and landscaping carefully to keep lines crisp.',
+  },
+  {
+    title: 'Apply quality exterior paint',
+    details:
+      "We use durable paints suited for Florida's sun and humidity, often with multiple coats on high-exposure areas like soffits and front doors.",
+  },
+  {
+    title: 'Final details',
+    details:
+      'We pay special attention to clean edges, hardware updates on the front door, and making sure everything looks sharp.',
+  },
+];
+
+const homeownerTips = [
+  {
+    title: 'The front door is one of the best investments',
+    details:
+      'Painting just the front door (and updating hardware) gives one of the biggest visual returns for the effort and cost.',
+  },
+  {
+    title: 'Soffits and fascia need good prep',
+    details:
+      'These areas are exposed to a lot of weather. Proper scraping, priming, and quality paint make a big difference in how long they last.',
+  },
+  {
+    title: 'Color choice on trim matters',
+    details:
+      'Bright white trim makes a house look crisp and clean. Softer off-whites can feel warmer. We can help you choose what works best with your siding color.',
+  },
+  {
+    title: "Don't skip the caulking",
+    details:
+      'Sealing gaps around trim, doors, and soffits prevents water intrusion and helps the new paint job last longer.',
+    link: { label: 'Caulking and sealing', href: '/services/caulking-and-sealing-brevard-county' },
+  },
+  {
+    title: 'Maintenance is easier than you think',
+    details:
+      'A quick annual inspection and touch-up of caulk or paint on the front door keeps everything looking fresh with minimal effort.',
+  },
+];
+
+const faqs = [
+  {
+    question: 'How much does painting just the front door cost?',
+    answer:
+      "It's one of our most popular smaller projects. We can give you a clear quote after seeing the door's condition.",
+  },
+  {
+    question: 'Should trim be the same color as the soffits?',
+    answer:
+      'Usually yes for a clean, cohesive look. We can also do subtle variations if you want more dimension.',
+  },
+  {
+    question: 'Can you paint a fiberglass or steel front door?',
+    answer:
+      'Yes. Both can be painted successfully with the right prep and exterior-grade paint.',
+  },
+  {
+    question: 'How long does exterior trim and door paint last?',
+    answer:
+      'With good prep and quality paint, expect 7–10 years. Front doors and high-sun areas may need touch-ups sooner.',
+  },
+  {
+    question: 'Do you paint garage doors too?',
+    answer:
+      'Yes. Garage doors are a big visual element and painting them can make a noticeable improvement.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+
+const tipLinkClass = 'font-medium text-purple transition-colors hover:text-coral';
+---
+
+<Layout {title} {description}>
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-5xl space-y-12 text-base leading-relaxed text-charcoal sm:text-lg">
+      <header class="space-y-5">
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          Trim, Soffit, and Door Painting
+        </h1>
+        <p>
+          Trim, soffits, and especially the front door are some of the highest-impact areas you can paint on a house.
+          Fresh, clean trim and soffits frame the home beautifully, while a refreshed front door can completely change
+          the curb appeal. These details often get overlooked but make a huge difference in how polished a home looks.
+        </p>
+      </header>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section aria-labelledby="what-we-cover-heading" class="space-y-5">
+        <h2 id="what-we-cover-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What We Cover
+        </h2>
+        <ul class="space-y-2">
+          {whatWeCover.map((item) => (
+            <li class="flex items-start gap-3 text-sm sm:text-base">
+              <span class="mt-1 inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-purple" aria-hidden="true"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="approach-heading" class="space-y-5">
+        <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          How We Approach It
+        </h2>
+        <ol class="space-y-3">
+          {approachSteps.map((step) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-4 sm:p-5">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{step.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{step.details}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section aria-labelledby="expect-heading" class="space-y-5">
+        <h2 id="expect-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What to Expect
+        </h2>
+        <p>
+          Trim, soffit, and door painting usually takes 2–5 days depending on the size of the home and how much prep is
+          needed.
+        </p>
+        <p>
+          A fresh front door alone can transform the look of the entire house. Clean trim and soffits complete the
+          picture and make the whole exterior feel well-maintained.
+        </p>
+      </section>
+
+      <section aria-labelledby="tips-heading" class="space-y-5">
+        <h2 id="tips-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Homeowner Tips
+        </h2>
+        <ul class="space-y-4">
+          {homeownerTips.map((tip) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{tip.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{tip.details}</p>
+              {'link' in tip && tip.link && (
+                <p class="mt-3">
+                  <a href={tip.link.href} class={tipLinkClass}>
+                    {tip.link.label} →
+                  </a>
+                </p>
+              )}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <FaqSection items={faqs} heading="Common Questions" />
+    </article>
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+</Layout>

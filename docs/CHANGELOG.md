@@ -9,6 +9,13 @@
 
 # Changelog
 
+## 2026-06-06
+- Created 20 new `src/pages/services/*-brevard-county.astro` detail pages — exterior, interior, specialty/woodwork, and outdoor living subservices
+- Updated `src/pages/services/index.astro` — linked service lists, category anchor IDs, refreshed hub copy and meta description
+- Updated `src/components/ServiceCategoryBar.astro` — home cards link to `/services/#` sections instead of detail pages
+- Updated `src/pages/services/exterior-painting-brevard-county.astro`, `interior-painting-brevard-county.astro`, `cabinet-painting-brevard-county.astro`, `pool-deck-painting-slip-resistant-coatings-brevard-county.astro` — minor consistency tweaks
+- Updated `docs/SESSIONS.md`, `docs/CHANGELOG.md`, `docs/STATUS.md` — session wrap-up for service expansion
+
 ## 2026-06-03
 - Updated `src/pages/services/exterior-painting-brevard-county.astro` — full copy refresh (prep, timelines, tips, FAQs)
 - Updated `src/pages/services/interior-painting-brevard-county.astro` — full copy refresh; revised intro and What to Expect timelines

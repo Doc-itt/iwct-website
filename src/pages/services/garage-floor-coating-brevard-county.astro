@@ -1,0 +1,217 @@
+---
+// Garage floor coating service page for Brevard County homeowners with process, tips, and FAQ.
+import FaqSection from '../../components/FaqSection.astro';
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Garage Floor Coating';
+const description =
+  'Garage floor coating options for homes in Brevard County. Practical information on sealers, epoxy, and polyaspartic systems and what to expect.';
+
+const whatWeCover = [
+  'Surface assessment and moisture testing',
+  'Concrete repair and crack filling',
+  'Surface preparation (grinding or etching)',
+  'Penetrating concrete sealers',
+  'Epoxy-based garage floor coatings',
+  'Polyaspartic and hybrid coating systems',
+  'Flake broadcast and non-slip options',
+];
+
+const approachSteps = [
+  {
+    title: 'Assess the concrete',
+    details:
+      'We evaluate the condition of the floor, check for cracks or damage, and test for moisture coming up through the slab. This helps determine which system will perform best.',
+  },
+  {
+    title: 'Repair the surface',
+    details:
+      'Cracks, spalls, and damaged areas are repaired before any coating is applied. Coating over bad concrete usually leads to early failure.',
+  },
+  {
+    title: 'Prepare the surface',
+    details:
+      'We clean and profile the concrete (usually by grinding) so the coating can bond properly. The level of prep depends on the system being used.',
+  },
+  {
+    title: 'Choose the right system',
+    details:
+      'We present options based on your budget and needs. This can range from a simple penetrating sealer to a full multi-layer epoxy or polyaspartic system with flakes.',
+  },
+  {
+    title: 'Apply the coating and allow proper cure',
+    details:
+      'We apply the chosen system and provide clear instructions on cure times before walking or parking on the floor.',
+  },
+];
+
+const expectTimeline = [
+  {
+    title: 'Penetrating sealers',
+    details:
+      'Usually the fastest — most jobs are done in one day with minimal downtime.',
+  },
+  {
+    title: 'Epoxy systems',
+    details:
+      'Typically take 2–3 days and require longer cure times before vehicles can return.',
+  },
+  {
+    title: 'Polyaspartic and hybrid systems',
+    details:
+      'Often allow light foot traffic within 24 hours and vehicles within a few days.',
+  },
+];
+
+const homeownerTips = [
+  {
+    title: "There's a big difference between budget options and professional systems",
+    details:
+      "Basic epoxy paints and sealers cost less upfront but generally don't last as long or hold up as well to chemicals and abrasion as professional multi-layer systems.",
+  },
+  {
+    title: 'Moisture in the slab is common in Brevard',
+    details:
+      'Many garages have moisture vapor coming up through the concrete. We test for this because it can cause coatings to fail if not addressed with the right primer or system.',
+  },
+  {
+    title: 'Polyaspartic systems usually outperform traditional epoxy in Florida',
+    details:
+      'They cure faster in humid conditions, resist yellowing better, and handle chemicals more effectively. However, they also cost more.',
+  },
+  {
+    title: "Flakes aren't just for looks",
+    details:
+      'Broadcast flakes can improve slip resistance and help hide dirt, oil stains, and minor surface imperfections better than solid color floors.',
+  },
+  {
+    title: 'Think about how you actually use your garage',
+    details:
+      'If you work on cars, store chemicals, or want the floor to look good for years with minimal maintenance, a higher-end system is usually worth the investment. For light use, a sealer or basic epoxy may be sufficient.',
+  },
+];
+
+const faqs = [
+  {
+    question: 'What are the cheapest options for coating a garage floor?',
+    answer:
+      "Penetrating concrete sealers and basic epoxy paint kits are the most affordable. They provide some protection and make cleaning easier but generally don't last as long or perform as well as professional systems.",
+  },
+  {
+    question: 'How long do garage floor coatings last?',
+    answer:
+      'It depends on the system and prep. Basic sealers and epoxy paints may last 3–7 years with light use. Professional epoxy and polyaspartic systems often last 10–15+ years when properly installed.',
+  },
+  {
+    question: 'Is polyaspartic worth the extra cost?',
+    answer:
+      "For many people in Florida, yes. It cures faster in humid conditions, resists chemicals and UV better than epoxy, and usually requires less downtime. However, if you're on a tight budget and don't need maximum durability, a quality epoxy system can still be a good option.",
+  },
+  {
+    question: 'Can you coat over existing paint or sealer?',
+    answer:
+      "Sometimes, but it depends on the condition of the old coating. If it's peeling or poorly bonded, it usually needs to be removed for the new coating to perform well.",
+  },
+  {
+    question: 'How soon can I park on the floor after coating?',
+    answer:
+      'It varies by system. Penetrating sealers often allow vehicles within 24 hours. Polyaspartic systems can usually handle light traffic quickly, while traditional epoxy systems require longer cure times before vehicles can return.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<Layout {title} {description}>
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-5xl space-y-12 text-base leading-relaxed text-charcoal sm:text-lg">
+      <header class="space-y-5">
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          Garage Floor Coating
+        </h1>
+        <p>
+          Garage floors deal with oil, chemicals, moisture, and constant vehicle traffic. Applying a coating can protect
+          the concrete and make the space easier to clean and maintain. There are several options available at different
+          price points, ranging from basic sealers to high-performance polyaspartic systems. The right choice depends on
+          your budget, how you use the garage, and how long you want the coating to last.
+        </p>
+      </header>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section aria-labelledby="what-we-cover-heading" class="space-y-5">
+        <h2 id="what-we-cover-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What We Cover
+        </h2>
+        <ul class="space-y-2">
+          {whatWeCover.map((item) => (
+            <li class="flex items-start gap-3 text-sm sm:text-base">
+              <span class="mt-1 inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-purple" aria-hidden="true"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="approach-heading" class="space-y-5">
+        <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          How We Approach It
+        </h2>
+        <ol class="space-y-3">
+          {approachSteps.map((step) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-4 sm:p-5">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{step.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{step.details}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section aria-labelledby="expect-heading" class="space-y-5">
+        <h2 id="expect-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What to Expect
+        </h2>
+        <p>
+          Timeline and return-to-use times vary significantly depending on the system:
+        </p>
+        <ul class="space-y-3">
+          {expectTimeline.map((item) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-4 sm:p-5">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{item.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{item.details}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="tips-heading" class="space-y-5">
+        <h2 id="tips-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Homeowner Tips
+        </h2>
+        <ul class="space-y-4">
+          {homeownerTips.map((tip) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{tip.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{tip.details}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <FaqSection items={faqs} heading="Common Questions" />
+    </article>
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+</Layout>

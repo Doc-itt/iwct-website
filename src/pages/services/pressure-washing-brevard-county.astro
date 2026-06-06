@@ -1,0 +1,199 @@
+---
+// Pressure washing service page for Brevard County homeowners with process, tips, and FAQ.
+import FaqSection from '../../components/FaqSection.astro';
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Pressure Washing Brevard County | If Walls Could Talk';
+const description =
+  "Pressure washing in Brevard County. Practical information on cleaning houses, decks, driveways, roofs, and other exterior surfaces in Florida's climate.";
+
+const whatWeCover = [
+  'House washing (siding, stucco, brick)',
+  'Deck and porch cleaning',
+  'Driveway and walkway cleaning',
+  'Roof cleaning (soft washing)',
+  'Fence washing',
+  'Gutter and exterior surface cleaning',
+];
+
+const approachSteps = [
+  {
+    title: 'Assess the surfaces',
+    details:
+      'We evaluate what needs to be cleaned and check the condition of the materials. Different surfaces require different pressures and cleaning methods.',
+  },
+  {
+    title: 'Protect the surrounding area',
+    details:
+      'We cover or move plants, furniture, windows, and other items that could be affected by water or cleaning solutions.',
+  },
+  {
+    title: 'Choose the right method',
+    details:
+      'Some jobs need traditional pressure washing, while others (especially roofs and delicate surfaces) are better suited for soft washing with appropriate cleaning solutions.',
+  },
+  {
+    title: 'Clean thoroughly',
+    details:
+      'We apply the right pressure and cleaning agents to remove mildew, algae, dirt, and stains without damaging the surface.',
+  },
+  {
+    title: 'Rinse and inspect',
+    details:
+      'After cleaning, we rinse surfaces and check the results to make sure everything is properly cleaned.',
+  },
+];
+
+const homeownerTips = [
+  {
+    title: 'Not everything should be blasted with high pressure',
+    details:
+      'Stucco, wood, and roofing can be damaged by too much pressure. We adjust the method and pressure based on the surface.',
+  },
+  {
+    title: 'Mildew and algae come back',
+    details:
+      "Florida's climate means these will return over time. Regular cleaning helps slow the buildup and keeps your home looking better between full washes.",
+  },
+  {
+    title: 'Roofs are usually soft washed, not pressure washed',
+    details:
+      'High pressure on a roof can damage shingles or tiles. Soft washing with the right cleaning solutions is safer and more effective for most roof types.',
+  },
+  {
+    title: 'Protect plants and landscaping',
+    details:
+      "We take steps to shield plants and grass from cleaning solutions, but it helps if you're aware that some overspray can occur.",
+  },
+  {
+    title: 'Cleaning before painting or staining helps',
+    details:
+      'Pressure washing (or soft washing) before painting or staining removes dirt and mildew so the new finish adheres better and lasts longer.',
+  },
+];
+
+const faqs = [
+  {
+    question: 'How often should I have my house pressure washed in Brevard?',
+    answer:
+      'Most homes benefit from exterior cleaning once or twice a year. Homes with heavy shade or near water often need it more frequently due to faster mildew growth.',
+  },
+  {
+    question: 'Will pressure washing damage my stucco or paint?',
+    answer:
+      'It can if too much pressure is used. We adjust the pressure and technique based on the surface to avoid damage.',
+  },
+  {
+    question: 'Do you clean roofs?',
+    answer:
+      'Yes. We use soft washing methods for roofs, which is safer and more effective than high-pressure washing on most roofing materials.',
+  },
+  {
+    question: 'Is pressure washing the same as soft washing?',
+    answer:
+      'No. Traditional pressure washing uses higher pressure and water. Soft washing uses lower pressure with cleaning solutions that kill mildew and algae. We choose the method based on the surface.',
+  },
+  {
+    question: 'Can I be home during the cleaning?',
+    answer:
+      "Yes. We just ask that windows and doors stay closed during the process and that you keep pets and children away from the work area until we're finished.",
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<Layout {title} {description}>
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-5xl space-y-12 text-base leading-relaxed text-charcoal sm:text-lg">
+      <header class="space-y-5">
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          Pressure Washing
+        </h1>
+        <p>
+          In Brevard County, heat, humidity, and frequent rain create the perfect conditions for mildew, algae, mold, and pollen
+          to build up quickly on exterior surfaces. Pressure washing can restore the look of a home, but results depend
+          on using the right technique and pressure for each surface. Too much pressure or the wrong method can damage
+          wood, stucco, paint, or roofing.
+        </p>
+      </header>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section aria-labelledby="what-we-cover-heading" class="space-y-5">
+        <h2 id="what-we-cover-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What We Cover
+        </h2>
+        <ul class="space-y-2">
+          {whatWeCover.map((item) => (
+            <li class="flex items-start gap-3 text-sm sm:text-base">
+              <span class="mt-1 inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-purple" aria-hidden="true"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="approach-heading" class="space-y-5">
+        <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          How We Approach It
+        </h2>
+        <ol class="space-y-3">
+          {approachSteps.map((step) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-4 sm:p-5">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{step.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{step.details}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section aria-labelledby="expect-heading" class="space-y-5">
+        <h2 id="expect-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What to Expect
+        </h2>
+        <p>
+          Most pressure washing jobs take a few hours to a full day, depending on the size of the property and how many
+          surfaces are being cleaned.
+        </p>
+        <p>
+          You'll usually see a noticeable difference immediately after cleaning. Some surfaces (especially roofs) may
+          take a few days to fully brighten as the cleaning solution finishes working.
+        </p>
+        <p>
+          In Brevard conditions, most homes benefit from exterior cleaning once or twice a year due to the rapid buildup
+          of mildew and algae.
+        </p>
+      </section>
+
+      <section aria-labelledby="tips-heading" class="space-y-5">
+        <h2 id="tips-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Homeowner Tips
+        </h2>
+        <ul class="space-y-4">
+          {homeownerTips.map((tip) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{tip.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{tip.details}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <FaqSection items={faqs} heading="Common Questions" />
+    </article>
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+</Layout>

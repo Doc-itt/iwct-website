@@ -7,78 +7,142 @@ const siteUrl = 'https://iwctpainting.com';
 
 const title = 'Painting Services in Brevard County | If Walls Could Talk';
 const description =
-  'Professional painting services in Brevard County: interior, exterior, cabinet refinishing, and pool deck coatings. Built for Florida conditions with expert crews and quality materials.';
+  'Painting services in Brevard County: exterior and interior painting, cabinet and wood finishes, and concrete coatings for pool decks, patios, and garage floors. Built for Florida heat, humidity, and storms.';
 
 const phone = '(321) 557-6959';
 const phoneHref = 'tel:+13215576959';
 
 const categories = [
   {
+    id: 'exterior-painting',
     title: 'Exterior Painting',
     intro:
-      'Full exterior house painting and related work. We focus on thorough prep and coatings built for Brevard County conditions.',
+      'Exterior painting in Brevard takes more than just paint. We fix the surface right and use coatings built for our heat, humidity, and storms.',
     services: [
       {
-        label: 'Exterior House Painting',
+        label: 'Exterior painting',
         href: '/services/exterior-painting-brevard-county',
       },
-      'Siding Painting',
-      'Stucco Painting and Sealing',
-      'Soffit and Fascia Painting',
-      'Trim, Shutters and Doors',
-      'Fence Painting',
-      'Roof Painting',
-      'Brick Painting and Sealing',
-      'UV-Protective and Mildew-Resistant Coatings',
-      'Rust-Inhibiting Metal Painting',
+      {
+        label: 'Siding painting',
+        href: '/services/siding-painting-brevard-county',
+      },
+      {
+        label: 'Stucco painting and sealing',
+        href: '/services/stucco-painting-and-sealing-brevard-county',
+      },
+      {
+        label: 'Pressure washing',
+        href: '/services/pressure-washing-brevard-county',
+      },
+      {
+        label: 'Trim, soffit, and door painting',
+        href: '/services/trim-soffit-and-door-painting-brevard-county',
+      },
+      {
+        label: 'Caulking and sealing',
+        href: '/services/caulking-and-sealing-brevard-county',
+      },
+      {
+        label: 'Stucco crack repair',
+        href: '/services/stucco-crack-repair-brevard-county',
+      },
     ],
   },
   {
+    id: 'interior-painting',
     title: 'Interior Painting',
     intro:
-      'Interior painting with proper prep and finishes that hold up in Florida humidity.',
+      'Interior painting that holds up here starts with proper prep and finishes that actually handle Florida humidity.',
     services: [
       {
-        label: 'Interior House Painting',
+        label: 'Interior painting',
         href: '/services/interior-painting-brevard-county',
       },
-      'Drywall Painting and Repair',
-      'Trim and Baseboard Painting',
-      'Accent Walls',
-      'Popcorn Ceiling Removal',
-      'Garage Painting (Walls and Floors)',
-      'Touch-Up Painting',
+      {
+        label: 'Drywall painting',
+        href: '/services/drywall-painting-brevard-county',
+      },
+      {
+        label: 'Trim and baseboard painting',
+        href: '/services/trim-and-baseboard-painting-brevard-county',
+      },
+      {
+        label: 'Accent wall painting',
+        href: '/services/accent-wall-painting-brevard-county',
+      },
+      {
+        label: 'Popcorn ceiling removal',
+        href: '/services/popcorn-ceiling-removal-brevard-county',
+      },
+      {
+        label: 'Garage painting',
+        href: '/services/garage-painting-brevard-county',
+      },
     ],
   },
   {
+    id: 'specialty-finishes-woodwork',
     title: 'Specialty Finishes & Woodwork',
     intro:
-      'Cabinet painting, wood refinishing, deck and porch painting, and other specialty work. A practical way to update kitchens, bathrooms, and wood surfaces.',
+      'We update cabinets, decks, porches, and wood surfaces with finishes that stand up to daily use and moisture.',
     services: [
       {
-        label: 'Cabinet Painting (Kitchen and Bathroom)',
+        label: 'Cabinet painting',
         href: '/services/cabinet-painting-brevard-county',
       },
-      'Wood Painting / Staining / Varnishing',
-      'Deck Painting',
-      'Porch Painting',
-      'Color Consultation',
+      {
+        label: 'Wood painting',
+        href: '/services/exterior-wood-painting-brevard-county',
+      },
+      {
+        label: 'Wood staining',
+        href: '/services/exterior-wood-staining-brevard-county',
+      },
+      {
+        label: 'Deck painting',
+        href: '/services/deck-painting-brevard-county',
+      },
+      {
+        label: 'Porch painting',
+        href: '/services/porch-painting-brevard-county',
+      },
+      {
+        label: 'Color consultation',
+        href: '/services/color-consultation-brevard-county',
+      },
     ],
   },
   {
+    id: 'outdoor-living-concrete-coatings',
     title: 'Outdoor Living & Concrete Coatings',
     intro:
-      'Pool decks, patios, garages, and other concrete surfaces built for sun, rain, chlorine, and heavy use.',
+      'Pool decks, patios, and garage floors need coatings made for sun, chlorine, rain, and heavy traffic.',
     services: [
       {
-        label: 'Pool Deck Painting and Slip-Resistant Coatings',
+        label: 'Pool deck painting',
         href: '/services/pool-deck-painting-slip-resistant-coatings-brevard-county',
       },
-      'Patio Painting',
-      'Concrete Floor Coatings',
-      'Garage Floor Coatings',
-      'Driveway Sealing and Painting',
-      'Polyaspartic Coatings',
+      {
+        label: 'Slip-resistant pool deck coating',
+        href: '/services/pool-deck-painting-slip-resistant-coatings-brevard-county',
+      },
+      {
+        label: 'Patio painting',
+        href: '/services/patio-painting-brevard-county',
+      },
+      {
+        label: 'Concrete floor coating',
+        href: '/services/concrete-coatings-brevard-county',
+      },
+      {
+        label: 'Garage floor coating',
+        href: '/services/garage-floor-coating-brevard-county',
+      },
+      {
+        label: 'Driveway sealing and painting',
+        href: '/services/driveway-sealing-and-painting-brevard-county',
+      },
     ],
   },
 ];
@@ -187,7 +251,7 @@ const serviceSchema = {
         </h2>
         <ul class="grid gap-5 md:grid-cols-2">
           {categories.map((category) => (
-            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+            <li id={category.id} class="scroll-mt-24 rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
               <h3 class="font-display text-xl font-semibold text-charcoal sm:text-2xl">{category.title}</h3>
               <p class="mt-3 text-sm text-muted sm:text-base">{category.intro}</p>
               <h4 class="mt-5 text-base font-semibold text-charcoal sm:text-lg">Included services:</h4>

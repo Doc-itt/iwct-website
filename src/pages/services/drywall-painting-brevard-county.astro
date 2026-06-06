@@ -1,0 +1,195 @@
+---
+// Drywall painting service page for Brevard County homeowners with process, tips, and FAQ.
+import FaqSection from '../../components/FaqSection.astro';
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Drywall Painting';
+const description =
+  'Drywall painting for homes in Brevard County. Practical information on prepping, priming, and painting drywall for new construction and renovations.';
+
+const whatWeCover = [
+  'Surface preparation and sanding',
+  'Drywall repair and patching',
+  'Priming new or repaired drywall',
+  'Texture matching',
+  'Painting walls and ceilings',
+  'Different paint finishes and their uses',
+];
+
+const approachSteps = [
+  {
+    title: 'Assess the drywall',
+    details:
+      'We look at the condition of the walls and ceilings, check for repairs that need to be made, and evaluate the existing texture and finish.',
+  },
+  {
+    title: 'Prepare the surface',
+    details:
+      'We sand joints, repair damage, and make sure the surface is smooth and clean before priming or painting. Good prep is essential for a clean final result.',
+  },
+  {
+    title: 'Prime as needed',
+    details:
+      'New drywall and repaired areas are primed to seal the surface and help the topcoat go on evenly. Skipping primer often causes flashing or uneven color.',
+  },
+  {
+    title: 'Apply the paint',
+    details:
+      'We use the appropriate paint and finish for the room and level of use. Multiple coats are often needed for good coverage and a consistent appearance.',
+  },
+  {
+    title: 'Inspect the finished work',
+    details:
+      'We check for even coverage, clean lines, and any imperfections before considering the job complete.',
+  },
+];
+
+const homeownerTips = [
+  {
+    title: 'Prep work shows in the final result',
+    details:
+      'Sanding, patching, and priming properly makes a much bigger difference in the finished look than most people expect. Rushing this step often leads to visible imperfections.',
+  },
+  {
+    title: 'Primer is especially important on new drywall',
+    details:
+      'New drywall is very porous. Without primer, the paint can absorb unevenly and show joint lines or texture differences.',
+  },
+  {
+    title: 'Different rooms need different finishes',
+    details:
+      'Flat or matte finishes hide imperfections well but are harder to clean. Satin or semi-gloss finishes are more durable and easier to wipe down, making them better for kitchens, bathrooms, and high-traffic areas.',
+  },
+  {
+    title: 'Texture matching matters',
+    details:
+      'When repairing drywall, matching the existing texture is important. A mismatched texture can be more noticeable than slight color differences after painting.',
+  },
+  {
+    title: 'Dark colors usually require more work',
+    details:
+      'Bold or dark colors often need extra coats and sometimes a tinted primer to achieve even coverage without flashing or showing through.',
+  },
+];
+
+const faqs = [
+  {
+    question: 'How long does drywall painting last?',
+    answer:
+      'With proper prep and good quality paint, drywall finishes typically last 7–10 years in residential homes before they start to show wear or need refreshing.',
+  },
+  {
+    question: 'Do I need to prime new drywall before painting?',
+    answer:
+      'Yes. Priming new drywall helps seal the surface and allows the paint to go on evenly. Skipping this step often leads to uneven color and visible joint lines.',
+  },
+  {
+    question: 'Can you paint over existing paint without priming?',
+    answer:
+      "It depends on the condition of the current paint. If it's in good shape and the same color or a similar shade, priming may not be necessary. When changing to a significantly different color or painting over repairs, priming is usually recommended.",
+  },
+  {
+    question: "What's the best paint finish for walls?",
+    answer:
+      "It depends on the room. Flat or eggshell finishes are popular for living areas because they hide imperfections. Satin or semi-gloss finishes are better for kitchens, bathrooms, and trim because they're easier to clean.",
+  },
+  {
+    question: 'How soon can I move furniture back after painting?',
+    answer:
+      "Most paint is dry to the touch within a few hours, but it's best to wait 24–48 hours before moving heavy furniture or hanging items on the walls to avoid damaging the fresh paint.",
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<Layout {title} {description}>
+  <main class="page-container py-12 sm:py-16">
+    <article class="mx-auto max-w-5xl space-y-12 text-base leading-relaxed text-charcoal sm:text-lg">
+      <header class="space-y-5">
+        <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          Drywall Painting
+        </h1>
+        <p>
+          Drywall painting is one of the most common interior finishing tasks, whether it's for new construction,
+          renovations, or repairs after water damage. A good drywall paint job depends heavily on proper surface
+          preparation and using the right products. Skimping on prep or primer often leads to visible imperfections and
+          shorter-lasting results.
+        </p>
+      </header>
+
+      <div class="watercolor-divider" aria-hidden="true"></div>
+
+      <section aria-labelledby="what-we-cover-heading" class="space-y-5">
+        <h2 id="what-we-cover-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What We Cover
+        </h2>
+        <ul class="space-y-2">
+          {whatWeCover.map((item) => (
+            <li class="flex items-start gap-3 text-sm sm:text-base">
+              <span class="mt-1 inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-purple" aria-hidden="true"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="approach-heading" class="space-y-5">
+        <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          How We Approach It
+        </h2>
+        <ol class="space-y-3">
+          {approachSteps.map((step) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-4 sm:p-5">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{step.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{step.details}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section aria-labelledby="expect-heading" class="space-y-5">
+        <h2 id="expect-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          What to Expect
+        </h2>
+        <p>
+          Most drywall painting projects take anywhere from a few hours to several days, depending on the size of the area
+          and how much repair or prep work is needed.
+        </p>
+        <p>
+          New drywall usually requires more coats and careful sanding between coats for a smooth finish. Repaint work on
+          existing walls is often faster but still depends on the condition of the current paint and surface.
+        </p>
+      </section>
+
+      <section aria-labelledby="tips-heading" class="space-y-5">
+        <h2 id="tips-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Homeowner Tips
+        </h2>
+        <ul class="space-y-4">
+          {homeownerTips.map((tip) => (
+            <li class="rounded-xl border border-charcoal/10 bg-white/60 p-5 sm:p-6">
+              <h3 class="font-display text-lg font-semibold sm:text-xl">{tip.title}</h3>
+              <p class="mt-2 text-sm text-muted sm:text-base">{tip.details}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <FaqSection items={faqs} heading="Common Questions" />
+    </article>
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+</Layout>
