@@ -7,7 +7,11 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://iwctpainting.com',
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      filter: (page) => !page.includes('/thank-you'),
+    }),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },

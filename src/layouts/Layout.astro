@@ -8,30 +8,31 @@ interface Props {
   title?: string;
   description?: string;
   ogImage?: string;
+  noindex?: boolean;
 }
 
 const {
   title = 'If Walls Could Talk | Brevard County Painting',
   description = 'Professional painting for Brevard County homeowners — interior, exterior, and more. Owner-operated with real standards since 2020.',
   ogImage = '/logotransparent.png',
+  noindex = false,
 } = Astro.props;
 
-const siteUrl = Astro.site ?? 'https://iwctpainting.com';
-const canonicalURL = new URL(Astro.url.pathname, siteUrl);
-const ogImageURL = new URL(ogImage, siteUrl);
+const siteOrigin = String(Astro.site ?? 'https://iwctpainting.com').replace(/\/$/, '');
+const canonicalURL = new URL(Astro.url.pathname, siteOrigin);
+const ogImageURL = new URL(ogImage, siteOrigin);
 
 const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'HousePainter',
-  '@id': `${siteUrl}/#localbusiness`,
+  '@id': new URL('/#localbusiness', siteOrigin).href,
   name: 'If Walls Could Talk LLC',
   description:
     'Owner-operated painting company serving Brevard County, Florida with vetted local crews, clear standards, and transparent communication.',
-  url: `${siteUrl}/`,
-  image: `${siteUrl}/logotransparent.png`,
+  url: new URL('/', siteOrigin).href,
+  image: new URL('/logotransparent.png', siteOrigin).href,
   telephone: '+1-321-557-6959',
   email: 'iwctpaintingplus@gmail.com',
-  foundingDate: '2020',
   priceRange: '$$',
   address: {
     '@type': 'PostalAddress',
@@ -81,11 +82,13 @@ const localBusinessSchema = {
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/logotransparent.png" />
+    <link rel="apple-touch-icon" href="/logotransparent.png" />
     <meta name="generator" content={Astro.generator} />
 
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
     <link rel="canonical" href={canonicalURL} />
 
     <meta property="og:type" content="website" />
