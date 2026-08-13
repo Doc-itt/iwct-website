@@ -9,6 +9,15 @@
 
 # Changelog
 
+## 2026-06-11
+- Created `src/data/schema.ts` — shared JSON-LD builders: BlogPosting, BreadcrumbList, FAQPage
+- Updated `src/layouts/Layout.astro` — `sameAs` now lists the Google Maps profile URL; added `WebSite` JSON-LD; trimmed Google Fonts request to used weights
+- Updated `src/pages/blog/*.astro` (3 posts) — BlogPosting + BreadcrumbList + FAQPage schema, TL;DR "short answer" blocks, FAQ sections
+- Updated `src/pages/homeowner-guide/*.astro` (4 articles) — BreadcrumbList + FAQPage schema, TL;DR blocks, FAQ sections, services links
+- Updated `src/pages/services/*-brevard-county.astro` (24 pages) — titles localized to "in Brevard County, FL" (owner-approved), BreadcrumbList schema, "Related Services & Reading" navs
+- Removed `public/images/blog/services/Website/` — ~10.8 MB of unused legacy image originals
+- Updated `docs/SESSIONS.md`, `docs/CHANGELOG.md`, `docs/STATUS.md`, `docs/DECISIONS.md` — session wrap-up
+
 ## 2026-06-06
 - Created 20 new `src/pages/services/*-brevard-county.astro` detail pages — exterior, interior, specialty/woodwork, and outdoor living subservices
 - Updated `src/pages/services/index.astro` — linked service lists, category anchor IDs, refreshed hub copy and meta description

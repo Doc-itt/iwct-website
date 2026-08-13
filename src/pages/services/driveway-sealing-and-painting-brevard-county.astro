@@ -2,8 +2,9 @@
 // Driveway sealing and painting service page for Brevard County homeowners with options, process, tips, and FAQ.
 import FaqSection from '../../components/FaqSection.astro';
 import Layout from '../../layouts/Layout.astro';
+import { breadcrumbSchema } from '../../data/schema';
 
-const title = 'Driveway Sealing and Painting | If Walls Could Talk';
+const title = 'Driveway Sealing and Painting in Brevard County, FL | If Walls Could Talk';
 const description =
   "Driveway sealing and painting in Brevard County. Practical information on sealers, coatings, and decorative options for concrete and paver driveways in Florida's climate.";
 
@@ -131,6 +132,19 @@ const faqSchema = {
     },
   })),
 };
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'Services', path: '/services' },
+  { name: 'Driveway Sealing and Painting' },
+]);
+
+const relatedLinks = [
+  { label: 'Concrete Coatings', href: '/services/concrete-coatings-brevard-county' },
+  { label: 'Pressure Washing', href: '/services/pressure-washing-brevard-county' },
+  { label: 'Garage Floor Coating', href: '/services/garage-floor-coating-brevard-county' },
+  { label: 'Guide: What to Expect During Your Project', href: '/homeowner-guide/what-to-expect-during-your-project' },
+];
+
 ---
 
 <Layout {title} {description}>
@@ -226,8 +240,25 @@ const faqSchema = {
       </section>
 
       <FaqSection items={faqs} heading="Common Questions" />
+
+      <nav class="space-y-4 border-t border-charcoal/10 pt-10" aria-labelledby="related-links-heading">
+        <h2 id="related-links-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Related Services &amp; Reading
+        </h2>
+        <ul class="space-y-3">
+          {relatedLinks.map((item) => (
+            <li>
+              <a href={item.href} class="font-medium text-purple transition-colors hover:text-coral">
+                {item.label} →
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
     </article>
   </main>
 
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)}></script>
 </Layout>

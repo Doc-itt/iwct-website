@@ -13,6 +13,17 @@
 
 # Sessions Log
 
+## 2026-06-11 — Cursor
+- Site-wide SEO/AEO pass on branch `feature/fable5-seo-optimization`. New `src/data/schema.ts` with shared JSON-LD builders (BlogPosting, BreadcrumbList, FAQPage).
+- `Layout.astro`: populated `sameAs` with the Google Maps profile URL; added sitewide `WebSite` JSON-LD; trimmed Google Fonts to used weights only (DM Sans 400/500/600, Fraunces 500/600 — no bold/italics used anywhere).
+- Schema rollout: `BlogPosting` + breadcrumbs + FAQ on all 3 blog posts; breadcrumbs + FAQ sections on all 4 homeowner-guide articles; breadcrumbs on all 24 service detail pages.
+- AEO content: "The short answer" TL;DR blocks under the H1 on 4 guide articles + 3 blog posts; "Related Services & Reading" internal-link navs on all 24 service detail pages; a few guide/blog → services in-content links.
+- Metadata (owner-approved with before/after): 24 service page titles now include "in Brevard County, FL"; pool deck title shortened to "Pool Deck Painting in Brevard County, FL". Descriptions unchanged.
+- Deleted unused legacy originals in `public/images/blog/services/Website/` (~10.8 MB off every deploy).
+- **Decisions:** see DECISIONS.md 2026-06-11 (title locality pattern, font trim, FAQ schema via shared helper).
+- **Next:** Deploy, re-submit sitemap in Search Console, spot-check rich results (Google Rich Results Test on a service page + a blog post), run Lighthouse mobile on `/`, one service page, and one blog post.
+- **Git:** Work on `feature/fable5-seo-optimization` (not yet committed at wrap-up time).
+
 ## 2026-06-06 — Cursor
 - Added 20 new service detail pages under `src/pages/services/` (exterior subservices, interior subservices, specialty/woodwork, outdoor living/concrete) using the same layout pattern as the original four.
 - Updated `src/pages/services/index.astro`: refreshed category copy, linked every listed service to its detail page, and added section anchor IDs (`exterior-painting`, `interior-painting`, `specialty-finishes-woodwork`, `outdoor-living-concrete-coatings`) with `scroll-mt-24` for the sticky header.

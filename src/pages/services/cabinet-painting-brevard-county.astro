@@ -2,8 +2,9 @@
 // Cabinet painting service page for Brevard County homeowners with process, tips, and FAQ.
 import FaqSection from '../../components/FaqSection.astro';
 import Layout from '../../layouts/Layout.astro';
+import { breadcrumbSchema } from '../../data/schema';
 
-const title = 'Cabinet Painting | If Walls Could Talk';
+const title = 'Cabinet Painting in Brevard County, FL | If Walls Could Talk';
 const description =
   'Expert cabinet painting and wood refinishing in Brevard County. Smooth, durable finishes that stand up to Florida humidity and daily use.';
 
@@ -111,6 +112,19 @@ const faqSchema = {
     },
   })),
 };
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'Services', path: '/services' },
+  { name: 'Cabinet Painting' },
+]);
+
+const relatedLinks = [
+  { label: 'Interior Painting', href: '/services/interior-painting-brevard-county' },
+  { label: 'Trim and Baseboard Painting', href: '/services/trim-and-baseboard-painting-brevard-county' },
+  { label: 'Color Consultation', href: '/services/color-consultation-brevard-county' },
+  { label: 'Guide: Questions to Ask Before You Hire a Painter', href: '/homeowner-guide/questions-to-ask-before-you-hire' },
+];
+
 ---
 
 <Layout {title} {description}>
@@ -206,8 +220,25 @@ const faqSchema = {
       </section>
 
       <FaqSection items={faqs} />
+
+      <nav class="space-y-4 border-t border-charcoal/10 pt-10" aria-labelledby="related-links-heading">
+        <h2 id="related-links-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Related Services &amp; Reading
+        </h2>
+        <ul class="space-y-3">
+          {relatedLinks.map((item) => (
+            <li>
+              <a href={item.href} class="font-medium text-purple transition-colors hover:text-coral">
+                {item.label} →
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
     </article>
   </main>
 
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)}></script>
 </Layout>

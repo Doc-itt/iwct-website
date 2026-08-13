@@ -2,8 +2,9 @@
 // Accent wall painting service page for Brevard County homeowners with process, tips, and FAQ.
 import FaqSection from '../../components/FaqSection.astro';
 import Layout from '../../layouts/Layout.astro';
+import { breadcrumbSchema } from '../../data/schema';
 
-const title = 'Accent Wall Painting | If Walls Could Talk';
+const title = 'Accent Wall Painting in Brevard County, FL | If Walls Could Talk';
 const description =
   'Accent wall painting for homes in Brevard County. Practical information on choosing colors, prep, and finishes for feature walls.';
 
@@ -112,6 +113,18 @@ const faqSchema = {
     },
   })),
 };
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'Services', path: '/services' },
+  { name: 'Accent Wall Painting' },
+]);
+
+const relatedLinks = [
+  { label: 'Interior Painting', href: '/services/interior-painting-brevard-county' },
+  { label: 'Color Consultation', href: '/services/color-consultation-brevard-county' },
+  { label: 'Blog: How Paint Colors Affect How You Feel at Home', href: '/blog/how-paint-colors-affect-how-you-feel' },
+];
+
 ---
 
 <Layout {title} {description}>
@@ -187,8 +200,25 @@ const faqSchema = {
       </section>
 
       <FaqSection items={faqs} heading="Common Questions" />
+
+      <nav class="space-y-4 border-t border-charcoal/10 pt-10" aria-labelledby="related-links-heading">
+        <h2 id="related-links-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Related Services &amp; Reading
+        </h2>
+        <ul class="space-y-3">
+          {relatedLinks.map((item) => (
+            <li>
+              <a href={item.href} class="font-medium text-purple transition-colors hover:text-coral">
+                {item.label} →
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
     </article>
   </main>
 
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)}></script>
 </Layout>

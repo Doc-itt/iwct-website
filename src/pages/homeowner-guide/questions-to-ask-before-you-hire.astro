@@ -1,6 +1,8 @@
 ---
 // Homeowner Guide article: eight questions to ask before hiring a painter in Brevard County.
+import FaqSection from '../../components/FaqSection.astro';
 import Layout from '../../layouts/Layout.astro';
+import { breadcrumbSchema, faqPageSchema } from '../../data/schema';
 
 const title = 'Questions to Ask Before You Hire a Painter in Brevard County | If Walls Could Talk';
 const description =
@@ -109,6 +111,36 @@ const moreGuideLinks = [
   { label: 'Understanding Paint Products in Florida', href: paintProductsHref },
   { label: 'What to Expect During Your Project', href: '/homeowner-guide/what-to-expect-during-your-project' },
 ];
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'Homeowner Guide', path: '/homeowner-guide' },
+  { name: 'Questions to Ask Before You Hire a Painter in Brevard County' },
+]);
+
+const faqs = [
+  {
+    question: "What's the single most important question to ask a painter?",
+    answer:
+      'Ask them to walk you through their prep process step by step. In Brevard County, poor prep is the number one reason paint jobs fail early — a painter who can explain washing, dry time, caulking, repairs, and priming without prompting is taking the job seriously.',
+  },
+  {
+    question: "What's the biggest red flag in a painting estimate?",
+    answer:
+      "A single total number with no breakdown of surfaces, coats, or products — or a bid far below the others with no explanation. Vague estimates are where surprise charges and cut corners come from.",
+  },
+  {
+    question: 'Should I ask a painter for proof of insurance?',
+    answer:
+      'For most jobs, yes. General liability insurance protects your property if something goes wrong. A reputable painter will show you their certificate without hesitation; defensiveness about it is a red flag.',
+  },
+  {
+    question: "What if a painter can't name the products they plan to use?",
+    answer:
+      'Keep looking. "We use good paint" usually means defaulting to cheaper contractor-grade materials. A pro names the product line and explains why it fits your surfaces and Florida\'s humidity, UV, and salt air.',
+  },
+];
+const faqSchema = faqPageSchema(faqs);
+
 ---
 
 <Layout {title} {description}>
@@ -118,6 +150,15 @@ const moreGuideLinks = [
         <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
           Questions to Ask Before You Hire a Painter
         </h1>
+        <aside class="rounded-xl border border-sage/60 bg-sage/10 p-5 sm:p-6" aria-label="Short answer">
+          <p class="text-sm font-semibold uppercase tracking-wide text-charcoal">The short answer</p>
+          <p class="mt-2">
+            Ask any painter in Brevard County eight things: what specific products they're using and why, their
+            step-by-step prep process, exactly what's included in the price, sheen recommendations for each area,
+            how they handle issues after the job, a realistic timeline, how they'll protect your home, and how
+            they'll communicate. Specific answers signal a pro — vague ones are a reason to keep looking.
+          </p>
+        </aside>
         <div class="space-y-4 text-muted">
           <p>
             Asking the right questions upfront makes a real difference in the quality and longevity of the work,
@@ -220,6 +261,8 @@ const moreGuideLinks = [
         </p>
       </section>
 
+      <FaqSection items={faqs} heading="Quick Answers" />
+
       <div class="watercolor-divider" aria-hidden="true"></div>
 
       <nav class="space-y-4" aria-labelledby="more-guide-heading">
@@ -245,4 +288,6 @@ const moreGuideLinks = [
       </nav>
     </article>
   </main>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
 </Layout>

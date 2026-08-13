@@ -2,8 +2,9 @@
 // Color consultation service page for Brevard County homeowners with process, tips, and FAQ.
 import FaqSection from '../../components/FaqSection.astro';
 import Layout from '../../layouts/Layout.astro';
+import { breadcrumbSchema } from '../../data/schema';
 
-const title = 'Color Consultation | If Walls Could Talk';
+const title = 'Color Consultation in Brevard County, FL | If Walls Could Talk';
 const description =
   'Professional color consultation for homes in Brevard County. Help choosing interior and exterior paint colors that work with your space, lighting, and lifestyle.';
 
@@ -107,6 +108,18 @@ const faqSchema = {
 };
 
 const tipLinkClass = 'font-medium text-purple transition-colors hover:text-coral';
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'Services', path: '/services' },
+  { name: 'Color Consultation' },
+]);
+
+const relatedLinks = [
+  { label: 'Interior Painting', href: '/services/interior-painting-brevard-county' },
+  { label: 'Accent Wall Painting', href: '/services/accent-wall-painting-brevard-county' },
+  { label: 'Blog: How Paint Colors Affect How You Feel at Home', href: '/blog/how-paint-colors-affect-how-you-feel' },
+];
+
 ---
 
 <Layout {title} {description}>
@@ -190,8 +203,25 @@ const tipLinkClass = 'font-medium text-purple transition-colors hover:text-coral
       </section>
 
       <FaqSection items={faqs} heading="Common Questions" />
+
+      <nav class="space-y-4 border-t border-charcoal/10 pt-10" aria-labelledby="related-links-heading">
+        <h2 id="related-links-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Related Services &amp; Reading
+        </h2>
+        <ul class="space-y-3">
+          {relatedLinks.map((item) => (
+            <li>
+              <a href={item.href} class="font-medium text-purple transition-colors hover:text-coral">
+                {item.label} →
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
     </article>
   </main>
 
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)}></script>
 </Layout>

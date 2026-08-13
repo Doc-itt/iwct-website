@@ -1,6 +1,8 @@
 ---
 // Homeowner Guide article: paint products, tiers, sheens, and primer for Brevard County's climate.
+import FaqSection from '../../components/FaqSection.astro';
 import Layout from '../../layouts/Layout.astro';
+import { breadcrumbSchema, faqPageSchema } from '../../data/schema';
 
 const title = 'Understanding Paint Products in Brevard County | If Walls Could Talk';
 const description =
@@ -107,6 +109,36 @@ const tableWrapperClass = 'overflow-x-auto rounded-xl border border-charcoal/10 
 const tableClass = 'w-full border-collapse text-left text-sm sm:text-base';
 const thClass = 'px-4 py-3 font-semibold text-charcoal';
 const tdClass = 'px-4 py-4 align-top';
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'Homeowner Guide', path: '/homeowner-guide' },
+  { name: 'Understanding Paint Products in Brevard County' },
+]);
+
+const faqs = [
+  {
+    question: 'What paint lasts longest on a Florida exterior?',
+    answer:
+      'A premium 100% acrylic latex (like Sherwin-Williams Duration or Emerald) in a satin sheen. Expect 7–10 years inland and 5–8 near the coast — Florida UV, humidity, and salt air cut every paint\'s lifespan below what the label claims.',
+  },
+  {
+    question: 'Is paint-and-primer-in-one good enough for Florida homes?',
+    answer:
+      'On previously painted surfaces in good condition, it can be fine. On bare stucco, bare wood, big color changes, chalky or mildewed surfaces, and coastal homes, a dedicated primer still matters — skipping it is one of the most common causes of early paint failure in Brevard County.',
+  },
+  {
+    question: 'Is elastomeric paint worth the extra cost?',
+    answer:
+      'On stucco with hairline cracks, coastal homes with heavy salt and moisture exposure, or walls with a history of peeling, yes — it bridges small cracks and adds a stronger moisture barrier. It is not the right call over active moisture problems or on wood siding.',
+  },
+  {
+    question: 'What sheen is best for a stucco exterior in Brevard County?',
+    answer:
+      'Satin is the go-to. It sheds water, resists mildew, cleans more easily, and holds up in direct sun better than flat. Flat can make sense on older walls where hiding surface imperfections matters most.',
+  },
+];
+const faqSchema = faqPageSchema(faqs);
+
 ---
 
 <Layout {title} {description}>
@@ -116,6 +148,15 @@ const tdClass = 'px-4 py-4 align-top';
         <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
           Understanding Paint Products in Brevard County
         </h1>
+        <aside class="rounded-xl border border-sage/60 bg-sage/10 p-5 sm:p-6" aria-label="Short answer">
+          <p class="text-sm font-semibold uppercase tracking-wide text-charcoal">The short answer</p>
+          <p class="mt-2">
+            For most Brevard County exteriors, the right choice is a quality 100% acrylic latex in a satin sheen —
+            flexible, breathable, and mildew-resistant. Premium tiers earn their cost here because Florida's UV,
+            humidity, and salt air shorten every paint's lifespan. Elastomeric coatings are worth it on cracked
+            stucco or coastal homes, and primer matters more here than the label suggests.
+          </p>
+        </aside>
         <div class="space-y-4 text-muted">
           <p>
             You don't need to become a paint expert to hire the right painter. You just need enough knowledge to ask
@@ -326,6 +367,19 @@ const tdClass = 'px-4 py-4 align-top';
           Getting the product wrong on these surfaces means early failure, peeling, and in the case of pool decks, a
           safety issue.
         </p>
+        <p>
+          For surface-specific details, see our{' '}
+          <a
+            href="/services/pool-deck-painting-slip-resistant-coatings-brevard-county"
+            class="font-medium text-purple transition-colors hover:text-coral"
+          >pool deck painting</a>{' '}
+          and{' '}
+          <a
+            href="/services/concrete-coatings-brevard-county"
+            class="font-medium text-purple transition-colors hover:text-coral"
+          >concrete coatings</a>{' '}
+          pages.
+        </p>
         <p class="text-muted">More detailed coverage on specialty surfaces coming soon.</p>
       </section>
 
@@ -386,6 +440,8 @@ const tdClass = 'px-4 py-4 align-top';
         </p>
       </section>
 
+      <FaqSection items={faqs} heading="Quick Answers on Paint Products" />
+
       <div class="watercolor-divider" aria-hidden="true"></div>
 
       <nav class="space-y-4" aria-labelledby="related-reading-heading">
@@ -409,4 +465,6 @@ const tdClass = 'px-4 py-4 align-top';
       </nav>
     </article>
   </main>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
 </Layout>

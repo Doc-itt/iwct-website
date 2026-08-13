@@ -1,14 +1,50 @@
 ---
 // Blog post: Florida and Brevard County painting license changes — what homeowners should know when hiring.
 import { Image } from 'astro:assets';
+import FaqSection from '../../components/FaqSection.astro';
 import Layout from '../../layouts/Layout.astro';
 import heroImage from '../../assets/blog/florida-painting-license-law.jpg';
+import { blogPostingSchema, breadcrumbSchema, faqPageSchema } from '../../data/schema';
 
 const title = 'Florida Painting License Law Change: What Brevard Homeowners Should Know';
 const description =
   'Florida ended the state painting license requirement in 2021, and Brevard County local licenses stopped in July 2025. Here\'s what it means for homeowners hiring painters.';
 
 const ogImage = '/images/blog/florida-painting-license-law.jpg';
+
+const postSchema = blogPostingSchema({
+  headline: "Florida Removed the Painting License Requirement. Here's What That Actually Means.",
+  description,
+  path: '/blog/florida-painting-contractor-license-changes-brevard',
+  image: ogImage,
+  datePublished: '2026-05-29',
+  dateModified: '2026-06-11',
+});
+
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'Blog', path: '/blog' },
+  { name: 'Florida Painting License Law Change' },
+]);
+
+const faqs = [
+  {
+    question: 'Is it legal to hire an unlicensed painter in Florida?',
+    answer:
+      'Yes. Painting is no longer a licensed trade in Florida — House Bill 735 (2021) removed the state requirement, and Senate Bill 1142 ended remaining local requirements as of July 1, 2025. There is simply no painting license for anyone to hold.',
+  },
+  {
+    question: 'Does no license mean painting work is completely unregulated?',
+    answer:
+      'No. Contract law, insurance requirements, and consumer protection still apply. What disappeared is the trade-specific screening — exams, financial responsibility checks — which is why vetting insurance and references matters more now.',
+  },
+  {
+    question: 'What should I check instead of a painting license?',
+    answer:
+      'Four things: general liability insurance, a written scope of work, a painter who can explain their prep process in detail, and verifiable local references or Google reviews from Brevard County homeowners.',
+  },
+];
+const faqSchema = faqPageSchema(faqs);
 
 const vettingItems = [
   {
@@ -55,6 +91,14 @@ const vettingItems = [
         <p class="text-sm text-muted">
           If Walls Could Talk LLC · Brevard County, FL · Homeowner Guidance
         </p>
+        <aside class="rounded-xl border border-sage/60 bg-sage/10 p-5 sm:p-6" aria-label="Short answer">
+          <p class="text-sm font-semibold uppercase tracking-wide text-charcoal">The short answer</p>
+          <p class="mt-2 text-charcoal">
+            As of July 2025, no state or local license is required to offer painting services in Brevard County,
+            Florida. That puts vetting on you: look for general liability insurance, a written scope of work, a clear
+            prep process, and verifiable local references instead of a license number.
+          </p>
+        </aside>
         <div class="space-y-4 text-muted">
           <p>
             In 2021, Florida eliminated the state requirement for a painting contractor license. Then in July 2025,
@@ -144,6 +188,8 @@ const vettingItems = [
         </p>
       </section>
 
+      <FaqSection items={faqs} heading="License Questions, Answered" />
+
       <nav class="space-y-4" aria-labelledby="see-also-heading">
         <h2 id="see-also-heading" class="font-display text-2xl font-semibold sm:text-3xl">See Also</h2>
         <ul class="space-y-3">
@@ -172,4 +218,7 @@ const vettingItems = [
       </nav>
     </article>
   </main>
+  <script type="application/ld+json" set:html={JSON.stringify(postSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 </Layout>

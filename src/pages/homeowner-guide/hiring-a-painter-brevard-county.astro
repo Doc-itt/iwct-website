@@ -1,6 +1,8 @@
 ---
 // Homeowner Guide article: how to hire a painter in Brevard County after Florida's 2021 licensing change.
+import FaqSection from '../../components/FaqSection.astro';
 import Layout from '../../layouts/Layout.astro';
+import { breadcrumbSchema, faqPageSchema } from '../../data/schema';
 
 const title = 'Hiring a Painter in Brevard County, FL | If Walls Could Talk';
 const description =
@@ -14,6 +16,36 @@ const moreGuideLinks = [
   { label: 'Understanding Paint Products in Florida', href: '/homeowner-guide/paint-products-florida' },
   { label: 'What to Expect During Your Project', href: '/homeowner-guide/what-to-expect-during-your-project' },
 ];
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'Homeowner Guide', path: '/homeowner-guide' },
+  { name: 'Hiring a Painter in Brevard County, FL' },
+]);
+
+const faqs = [
+  {
+    question: 'Do painters in Brevard County need a license?',
+    answer:
+      'No. Florida removed the state painting license requirement in 2021, and Brevard County ended its local requirement in July 2025. There is no painting license to check anymore — vet insurance, references, and a written scope instead.',
+  },
+  {
+    question: 'How much of a deposit is normal for a painting job?',
+    answer:
+      "In Brevard County, a deposit between 10% and 30% is typical. The final payment is usually made after the job is complete and you're satisfied with the work. Be cautious of anyone asking for full payment up front.",
+  },
+  {
+    question: 'How many painting estimates should I get?',
+    answer:
+      'Two or three is usually enough to compare. Pay attention to how detailed each proposal is and how each painter talks about prep and products — not just the bottom-line price.',
+  },
+  {
+    question: 'Is the cheapest painting quote always a bad sign?',
+    answer:
+      "Not always, but a bid much lower than the others usually means less prep time, fewer coats, or lower-grade materials. In Florida's climate, those shortcuts tend to show up within a few years.",
+  },
+];
+const faqSchema = faqPageSchema(faqs);
+
 ---
 
 <Layout {title} {description}>
@@ -23,6 +55,15 @@ const moreGuideLinks = [
         <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
           Hiring a Painter in Brevard County, FL
         </h1>
+        <aside class="rounded-xl border border-sage/60 bg-sage/10 p-5 sm:p-6" aria-label="Short answer">
+          <p class="text-sm font-semibold uppercase tracking-wide text-charcoal">The short answer</p>
+          <p class="mt-2">
+            Florida no longer requires a license to paint homes, so in Brevard County focus on four things instead:
+            proof of general liability insurance, a written proposal with price and scope, real experience with
+            Florida humidity and salt air, and clear communication. Get those four right and you'll avoid most bad
+            outcomes.
+          </p>
+        </aside>
         <div class="space-y-4 text-muted">
           <p>
             Finding a painter in Brevard County is easy. Finding one who communicates well, does solid prep work,
@@ -224,6 +265,8 @@ const moreGuideLinks = [
         </p>
       </section>
 
+      <FaqSection items={faqs} heading="Common Questions About Hiring a Painter" />
+
       <div class="watercolor-divider" aria-hidden="true"></div>
 
       <nav class="space-y-4" aria-labelledby="more-guide-heading">
@@ -250,4 +293,6 @@ const moreGuideLinks = [
       </nav>
     </article>
   </main>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
 </Layout>

@@ -2,8 +2,9 @@
 // Concrete coatings service page for Brevard County driveways, pool decks, patios, and garages.
 import FaqSection from '../../components/FaqSection.astro';
 import Layout from '../../layouts/Layout.astro';
+import { breadcrumbSchema } from '../../data/schema';
 
-const title = 'Concrete Coatings | If Walls Could Talk';
+const title = 'Concrete Coatings in Brevard County, FL | If Walls Could Talk';
 const description =
   "Concrete coating options for Brevard County driveways, pool decks, patios, and garages — honest trade-offs and what to expect in Florida's climate.";
 
@@ -142,6 +143,19 @@ const faqSchema = {
     },
   })),
 };
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'Services', path: '/services' },
+  { name: 'Concrete Coatings' },
+]);
+
+const relatedLinks = [
+  { label: 'Garage Floor Coating', href: '/services/garage-floor-coating-brevard-county' },
+  { label: 'Pool Deck Painting & Slip-Resistant Coatings', href: '/services/pool-deck-painting-slip-resistant-coatings-brevard-county' },
+  { label: 'Driveway Sealing and Painting', href: '/services/driveway-sealing-and-painting-brevard-county' },
+  { label: 'Guide: Understanding Paint Products in Florida', href: '/homeowner-guide/paint-products-florida' },
+];
+
 ---
 
 <Layout {title} {description}>
@@ -263,8 +277,25 @@ const faqSchema = {
       </section>
 
       <FaqSection items={faqs} />
+
+      <nav class="space-y-4 border-t border-charcoal/10 pt-10" aria-labelledby="related-links-heading">
+        <h2 id="related-links-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Related Services &amp; Reading
+        </h2>
+        <ul class="space-y-3">
+          {relatedLinks.map((item) => (
+            <li>
+              <a href={item.href} class="font-medium text-purple transition-colors hover:text-coral">
+                {item.label} →
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
     </article>
   </main>
 
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)}></script>
 </Layout>
