@@ -9,6 +9,17 @@
 
 # Changelog
 
+## 2026-08-14
+- Updated `src/layouts/Layout.astro` — merged LocalBusiness + WebSite JSON-LD into one `@graph`; areaServed +Rockledge/Cocoa Beach/Satellite Beach/Merritt Island; added `knowsAbout` (8 service entities); `sameAs` now pulls from data file
+- Updated `src/data/google-business.ts` — added `otherProfileUrls` export (empty; paste Facebook/Instagram/directory URLs here for sitewide `sameAs`)
+- Updated `src/data/schema.ts` — added `servicePageSchema` builder (Service type, provider → `#localbusiness`)
+- Updated `src/pages/services/*-brevard-county.astro` (24 pages) — per-page `Service` JSON-LD referencing the sitewide business entity
+- Updated `src/pages/services/stucco-painting-and-sealing-brevard-county.astro` — elastomeric tip now cites 10–15 dry mil thickness (GEO fact density)
+- Created `public/llms.txt` — business info, service area, core services, and key page links for AI crawlers
+- Created `public/_redirects` — Netlify redirect: `/card` → `/contact` (302, forced) for the dynamic business card QR code
+- Updated `astro.config.mjs` — matching `/card` → `/contact` redirect so dev/preview don't 404 (keep both in sync when retargeting)
+- Updated `src/pages/services/` (7 pages) — heading/copy mismatch audit fixes: answer-first intro sentences under scope-question H2s (siding, stucco crack repair, exterior wood painting, exterior wood staining, cabinet), new "spotting failing caulk" tip (caulking), pool deck approach H2 retitled to cover its timeline copy
+
 ## 2026-08-13
 - Updated `src/pages/services/*-brevard-county.astro` (24 pages) — "The short answer" blocks under each H1; generic section H2s rewritten as natural homeowner questions (ids/anchors unchanged)
 - Updated `src/pages/homeowner-guide/*.astro` (4 articles) — removed "The short answer" blocks (owner request); FAQ sections and schema unchanged

@@ -61,6 +61,31 @@ export function faqPageSchema(faqs: FaqEntry[]) {
   };
 }
 
+export type ServicePageInput = {
+  /** Human-readable service name, e.g. 'Exterior Painting'. */
+  name: string;
+  /** Meta description of the page (reused so schema matches visible intent). */
+  description: string;
+  /** Path of the service page, e.g. '/services/exterior-painting-brevard-county'. */
+  path: string;
+};
+
+/** Service schema for a service detail page, linked to the sitewide #localbusiness entity. */
+export function servicePageSchema(input: ServicePageInput) {
+  const url = `${SITE_ORIGIN}${input.path}`;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${url}#service`,
+    name: input.name,
+    description: input.description,
+    serviceType: input.name,
+    url,
+    provider: { '@id': `${SITE_ORIGIN}/#localbusiness` },
+    areaServed: { '@type': 'AdministrativeArea', name: 'Brevard County, Florida' },
+  };
+}
+
 export type BreadcrumbItem = {
   name: string;
   /** Path for the crumb, e.g. '/services'. Omit for the current (last) page. */

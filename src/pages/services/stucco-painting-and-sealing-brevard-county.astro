@@ -2,7 +2,7 @@
 // Stucco painting and sealing service page for Brevard County homeowners with process, tips, and FAQ.
 import FaqSection from '../../components/FaqSection.astro';
 import Layout from '../../layouts/Layout.astro';
-import { breadcrumbSchema } from '../../data/schema';
+import { breadcrumbSchema, servicePageSchema } from '../../data/schema';
 
 const title = 'Stucco Painting and Sealing in Brevard County, FL | If Walls Could Talk';
 const description =
@@ -60,7 +60,7 @@ const homeownerTips = [
   {
     title: 'Elastomeric coatings perform better on stucco here',
     details:
-      "These coatings are more flexible and water-resistant than regular paint, which helps with the constant expansion and contraction caused by Florida's heat and humidity.",
+      "These coatings are more flexible and water-resistant than regular paint, which helps with the constant expansion and contraction caused by Florida's heat and humidity. They also go on much thicker — typically 10–15 dry mils versus 2–3 for standard exterior paint — which is what lets them bridge hairline cracks.",
   },
   {
     title: 'Not all cracks need the same repair',
@@ -119,6 +119,12 @@ const breadcrumbs = breadcrumbSchema([
   { name: 'Services', path: '/services' },
   { name: 'Stucco Painting and Sealing' },
 ]);
+
+const serviceSchema = servicePageSchema({
+  name: 'Stucco Painting and Sealing',
+  description,
+  path: '/services/stucco-painting-and-sealing-brevard-county',
+});
 
 const relatedLinks = [
   { label: 'Stucco Crack Repair', href: '/services/stucco-crack-repair-brevard-county' },
@@ -228,5 +234,6 @@ const relatedLinks = [
   </main>
 
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)}></script>
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)}></script>
 </Layout>

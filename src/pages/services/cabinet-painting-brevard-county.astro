@@ -2,7 +2,7 @@
 // Cabinet painting service page for Brevard County homeowners with process, tips, and FAQ.
 import FaqSection from '../../components/FaqSection.astro';
 import Layout from '../../layouts/Layout.astro';
-import { breadcrumbSchema } from '../../data/schema';
+import { breadcrumbSchema, servicePageSchema } from '../../data/schema';
 
 const title = 'Cabinet Painting in Brevard County, FL | If Walls Could Talk';
 const description =
@@ -118,6 +118,12 @@ const breadcrumbs = breadcrumbSchema([
   { name: 'Cabinet Painting' },
 ]);
 
+const serviceSchema = servicePageSchema({
+  name: 'Cabinet Painting',
+  description,
+  path: '/services/cabinet-painting-brevard-county',
+});
+
 const relatedLinks = [
   { label: 'Interior Painting', href: '/services/interior-painting-brevard-county' },
   { label: 'Trim and Baseboard Painting', href: '/services/trim-and-baseboard-painting-brevard-county' },
@@ -154,6 +160,7 @@ const relatedLinks = [
           Can you paint existing kitchen cabinets instead of replacing them?
         </h2>
         <p>
+          Yes — in most cases painting your existing cabinets is the smarter move, at a fraction of the cost of replacement.
           We paint kitchen and bathroom cabinets, including doors, drawer fronts, frames, and boxes. We also handle:
         </p>
         <ul class="space-y-2">
@@ -246,5 +253,6 @@ const relatedLinks = [
   </main>
 
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)}></script>
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)}></script>
 </Layout>

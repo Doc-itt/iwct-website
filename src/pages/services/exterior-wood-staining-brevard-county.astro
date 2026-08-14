@@ -2,7 +2,7 @@
 // Exterior wood staining service page for Brevard County homeowners with process, tips, and FAQ.
 import FaqSection from '../../components/FaqSection.astro';
 import Layout from '../../layouts/Layout.astro';
-import { breadcrumbSchema } from '../../data/schema';
+import { breadcrumbSchema, servicePageSchema } from '../../data/schema';
 
 const title = 'Exterior Wood Staining in Brevard County, FL | If Walls Could Talk';
 const description =
@@ -130,6 +130,12 @@ const breadcrumbs = breadcrumbSchema([
   { name: 'Exterior Wood Staining' },
 ]);
 
+const serviceSchema = servicePageSchema({
+  name: 'Exterior Wood Staining',
+  description,
+  path: '/services/exterior-wood-staining-brevard-county',
+});
+
 const relatedLinks = [
   { label: 'Exterior Wood Painting', href: '/services/exterior-wood-painting-brevard-county' },
   { label: 'Deck Painting', href: '/services/deck-painting-brevard-county' },
@@ -164,6 +170,10 @@ const relatedLinks = [
         <h2 id="what-we-cover-heading" class="font-display text-2xl font-semibold sm:text-3xl">
           What exterior wood can be stained?
         </h2>
+        <p>
+          Decks, fences, pergolas, railings, shutters, and exterior trim can all be stained — as long as the wood is
+          sound and properly prepped. A typical staining project includes:
+        </p>
         <ul class="space-y-2">
           {whatWeCover.map((item) => (
             <li class="flex items-start gap-3 text-sm sm:text-base">
@@ -239,5 +249,6 @@ const relatedLinks = [
   </main>
 
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)}></script>
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)}></script>
 </Layout>

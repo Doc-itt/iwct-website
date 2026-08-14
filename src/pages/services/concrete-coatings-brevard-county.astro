@@ -2,7 +2,7 @@
 // Concrete coatings service page for Brevard County driveways, pool decks, patios, and garages.
 import FaqSection from '../../components/FaqSection.astro';
 import Layout from '../../layouts/Layout.astro';
-import { breadcrumbSchema } from '../../data/schema';
+import { breadcrumbSchema, servicePageSchema } from '../../data/schema';
 
 const title = 'Concrete Coatings in Brevard County, FL | If Walls Could Talk';
 const description =
@@ -148,6 +148,12 @@ const breadcrumbs = breadcrumbSchema([
   { name: 'Services', path: '/services' },
   { name: 'Concrete Coatings' },
 ]);
+
+const serviceSchema = servicePageSchema({
+  name: 'Concrete Coatings',
+  description,
+  path: '/services/concrete-coatings-brevard-county',
+});
 
 const relatedLinks = [
   { label: 'Garage Floor Coating', href: '/services/garage-floor-coating-brevard-county' },
@@ -303,5 +309,6 @@ const relatedLinks = [
   </main>
 
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)}></script>
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)}></script>
 </Layout>

@@ -2,7 +2,7 @@
 // Interior painting service page for Brevard County homeowners with process, tips, and FAQ.
 import FaqSection from '../../components/FaqSection.astro';
 import Layout from '../../layouts/Layout.astro';
-import { breadcrumbSchema } from '../../data/schema';
+import { breadcrumbSchema, servicePageSchema } from '../../data/schema';
 
 const title = 'Interior Painting in Brevard County, FL | If Walls Could Talk';
 const description =
@@ -109,6 +109,12 @@ const breadcrumbs = breadcrumbSchema([
   { name: 'Services', path: '/services' },
   { name: 'Interior Painting' },
 ]);
+
+const serviceSchema = servicePageSchema({
+  name: 'Interior Painting',
+  description,
+  path: '/services/interior-painting-brevard-county',
+});
 
 const relatedLinks = [
   { label: 'Trim and Baseboard Painting', href: '/services/trim-and-baseboard-painting-brevard-county' },
@@ -226,5 +232,6 @@ const relatedLinks = [
   </main>
 
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)}></script>
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)}></script>
 </Layout>

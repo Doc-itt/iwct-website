@@ -2,7 +2,7 @@
 // Popcorn ceiling removal service page for Brevard County homeowners with process, tips, and FAQ.
 import FaqSection from '../../components/FaqSection.astro';
 import Layout from '../../layouts/Layout.astro';
-import { breadcrumbSchema } from '../../data/schema';
+import { breadcrumbSchema, servicePageSchema } from '../../data/schema';
 
 const title = 'Popcorn Ceiling Removal in Brevard County, FL | If Walls Could Talk';
 const description =
@@ -114,6 +114,12 @@ const breadcrumbs = breadcrumbSchema([
   { name: 'Services', path: '/services' },
   { name: 'Popcorn Ceiling Removal' },
 ]);
+
+const serviceSchema = servicePageSchema({
+  name: 'Popcorn Ceiling Removal',
+  description,
+  path: '/services/popcorn-ceiling-removal-brevard-county',
+});
 
 const relatedLinks = [
   { label: 'Drywall Painting', href: '/services/drywall-painting-brevard-county' },
@@ -229,5 +235,6 @@ const relatedLinks = [
   </main>
 
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)}></script>
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)}></script>
 </Layout>

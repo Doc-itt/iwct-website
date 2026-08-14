@@ -1,0 +1,11 @@
+# Netlify redirect rules for iwctpainting.com
+# Docs: https://docs.netlify.com/routing/redirects/
+#
+# /card — dynamic business card QR code target.
+# The printed QR code points to /card; change the destination URL below
+# (and redeploy) to repoint every printed card without reprinting.
+# 302 = temporary, so browsers/search engines don't cache the destination.
+
+# The "!" forces this rule over the meta-refresh fallback page Astro builds
+# at /card/ (from the redirects entry in astro.config.mjs).
+/card    /contact    302!

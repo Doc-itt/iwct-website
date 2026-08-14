@@ -13,6 +13,13 @@ export const googleMapsProfileUrl = `https://www.google.com/maps?cid=${GOOGLE_MA
 /** Embed URL for site footer / contact map iframes (no API key). */
 export const googleMapsEmbedUrl = `https://maps.google.com/maps?q=cid:${GOOGLE_MAPS_CID}&output=embed`;
 
+/**
+ * Other official profile URLs for JSON-LD `sameAs` (Facebook, Instagram,
+ * Nextdoor, BBB, etc.). Paste full URLs here as listings are created —
+ * they'll be picked up sitewide automatically. Only list profiles you control.
+ */
+export const otherProfileUrls: string[] = [];
+
 export type GoogleReviewLinkOptions = {
   /** Direct share link from Google Maps for one review; falls back to profile URL. */
   googleShareUrl?: string;

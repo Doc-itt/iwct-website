@@ -2,7 +2,7 @@
 // Garage painting service page for Brevard County homeowners with process, tips, and FAQ.
 import FaqSection from '../../components/FaqSection.astro';
 import Layout from '../../layouts/Layout.astro';
-import { breadcrumbSchema } from '../../data/schema';
+import { breadcrumbSchema, servicePageSchema } from '../../data/schema';
 
 const title = 'Garage Painting in Brevard County, FL | If Walls Could Talk';
 const description =
@@ -115,6 +115,12 @@ const breadcrumbs = breadcrumbSchema([
   { name: 'Services', path: '/services' },
   { name: 'Garage Painting' },
 ]);
+
+const serviceSchema = servicePageSchema({
+  name: 'Garage Painting',
+  description,
+  path: '/services/garage-painting-brevard-county',
+});
 
 const relatedLinks = [
   { label: 'Garage Floor Coating', href: '/services/garage-floor-coating-brevard-county' },
@@ -229,5 +235,6 @@ const relatedLinks = [
   </main>
 
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)}></script>
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)}></script>
 </Layout>

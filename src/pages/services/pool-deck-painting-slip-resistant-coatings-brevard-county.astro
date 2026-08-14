@@ -2,7 +2,7 @@
 // Pool deck and concrete coating service page for Brevard County homeowners with process, options, tips, and FAQ.
 import FaqSection from '../../components/FaqSection.astro';
 import Layout from '../../layouts/Layout.astro';
-import { breadcrumbSchema } from '../../data/schema';
+import { breadcrumbSchema, servicePageSchema } from '../../data/schema';
 
 const title = 'Pool Deck Painting in Brevard County, FL | If Walls Could Talk';
 const description =
@@ -122,6 +122,12 @@ const breadcrumbs = breadcrumbSchema([
   { name: 'Pool Deck Painting & Slip-Resistant Coatings' },
 ]);
 
+const serviceSchema = servicePageSchema({
+  name: 'Pool Deck Painting',
+  description,
+  path: '/services/pool-deck-painting-slip-resistant-coatings-brevard-county',
+});
+
 const relatedLinks = [
   { label: 'Concrete Coatings', href: '/services/concrete-coatings-brevard-county' },
   { label: 'Patio Painting', href: '/services/patio-painting-brevard-county' },
@@ -183,7 +189,7 @@ const relatedLinks = [
 
       <section aria-labelledby="approach-heading" class="space-y-5">
         <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
-          How do we coat a pool deck so it lasts?
+          How do we coat a pool deck, and how long does it take?
         </h2>
         <p>
           Pool decks take the hardest beating in Florida — constant sun, rain, chemicals, and foot traffic. We build the
@@ -242,5 +248,6 @@ const relatedLinks = [
   </main>
 
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)}></script>
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)}></script>
 </Layout>

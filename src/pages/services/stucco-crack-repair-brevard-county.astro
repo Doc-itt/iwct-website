@@ -2,7 +2,7 @@
 // Stucco crack repair service page for Brevard County homeowners with process, tips, and FAQ.
 import FaqSection from '../../components/FaqSection.astro';
 import Layout from '../../layouts/Layout.astro';
-import { breadcrumbSchema } from '../../data/schema';
+import { breadcrumbSchema, servicePageSchema } from '../../data/schema';
 
 const title = 'Stucco Crack Repair in Brevard County, FL | If Walls Could Talk';
 const description =
@@ -128,6 +128,12 @@ const breadcrumbs = breadcrumbSchema([
   { name: 'Stucco Crack Repair' },
 ]);
 
+const serviceSchema = servicePageSchema({
+  name: 'Stucco Crack Repair',
+  description,
+  path: '/services/stucco-crack-repair-brevard-county',
+});
+
 const relatedLinks = [
   { label: 'Stucco Painting and Sealing', href: '/services/stucco-painting-and-sealing-brevard-county' },
   { label: 'Caulking and Sealing', href: '/services/caulking-and-sealing-brevard-county' },
@@ -162,6 +168,10 @@ const relatedLinks = [
         <h2 id="what-we-cover-heading" class="font-display text-2xl font-semibold sm:text-3xl">
           Which stucco cracks can be repaired?
         </h2>
+        <p>
+          Most stucco cracks can be repaired — from hairline surface cracks to wider cracks that need reinforcement.
+          The key is matching the repair method to the type of crack. Our work covers:
+        </p>
         <ul class="space-y-2">
           {whatWeCover.map((item) => (
             <li class="flex items-start gap-3 text-sm sm:text-base">
@@ -242,5 +252,6 @@ const relatedLinks = [
   </main>
 
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)}></script>
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)}></script>
 </Layout>

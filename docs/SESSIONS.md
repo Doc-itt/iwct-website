@@ -13,6 +13,16 @@
 
 # Sessions Log
 
+## 2026-08-14 — Cursor
+- Audited all 24 service pages: every H2/H3/FAQ heading checked against the copy directly beneath it (on branch `feature/qr-page`).
+- Fixed 7 mismatches: added direct-answer intro sentences under "Which/What ... can be painted/stained/repaired?" H2s (siding, stucco crack repair, exterior wood painting, exterior wood staining); cabinet cover copy now opens with "Yes —" to answer its H2; added a "Spotting failing caulk" homeowner tip so the caulking tips H2 question is actually answered; pool deck approach H2 retitled "How do we coat a pool deck, and how long does it take?" to match its timeline paragraph.
+- FAQs, H3 step/tip pairs, and all other sections checked clean — no metadata, titles, descriptions, or heading ids touched.
+- Created `public/_redirects` with a 302 rule `/card` → `/contact` — the QR code on printed business cards points to `/card`, so the destination can be repointed later by editing one line (no reprints). Astro copies `public/` into `dist/` automatically; verified via build.
+- Full schema/GEO audit (owner-requested): Layout JSON-LD now a single `@graph` (HousePainter + WebSite); areaServed expanded to 11 places; `knowsAbout` added; `sameAs` sourced from `otherProfileUrls` in `src/data/google-business.ts` (currently only Google Maps — no FB/IG/directory URLs exist yet; paste them there when created).
+- Added per-page `Service` schema to all 24 service pages via new `servicePageSchema` helper (provider → `#localbusiness`). Verified FAQPage schema is 1:1 with visible FAQs on all 34 FAQ pages, built from the same data arrays (no hidden content).
+- Dist scan of 39 built pages: one H1 each, no skipped heading levels, all JSON-LD parses. Added elastomeric mil-thickness fact to stucco page. Created `public/llms.txt`. Fixed wrong domain in `_redirects` comment (site is iwctpainting.com).
+- **Next:** Commit, deploy, re-run Google Rich Results Test on home + one service page; decide the long-term `/card` destination; add social profile URLs to `otherProfileUrls` when available.
+
 ## 2026-08-13 — Cursor
 - Extended AEO work to all 24 service detail pages on branch `feature/gemini-aeo-opt` (created this session from `feature/fable5-seo-optimization` after committing/pushing the June SEO work).
 - Added "The short answer" blocks (35–50 words, same sage-box format as guides) directly under the H1 on every service page; copy cross-checked against each page's timelines/pricing so nothing contradicts.

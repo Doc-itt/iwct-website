@@ -2,7 +2,7 @@
 // Trim, soffit, and door painting service page for Brevard County homeowners with process, tips, and FAQ.
 import FaqSection from '../../components/FaqSection.astro';
 import Layout from '../../layouts/Layout.astro';
-import { breadcrumbSchema } from '../../data/schema';
+import { breadcrumbSchema, servicePageSchema } from '../../data/schema';
 
 const title = 'Trim, Soffit, and Door Painting in Brevard County, FL | If Walls Could Talk';
 const description =
@@ -122,6 +122,12 @@ const breadcrumbs = breadcrumbSchema([
   { name: 'Trim, Soffit, and Door Painting' },
 ]);
 
+const serviceSchema = servicePageSchema({
+  name: 'Trim, Soffit, and Door Painting',
+  description,
+  path: '/services/trim-soffit-and-door-painting-brevard-county',
+});
+
 const relatedLinks = [
   { label: 'Exterior Painting', href: '/services/exterior-painting-brevard-county' },
   { label: 'Exterior Wood Painting', href: '/services/exterior-wood-painting-brevard-county' },
@@ -237,5 +243,6 @@ const relatedLinks = [
   </main>
 
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)}></script>
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)}></script>
 </Layout>

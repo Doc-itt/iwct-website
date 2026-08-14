@@ -2,7 +2,7 @@
 // Caulking and sealing service page for Brevard County homeowners with process, tips, and FAQ.
 import FaqSection from '../../components/FaqSection.astro';
 import Layout from '../../layouts/Layout.astro';
-import { breadcrumbSchema } from '../../data/schema';
+import { breadcrumbSchema, servicePageSchema } from '../../data/schema';
 
 const title = 'Caulking and Sealing in Brevard County, FL | If Walls Could Talk';
 const description =
@@ -46,6 +46,11 @@ const approachSteps = [
 ];
 
 const homeownerTips = [
+  {
+    title: 'Spotting failing caulk is straightforward',
+    details:
+      "Look for caulk that's cracked, shrunken, pulling away from the surface, or missing entirely. Healthy caulk feels flexible when you press it; failing caulk is hard and brittle. Windows, door frames, and sun-exposed trim joints usually go first.",
+  },
   {
     title: 'Caulk before you paint',
     details:
@@ -118,6 +123,12 @@ const breadcrumbs = breadcrumbSchema([
   { name: 'Services', path: '/services' },
   { name: 'Caulking and Sealing' },
 ]);
+
+const serviceSchema = servicePageSchema({
+  name: 'Caulking and Sealing',
+  description,
+  path: '/services/caulking-and-sealing-brevard-county',
+});
 
 const relatedLinks = [
   { label: 'Stucco Crack Repair', href: '/services/stucco-crack-repair-brevard-county' },
@@ -225,5 +236,6 @@ const relatedLinks = [
   </main>
 
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)}></script>
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)}></script>
 </Layout>
