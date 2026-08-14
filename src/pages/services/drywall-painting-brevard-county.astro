@@ -2,8 +2,9 @@
 // Drywall painting service page for Brevard County homeowners with process, tips, and FAQ.
 import FaqSection from '../../components/FaqSection.astro';
 import Layout from '../../layouts/Layout.astro';
+import { breadcrumbSchema } from '../../data/schema';
 
-const title = 'Drywall Painting | If Walls Could Talk';
+const title = 'Drywall Painting in Brevard County, FL | If Walls Could Talk';
 const description =
   'Drywall painting for homes in Brevard County. Practical information on prepping, priming, and painting drywall for new construction and renovations.';
 
@@ -112,6 +113,19 @@ const faqSchema = {
     },
   })),
 };
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'Services', path: '/services' },
+  { name: 'Drywall Painting' },
+]);
+
+const relatedLinks = [
+  { label: 'Interior Painting', href: '/services/interior-painting-brevard-county' },
+  { label: 'Popcorn Ceiling Removal', href: '/services/popcorn-ceiling-removal-brevard-county' },
+  { label: 'Trim and Baseboard Painting', href: '/services/trim-and-baseboard-painting-brevard-county' },
+  { label: 'Guide: What to Expect During Your Project', href: '/homeowner-guide/what-to-expect-during-your-project' },
+];
+
 ---
 
 <Layout {title} {description}>
@@ -121,6 +135,12 @@ const faqSchema = {
         <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
           Drywall Painting
         </h1>
+        <aside class="rounded-xl border border-sage/60 bg-sage/10 p-5 sm:p-6" aria-label="Short answer">
+          <p class="text-sm font-semibold uppercase tracking-wide text-charcoal">The short answer</p>
+          <p class="mt-2">
+            We prep and paint new or repaired drywall — priming bare surfaces, fixing imperfections, and using finishes that hold up in Florida humidity. Proper sealing keeps moisture from telegraphing through the finish coat.
+          </p>
+        </aside>
         <p>
           Drywall painting is one of the most common interior finishing tasks, whether it's for new construction,
           renovations, or repairs after water damage. A good drywall paint job depends heavily on proper surface
@@ -133,7 +153,7 @@ const faqSchema = {
 
       <section aria-labelledby="what-we-cover-heading" class="space-y-5">
         <h2 id="what-we-cover-heading" class="font-display text-2xl font-semibold sm:text-3xl">
-          What We Cover
+          What does drywall painting include?
         </h2>
         <ul class="space-y-2">
           {whatWeCover.map((item) => (
@@ -147,7 +167,7 @@ const faqSchema = {
 
       <section aria-labelledby="approach-heading" class="space-y-5">
         <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
-          How We Approach It
+          How do we prep and paint new or repaired drywall?
         </h2>
         <ol class="space-y-3">
           {approachSteps.map((step) => (
@@ -161,7 +181,7 @@ const faqSchema = {
 
       <section aria-labelledby="expect-heading" class="space-y-5">
         <h2 id="expect-heading" class="font-display text-2xl font-semibold sm:text-3xl">
-          What to Expect
+          How long does drywall painting take?
         </h2>
         <p>
           Most drywall painting projects take anywhere from a few hours to several days, depending on the size of the area
@@ -175,7 +195,7 @@ const faqSchema = {
 
       <section aria-labelledby="tips-heading" class="space-y-5">
         <h2 id="tips-heading" class="font-display text-2xl font-semibold sm:text-3xl">
-          Homeowner Tips
+          What should you know before painting drywall?
         </h2>
         <ul class="space-y-4">
           {homeownerTips.map((tip) => (
@@ -188,8 +208,25 @@ const faqSchema = {
       </section>
 
       <FaqSection items={faqs} heading="Common Questions" />
+
+      <nav class="space-y-4 border-t border-charcoal/10 pt-10" aria-labelledby="related-links-heading">
+        <h2 id="related-links-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Related Services &amp; Reading
+        </h2>
+        <ul class="space-y-3">
+          {relatedLinks.map((item) => (
+            <li>
+              <a href={item.href} class="font-medium text-purple transition-colors hover:text-coral">
+                {item.label} →
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
     </article>
   </main>
 
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)}></script>
 </Layout>

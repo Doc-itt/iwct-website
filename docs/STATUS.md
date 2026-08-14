@@ -7,7 +7,7 @@
 
 # Project Status
 
-_Last verified: 2026-06-06_
+_Last verified: 2026-08-13_
 
 ## Pages
 | Page | Path | Status | Notes |
@@ -37,6 +37,17 @@ _Last verified: 2026-06-06_
 - Service bar and blog heroes use **Astro `<Image />`** (`astro:assets`) — build outputs WebP + `srcset`.
 - Sources live in `src/assets/services/` and `src/assets/blog/`; matching optimized JPEGs in `public/images/` for OG meta tags.
 - Re-run after replacing originals: `npm run optimize:service-images` and `npm run optimize:blog-images`.
+- Unused legacy originals (`public/images/blog/services/Website/`, ~10.8 MB) removed 2026-06-11.
+- Google Fonts trimmed to used weights only (DM Sans 400/500/600, Fraunces 500/600); extend the URL in `Layout.astro` if bold/italic text is ever added.
+
+## SEO / structured data (2026-06-11)
+- Sitewide JSON-LD in `Layout.astro`: `HousePainter` (with `sameAs` → Google Maps profile) + `WebSite`.
+- Shared schema builders in `src/data/schema.ts`: `blogPostingSchema`, `breadcrumbSchema`, `faqPageSchema` — use these for new pages.
+- `BlogPosting` + breadcrumbs + FAQ schema on all blog posts; breadcrumbs + FAQ on all guide articles; breadcrumbs + FAQ on all service detail pages.
+- Service page titles localized: "{Service} in Brevard County, FL | If Walls Could Talk".
+- Blog posts and all 24 service pages open with a "The short answer" TL;DR block (AEO answer-first pattern). Removed from homeowner-guide articles 2026-08-13 by owner request.
+- Service page section H2s are natural homeowner questions (e.g. "What does exterior painting include?"); heading ids unchanged.
+- Service detail pages end with a "Related Services & Reading" internal-link nav.
 
 ## Tech stack
 - **Astro** v6.3.3

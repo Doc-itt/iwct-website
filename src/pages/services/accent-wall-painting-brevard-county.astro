@@ -2,8 +2,9 @@
 // Accent wall painting service page for Brevard County homeowners with process, tips, and FAQ.
 import FaqSection from '../../components/FaqSection.astro';
 import Layout from '../../layouts/Layout.astro';
+import { breadcrumbSchema } from '../../data/schema';
 
-const title = 'Accent Wall Painting | If Walls Could Talk';
+const title = 'Accent Wall Painting in Brevard County, FL | If Walls Could Talk';
 const description =
   'Accent wall painting for homes in Brevard County. Practical information on choosing colors, prep, and finishes for feature walls.';
 
@@ -112,6 +113,18 @@ const faqSchema = {
     },
   })),
 };
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'Services', path: '/services' },
+  { name: 'Accent Wall Painting' },
+]);
+
+const relatedLinks = [
+  { label: 'Interior Painting', href: '/services/interior-painting-brevard-county' },
+  { label: 'Color Consultation', href: '/services/color-consultation-brevard-county' },
+  { label: 'Blog: How Paint Colors Affect How You Feel at Home', href: '/blog/how-paint-colors-affect-how-you-feel' },
+];
+
 ---
 
 <Layout {title} {description}>
@@ -121,6 +134,12 @@ const faqSchema = {
         <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
           Accent Wall Painting
         </h1>
+        <aside class="rounded-xl border border-sage/60 bg-sage/10 p-5 sm:p-6" aria-label="Short answer">
+          <p class="text-sm font-semibold uppercase tracking-wide text-charcoal">The short answer</p>
+          <p class="mt-2">
+            We help you choose and paint accent walls that work with your room's light. Florida's bright sun shifts colors through the day, so we test before committing — and most accent walls are finished within a day.
+          </p>
+        </aside>
         <p>
           Accent walls are a popular way to add color and personality to a room without painting the entire space. A
           well-done accent wall can make a room feel more finished and intentional. However, choosing the right color,
@@ -132,7 +151,7 @@ const faqSchema = {
 
       <section aria-labelledby="what-we-cover-heading" class="space-y-5">
         <h2 id="what-we-cover-heading" class="font-display text-2xl font-semibold sm:text-3xl">
-          What We Cover
+          What does accent wall painting include?
         </h2>
         <ul class="space-y-2">
           {whatWeCover.map((item) => (
@@ -146,7 +165,7 @@ const faqSchema = {
 
       <section aria-labelledby="approach-heading" class="space-y-5">
         <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
-          How We Approach It
+          How do we choose and paint an accent wall?
         </h2>
         <ol class="space-y-3">
           {approachSteps.map((step) => (
@@ -160,7 +179,7 @@ const faqSchema = {
 
       <section aria-labelledby="expect-heading" class="space-y-5">
         <h2 id="expect-heading" class="font-display text-2xl font-semibold sm:text-3xl">
-          What to Expect
+          How long does an accent wall take?
         </h2>
         <p>
           Most accent wall projects take a few hours to one day, depending on the size of the wall and how much prep is
@@ -174,7 +193,7 @@ const faqSchema = {
 
       <section aria-labelledby="tips-heading" class="space-y-5">
         <h2 id="tips-heading" class="font-display text-2xl font-semibold sm:text-3xl">
-          Homeowner Tips
+          What should you know before adding an accent wall?
         </h2>
         <ul class="space-y-4">
           {homeownerTips.map((tip) => (
@@ -187,8 +206,25 @@ const faqSchema = {
       </section>
 
       <FaqSection items={faqs} heading="Common Questions" />
+
+      <nav class="space-y-4 border-t border-charcoal/10 pt-10" aria-labelledby="related-links-heading">
+        <h2 id="related-links-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Related Services &amp; Reading
+        </h2>
+        <ul class="space-y-3">
+          {relatedLinks.map((item) => (
+            <li>
+              <a href={item.href} class="font-medium text-purple transition-colors hover:text-coral">
+                {item.label} →
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
     </article>
   </main>
 
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)}></script>
 </Layout>

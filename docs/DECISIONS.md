@@ -14,6 +14,12 @@
 
 # Decisions
 
+## 2026-06-11
+- **Service page titles include "in Brevard County, FL" before the brand.** Strengthens local relevance for search and AI answer engines; approved with full before/after list. Exception: pool deck title shortened to "Pool Deck Painting in Brevard County, FL" so the locality stays within Google's ~60-char display limit ("slip-resistant coatings" remains in H1 and description).
+- **JSON-LD built via shared helpers in `src/data/schema.ts`, not per-page inline objects.** Keeps BlogPosting/BreadcrumbList/FAQPage output consistent and referencing the sitewide `#localbusiness` entity. New pages should import these instead of hand-writing schema.
+- **Google Fonts trimmed to weights actually used (DM Sans 400/500/600, Fraunces 500/600, no italics).** No `font-bold`, `<strong>`, or italics exist in `src/`; smaller font CSS/woff payload. If bold or italic text is added later, the font URL in `Layout.astro` must be extended.
+- **Skip `HowTo` schema.** Google retired HowTo rich results; process steps stay as semantic ordered lists, which AI crawlers parse fine.
+
 ## 2026-06-03
 - **Enable search indexing (remove sitewide `noindex`).** Removed `noindex` / robots meta from `Layout.astro`, wired `site` + `@astrojs/sitemap` in `astro.config.mjs`, added `public/robots.txt`. Phase 0 found no indexed legacy URLs — no `_redirects` file. Supersedes 2026-05-29 “site stays `noindex` until launch.” Post-deploy: Netlify production deploy + Google Search Console sitemap (owner).
 

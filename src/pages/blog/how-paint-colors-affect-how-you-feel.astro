@@ -1,14 +1,50 @@
 ---
 // Blog post: how interior paint color affects mood and feel, with Florida-specific light and testing tips.
 import { Image } from 'astro:assets';
+import FaqSection from '../../components/FaqSection.astro';
 import Layout from '../../layouts/Layout.astro';
 import heroImage from '../../assets/blog/paint-colors-feel-home.jpg';
+import { blogPostingSchema, breadcrumbSchema, faqPageSchema } from '../../data/schema';
 
 const title = 'How Paint Colors Affect How You Feel at Home | Brevard County | If Walls Could Talk';
 const description =
   'Interior paint color tips for Brevard County — undertones, Florida light, sample testing, and how wall color changes how a room actually feels.';
 
 const ogImage = '/images/blog/paint-colors-feel-home.jpg';
+
+const postSchema = blogPostingSchema({
+  headline: 'How Paint Colors Actually Affect How You Feel in Your Home',
+  description,
+  path: '/blog/how-paint-colors-affect-how-you-feel',
+  image: ogImage,
+  datePublished: '2026-05-29',
+  dateModified: '2026-06-11',
+});
+
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'Blog', path: '/blog' },
+  { name: 'How Paint Colors Affect How You Feel at Home' },
+]);
+
+const faqs = [
+  {
+    question: 'What paint colors work best in Florida light?',
+    answer:
+      "Colors with warm undertones — warm whites, beiges, greiges, and soft blues and greens — tend to feel balanced in Florida's intense sunlight. Cool, blue-toned grays and stark whites often read harsh or sterile here.",
+  },
+  {
+    question: 'How do I test paint colors before committing?',
+    answer:
+      'Paint a sample at least 12×12 inches on the wall, use a movable poster board, or order peel-and-stick samples made with real paint. Then check it in morning, midday, late afternoon, and nighttime light — Florida light shifts colors dramatically through the day.',
+  },
+  {
+    question: 'Should ceilings always be painted white?',
+    answer:
+      "Not necessarily. Bright white over saturated walls can create a jarring break. A slightly lighter version of the wall color, or a warm white that picks up its undertone, usually feels more cohesive.",
+  },
+];
+const faqSchema = faqPageSchema(faqs);
 
 const phone = '(321) 557-6959';
 const phoneHref = 'tel:+13215576959';
@@ -61,6 +97,14 @@ const relatedLinks = [
         <p class="text-sm text-muted">
           If Walls Could Talk LLC · Brevard County, FL · Homeowner Guidance
         </p>
+        <aside class="rounded-xl border border-sage/60 bg-sage/10 p-5 sm:p-6" aria-label="Short answer">
+          <p class="text-sm font-semibold uppercase tracking-wide text-charcoal">The short answer</p>
+          <p class="mt-2 text-charcoal">
+            Paint color changes how a room feels — cool colors calm and expand a space, warm colors energize and make
+            it cozier. In Florida's intense light, undertones shift through the day, so always test large samples in
+            your own rooms at morning, midday, and night before committing.
+          </p>
+        </aside>
         <div class="space-y-4 text-muted">
           <p>
             Most people approach interior paint color the same way: they fall in love with a swatch, get it matched,
@@ -287,6 +331,8 @@ const relatedLinks = [
         </p>
       </section>
 
+      <FaqSection items={faqs} heading="Color Questions Homeowners Ask" />
+
       <nav class="space-y-4" aria-labelledby="see-also-heading">
         <h2 id="see-also-heading" class="font-display text-2xl font-semibold sm:text-3xl">See Also</h2>
         <ul class="space-y-3">
@@ -308,4 +354,7 @@ const relatedLinks = [
       </nav>
     </article>
   </main>
+  <script type="application/ld+json" set:html={JSON.stringify(postSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 </Layout>

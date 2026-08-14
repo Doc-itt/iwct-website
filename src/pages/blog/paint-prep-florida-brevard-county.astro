@@ -1,14 +1,55 @@
 ---
 // Blog post: what proper paint prep looks like in Florida and why it matters in Brevard County.
 import { Image } from 'astro:assets';
+import FaqSection from '../../components/FaqSection.astro';
 import Layout from '../../layouts/Layout.astro';
 import heroImage from '../../assets/blog/paint-prep-florida-brevard.jpg';
+import { blogPostingSchema, breadcrumbSchema, faqPageSchema } from '../../data/schema';
 
 const title = 'What Good Paint Prep Really Looks Like in Florida (Brevard County Guide)';
 const description =
   "Florida's climate destroys paint fast if prep is skipped. Here's what proper preparation actually involves in Brevard County — and why it matters more here than almost anywhere else.";
 
 const ogImage = '/images/blog/paint-prep-florida-brevard.jpg';
+
+const postSchema = blogPostingSchema({
+  headline: 'What "Good Prep" Actually Looks Like in Florida — And Why It\'s Non-Negotiable',
+  description,
+  path: '/blog/paint-prep-florida-brevard-county',
+  image: ogImage,
+  datePublished: '2026-06-01',
+  dateModified: '2026-06-11',
+});
+
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'Blog', path: '/blog' },
+  { name: 'What Good Paint Prep Really Looks Like in Florida' },
+]);
+
+const faqs = [
+  {
+    question: 'How long should a house dry after pressure washing before painting?',
+    answer:
+      "Usually 24–48 hours in Brevard County's humidity, and longer after rain. Painting over a surface that hasn't fully dried traps moisture and leads to bubbling and peeling.",
+  },
+  {
+    question: 'Can you paint over mildew if you pressure wash first?',
+    answer:
+      "No. Washing removes surface growth but not the roots. Without a mildewcide treatment, the black and green growth pushes back through new paint within months — one of the most common failures on Florida homes.",
+  },
+  {
+    question: 'Does new paint fix stucco cracks?',
+    answer:
+      'No. Cracks need to be cleaned out and properly filled first. Painting over active cracks traps water inside the wall and makes the problem worse. Elastomeric coatings can bridge hairline cracks, but only on properly prepped stucco.',
+  },
+  {
+    question: 'How can I tell if my painter skipped prep?',
+    answer:
+      'The signs show up within 1–3 years: peeling sheets of paint, mildew bleeding through, bubbling near windows and doors, and chipping on every edge that gets touched. Done right, an exterior paint job in Brevard County should last 7–10 years.',
+  },
+];
+const faqSchema = faqPageSchema(faqs);
 
 const floridaChallenges = [
   'Intense UV rays break down paint faster here than in almost any other state.',
@@ -34,6 +75,8 @@ const seeAlsoLinks = [
     label: 'Florida Painting License Law Change',
     href: '/blog/florida-painting-contractor-license-changes-brevard',
   },
+  { label: 'Stucco Crack Repair', href: '/services/stucco-crack-repair-brevard-county' },
+  { label: 'Caulking and Sealing', href: '/services/caulking-and-sealing-brevard-county' },
 ];
 
 const linkClass = 'font-semibold text-purple transition-colors hover:text-coral';
@@ -61,6 +104,15 @@ const linkClass = 'font-semibold text-purple transition-colors hover:text-coral'
         <p class="text-sm text-muted">
           If Walls Could Talk LLC · Brevard County, FL · Homeowner Guidance
         </p>
+        <aside class="rounded-xl border border-sage/60 bg-sage/10 p-5 sm:p-6" aria-label="Short answer">
+          <p class="text-sm font-semibold uppercase tracking-wide text-charcoal">The short answer</p>
+          <p class="mt-2 text-charcoal">
+            In Brevard County, prep is the difference between a paint job that lasts 8–10 years and one that fails in
+            2–3. Good prep means pressure washing plus a mildewcide treatment, fresh caulk around windows and doors,
+            stucco crack repair, and the right primer for each surface. Florida's UV, humidity, and salt air punish
+            every shortcut.
+          </p>
+        </aside>
         <div class="space-y-4 text-muted">
           <p>
             If you&rsquo;ve ever had paint start peeling within a couple of years, or watched a brand-new paint job turn
@@ -206,6 +258,8 @@ const linkClass = 'font-semibold text-purple transition-colors hover:text-coral'
         </p>
       </section>
 
+      <FaqSection items={faqs} heading="Prep Questions Homeowners Ask" />
+
       <nav class="space-y-4" aria-labelledby="see-also-heading">
         <h2 id="see-also-heading" class="font-display text-2xl font-semibold sm:text-3xl">See Also</h2>
         <ul class="space-y-3">
@@ -227,4 +281,7 @@ const linkClass = 'font-semibold text-purple transition-colors hover:text-coral'
       </nav>
     </article>
   </main>
+  <script type="application/ld+json" set:html={JSON.stringify(postSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 </Layout>

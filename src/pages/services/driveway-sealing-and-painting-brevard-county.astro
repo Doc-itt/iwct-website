@@ -2,8 +2,9 @@
 // Driveway sealing and painting service page for Brevard County homeowners with options, process, tips, and FAQ.
 import FaqSection from '../../components/FaqSection.astro';
 import Layout from '../../layouts/Layout.astro';
+import { breadcrumbSchema } from '../../data/schema';
 
-const title = 'Driveway Sealing and Painting | If Walls Could Talk';
+const title = 'Driveway Sealing and Painting in Brevard County, FL | If Walls Could Talk';
 const description =
   "Driveway sealing and painting in Brevard County. Practical information on sealers, coatings, and decorative options for concrete and paver driveways in Florida's climate.";
 
@@ -131,6 +132,19 @@ const faqSchema = {
     },
   })),
 };
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'Services', path: '/services' },
+  { name: 'Driveway Sealing and Painting' },
+]);
+
+const relatedLinks = [
+  { label: 'Concrete Coatings', href: '/services/concrete-coatings-brevard-county' },
+  { label: 'Pressure Washing', href: '/services/pressure-washing-brevard-county' },
+  { label: 'Garage Floor Coating', href: '/services/garage-floor-coating-brevard-county' },
+  { label: 'Guide: What to Expect During Your Project', href: '/homeowner-guide/what-to-expect-during-your-project' },
+];
+
 ---
 
 <Layout {title} {description}>
@@ -140,6 +154,12 @@ const faqSchema = {
         <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
           Driveway Sealing and Painting
         </h1>
+        <aside class="rounded-xl border border-sage/60 bg-sage/10 p-5 sm:p-6" aria-label="Short answer">
+          <p class="text-sm font-semibold uppercase tracking-wide text-charcoal">The short answer</p>
+          <p class="mt-2">
+            We clean, repair, and seal or paint concrete driveways with UV-stable products that handle vehicle traffic and Brevard weather. Sealing keeps moisture, mold, and stains out of the slab — most driveways are finished within two days, weather permitting.
+          </p>
+        </aside>
         <p>
           Concrete driveways in Brevard County deal with intense UV, surface heat, heavy rain, and vehicle traffic
           year-round. Unsealed concrete absorbs moisture, stains easily, and breaks down faster than it would in a
@@ -152,7 +172,7 @@ const faqSchema = {
 
       <section aria-labelledby="what-we-cover-heading" class="space-y-5">
         <h2 id="what-we-cover-heading" class="font-display text-2xl font-semibold sm:text-3xl">
-          What We Cover
+          What does driveway sealing and painting include?
         </h2>
         <ul class="space-y-2">
           {whatWeCover.map((item) => (
@@ -166,7 +186,7 @@ const faqSchema = {
 
       <section aria-labelledby="coating-options-heading" class="space-y-5">
         <h2 id="coating-options-heading" class="font-display text-2xl font-semibold sm:text-3xl">
-          Coating Options
+          Should you seal, paint, or coat your driveway?
         </h2>
         <p>Not every product is the right fit for every driveway. Here's a practical overview of the main options.</p>
         <ul class="space-y-4">
@@ -181,7 +201,7 @@ const faqSchema = {
 
       <section aria-labelledby="approach-heading" class="space-y-5">
         <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
-          How We Approach It
+          How do we prep and seal a driveway?
         </h2>
         <ol class="space-y-3">
           {approachSteps.map((step) => (
@@ -195,7 +215,7 @@ const faqSchema = {
 
       <section aria-labelledby="expect-heading" class="space-y-5">
         <h2 id="expect-heading" class="font-display text-2xl font-semibold sm:text-3xl">
-          What to Expect
+          How long does driveway sealing take?
         </h2>
         <p>
           Most driveway sealing and painting projects take 1–2 days. Decorative overlay work takes longer depending on
@@ -213,7 +233,7 @@ const faqSchema = {
 
       <section aria-labelledby="tips-heading" class="space-y-5">
         <h2 id="tips-heading" class="font-display text-2xl font-semibold sm:text-3xl">
-          Homeowner Tips
+          What should you know before sealing your driveway?
         </h2>
         <ul class="space-y-4">
           {homeownerTips.map((tip) => (
@@ -226,8 +246,25 @@ const faqSchema = {
       </section>
 
       <FaqSection items={faqs} heading="Common Questions" />
+
+      <nav class="space-y-4 border-t border-charcoal/10 pt-10" aria-labelledby="related-links-heading">
+        <h2 id="related-links-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Related Services &amp; Reading
+        </h2>
+        <ul class="space-y-3">
+          {relatedLinks.map((item) => (
+            <li>
+              <a href={item.href} class="font-medium text-purple transition-colors hover:text-coral">
+                {item.label} →
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
     </article>
   </main>
 
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)}></script>
 </Layout>

@@ -1,6 +1,8 @@
 ---
 // Homeowner Guide article: what to expect before, during, and after a painting project in Brevard County.
+import FaqSection from '../../components/FaqSection.astro';
 import Layout from '../../layouts/Layout.astro';
+import { breadcrumbSchema, faqPageSchema } from '../../data/schema';
 
 const title = 'What to Expect During Your Painting Project in Brevard County | If Walls Could Talk';
 const description =
@@ -35,6 +37,36 @@ const moreGuideLinks = [
   },
   { label: 'Understanding Paint Products in Florida', href: '/homeowner-guide/paint-products-florida' },
 ];
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'Homeowner Guide', path: '/homeowner-guide' },
+  { name: 'What to Expect During Your Painting Project in Brevard County' },
+]);
+
+const faqs = [
+  {
+    question: 'How should I prepare my home before the painters arrive?',
+    answer:
+      'Move fragile items and wall hangings, clear space around the work areas, and plan for pets and parking. For exteriors, trim back plants touching the walls and unlock gates. Your painter should tell you anything specific before day one.',
+  },
+  {
+    question: 'What happens if it rains during my painting project?',
+    answer:
+      "The schedule shifts — and that's the right call. Paint applied to damp surfaces or before a storm fails early. Good Brevard County painters build weather buffer into their timeline and tell you promptly when afternoon rain or humidity pushes things back.",
+  },
+  {
+    question: 'When should I make the final payment?',
+    answer:
+      "After the final walkthrough, once you've seen even coverage, clean lines, and proper cleanup in good lighting. Walking the project together before final payment is standard practice, not an imposition.",
+  },
+  {
+    question: 'What records should I keep after a painting project?',
+    answer:
+      'The colors, brands, sheens, and products used on each surface. It makes future touch-ups and repaints far easier. Not every painter provides this, so ask during the estimate — we document it on every job.',
+  },
+];
+const faqSchema = faqPageSchema(faqs);
+
 ---
 
 <Layout {title} {description}>
@@ -161,6 +193,10 @@ const moreGuideLinks = [
           I work with small, vetted local crews and stay involved to help keep things on track so the standards stay
           consistent.
         </p>
+        <p>
+          You can see everything we handle — interior, exterior, cabinets, and outdoor surfaces — on our{' '}
+          <a href="/services" class="font-medium text-purple transition-colors hover:text-coral">services page</a>.
+        </p>
       </section>
 
       <section
@@ -185,6 +221,8 @@ const moreGuideLinks = [
         </p>
       </section>
 
+      <FaqSection items={faqs} heading="Common Questions About the Process" />
+
       <div class="watercolor-divider" aria-hidden="true"></div>
 
       <nav class="space-y-4" aria-labelledby="keep-reading-heading">
@@ -208,4 +246,6 @@ const moreGuideLinks = [
       </nav>
     </article>
   </main>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
 </Layout>

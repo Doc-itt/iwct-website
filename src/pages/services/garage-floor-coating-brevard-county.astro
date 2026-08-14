@@ -2,8 +2,9 @@
 // Garage floor coating service page for Brevard County homeowners with process, tips, and FAQ.
 import FaqSection from '../../components/FaqSection.astro';
 import Layout from '../../layouts/Layout.astro';
+import { breadcrumbSchema } from '../../data/schema';
 
-const title = 'Garage Floor Coating | If Walls Could Talk';
+const title = 'Garage Floor Coating in Brevard County, FL | If Walls Could Talk';
 const description =
   'Garage floor coating options for homes in Brevard County. Practical information on sealers, epoxy, and polyaspartic systems and what to expect.';
 
@@ -131,6 +132,19 @@ const faqSchema = {
     },
   })),
 };
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'Services', path: '/services' },
+  { name: 'Garage Floor Coating' },
+]);
+
+const relatedLinks = [
+  { label: 'Concrete Coatings', href: '/services/concrete-coatings-brevard-county' },
+  { label: 'Garage Painting', href: '/services/garage-painting-brevard-county' },
+  { label: 'Driveway Sealing and Painting', href: '/services/driveway-sealing-and-painting-brevard-county' },
+  { label: 'Guide: What to Expect During Your Project', href: '/homeowner-guide/what-to-expect-during-your-project' },
+];
+
 ---
 
 <Layout {title} {description}>
@@ -140,6 +154,12 @@ const faqSchema = {
         <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
           Garage Floor Coating
         </h1>
+        <aside class="rounded-xl border border-sage/60 bg-sage/10 p-5 sm:p-6" aria-label="Short answer">
+          <p class="text-sm font-semibold uppercase tracking-wide text-charcoal">The short answer</p>
+          <p class="mt-2">
+            We coat garage floors with epoxy or polyaspartic systems that resist hot-tire pickup, oil, and Florida humidity. Proper prep — grinding and moisture testing — is most of the job; done right, a coated floor outlasts paint by years.
+          </p>
+        </aside>
         <p>
           Garage floors deal with oil, chemicals, moisture, and constant vehicle traffic. Applying a coating can protect
           the concrete and make the space easier to clean and maintain. There are several options available at different
@@ -152,7 +172,7 @@ const faqSchema = {
 
       <section aria-labelledby="what-we-cover-heading" class="space-y-5">
         <h2 id="what-we-cover-heading" class="font-display text-2xl font-semibold sm:text-3xl">
-          What We Cover
+          What does garage floor coating include?
         </h2>
         <ul class="space-y-2">
           {whatWeCover.map((item) => (
@@ -166,7 +186,7 @@ const faqSchema = {
 
       <section aria-labelledby="approach-heading" class="space-y-5">
         <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
-          How We Approach It
+          How do we prep and coat a garage floor?
         </h2>
         <ol class="space-y-3">
           {approachSteps.map((step) => (
@@ -180,7 +200,7 @@ const faqSchema = {
 
       <section aria-labelledby="expect-heading" class="space-y-5">
         <h2 id="expect-heading" class="font-display text-2xl font-semibold sm:text-3xl">
-          What to Expect
+          How long does a garage floor coating take?
         </h2>
         <p>
           Timeline and return-to-use times vary significantly depending on the system:
@@ -197,7 +217,7 @@ const faqSchema = {
 
       <section aria-labelledby="tips-heading" class="space-y-5">
         <h2 id="tips-heading" class="font-display text-2xl font-semibold sm:text-3xl">
-          Homeowner Tips
+          What should you know before coating your garage floor?
         </h2>
         <ul class="space-y-4">
           {homeownerTips.map((tip) => (
@@ -210,8 +230,25 @@ const faqSchema = {
       </section>
 
       <FaqSection items={faqs} heading="Common Questions" />
+
+      <nav class="space-y-4 border-t border-charcoal/10 pt-10" aria-labelledby="related-links-heading">
+        <h2 id="related-links-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Related Services &amp; Reading
+        </h2>
+        <ul class="space-y-3">
+          {relatedLinks.map((item) => (
+            <li>
+              <a href={item.href} class="font-medium text-purple transition-colors hover:text-coral">
+                {item.label} →
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
     </article>
   </main>
 
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)}></script>
 </Layout>

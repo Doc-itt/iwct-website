@@ -2,8 +2,9 @@
 // Exterior painting service page for Brevard County homeowners with process, tips, and FAQ.
 import FaqSection from '../../components/FaqSection.astro';
 import Layout from '../../layouts/Layout.astro';
+import { breadcrumbSchema } from '../../data/schema';
 
-const title = 'Exterior Painting | If Walls Could Talk';
+const title = 'Exterior Painting in Brevard County, FL | If Walls Could Talk';
 const description =
   'Durable exterior house painting in Brevard County designed for Florida heat, salt air, and storms. Thorough prep and long-lasting results by vetted crews.';
 
@@ -110,6 +111,19 @@ const faqSchema = {
     },
   })),
 };
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'Services', path: '/services' },
+  { name: 'Exterior Painting' },
+]);
+
+const relatedLinks = [
+  { label: 'Siding Painting', href: '/services/siding-painting-brevard-county' },
+  { label: 'Stucco Painting and Sealing', href: '/services/stucco-painting-and-sealing-brevard-county' },
+  { label: 'Pressure Washing', href: '/services/pressure-washing-brevard-county' },
+  { label: 'Guide: Understanding Paint Products in Florida', href: '/homeowner-guide/paint-products-florida' },
+];
+
 ---
 
 <Layout {title} {description}>
@@ -119,6 +133,12 @@ const faqSchema = {
         <h1 class="font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
           Exterior Painting
         </h1>
+        <aside class="rounded-xl border border-sage/60 bg-sage/10 p-5 sm:p-6" aria-label="Short answer">
+          <p class="text-sm font-semibold uppercase tracking-wide text-charcoal">The short answer</p>
+          <p class="mt-2">
+            Exterior painting in Brevard County starts with prep — pressure washing, mildew treatment, crack repair, and the right primer — followed by 100% acrylic coatings built for Florida sun and salt air. Most single-story homes take 2–4 days, and done right, the finish lasts 7–10 years.
+          </p>
+        </aside>
         <p>
           Exterior painting in Brevard County is more demanding than most people expect. The sun is intense, the humidity is
           constant, and if you're near the coast, salt air is working on your paint year-round.
@@ -132,7 +152,7 @@ const faqSchema = {
 
       <section aria-labelledby="what-we-cover-heading" class="space-y-5">
         <h2 id="what-we-cover-heading" class="font-display text-2xl font-semibold sm:text-3xl">
-          What We Cover
+          What does exterior painting include?
         </h2>
         <p>
           Exterior painting is more than just walls. A complete exterior project can include all of these:
@@ -152,7 +172,7 @@ const faqSchema = {
 
       <section aria-labelledby="approach-heading" class="space-y-5">
         <h2 id="approach-heading" class="font-display text-2xl font-semibold sm:text-3xl">
-          How We Approach It
+          What steps go into a proper exterior prep and paint job?
         </h2>
         <p>
           Most exterior failures in Florida trace back to a skipped step. Here's the sequence we follow:
@@ -169,7 +189,7 @@ const faqSchema = {
 
       <section aria-labelledby="expect-heading" class="space-y-5">
         <h2 id="expect-heading" class="font-display text-2xl font-semibold sm:text-3xl">
-          What to Expect
+          How long does exterior painting take, and what does it cost?
         </h2>
         <p>
           Most single-story homes take 2–4 days for a full exterior. Two-story homes or jobs with heavy prep usually
@@ -188,7 +208,7 @@ const faqSchema = {
 
       <section aria-labelledby="tips-heading" class="space-y-5">
         <h2 id="tips-heading" class="font-display text-2xl font-semibold sm:text-3xl">
-          Homeowner Tips
+          What should Brevard County homeowners know before an exterior repaint?
         </h2>
         <ul class="space-y-4">
           {homeownerTips.map((tip) => (
@@ -201,8 +221,25 @@ const faqSchema = {
       </section>
 
       <FaqSection items={faqs} />
+
+      <nav class="space-y-4 border-t border-charcoal/10 pt-10" aria-labelledby="related-links-heading">
+        <h2 id="related-links-heading" class="font-display text-2xl font-semibold sm:text-3xl">
+          Related Services &amp; Reading
+        </h2>
+        <ul class="space-y-3">
+          {relatedLinks.map((item) => (
+            <li>
+              <a href={item.href} class="font-medium text-purple transition-colors hover:text-coral">
+                {item.label} →
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
     </article>
   </main>
 
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)}></script>
 </Layout>
