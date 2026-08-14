@@ -13,6 +13,15 @@
 
 # Sessions Log
 
+## 2026-08-13 — Cursor
+- Extended AEO work to all 24 service detail pages on branch `feature/gemini-aeo-opt` (created this session from `feature/fable5-seo-optimization` after committing/pushing the June SEO work).
+- Added "The short answer" blocks (35–50 words, same sage-box format as guides) directly under the H1 on every service page; copy cross-checked against each page's timelines/pricing so nothing contradicts.
+- Rewrote generic H2s into natural homeowner questions on all 24 pages ("What We Cover" → "What does exterior painting include?", "How We Approach It" → "What steps go into a proper exterior prep and paint job?", etc.). All heading `id`s, H1s, titles, descriptions, and schema untouched.
+- Removed "The short answer" blocks from the 4 homeowner-guide articles (owner request); blocks remain on blog posts and service pages. Guide FAQ sections/schema untouched.
+- **Decisions:** Header question phrasing is per-page, not templated verbatim; pricing-style questions only where the section actually covers pricing (exterior, cabinet).
+- **Next:** Deploy, spot-check a few service pages on mobile, re-run Rich Results Test on one service page.
+- **Git:** June work committed as `fa693ad` and pushed; this session's service-page AEO changes pending commit on `feature/gemini-aeo-opt`.
+
 ## 2026-06-11 — Cursor
 - Site-wide SEO/AEO pass on branch `feature/fable5-seo-optimization`. New `src/data/schema.ts` with shared JSON-LD builders (BlogPosting, BreadcrumbList, FAQPage).
 - `Layout.astro`: populated `sameAs` with the Google Maps profile URL; added sitewide `WebSite` JSON-LD; trimmed Google Fonts to used weights only (DM Sans 400/500/600, Fraunces 500/600 — no bold/italics used anywhere).

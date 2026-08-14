@@ -9,6 +9,11 @@
 
 # Changelog
 
+## 2026-08-13
+- Updated `src/pages/services/*-brevard-county.astro` (24 pages) — "The short answer" blocks under each H1; generic section H2s rewritten as natural homeowner questions (ids/anchors unchanged)
+- Updated `src/pages/homeowner-guide/*.astro` (4 articles) — removed "The short answer" blocks (owner request); FAQ sections and schema unchanged
+- Updated `docs/SESSIONS.md`, `docs/CHANGELOG.md`, `docs/STATUS.md` — session wrap-up
+
 ## 2026-06-11
 - Created `src/data/schema.ts` — shared JSON-LD builders: BlogPosting, BreadcrumbList, FAQPage
 - Updated `src/layouts/Layout.astro` — `sameAs` now lists the Google Maps profile URL; added `WebSite` JSON-LD; trimmed Google Fonts request to used weights

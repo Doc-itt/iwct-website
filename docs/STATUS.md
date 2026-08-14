@@ -7,7 +7,7 @@
 
 # Project Status
 
-_Last verified: 2026-06-11_
+_Last verified: 2026-08-13_
 
 ## Pages
 | Page | Path | Status | Notes |
@@ -45,7 +45,8 @@ _Last verified: 2026-06-11_
 - Shared schema builders in `src/data/schema.ts`: `blogPostingSchema`, `breadcrumbSchema`, `faqPageSchema` — use these for new pages.
 - `BlogPosting` + breadcrumbs + FAQ schema on all blog posts; breadcrumbs + FAQ on all guide articles; breadcrumbs + FAQ on all service detail pages.
 - Service page titles localized: "{Service} in Brevard County, FL | If Walls Could Talk".
-- Guide articles and blog posts open with a "The short answer" TL;DR block (AEO answer-first pattern).
+- Blog posts and all 24 service pages open with a "The short answer" TL;DR block (AEO answer-first pattern). Removed from homeowner-guide articles 2026-08-13 by owner request.
+- Service page section H2s are natural homeowner questions (e.g. "What does exterior painting include?"); heading ids unchanged.
 - Service detail pages end with a "Related Services & Reading" internal-link nav.
 
 ## Tech stack
